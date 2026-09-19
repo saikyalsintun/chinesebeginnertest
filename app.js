@@ -21,7 +21,34 @@ const CONFIG = {
 
 };
 
+/* =========================================================
+   CLASS / COURSE CONFIGURATION
+========================================================= */
 
+const CLASS_CONFIG = {
+
+    Beginner: {
+        folder: "chapters",
+        totalChapters: 15
+    },
+
+    Speaking: {
+        folder: "speaking",
+        totalChapters: 35
+    }
+
+    /*
+    Intermediate will be added later.
+
+    Example:
+
+    Intermediate: {
+        folder: "intermediate",
+        totalChapters: 30
+    }
+    */
+
+};
 /* =========================================================
    APPLICATION STATE
 ========================================================= */
