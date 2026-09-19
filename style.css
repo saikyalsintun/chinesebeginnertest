@@ -2271,3 +2271,8 @@ input:focus-visible {
     }
 
 }
+#loginScreen .login-title,
+#loginScreen .login-subtitle,
+#loginScreen .section-label {
+    color: #f97316 !important;
+}
