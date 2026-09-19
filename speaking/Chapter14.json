@@ -1,0 +1,570 @@
+{
+  "chapter": {
+    "id": "chapter-14",
+    "title": "Chapter 14",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch14-p1-q1",
+          "question": "မကြာသေးခင်က ဒူးရင်းသီးစားချင်နေတယ်။",
+          "answer": "Wǒ zuìjìn xiǎng chī liúlián le."
+        },
+        {
+          "id": "ch14-p1-q2",
+          "question": "အခုက သရက်သီးရာသီပါ။",
+          "answer": "Xiànzài shì mángguǒ jìjié."
+        },
+        {
+          "id": "ch14-p1-q3",
+          "question": "ကျွန်တော်/ကျွန်မ အကြိုက်ဆုံးစားတဲ့ သစ်သီးတွေက စပျစ်သီးနဲ့ ငှက်ပျောသီးပါ။",
+          "answer": "Wǒ zuì àichī de shuǐguǒ shì pútáo hé xiāngjiāo."
+        },
+        {
+          "id": "ch14-p1-q4",
+          "question": "နေ့တိုင်း လိမ္မော်သီးတစ်လုံးစားတာ ကျန်းမာရေးအတွက်ကောင်းတယ်။",
+          "answer": "Měitiān chī yí gè júzi duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch14-p1-q5",
+          "question": "ဒီဟာမီသီးက အရမ်းချိုတယ်။",
+          "answer": "Zhège hāmìguā hěn tián."
+        },
+        {
+          "id": "ch14-p1-q6",
+          "question": "သံပုရာသီးက အရမ်းချဉ်တယ်။",
+          "answer": "Níngméng hǎo suān."
+        },
+        {
+          "id": "ch14-p1-q7",
+          "question": "ဖရဲသီးဖျော်ရည်တစ်ခွက် လိုချင်တယ်။",
+          "answer": "Wǒ yào yì bēi xīguāzhi."
+        },
+        {
+          "id": "ch14-p1-q8",
+          "question": "နင် နာနတ်သီးနဲ့ မင်းကျွတ်သီးတွေ မဝယ်တော့ဘူးလား။",
+          "answer": "Nǐ bú mǎi bōluó hé shānzhú le ma?"
+        },
+        {
+          "id": "ch14-p1-q9",
+          "question": "ကမ်းခြေမှာ အုန်းသီးတွေအများကြီးရှိတယ်။",
+          "answer": "Zài hǎibiān yǒu hěn duō yēzi."
+        },
+        {
+          "id": "ch14-p1-q10",
+          "question": "တရုတ်နိုင်ငံမှာ သစ်တော်သီးတွေက ဈေးကြီးတယ်။",
+          "answer": "Zài Zhōngguó luòlí hěn guì."
+        },
+        {
+          "id": "ch14-p1-q11",
+          "question": "ဒီနေ့ စူပါမားကတ်ကို သွားချင်တယ်။",
+          "answer": "Wǒ jīntiān yào qù chāoshì."
+        },
+        {
+          "id": "ch14-p1-q12",
+          "question": "နင် ငါနဲ့အတူ သွားချင်လား။",
+          "answer": "Nǐ yào hé wǒ qù ma?"
+        },
+        {
+          "id": "ch14-p1-q13",
+          "question": "မသွားတော့ဘူး။",
+          "answer": "Wǒ bú qù le."
+        },
+        {
+          "id": "ch14-p1-q14",
+          "question": "စတော်ဘယ်ရီကိတ်မုန့်နဲ့ နဂါးမောက်သီး ၁၀ လုံး ဝယ်ပေးနိုင်မလား။",
+          "answer": "Nǐ kěyǐ bāng wǒ mǎi cǎoméi dàngāo hé shí gè huǒlóng guǒ ma?"
+        },
+        {
+          "id": "ch14-p1-q15",
+          "question": "ရပါတယ်။",
+          "answer": "Dāngrán kěyǐ."
+        },
+        {
+          "id": "ch14-p1-q16",
+          "question": "ယိုဇီသီးကရော။",
+          "answer": "Yòuzi ne?"
+        },
+        {
+          "id": "ch14-p1-q17",
+          "question": "ယိုဇီသီးကတော့ ဝယ်စရာမလိုဘူး။",
+          "answer": "Yòuzi jiù bú yòng mǎi le."
+        },
+        {
+          "id": "ch14-p1-q18",
+          "question": "ကျေးဇူးတင်ပါတယ်။",
+          "answer": "Xièxie nǐ."
+        },
+        {
+          "id": "ch14-p1-q19",
+          "question": "ရပါတယ်။",
+          "answer": "Bú kèqì."
+        },
+        {
+          "id": "ch14-p1-q20",
+          "question": "တောင်းပန်ပါတယ်၊ ပန်းသီးတွေကို ဘယ်လိုရောင်းသလဲ။",
+          "answer": "Qǐngwèn, píngguǒ zěnme mài?"
+        },
+        {
+          "id": "ch14-p1-q21",
+          "question": "တစ်ပေါင်ကို ၃ ဒေါ်လာပါ။",
+          "answer": "Sān měiyuán yī bàng."
+        },
+        {
+          "id": "ch14-p1-q22",
+          "question": "ဒီဟာတွေ ဘယ်လောက်ကျသလဲ။",
+          "answer": "Zhèxiē duōshǎo qián?"
+        },
+        {
+          "id": "ch14-p1-q23",
+          "question": "စုစုပေါင်း ၁၂ ဒေါ်လာပါ။",
+          "answer": "Yígòng shí’èr měiyuán."
+        },
+        {
+          "id": "ch14-p1-q24",
+          "question": "တခြားဘာလိုသေးလဲ။",
+          "answer": "Hái yào bié de ma?"
+        },
+        {
+          "id": "ch14-p1-q25",
+          "question": "မလိုတော့ဘူး။",
+          "answer": "Bùyàole."
+        },
+        {
+          "id": "ch14-p1-q26",
+          "question": "ဒီမှာ ပိုက်ဆံ။",
+          "answer": "Gěi nǐ qián."
+        },
+        {
+          "id": "ch14-p1-q27",
+          "question": "ဒီမှာ ၁၅ ကျပ်/ဒေါ်လာ။",
+          "answer": "Zhè shì shíwǔ kuài."
+        },
+        {
+          "id": "ch14-p1-q28",
+          "question": "မင်းကို ၃ ကျပ်/ဒေါ်လာ ပြန်အမ်းမယ်။",
+          "answer": "Zhǎo nǐ sān kuài."
+        },
+        {
+          "id": "ch14-p1-q29",
+          "question": "ကျေးဇူးတင်ပါတယ်။",
+          "answer": "Xièxiè."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch14-p2-q1",
+          "question": "Wǒ zuìjìn xiǎng chī shénme?",
+          "answer": "Wǒ zuìjìn xiǎng chī liúlián."
+        },
+        {
+          "id": "ch14-p2-q2",
+          "question": "Xiànzài shì shénme jìjié?",
+          "answer": "Xiànzài shì mángguǒ jìjié."
+        },
+        {
+          "id": "ch14-p2-q3",
+          "question": "Nǐ zuì àichī de shuǐguǒ shì shénme?",
+          "answer": "Wǒ zuì àichī de shuǐguǒ shì pútáo hé xiāngjiāo."
+        },
+        {
+          "id": "ch14-p2-q4",
+          "question": "Měitiān chī yí gè júzi zěnmeyàng?",
+          "answer": "Měitiān chī yí gè júzi duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch14-p2-q5",
+          "question": "Zhège hāmìguā zěnmeyàng?",
+          "answer": "Zhège hāmìguā hěn tián."
+        },
+        {
+          "id": "ch14-p2-q6",
+          "question": "Níngméng zěnmeyàng?",
+          "answer": "Níngméng hǎo suān."
+        },
+        {
+          "id": "ch14-p2-q7",
+          "question": "Nǐ yào hē shénme?",
+          "answer": "Wǒ yào yì bēi xīguāzhi."
+        },
+        {
+          "id": "ch14-p2-q8",
+          "question": "Nǐ bú mǎi bōluó hé shānzhú le ma?",
+          "answer": "Bú mǎi le."
+        },
+        {
+          "id": "ch14-p2-q9",
+          "question": "Nǎlǐ yǒu hěn duō yēzi?",
+          "answer": "Zài hǎibiān yǒu hěn duō yēzi."
+        },
+        {
+          "id": "ch14-p2-q10",
+          "question": "Zài Zhōngguó shénme hěn guì?",
+          "answer": "Luòlí hěn guì."
+        },
+        {
+          "id": "ch14-p2-q11",
+          "question": "Nǐ jīntiān yào qù nǎlǐ?",
+          "answer": "Wǒ jīntiān yào qù chāoshì."
+        },
+        {
+          "id": "ch14-p2-q12",
+          "question": "Nǐ yào hé wǒ qù ma?",
+          "answer": "Wǒ bú qù le."
+        },
+        {
+          "id": "ch14-p2-q13",
+          "question": "Nǐ kěyǐ bāng wǒ mǎi shénme?",
+          "answer": "Wǒ kěyǐ bāng nǐ mǎi cǎoméi dàngāo hé shí gè huǒlóng guǒ."
+        },
+        {
+          "id": "ch14-p2-q14",
+          "question": "Yòuzi ne?",
+          "answer": "Yòuzi jiù bú yòng mǎi le."
+        },
+        {
+          "id": "ch14-p2-q15",
+          "question": "Píngguǒ zěnme mài?",
+          "answer": "Sān měiyuán yī bàng."
+        },
+        {
+          "id": "ch14-p2-q16",
+          "question": "Zhèxiē duōshǎo qián?",
+          "answer": "Yígòng shí’èr měiyuán."
+        },
+        {
+          "id": "ch14-p2-q17",
+          "question": "Hái yào bié de ma?",
+          "answer": "Bùyàole."
+        },
+        {
+          "id": "ch14-p2-q18",
+          "question": "Gěi nǐ qián.",
+          "answer": "Xièxiè."
+        },
+        {
+          "id": "ch14-p2-q19",
+          "question": "Zhè shì shíwǔ kuài. Zhǎo nǐ duōshǎo?",
+          "answer": "Zhǎo nǐ sān kuài."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch14-p3-q1",
+          "words": [
+            "le",
+            "liúlián",
+            "chī",
+            "xiǎng",
+            "zuìjìn",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zuìjìn xiǎng chī liúlián le."
+        },
+        {
+          "id": "ch14-p3-q2",
+          "words": [
+            "jìjié",
+            "mángguǒ",
+            "shì",
+            "Xiànzài"
+          ],
+          "answer": "Xiànzài shì mángguǒ jìjié."
+        },
+        {
+          "id": "ch14-p3-q3",
+          "words": [
+            "xiāngjiāo",
+            "hé",
+            "pútáo",
+            "shì",
+            "shuǐguǒ",
+            "de",
+            "àichī",
+            "zuì",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zuì àichī de shuǐguǒ shì pútáo hé xiāngjiāo."
+        },
+        {
+          "id": "ch14-p3-q4",
+          "words": [
+            "hǎo",
+            "shēntǐ",
+            "duì",
+            "júzi",
+            "gè",
+            "yí",
+            "chī",
+            "Měitiān"
+          ],
+          "answer": "Měitiān chī yí gè júzi duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch14-p3-q5",
+          "words": [
+            "tián",
+            "hěn",
+            "hāmìguā",
+            "Zhège"
+          ],
+          "answer": "Zhège hāmìguā hěn tián."
+        },
+        {
+          "id": "ch14-p3-q6",
+          "words": [
+            "suān",
+            "hǎo",
+            "Níngméng"
+          ],
+          "answer": "Níngméng hǎo suān."
+        },
+        {
+          "id": "ch14-p3-q7",
+          "words": [
+            "xīguāzhi",
+            "bēi",
+            "yì",
+            "yào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yào yì bēi xīguāzhi."
+        },
+        {
+          "id": "ch14-p3-q8",
+          "words": [
+            "ma",
+            "le",
+            "shānzhú",
+            "hé",
+            "bōluó",
+            "mǎi",
+            "bú",
+            "Nǐ"
+          ],
+          "answer": "Nǐ bú mǎi bōluó hé shānzhú le ma?"
+        },
+        {
+          "id": "ch14-p3-q9",
+          "words": [
+            "yēzi",
+            "duō",
+            "hěn",
+            "yǒu",
+            "hǎibiān",
+            "Zài"
+          ],
+          "answer": "Zài hǎibiān yǒu hěn duō yēzi."
+        },
+        {
+          "id": "ch14-p3-q10",
+          "words": [
+            "guì",
+            "hěn",
+            "luòlí",
+            "Zhōngguó",
+            "Zài"
+          ],
+          "answer": "Zài Zhōngguó luòlí hěn guì."
+        },
+        {
+          "id": "ch14-p3-q11",
+          "words": [
+            "chāoshì",
+            "qù",
+            "yào",
+            "jīntiān",
+            "Wǒ"
+          ],
+          "answer": "Wǒ jīntiān yào qù chāoshì."
+        },
+        {
+          "id": "ch14-p3-q12",
+          "words": [
+            "ma",
+            "qù",
+            "wǒ",
+            "hé",
+            "yào",
+            "Nǐ"
+          ],
+          "answer": "Nǐ yào hé wǒ qù ma?"
+        },
+        {
+          "id": "ch14-p3-q13",
+          "words": [
+            "le",
+            "qù",
+            "bú",
+            "Wǒ"
+          ],
+          "answer": "Wǒ bú qù le."
+        },
+        {
+          "id": "ch14-p3-q14",
+          "words": [
+            "ma",
+            "guǒ",
+            "huǒlóng",
+            "gè",
+            "shí",
+            "hé",
+            "dàngāo",
+            "cǎoméi",
+            "mǎi",
+            "wǒ",
+            "bāng",
+            "kěyǐ",
+            "Nǐ"
+          ],
+          "answer": "Nǐ kěyǐ bāng wǒ mǎi cǎoméi dàngāo hé shí gè huǒlóng guǒ ma?"
+        },
+        {
+          "id": "ch14-p3-q15",
+          "words": [
+            "kěyǐ",
+            "Dāngrán"
+          ],
+          "answer": "Dāngrán kěyǐ."
+        },
+        {
+          "id": "ch14-p3-q16",
+          "words": [
+            "ne",
+            "Yòuzi"
+          ],
+          "answer": "Yòuzi ne?"
+        },
+        {
+          "id": "ch14-p3-q17",
+          "words": [
+            "le",
+            "mǎi",
+            "yòng",
+            "bú",
+            "jiù",
+            "Yòuzi"
+          ],
+          "answer": "Yòuzi jiù bú yòng mǎi le."
+        },
+        {
+          "id": "ch14-p3-q18",
+          "words": [
+            "nǐ",
+            "Xièxie"
+          ],
+          "answer": "Xièxie nǐ."
+        },
+        {
+          "id": "ch14-p3-q19",
+          "words": [
+            "kèqì",
+            "Bú"
+          ],
+          "answer": "Bú kèqì."
+        },
+        {
+          "id": "ch14-p3-q20",
+          "words": [
+            "mài",
+            "zěnme",
+            "píngguǒ",
+            "Qǐngwèn"
+          ],
+          "answer": "Qǐngwèn píngguǒ zěnme mài?"
+        },
+        {
+          "id": "ch14-p3-q21",
+          "words": [
+            "bàng",
+            "yī",
+            "měiyuán",
+            "Sān"
+          ],
+          "answer": "Sān měiyuán yī bàng."
+        },
+        {
+          "id": "ch14-p3-q22",
+          "words": [
+            "qián",
+            "duōshǎo",
+            "Zhèxiē"
+          ],
+          "answer": "Zhèxiē duōshǎo qián?"
+        },
+        {
+          "id": "ch14-p3-q23",
+          "words": [
+            "měiyuán",
+            "shí’èr",
+            "Yígòng"
+          ],
+          "answer": "Yígòng shí’èr měiyuán."
+        },
+        {
+          "id": "ch14-p3-q24",
+          "words": [
+            "ma",
+            "de",
+            "bié",
+            "yào",
+            "Hái"
+          ],
+          "answer": "Hái yào bié de ma?"
+        },
+        {
+          "id": "ch14-p3-q25",
+          "words": [
+            "Bùyàole"
+          ],
+          "answer": "Bùyàole."
+        },
+        {
+          "id": "ch14-p3-q26",
+          "words": [
+            "qián",
+            "nǐ",
+            "Gěi"
+          ],
+          "answer": "Gěi nǐ qián."
+        },
+        {
+          "id": "ch14-p3-q27",
+          "words": [
+            "kuài",
+            "shíwǔ",
+            "shì",
+            "Zhè"
+          ],
+          "answer": "Zhè shì shíwǔ kuài."
+        },
+        {
+          "id": "ch14-p3-q28",
+          "words": [
+            "kuài",
+            "sān",
+            "nǐ",
+            "Zhǎo"
+          ],
+          "answer": "Zhǎo nǐ sān kuài."
+        },
+        {
+          "id": "ch14-p3-q29",
+          "words": [
+            "Xièxiè"
+          ],
+          "answer": "Xièxiè."
+        }
+      ]
+    }
+  }
+}

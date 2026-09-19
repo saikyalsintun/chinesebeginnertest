@@ -1,0 +1,230 @@
+{
+  "chapter": {
+    "id": "chapter-23",
+    "title": "Chapter 23",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p1-q1",
+          "question": "ညဘက်အားလပ်ချိန်မှာ မင်းဘာလုပ်လဲ။",
+          "answer": "Nǐ zài yèyǔ shíjiān zuò shénme?"
+        },
+        {
+          "id": "ch23-p1-q2",
+          "question": "ကျွန်တော် အားကစားလုပ်ရတာကြိုက်တယ်။",
+          "answer": "Wǒ xǐhuan yùndòng."
+        },
+        {
+          "id": "ch23-p1-q3",
+          "question": "မင်းဘယ်အားကစားကို အကြိုက်ဆုံးလဲ။",
+          "answer": "Nǐ xǐhuan shénme yùndòng?"
+        },
+        {
+          "id": "ch23-p1-q4",
+          "question": "ကျွန်တော် ရေကူးတာ၊ စားပွဲတင်တင်းနစ်ကစားတာနဲ့ ဘောလုံးကန်တာကို အကြိုက်ဆုံးပဲ။",
+          "answer": "Wǒ zuì xǐhuan yóuyǒng, dǎ pīngpāngqiú hé tī zúqiú."
+        },
+        {
+          "id": "ch23-p1-q5",
+          "question": "မင်းဘယ်အချိန်မှာ ဒီအားကစားတွေ လုပ်လဲ။",
+          "answer": "Nǐ shénme shíhou zuò zhèxiē yùndòng?"
+        },
+        {
+          "id": "ch23-p1-q6",
+          "question": "ကျွန်တော် ပိတ်ရက်မှာ ဒီအားကစားတွေ လုပ်ရတာကြိုက်တယ်။",
+          "answer": "Wǒ zhōumò xǐhuān zuò zhèxiē yùndòng."
+        },
+        {
+          "id": "ch23-p1-q7",
+          "question": "မင်းအားကစားလုပ်ရတာကြိုက်လား။",
+          "answer": "Nǐ ài yùndòng ma?"
+        },
+        {
+          "id": "ch23-p1-q8",
+          "question": "ကျွန်တော် သိပ်အားကစားမလုပ်ဘူး၊ တစ်ခါတလေ ပြေးတာပဲ။",
+          "answer": "Wǒ bútài yùndòng, zhǐshì ǒu’ěr huì qù pǎobù."
+        },
+        {
+          "id": "ch23-p1-q9",
+          "question": "ကျွန်တော် နေ့တိုင်းမနက်မှာ တစ်နာရီလောက် ကြက်တောင်ရိုက်တယ်။",
+          "answer": "Wǒ měitiān zǎoshàng dōu huì dǎ yí gè xiǎoshí de yǔmáoqiú."
+        },
+        {
+          "id": "ch23-p1-q10",
+          "question": "မင်းဘယ်သူနဲ့အတူ ကြက်တောင်ရိုက်လဲ။",
+          "answer": "Nǐ hé shéi yìqǐ dǎ?"
+        },
+        {
+          "id": "ch23-p1-q11",
+          "question": "ကျွန်တော် ညီလေးနဲ့ ညီမလေးနဲ့အတူ ရိုက်တယ်။",
+          "answer": "Wǒ hé dìdi, mèimei yìqǐ dǎ."
+        },
+        {
+          "id": "ch23-p1-q12",
+          "question": "နေ့တိုင်းအားကစားလုပ်တာက ကိုယ်ခန္ဓာအတွက်ကောင်းတယ်။",
+          "answer": "Měitiān yùndòng duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch23-p1-q13",
+          "question": "နောက်တစ်နေ့ ကျွန်တော်တို့အတူတူ အားကစားလုပ်ကြရအောင်။",
+          "answer": "Gǎitiān wǒmen yìqǐ yùndòng ba."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p2-q1",
+          "question": "Nǐ zài yèyǔ shíjiān zuò shénme?",
+          "answer": "Wǒ xǐhuan yùndòng."
+        },
+        {
+          "id": "ch23-p2-q2",
+          "question": "Nǐ xǐhuan shénme yùndòng?",
+          "answer": "Wǒ zuì xǐhuan yóuyǒng, dǎ pīngpāngqiú hé tī zúqiú."
+        },
+        {
+          "id": "ch23-p2-q3",
+          "question": "Nǐ shénme shíhou zuò zhèxiē yùndòng?",
+          "answer": "Wǒ zhōumò xǐhuān zuò zhèxiē yùndòng."
+        },
+        {
+          "id": "ch23-p2-q4",
+          "question": "Xiǎolíng, nǐ ài yùndòng ma?",
+          "answer": "Wǒ bútài yùndòng, zhǐshì ǒu’ěr huì qù pǎobù."
+        },
+        {
+          "id": "ch23-p2-q5",
+          "question": "Nǐ ne?",
+          "answer": "Wǒ měitiān zǎoshàng dōu huì dǎ yí gè xiǎoshí de yǔmáoqiú."
+        },
+        {
+          "id": "ch23-p2-q6",
+          "question": "Nǐ hé shéi yìqǐ dǎ?",
+          "answer": "Wǒ hé dìdi, mèimei yìqǐ dǎ."
+        },
+        {
+          "id": "ch23-p2-q7",
+          "question": "Měitiān yùndòng duì shēntǐ hǎo ma?",
+          "answer": "Shì de. Měitiān yùndòng duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch23-p2-q8",
+          "question": "Gǎitiān wǒmen yìqǐ yùndòng ba.",
+          "answer": "Hǎo."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch23-p3-q1",
+          "words": [
+            "yùndòng",
+            "xǐhuan",
+            "Wǒ"
+          ],
+          "answer": "Wǒ xǐhuan yùndòng."
+        },
+        {
+          "id": "ch23-p3-q2",
+          "words": [
+            "zúqiú",
+            "tī",
+            "hé",
+            "pīngpāngqiú",
+            "dǎ",
+            "yóuyǒng,",
+            "xǐhuan",
+            "zuì",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zuì xǐhuan yóuyǒng, dǎ pīngpāngqiú hé tī zúqiú."
+        },
+        {
+          "id": "ch23-p3-q3",
+          "words": [
+            "yùndòng",
+            "zhèxiē",
+            "zuò",
+            "xǐhuān",
+            "zhōumò",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zhōumò xǐhuān zuò zhèxiē yùndòng."
+        },
+        {
+          "id": "ch23-p3-q4",
+          "words": [
+            "pǎobù",
+            "qù",
+            "huì",
+            "ǒu’ěr",
+            "zhǐshì",
+            "yùndòng,",
+            "bútài",
+            "Wǒ"
+          ],
+          "answer": "Wǒ bútài yùndòng, zhǐshì ǒu’ěr huì qù pǎobù."
+        },
+        {
+          "id": "ch23-p3-q5",
+          "words": [
+            "yǔmáoqiú",
+            "de",
+            "xiǎoshí",
+            "gè",
+            "yí",
+            "dǎ",
+            "huì",
+            "dōu",
+            "zǎoshàng",
+            "měitiān",
+            "Wǒ"
+          ],
+          "answer": "Wǒ měitiān zǎoshàng dōu huì dǎ yí gè xiǎoshí de yǔmáoqiú."
+        },
+        {
+          "id": "ch23-p3-q6",
+          "words": [
+            "dǎ",
+            "yìqǐ",
+            "mèimei",
+            "dìdi,",
+            "hé",
+            "Wǒ"
+          ],
+          "answer": "Wǒ hé dìdi, mèimei yìqǐ dǎ."
+        },
+        {
+          "id": "ch23-p3-q7",
+          "words": [
+            "hǎo",
+            "shēntǐ",
+            "duì",
+            "yùndòng",
+            "Měitiān"
+          ],
+          "answer": "Měitiān yùndòng duì shēntǐ hǎo."
+        },
+        {
+          "id": "ch23-p3-q8",
+          "words": [
+            "ba",
+            "yùndòng",
+            "yìqǐ",
+            "wǒmen",
+            "Gǎitiān"
+          ],
+          "answer": "Gǎitiān wǒmen yìqǐ yùndòng ba."
+        }
+      ]
+    }
+  }
+}

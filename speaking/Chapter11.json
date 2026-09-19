@@ -1,0 +1,253 @@
+{
+  "chapter": {
+    "id": "chapter-11",
+    "title": "Chapter 11",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch11-p1-q1",
+          "question": "လူတိုင်းက မီးသတ်သမားရဲ့ သတ္တိကို အရမ်းလေးစားကြတယ်။",
+          "answer": "Měige rén dōu hěn pèifú xiāofángyuán de yǒngqì."
+        },
+        {
+          "id": "ch11-p1-q2",
+          "question": "သူက အကြောင်းမရှိဘဲ မကြာခဏ စိတ်ဆိုးတတ်တယ်။",
+          "answer": "Tā cháng wúyuánwúgù shēngqì."
+        },
+        {
+          "id": "ch11-p1-q3",
+          "question": "သူက အချိန်ပိုအလုပ်လုပ်ရတာကို မုန်းတယ်။",
+          "answer": "Tā tǎoyàn jiābān."
+        },
+        {
+          "id": "ch11-p1-q4",
+          "question": "ဆရာက ကျောင်းသားတွေရဲ့ အမှတ်တွေကို အရမ်းစိတ်ပျက်တယ်။",
+          "answer": "Lǎoshī duì xuéshengmen de chéngjì hěn shīwàng."
+        },
+        {
+          "id": "ch11-p1-q5",
+          "question": "သူက ဒီရုပ်ရှင်က အရမ်းပျင်းစရာကောင်းတယ်လို့ ထင်တယ်။",
+          "answer": "Tā juéde zhè bù diànyǐng wúliáo jí le."
+        },
+        {
+          "id": "ch11-p1-q6",
+          "question": "ကျွန်တော်/ကျွန်မ နေ့တိုင်း အရမ်းပျော်တယ်။",
+          "answer": "Wǒ měitiān dōu hěn kāixīn."
+        },
+        {
+          "id": "ch11-p1-q7",
+          "question": "ကျွန်တော်/ကျွန်မ အရမ်းဝမ်းနည်းတယ်။",
+          "answer": "Wǒ hěn nánguò."
+        },
+        {
+          "id": "ch11-p1-q8",
+          "question": "ညီမလေးက ပျော်လွန်းလို့ ငိုလိုက်တယ်။",
+          "answer": "Mèimei gāoxìng de kū le."
+        },
+        {
+          "id": "ch11-p1-q9",
+          "question": "သူက ပြုံးပြီး ကျွန်တော်/ကျွန်မ အရမ်းကောင်းတယ်လို့ ပြောတယ်။",
+          "answer": "Tā xiào zhe shuō wǒ hěn hǎo."
+        },
+        {
+          "id": "ch11-p1-q10",
+          "question": "ကျွန်တော်/ကျွန်မ မကြောက်ဘူး။",
+          "answer": "Wǒ bú hàipà."
+        },
+        {
+          "id": "ch11-p1-q11",
+          "question": "ဒီနေ့ အစည်းအဝေးက အရမ်းအောင်မြင်တယ်။",
+          "answer": "Jīntiān de huìyì hěn chénggōng."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch11-p2-q1",
+          "question": "Měige rén dōu hěn pèifú xiāofángyuán de shénme?",
+          "answer": "Xiāofángyuán de yǒngqì."
+        },
+        {
+          "id": "ch11-p2-q2",
+          "question": "Tā cháng wúyuánwúgù zuò shénme?",
+          "answer": "Tā cháng wúyuánwúgù shēngqì."
+        },
+        {
+          "id": "ch11-p2-q3",
+          "question": "Tā tǎoyàn shénme?",
+          "answer": "Tā tǎoyàn jiābān."
+        },
+        {
+          "id": "ch11-p2-q4",
+          "question": "Lǎoshī duì xuéshengmen de chéngjì zěnmeyàng?",
+          "answer": "Hěn shīwàng."
+        },
+        {
+          "id": "ch11-p2-q5",
+          "question": "Tā juéde zhèbù diànyǐng zěnmeyàng?",
+          "answer": "Wúliáo jí le."
+        },
+        {
+          "id": "ch11-p2-q6",
+          "question": "Wǒ měitiān dōu zěnmeyàng?",
+          "answer": "Hěn kāixīn."
+        },
+        {
+          "id": "ch11-p2-q7",
+          "question": "Nǐ shìfǒu hàipà?",
+          "answer": "Wǒ bú hàipà."
+        },
+        {
+          "id": "ch11-p2-q8",
+          "question": "Mèimei wèishénme kū le?",
+          "answer": "Yīnwèi tā hěn gāoxìng."
+        },
+        {
+          "id": "ch11-p2-q9",
+          "question": "Tā zěnme shuō wǒ?",
+          "answer": "Tā xiào zhe shuō wǒ hěn hǎo."
+        },
+        {
+          "id": "ch11-p2-q10",
+          "question": "Jīntiān de huìyì zěnmeyàng?",
+          "answer": "Jīntiān de huìyì hěn chénggōng."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch11-p3-q0",
+          "words": [
+            "yǒngqì",
+            "de",
+            "xiāofángyuán",
+            "pèifú",
+            "hěn",
+            "dōu",
+            "rén",
+            "Měige"
+          ],
+          "answer": "Měige rén dōu hěn pèifú xiāofángyuán de yǒngqì?"
+        },
+        {
+          "id": "ch11-p3-q1",
+          "words": [
+            "shēngqì",
+            "wúyuánwúgù",
+            "cháng",
+            "Tā"
+          ],
+          "answer": "Tā cháng wúyuánwúgù shēngqì."
+        },
+        {
+          "id": "ch11-p3-q2",
+          "words": [
+            "jiābān",
+            "tǎoyàn",
+            "Tā"
+          ],
+          "answer": "Tā tǎoyàn jiābān."
+        },
+        {
+          "id": "ch11-p3-q3",
+          "words": [
+            "shīwàng",
+            "hěn",
+            "chéngjì",
+            "de",
+            "xuéshengmen",
+            "duì",
+            "Lǎoshī"
+          ],
+          "answer": "Lǎoshī duì xuéshengmen de chéngjì hěn shīwàng."
+        },
+        {
+          "id": "ch11-p3-q4",
+          "words": [
+            "le",
+            "jí",
+            "wúliáo",
+            "diànyǐng",
+            "bù",
+            "zhè",
+            "juéde",
+            "Tā"
+          ],
+          "answer": "Tā juéde zhè bù diànyǐng wúliáo jí le."
+        },
+        {
+          "id": "ch11-p3-q5",
+          "words": [
+            "kāixīn",
+            "hěn",
+            "dōu",
+            "měitiān",
+            "Wǒ"
+          ],
+          "answer": "Wǒ měitiān dōu hěn kāixīn."
+        },
+        {
+          "id": "ch11-p3-q6",
+          "words": [
+            "nánguò",
+            "hěn",
+            "Wǒ"
+          ],
+          "answer": "Wǒ hěn nánguò."
+        },
+        {
+          "id": "ch11-p3-q7",
+          "words": [
+            "le",
+            "kū",
+            "de",
+            "gāoxìng",
+            "Mèimei"
+          ],
+          "answer": "Mèimei gāoxìng de kū le."
+        },
+        {
+          "id": "ch11-p3-q8",
+          "words": [
+            "hǎo",
+            "hěn",
+            "wǒ",
+            "shuō",
+            "zhe",
+            "xiào",
+            "Tā"
+          ],
+          "answer": "Tā xiào zhe shuō wǒ hěn hǎo."
+        },
+        {
+          "id": "ch11-p3-q9",
+          "words": [
+            "hàipà",
+            "bú",
+            "Wǒ"
+          ],
+          "answer": "Wǒ bú hàipà."
+        },
+        {
+          "id": "ch11-p3-q10",
+          "words": [
+            "chénggōng",
+            "hěn",
+            "huìyì",
+            "de",
+            "Jīntiān"
+          ],
+          "answer": "Jīntiān de huìyì hěn chénggōng."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "chapter": {
+    "id": "chapter-9",
+    "title": "Chapter 9",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch9-p1-q1",
+          "question": "မင်းရဲ့ဖုန်းနံပါတ်က ဘယ်လောက်လဲ။",
+          "words": [
+            "nǐde",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "duōshǎo",
+            "wǒde",
+            "nǐ",
+            "ne"
+          ],
+          "answers": [
+            [
+              "nǐde",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "duōshǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q2",
+          "question": "ငါ့ဖုန်းနံပါတ်က 09-891160521 ပါ။",
+          "words": [
+            "wǒde",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "09-891160521",
+            "nǐde",
+            "ne",
+            "duōshǎo"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "09-891160521"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q3",
+          "question": "ငါ့ဖုန်းနံပါတ်က 09-751318079 ပါ။",
+          "words": [
+            "wǒde",
+            "shì",
+            "diànhuà",
+            "hàomǎ",
+            "09-751318079",
+            "nǐde",
+            "duōshǎo",
+            "ne"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "shì",
+              "09-751318079"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q4",
+          "question": "မင်းအမေရဲ့ဖုန်းနံပါတ်က ဘယ်လောက်လဲ။",
+          "words": [
+            "nǐ",
+            "māmɑ",
+            "de",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "duōshǎo",
+            "wǒde",
+            "ne"
+          ],
+          "answers": [
+            [
+              "nǐ",
+              "māmɑ",
+              "de",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "duōshǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q5",
+          "question": "မင်းကိုရှာမတွေ့ရင် မင်းအမေကို ရှာလို့ရတယ်။",
+          "words": [
+            "zhǎo",
+            "bú",
+            "dào",
+            "nǐ",
+            "kěyǐ",
+            "zhǎo",
+            "nǐ",
+            "māmɑ",
+            "wǒde",
+            "diànhuà"
+          ],
+          "answers": [
+            [
+              "zhǎo",
+              "bú",
+              "dào",
+              "nǐ",
+              "kěyǐ",
+              "zhǎo",
+              "nǐ",
+              "māmɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q6",
+          "question": "ငါ့အမေရဲ့ဖုန်းနံပါတ်က 53648927 ပါ။",
+          "words": [
+            "wǒ",
+            "māmɑ",
+            "de",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "53648927",
+            "nǐde",
+            "duōshǎo"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "māmɑ",
+              "de",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "53648927"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q7",
+          "question": "ဒါက ခင်ဗျားမှာထားတဲ့ ဖက်ထုပ်နဲ့ ဘီယာပါ။",
+          "words": [
+            "zhè",
+            "shì",
+            "nín",
+            "diǎn",
+            "de",
+            "jiǎozi",
+            "hé",
+            "píjiǔ",
+            "fúwùyuan",
+            "mǎidān"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "shì",
+              "nín",
+              "diǎn",
+              "de",
+              "jiǎozi",
+              "hé",
+              "píjiǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q8",
+          "question": "ကျေးဇူးတင်ပါတယ်။",
+          "words": [
+            "xièxie",
+            "bú",
+            "yòng",
+            "xiè",
+            "màn",
+            "yígòng",
+            "hǎo",
+            "de"
+          ],
+          "answers": [
+            [
+              "xièxie"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q9",
+          "question": "ကျေးဇူးမတင်လည်းရပါတယ်၊ သုံးဆောင်ပါ။",
+          "words": [
+            "bú",
+            "yòng",
+            "xiè",
+            "nín",
+            "mànyòng",
+            "fúwùyuan",
+            "mǎidān",
+            "xiàcì"
+          ],
+          "answers": [
+            [
+              "bú",
+              "yòng",
+              "xiè",
+              "nín",
+              "mànyòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p1-q10",
+          "question": "စုစုပေါင်း ၇၈၀၀ ယွမ်ပါ။",
+          "words": [
+            "yígòng",
+            "shì",
+            "qīqiān",
+            "bā",
+            "bǎi",
+            "yuán",
+            "mǎidān",
+            "xiàcì",
+            "màn"
+          ],
+          "answers": [
+            [
+              "yígòng",
+              "shì",
+              "qīqiān",
+              "bā",
+              "bǎi",
+              "yuán"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer the Question",
+      "instruction": "Answer the question by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch9-p2-q1",
+          "question": "Nǐde diànhuà hàomǎ shì duōshǎo?",
+          "words": [
+            "wǒde",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "09-891160521",
+            "nǐde",
+            "ne",
+            "duōshǎo"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "09-891160521"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q2",
+          "question": "Nǐde ne?",
+          "words": [
+            "wǒde",
+            "shì",
+            "09-751318079",
+            "diànhuà",
+            "hàomǎ",
+            "nǐde",
+            "ne",
+            "duōshǎo"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "shì",
+              "09-751318079"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q3",
+          "question": "Nà, nǐ māmɑ de diànhuà hàomǎ shì duōshǎo?",
+          "words": [
+            "wǒ",
+            "māmɑ",
+            "de",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "53648927",
+            "nǐ",
+            "duōshǎo",
+            "ne"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "māmɑ",
+              "de",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "53648927"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q4",
+          "question": "Zhǎo bú dào nǐ, kěyǐ zhǎo shuí?",
+          "words": [
+            "kěyǐ",
+            "zhǎo",
+            "nǐ",
+            "māmɑ",
+            "zhǎo",
+            "bú",
+            "dào",
+            "wǒ",
+            "fúwùyuan"
+          ],
+          "answers": [
+            [
+              "kěyǐ",
+              "zhǎo",
+              "nǐ",
+              "māmɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q5",
+          "question": "Zhè shì nín diǎn de shénme?",
+          "words": [
+            "zhè",
+            "shì",
+            "nín",
+            "diǎn",
+            "de",
+            "jiǎozi",
+            "hé",
+            "píjiǔ",
+            "mǎidān"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "shì",
+              "nín",
+              "diǎn",
+              "de",
+              "jiǎozi",
+              "hé",
+              "píjiǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q6",
+          "question": "Fúwùyuán, mǎidān.",
+          "words": [
+            "yígòng",
+            "shì",
+            "qīqiān",
+            "bā",
+            "bǎi",
+            "yuán",
+            "xièxie",
+            "mǎidān"
+          ],
+          "answers": [
+            [
+              "yígòng",
+              "shì",
+              "qīqiān",
+              "bā",
+              "bǎi",
+              "yuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q7",
+          "question": "Yígòng shì duōshǎo qián?",
+          "words": [
+            "yígòng",
+            "shì",
+            "qīqiān",
+            "bā",
+            "bǎi",
+            "yuán",
+            "màn",
+            "xiàcì"
+          ],
+          "answers": [
+            [
+              "yígòng",
+              "shì",
+              "qīqiān",
+              "bā",
+              "bǎi",
+              "yuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q8",
+          "question": "Nín mànyòng ma?",
+          "words": [
+            "nín",
+            "mànyòng",
+            "bú",
+            "yòng",
+            "xiè",
+            "xièxie",
+            "hǎo",
+            "de"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q9",
+          "question": "Fúwùyuán, mǎidān.",
+          "words": [
+            "hǎo",
+            "de",
+            "fúwùyuan",
+            "mǎidān",
+            "xièxie",
+            "yígòng",
+            "màn"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p2-q10",
+          "question": "Huānyíng nín xiàcì zài lái.",
+          "words": [
+            "xiàcì",
+            "zài",
+            "lái",
+            "huānyíng",
+            "nín",
+            "mǎidān",
+            "màn",
+            "yígòng"
+          ],
+          "answers": [
+            [
+              "xiàcì",
+              "zài",
+              "lái"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch9-p3-q1",
+          "question": "",
+          "words": [
+            "shì",
+            "nǐde",
+            "hàomǎ",
+            "diànhuà",
+            "duōshǎo",
+            "nǐde"
+          ],
+          "answers": [
+            [
+              "nǐde",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "duōshǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q2",
+          "question": "",
+          "words": [
+            "wǒde",
+            "shì",
+            "diànhuà",
+            "09-891160521",
+            "hàomǎ",
+            "ne"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "09-891160521"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q3",
+          "question": "",
+          "words": [
+            "nǐde",
+            "wǒde",
+            "shì",
+            "09-751318079",
+            "ne"
+          ],
+          "answers": [
+            [
+              "wǒde",
+              "shì",
+              "09-751318079"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q4",
+          "question": "",
+          "words": [
+            "māmɑ",
+            "nǐ",
+            "de",
+            "shì",
+            "diànhuà",
+            "hàomǎ",
+            "duōshǎo"
+          ],
+          "answers": [
+            [
+              "nǐ",
+              "māmɑ",
+              "de",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "duōshǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q5",
+          "question": "",
+          "words": [
+            "zhǎo",
+            "nǐ",
+            "bú",
+            "dào",
+            "kěyǐ",
+            "māmɑ",
+            "zhǎo",
+            "nǐ"
+          ],
+          "answers": [
+            [
+              "zhǎo",
+              "bú",
+              "dào",
+              "nǐ",
+              "kěyǐ",
+              "zhǎo",
+              "nǐ",
+              "māmɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q6",
+          "question": "",
+          "words": [
+            "wǒ",
+            "māmɑ",
+            "de",
+            "diànhuà",
+            "hàomǎ",
+            "shì",
+            "53648927"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "māmɑ",
+              "de",
+              "diànhuà",
+              "hàomǎ",
+              "shì",
+              "53648927"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q7",
+          "question": "",
+          "words": [
+            "zhè",
+            "shì",
+            "nín",
+            "diǎn",
+            "de",
+            "jiǎozi",
+            "hé",
+            "píjiǔ"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "shì",
+              "nín",
+              "diǎn",
+              "de",
+              "jiǎozi",
+              "hé",
+              "píjiǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q8",
+          "question": "",
+          "words": [
+            "xièxie",
+            "bú",
+            "yòng",
+            "xiè",
+            "nín",
+            "mànyòng"
+          ],
+          "answers": [
+            [
+              "bú",
+              "yòng",
+              "xiè",
+              "nín",
+              "mànyòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q9",
+          "question": "",
+          "words": [
+            "fúwùyuan",
+            "mǎidān",
+            "yígòng",
+            "shì",
+            "qīqiān",
+            "bā",
+            "bǎi",
+            "yuán"
+          ],
+          "answers": [
+            [
+              "yígòng",
+              "shì",
+              "qīqiān",
+              "bā",
+              "bǎi",
+              "yuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q10",
+          "question": "",
+          "words": [
+            "huānyíng",
+            "nín",
+            "xiàcì",
+            "zài",
+            "lái",
+            "mǎidān"
+          ],
+          "answers": [
+            [
+              "huānyíng",
+              "nín",
+              "xiàcì",
+              "zài",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q11",
+          "question": "",
+          "words": [
+            "kěyǐ",
+            "zhǎo",
+            "nǐ",
+            "māmɑ",
+            "zhǎo",
+            "bú",
+            "dào",
+            "fúwùyuan"
+          ],
+          "answers": [
+            [
+              "kěyǐ",
+              "zhǎo",
+              "nǐ",
+              "māmɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch9-p3-q12",
+          "question": "",
+          "words": [
+            "yígòng",
+            "shì",
+            "qīqiān",
+            "bā",
+            "bǎi",
+            "yuán",
+            "xièxie",
+            "màn"
+          ],
+          "answers": [
+            [
+              "yígòng",
+              "shì",
+              "qīqiān",
+              "bā",
+              "bǎi",
+              "yuán"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

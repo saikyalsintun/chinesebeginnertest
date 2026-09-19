@@ -1,0 +1,315 @@
+{
+  "chapter": {
+    "id": "chapter-27",
+    "title": "Chapter 27",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch27-p1-q1",
+          "question": "ဒီနေ့ မိုးလေဝသခန့်မှန်းချက်က ဘယ်လိုပြောထားလဲ။",
+          "answer": "Jīntiān de tiānqìyùbào zěnme shuō?"
+        },
+        {
+          "id": "ch27-p1-q2",
+          "question": "ဒီအပတ် မိုးလေဝသခန့်မှန်းချက်က ဘယ်လိုပြောထားလဲ။",
+          "answer": "Zhège xīngqī de tiānqìyùbào zěnme shuō?"
+        },
+        {
+          "id": "ch27-p1-q3",
+          "question": "ရာသီဥတုက ဘယ်လိုလဲ။",
+          "answer": "Tiānqì zěnmeyàng?"
+        },
+        {
+          "id": "ch27-p1-q4",
+          "question": "အပြင်မှာ အခြေအနေဘယ်လိုလဲ။",
+          "answer": "Wàibiān zěnmeyàng?"
+        },
+        {
+          "id": "ch27-p1-q5",
+          "question": "မိုးကြီးလေပြင်းတိုက်တယ်။",
+          "answer": "Yǒu bàofēngyǔ."
+        },
+        {
+          "id": "ch27-p1-q6",
+          "question": "ရာသီဥတုက အရမ်းကောင်းတယ်။",
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p1-q7",
+          "question": "ရေခဲနဲ့ နှင်းရှိတယ်။",
+          "answer": "Yǒu bīngxuě."
+        },
+        {
+          "id": "ch27-p1-q8",
+          "question": "ရာသီဥတုက စိုထိုင်းတယ်။",
+          "answer": "Tiānqì cháoshī."
+        },
+        {
+          "id": "ch27-p1-q9",
+          "question": "အရမ်းအေးတယ်။",
+          "answer": "Hěn lěng."
+        },
+        {
+          "id": "ch27-p1-q10",
+          "question": "အရမ်းနွေးတယ်။",
+          "answer": "Hěn nuǎnhuo."
+        },
+        {
+          "id": "ch27-p1-q11",
+          "question": "အရမ်းပူတယ်။",
+          "answer": "Hěn rè."
+        },
+        {
+          "id": "ch27-p1-q12",
+          "question": "မိုးရွာနေပြီ။",
+          "answer": "Xiàyǔ le."
+        },
+        {
+          "id": "ch27-p1-q13",
+          "question": "ရာသီဥတုက အရမ်းဆိုးတယ်။",
+          "answer": "Tiānqì hěn èliè."
+        },
+        {
+          "id": "ch27-p1-q14",
+          "question": "ရာသီဥတုက အရမ်းကောင်းတယ်။",
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p1-q15",
+          "question": "ရာသီဥတု မကောင်းဘူး။",
+          "answer": "Tiānqì bù hǎo."
+        },
+        {
+          "id": "ch27-p1-q16",
+          "question": "ရေခဲနဲ့နှင်းတွေဖုံးလွှမ်းနေတဲ့ အေးတဲ့ရာသီဥတုပါ။",
+          "answer": "Bīngtiānxuědì de lěng tiānqì."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch27-p2-q1",
+          "question": "Jīntiān de tiānqìyùbào zěnme shuō?",
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p2-q2",
+          "question": "Zhège xīngqī de tiānqìyùbào zěnme shuō?",
+          "answer": "Yǒu bàofēngyǔ."
+        },
+        {
+          "id": "ch27-p2-q3",
+          "question": "Tiānqì zěnmeyàng?",
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p2-q4",
+          "question": "Wàibiān zěnmeyàng?",
+          "answer": "Yǒu bīngxuě."
+        },
+        {
+          "id": "ch27-p2-q5",
+          "question": "Wàimiàn yǒu shénme?",
+          "answer": "Yǒu bàofēngyǔ."
+        },
+        {
+          "id": "ch27-p2-q6",
+          "question": "Tiānqì hǎo ma?",
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p2-q7",
+          "question": "Tiānqì cháoshī ma?",
+          "answer": "Tiānqì cháoshī."
+        },
+        {
+          "id": "ch27-p2-q8",
+          "question": "Jīntiān lěng ma?",
+          "answer": "Hěn lěng."
+        },
+        {
+          "id": "ch27-p2-q9",
+          "question": "Jīntiān nuǎnhuo ma?",
+          "answer": "Hěn nuǎnhuo."
+        },
+        {
+          "id": "ch27-p2-q10",
+          "question": "Jīntiān rè ma?",
+          "answer": "Hěn rè."
+        },
+        {
+          "id": "ch27-p2-q11",
+          "question": "Xiàyǔ le ma?",
+          "answer": "Xiàyǔ le."
+        },
+        {
+          "id": "ch27-p2-q12",
+          "question": "Tiānqì hěn èliè ma?",
+          "answer": "Tiānqì hěn èliè."
+        },
+        {
+          "id": "ch27-p2-q13",
+          "question": "Tiānqì hǎo háishì bù hǎo?",
+          "answer": "Tiānqì bù hǎo."
+        },
+        {
+          "id": "ch27-p2-q14",
+          "question": "Shénme shì bīngtiānxuědì de tiānqì?",
+          "answer": "Bīngtiānxuědì de lěng tiānqì."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch27-p3-q1",
+          "words": [
+            "shuō",
+            "zěnme",
+            "tiānqìyùbào",
+            "de",
+            "Jīntiān"
+          ],
+          "answer": "Jīntiān de tiānqìyùbào zěnme shuō?"
+        },
+        {
+          "id": "ch27-p3-q2",
+          "words": [
+            "shuō",
+            "zěnme",
+            "tiānqìyùbào",
+            "de",
+            "xīngqī",
+            "Zhège"
+          ],
+          "answer": "Zhège xīngqī de tiānqìyùbào zěnme shuō?"
+        },
+        {
+          "id": "ch27-p3-q3",
+          "words": [
+            "zěnmeyàng",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì zěnmeyàng?"
+        },
+        {
+          "id": "ch27-p3-q4",
+          "words": [
+            "zěnmeyàng",
+            "Wàibiān"
+          ],
+          "answer": "Wàibiān zěnmeyàng?"
+        },
+        {
+          "id": "ch27-p3-q5",
+          "words": [
+            "bàofēngyǔ",
+            "Yǒu"
+          ],
+          "answer": "Yǒu bàofēngyǔ."
+        },
+        {
+          "id": "ch27-p3-q6",
+          "words": [
+            "hǎo",
+            "hěn",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p3-q7",
+          "words": [
+            "bīngxuě",
+            "Yǒu"
+          ],
+          "answer": "Yǒu bīngxuě."
+        },
+        {
+          "id": "ch27-p3-q8",
+          "words": [
+            "cháoshī",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì cháoshī."
+        },
+        {
+          "id": "ch27-p3-q9",
+          "words": [
+            "lěng",
+            "Hěn"
+          ],
+          "answer": "Hěn lěng."
+        },
+        {
+          "id": "ch27-p3-q10",
+          "words": [
+            "nuǎnhuo",
+            "Hěn"
+          ],
+          "answer": "Hěn nuǎnhuo."
+        },
+        {
+          "id": "ch27-p3-q11",
+          "words": [
+            "rè",
+            "Hěn"
+          ],
+          "answer": "Hěn rè."
+        },
+        {
+          "id": "ch27-p3-q12",
+          "words": [
+            "le",
+            "Xiàyǔ"
+          ],
+          "answer": "Xiàyǔ le."
+        },
+        {
+          "id": "ch27-p3-q13",
+          "words": [
+            "èliè",
+            "hěn",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì hěn èliè."
+        },
+        {
+          "id": "ch27-p3-q14",
+          "words": [
+            "hǎo",
+            "hěn",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì hěn hǎo."
+        },
+        {
+          "id": "ch27-p3-q15",
+          "words": [
+            "hǎo",
+            "bù",
+            "Tiānqì"
+          ],
+          "answer": "Tiānqì bù hǎo."
+        },
+        {
+          "id": "ch27-p3-q16",
+          "words": [
+            "tiānqì",
+            "lěng",
+            "de",
+            "Bīngtiānxuědì"
+          ],
+          "answer": "Bīngtiānxuědì de lěng tiānqì."
+        }
+      ]
+    }
+  }
+}

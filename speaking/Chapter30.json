@@ -1,0 +1,278 @@
+{
+  "chapter": {
+    "id": "chapter-30",
+    "title": "Chapter 30",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch30-p1-q1",
+          "question": "ကျွန်တော် အိမ်နီးချင်းထိုင်ခုံ နှစ်ခုံ ကြိုတင်မှာလို့ရမလား။",
+          "answer": "Wǒ kěyǐ yùdìng liǎng gè xiānglín de zuòwèi ma?"
+        },
+        {
+          "id": "ch30-p1-q2",
+          "question": "ကျွန်တော် ပေါက်ပေါက်နဲ့ အချိုရည်ဝယ်ဖို့ စီစဉ်ထားတယ်။",
+          "answer": "Wǒ dǎsuàn mǎi bàomǐhuā hé yǐnliào."
+        },
+        {
+          "id": "ch30-p1-q3",
+          "question": "မင်း ကျွန်တော်တို့အတွက် ထိုင်ခုံရှာပေးနိုင်လား။",
+          "answer": "Nǐ néng bāng wǒmen zhǎodào zuòwèi ma?"
+        },
+        {
+          "id": "ch30-p1-q4",
+          "question": "ဒီတန်းက ဘယ်နံပါတ်လဲ။",
+          "answer": "Zhèi pái shì duōshao hào?"
+        },
+        {
+          "id": "ch30-p1-q5",
+          "question": "မင်း ဘယ်ရုပ်ရှင်ရုံကို သွားချင်လဲ။",
+          "answer": "Nǐ xiǎng qù nǎge diànyǐngyuàn?"
+        },
+        {
+          "id": "ch30-p1-q6",
+          "question": "ကျွန်တော်တို့ လက်မှတ်ရုံမှာ လက်မှတ်သွားယူဖို့လိုတယ်။",
+          "answer": "Wǒmen xūyào zài shòupiàochù ná piào."
+        },
+        {
+          "id": "ch30-p1-q7",
+          "question": "အဲဒီအစီအစဉ်က မနက်ဖြန် ကိုးနာရီမှာ ထုတ်လွှင့်မယ်။",
+          "answer": "Nàge jiémù míngtiān jiǔdiǎn bōchū."
+        },
+        {
+          "id": "ch30-p1-q8",
+          "question": "မင်း အကြိုက်ဆုံး တီဗီအစီအစဉ်က ဘာလဲ။",
+          "answer": "Nǐ zuì xǐhuān shénme diànshì jiémù?"
+        },
+        {
+          "id": "ch30-p1-q9",
+          "question": "မင်း ဘယ်လိုရုပ်ရှင်တွေ ကြည့်ရတာကြိုက်လဲ။",
+          "answer": "Nǐ xǐhuān kàn shénme diànyǐng?"
+        },
+        {
+          "id": "ch30-p1-q10",
+          "question": "ကျွန်တော် အက်ရှင်၊ သရဲကားနဲ့ ဒရာမာကားတွေ ကြည့်ရတာကြိုက်တယ်။",
+          "answer": "Wǒ xǐhuān kàn dòngzuòpiàn, kǒngbùpiàn háiyǒu jùqíngpiàn."
+        },
+        {
+          "id": "ch30-p1-q11",
+          "question": "မင်း တီဗီဇာတ်လမ်းတွဲတွေ ကြည့်ရတာကြိုက်လား။",
+          "answer": "Nǐ xǐhuān kàn diànshìjù ma?"
+        },
+        {
+          "id": "ch30-p1-q12",
+          "question": "ကျွန်တော် တီဗီဇာတ်လမ်းတွဲတွေ ကြည့်ရတာ သိပ်မကြိုက်ဘူး။",
+          "answer": "Wǒ bú tài xǐhuān kàn diànshìjù."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch30-p2-q1",
+          "question": "Wǒ kéyǐ yùdìng liǎng gè xiānglín de zuòwèi ma?",
+          "answer": "Kěyǐ."
+        },
+        {
+          "id": "ch30-p2-q2",
+          "question": "Wǒ dǎsuàn mǎi shénme?",
+          "answer": "Wǒ dǎsuàn mǎi bàomǐhuā hé yǐnliào."
+        },
+        {
+          "id": "ch30-p2-q3",
+          "question": "Nǐ néng bāng wǒmen zhǎodao zuòwèi ma?",
+          "answer": "Néng."
+        },
+        {
+          "id": "ch30-p2-q4",
+          "question": "Zhèi pái shì duōshao hào?",
+          "answer": "Zhèi pái shì shí hào."
+        },
+        {
+          "id": "ch30-p2-q5",
+          "question": "Nǐ xiǎng qù nǎge diànyǐngyuàn?",
+          "answer": "Wǒ xiǎng qù zhège diànyǐngyuàn."
+        },
+        {
+          "id": "ch30-p2-q6",
+          "question": "Wǒmen zài nǎr ná piào?",
+          "answer": "Wǒmen xūyào zài shòupiàochù ná piào."
+        },
+        {
+          "id": "ch30-p2-q7",
+          "question": "Nàge jiémù shénme shíhou bōchū?",
+          "answer": "Nàge jiémù míngtiān jiǔdiǎn bōchū."
+        },
+        {
+          "id": "ch30-p2-q8",
+          "question": "Nǐ zuì xǐhuān shénme diànshì jiémù?",
+          "answer": "Wǒ zuì xǐhuān zhège diànshì jiémù."
+        },
+        {
+          "id": "ch30-p2-q9",
+          "question": "Nǐ xǐhuān kàn shénme diànyǐng?",
+          "answer": "Wǒ xǐhuān kàn dòngzuòpiàn, kǒngbùpiàn háiyǒu jùqíngpiàn."
+        },
+        {
+          "id": "ch30-p2-q10",
+          "question": "Nǐ xǐhuān kàn diànshìjù ma?",
+          "answer": "Wǒ bú tài xǐhuān kàn diànshìjù."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch30-p3-q1",
+          "words": [
+            "ma",
+            "zuòwèi",
+            "de",
+            "xiānglín",
+            "gè",
+            "liǎng",
+            "yùdìng",
+            "kéyǐ",
+            "Wǒ"
+          ],
+          "answer": "Wǒ kéyǐ yùdìng liǎng gè xiānglín de zuòwèi ma?"
+        },
+        {
+          "id": "ch30-p3-q2",
+          "words": [
+            "yǐnliào",
+            "hé",
+            "bàomǐhuā",
+            "mǎi",
+            "dǎsuàn",
+            "Wǒ"
+          ],
+          "answer": "Wǒ dǎsuàn mǎi bàomǐhuā hé yǐnliào."
+        },
+        {
+          "id": "ch30-p3-q3",
+          "words": [
+            "ma",
+            "zuòwèi",
+            "zhǎodao",
+            "wǒmen",
+            "bāng",
+            "néng",
+            "Nǐ"
+          ],
+          "answer": "Nǐ néng bāng wǒmen zhǎodao zuòwèi ma?"
+        },
+        {
+          "id": "ch30-p3-q4",
+          "words": [
+            "hào",
+            "duōshao",
+            "shì",
+            "pái",
+            "Zhèi"
+          ],
+          "answer": "Zhèi pái shì duōshao hào?"
+        },
+        {
+          "id": "ch30-p3-q5",
+          "words": [
+            "diànyǐngyuàn",
+            "nǎge",
+            "qù",
+            "xiǎng",
+            "Nǐ"
+          ],
+          "answer": "Nǐ xiǎng qù nǎge diànyǐngyuàn?"
+        },
+        {
+          "id": "ch30-p3-q6",
+          "words": [
+            "piào",
+            "ná",
+            "shòupiàochù",
+            "zài",
+            "xūyào",
+            "Wǒmen"
+          ],
+          "answer": "Wǒmen xūyào zài shòupiàochù ná piào."
+        },
+        {
+          "id": "ch30-p3-q7",
+          "words": [
+            "bōchū",
+            "jiǔdiǎn",
+            "míngtiān",
+            "jiémù",
+            "Nàge"
+          ],
+          "answer": "Nàge jiémù míngtiān jiǔdiǎn bōchū."
+        },
+        {
+          "id": "ch30-p3-q8",
+          "words": [
+            "jiémù",
+            "diànshì",
+            "shénme",
+            "xǐhuān",
+            "zuì",
+            "Nǐ"
+          ],
+          "answer": "Nǐ zuì xǐhuān shénme diànshì jiémù?"
+        },
+        {
+          "id": "ch30-p3-q9",
+          "words": [
+            "diànyǐng",
+            "shénme",
+            "kàn",
+            "xǐhuān",
+            "Nǐ"
+          ],
+          "answer": "Nǐ xǐhuān kàn shénme diànyǐng?"
+        },
+        {
+          "id": "ch30-p3-q10",
+          "words": [
+            "jùqíngpiàn",
+            "háiyǒu",
+            "kǒngbùpiàn",
+            "dòngzuòpiàn,",
+            "kàn",
+            "xǐhuān",
+            "Wǒ"
+          ],
+          "answer": "Wǒ xǐhuān kàn dòngzuòpiàn, kǒngbùpiàn háiyǒu jùqíngpiàn."
+        },
+        {
+          "id": "ch30-p3-q11",
+          "words": [
+            "ma",
+            "diànshìjù",
+            "kàn",
+            "xǐhuān",
+            "Nǐ"
+          ],
+          "answer": "Nǐ xǐhuān kàn diànshìjù ma?"
+        },
+        {
+          "id": "ch30-p3-q12",
+          "words": [
+            "diànshìjù",
+            "kàn",
+            "xǐhuān",
+            "tài",
+            "bú",
+            "Wǒ"
+          ],
+          "answer": "Wǒ bú tài xǐhuān kàn diànshìjù."
+        }
+      ]
+    }
+  }
+}

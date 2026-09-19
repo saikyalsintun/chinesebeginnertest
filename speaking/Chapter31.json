@@ -1,0 +1,290 @@
+{
+  "chapter": {
+    "id": "chapter-31",
+    "title": "Chapter 31",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch31-p1-q1",
+          "question": "သူ့မှာ အပြာရောင်မျက်လုံးရှိတယ်။",
+          "answer": "Tā yǒu lánsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p1-q2",
+          "question": "သူ့မှာ အသားအရေ ဖြူဖွေးနူးညံ့တယ်။",
+          "answer": "Tā yǒu báinèn de pífū."
+        },
+        {
+          "id": "ch31-p1-q3",
+          "question": "သူ့ဆံပင်က အရမ်းရှည်တယ်။",
+          "answer": "Tā de tóufa hěn cháng."
+        },
+        {
+          "id": "ch31-p1-q4",
+          "question": "သူ့ဆံပင်က ကောက်တယ်။",
+          "answer": "Tā tóufa juǎn."
+        },
+        {
+          "id": "ch31-p1-q5",
+          "question": "သူ့ဆံပင်က ရွှေရောင်တောက်တောက်ပါ။",
+          "answer": "Tā de tóufa shì jīnhuángsè."
+        },
+        {
+          "id": "ch31-p1-q6",
+          "question": "သူ့ဆံပင်က မရှည်လည်းမတိုဘူး။",
+          "answer": "Tā tóufà bù cháng yě bù duǎn."
+        },
+        {
+          "id": "ch31-p1-q7",
+          "question": "အစ်မမှာ ကောက်ဆံပင်ရှိတယ်။",
+          "answer": "Jiějie yǒu yìtóu juǎnfà."
+        },
+        {
+          "id": "ch31-p1-q8",
+          "question": "သူ့မှာ အညိုရောင်မျက်လုံးတစ်စုံရှိတယ်။",
+          "answer": "Tā yǒu yì shuāng zōngsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p1-q9",
+          "question": "သူက အရပ်မရှည်ဘူး။",
+          "answer": "Tā gèzi bù gāo."
+        },
+        {
+          "id": "ch31-p1-q10",
+          "question": "သူက အရမ်းအရပ်ရှည်တယ်။",
+          "answer": "Tā gèzi hěn gāo."
+        },
+        {
+          "id": "ch31-p1-q11",
+          "question": "သူက အရမ်းဝတယ်။",
+          "answer": "Tā hěn pàng."
+        },
+        {
+          "id": "ch31-p1-q12",
+          "question": "သူ့ခန္ဓာကိုယ်က ပိန်သွယ်တယ်။",
+          "answer": "Tā shēncái shòuxuē."
+        },
+        {
+          "id": "ch31-p1-q13",
+          "question": "သူက အရမ်းချောတယ်။",
+          "answer": "Tā hěn shuài."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch31-p2-q1",
+          "question": "Tā yǒu shénme yánsè de yǎnjīng?",
+          "answer": "Tā yǒu lánsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p2-q2",
+          "question": "Tā de pífū zěnmeyàng?",
+          "answer": "Tā yǒu báinèn de pífū."
+        },
+        {
+          "id": "ch31-p2-q3",
+          "question": "Tā de tóufa zěnmeyàng?",
+          "answer": "Tā de tóufa hěn cháng."
+        },
+        {
+          "id": "ch31-p2-q4",
+          "question": "Tā tóufa zěnmeyàng?",
+          "answer": "Tā tóufa juǎn."
+        },
+        {
+          "id": "ch31-p2-q5",
+          "question": "Tā de tóufa shì shénme yánsè?",
+          "answer": "Tā de tóufa shì jīnhuángsè."
+        },
+        {
+          "id": "ch31-p2-q6",
+          "question": "Tā tóufà cháng háishì duǎn?",
+          "answer": "Tā tóufà bù cháng yě bù duǎn."
+        },
+        {
+          "id": "ch31-p2-q7",
+          "question": "Jiějie yǒu shénme tóufa?",
+          "answer": "Jiějie yǒu yìtóu juǎnfà."
+        },
+        {
+          "id": "ch31-p2-q8",
+          "question": "Tā yǒu shénme yánsè de yǎnjīng?",
+          "answer": "Tā yǒu yì shuāng zōngsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p2-q9",
+          "question": "Tā gèzi gāo ma?",
+          "answer": "Tā gèzi bù gāo."
+        },
+        {
+          "id": "ch31-p2-q10",
+          "question": "Tā gèzi zěnmeyàng?",
+          "answer": "Tā gèzi hěn gāo."
+        },
+        {
+          "id": "ch31-p2-q11",
+          "question": "Tā pàng ma?",
+          "answer": "Tā hěn pàng."
+        },
+        {
+          "id": "ch31-p2-q12",
+          "question": "Tā shēncái zěnmeyàng?",
+          "answer": "Tā shēncái shòuxuē."
+        },
+        {
+          "id": "ch31-p2-q13",
+          "question": "Tā shuài ma?",
+          "answer": "Tā hěn shuài."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch31-p3-q1",
+          "words": [
+            "yǎnjīng",
+            "de",
+            "lánsè",
+            "yǒu",
+            "Tā"
+          ],
+          "answer": "Tā yǒu lánsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p3-q2",
+          "words": [
+            "pífū",
+            "de",
+            "báinèn",
+            "yǒu",
+            "Tā"
+          ],
+          "answer": "Tā yǒu báinèn de pífū."
+        },
+        {
+          "id": "ch31-p3-q3",
+          "words": [
+            "cháng",
+            "hěn",
+            "tóufa",
+            "de",
+            "Tā"
+          ],
+          "answer": "Tā de tóufa hěn cháng."
+        },
+        {
+          "id": "ch31-p3-q4",
+          "words": [
+            "juǎn",
+            "tóufa",
+            "Tā"
+          ],
+          "answer": "Tā tóufa juǎn."
+        },
+        {
+          "id": "ch31-p3-q5",
+          "words": [
+            "jīnhuángsè",
+            "shì",
+            "tóufa",
+            "de",
+            "Tā"
+          ],
+          "answer": "Tā de tóufa shì jīnhuángsè."
+        },
+        {
+          "id": "ch31-p3-q6",
+          "words": [
+            "duǎn",
+            "bù",
+            "yě",
+            "cháng",
+            "bù",
+            "tóufà",
+            "Tā"
+          ],
+          "answer": "Tā tóufà bù cháng yě bù duǎn."
+        },
+        {
+          "id": "ch31-p3-q7",
+          "words": [
+            "juǎnfà",
+            "yìtóu",
+            "yǒu",
+            "Jiějie"
+          ],
+          "answer": "Jiějie yǒu yìtóu juǎnfà."
+        },
+        {
+          "id": "ch31-p3-q8",
+          "words": [
+            "yǎnjīng",
+            "de",
+            "zōngsè",
+            "shuāng",
+            "yì",
+            "yǒu",
+            "Tā"
+          ],
+          "answer": "Tā yǒu yì shuāng zōngsè de yǎnjīng."
+        },
+        {
+          "id": "ch31-p3-q9",
+          "words": [
+            "gāo",
+            "bù",
+            "gèzi",
+            "Tā"
+          ],
+          "answer": "Tā gèzi bù gāo."
+        },
+        {
+          "id": "ch31-p3-q10",
+          "words": [
+            "gāo",
+            "hěn",
+            "gèzi",
+            "Tā"
+          ],
+          "answer": "Tā gèzi hěn gāo."
+        },
+        {
+          "id": "ch31-p3-q11",
+          "words": [
+            "pàng",
+            "hěn",
+            "Tā"
+          ],
+          "answer": "Tā hěn pàng."
+        },
+        {
+          "id": "ch31-p3-q12",
+          "words": [
+            "shòuxuē",
+            "shēncái",
+            "Tā"
+          ],
+          "answer": "Tā shēncái shòuxuē."
+        },
+        {
+          "id": "ch31-p3-q13",
+          "words": [
+            "shuài",
+            "hěn",
+            "Tā"
+          ],
+          "answer": "Tā hěn shuài."
+        }
+      ]
+    }
+  }
+}

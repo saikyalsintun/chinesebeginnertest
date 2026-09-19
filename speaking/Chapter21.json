@@ -1,0 +1,404 @@
+{
+  "chapter": {
+    "id": "chapter-21",
+    "title": "Chapter 21",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch21-p1-q1",
+          "question": "ကျွန်တော် ဟိုတယ်မှာ အလုပ်လုပ်တယ်။",
+          "answer": "Wǒ zài jiǔdiàn gōngzuò."
+        },
+        {
+          "id": "ch21-p1-q2",
+          "question": "ပိတ်ရက်မှာ ကျွန်တော်တို့ ကော်ဖီဆိုင်သွားပြီး ကော်ဖီတစ်ခွက်သောက်တယ်။",
+          "answer": "Zhōumò wǒmen qù kāfēi diàn hē bēi kāfēi."
+        },
+        {
+          "id": "ch21-p1-q3",
+          "question": "စာအုပ်ဆိုင် ဘယ်အချိန်ဖွင့်လဲ။",
+          "answer": "Shūdiàn jǐ diǎn kāimén?"
+        },
+        {
+          "id": "ch21-p1-q4",
+          "question": "အမေက အစ်ကိုကို သစ်သီးဆိုင်သွားပြီး ဒူးရင်းသီးနှစ်လုံးဝယ်ခိုင်းတယ်။",
+          "answer": "Māma jiào gēge qù shuǐguǒdiàn mǎi liǎng gè liúlián."
+        },
+        {
+          "id": "ch21-p1-q5",
+          "question": "ဒီမုန့်ဆိုင်ရဲ့ ပေါင်မုန့်က တကယ်အရသာရှိတယ်။",
+          "answer": "Zhè jiā miànbāodiàn de miànbāo zhēn hǎochī."
+        },
+        {
+          "id": "ch21-p1-q6",
+          "question": "ဆရာဝန်က ဆေးရုံမှာ အလုပ်လုပ်တယ်။",
+          "answer": "Yīshēng zài yīyuàn gōngzuò."
+        },
+        {
+          "id": "ch21-p1-q7",
+          "question": "စာသင်ခန်းထဲမှာ ကျောင်းသားအများကြီးရှိတယ်။",
+          "answer": "Jiàoshì lǐ yǒu hěn duō xuéshēng."
+        },
+        {
+          "id": "ch21-p1-q8",
+          "question": "ကျွန်တော်တို့ ဆိုင်ကိုသွားပြီး ပစ္စည်းဝယ်ကြရအောင်။",
+          "answer": "Wǒmen qù shāngdiàn mǎi dōngxi ba."
+        },
+        {
+          "id": "ch21-p1-q9",
+          "question": "သူတို့ ရထားဘူတာကိုသွားပြီး ရထားစီးမယ်။",
+          "answer": "Tāmen yào qù huǒchēzhàn zuò huǒchē."
+        },
+        {
+          "id": "ch21-p1-q10",
+          "question": "ကျွန်တော်တို့ လေဆိပ်ကိုသွားပြီး လေယာဉ်စီးမယ်။",
+          "answer": "Wǒmen yào qù jīchǎng zuò fēijī."
+        },
+        {
+          "id": "ch21-p1-q11",
+          "question": "သူ့အခန်းက အရမ်းလှတယ်။",
+          "answer": "Tā de fángjiān hěn piàoliang."
+        },
+        {
+          "id": "ch21-p1-q12",
+          "question": "သူက ငါ့ကုမ္ပဏီရဲ့ လုပ်ဖော်ကိုင်ဖက်ပါ။",
+          "answer": "Tā shì wǒ gōngsī de tóngshì."
+        },
+        {
+          "id": "ch21-p1-q13",
+          "question": "မင်္ဂလာပါ။ မင်းဘာအလုပ်လုပ်လဲ။",
+          "answer": "Nǐ hǎo! Nǐ shì zuò shénme gōngzuò de?"
+        },
+        {
+          "id": "ch21-p1-q14",
+          "question": "မင်္ဂလာပါ။ ကျွန်တော် ဆရာပါ။",
+          "answer": "Nǐ hǎo! Wǒ shì lǎoshī."
+        },
+        {
+          "id": "ch21-p1-q15",
+          "question": "မင်းဘယ်မှာ အလုပ်လုပ်လဲ။",
+          "answer": "Nǐ zài nǎlǐ gōngzuò?"
+        },
+        {
+          "id": "ch21-p1-q16",
+          "question": "ကျွန်တော် ကျောင်းမှာ အလုပ်လုပ်တယ်။",
+          "answer": "Wǒ zài xuéxiào gōngzuò."
+        },
+        {
+          "id": "ch21-p1-q17",
+          "question": "မင်းအလုပ်လုပ်တဲ့ကျောင်းက ဘယ်မှာလဲ။",
+          "answer": "Nǐ gōngzuò de xuéxiào zài nǎr?"
+        },
+        {
+          "id": "ch21-p1-q18",
+          "question": "ဟိုတယ်နောက်မှာ ကော်ဖီဆိုင်တစ်ဆိုင်ရှိတယ်။",
+          "answer": "Zài jiǔdiàn de hòumiàn, pángbiān yǒu jiā kāfēi diàn."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch21-p2-q1",
+          "question": "Nǐ zài nǎr gōngzuò?",
+          "answer": "Wǒ zài jiǔdiàn gōngzuò."
+        },
+        {
+          "id": "ch21-p2-q2",
+          "question": "Zhōumò nǐmen qù nǎr hē kāfēi?",
+          "answer": "Wǒmen qù kāfēi diàn hē kāfēi."
+        },
+        {
+          "id": "ch21-p2-q3",
+          "question": "Shūdiàn jǐ diǎn kāimén?",
+          "answer": "Shūdiàn jǐ diǎn kāimén?"
+        },
+        {
+          "id": "ch21-p2-q4",
+          "question": "Māmɑ jiào gēge qù nǎr mǎi liúlián?",
+          "answer": "Māmɑ jiào gēge qù shuǐguǒdiàn mǎi liúlián."
+        },
+        {
+          "id": "ch21-p2-q5",
+          "question": "Zhè jiā miànbāodiàn de miànbāo zěnmeyàng?",
+          "answer": "Zhè jiā miànbāodiàn de miànbāo zhēn hǎochī."
+        },
+        {
+          "id": "ch21-p2-q6",
+          "question": "Yīshēng zài nǎr gōngzuò?",
+          "answer": "Yīshēng zài yīyuàn gōngzuò."
+        },
+        {
+          "id": "ch21-p2-q7",
+          "question": "Jiàoshì lǐ yǒu shénme?",
+          "answer": "Jiàoshì lǐ yǒu hěn duō xuéshēng."
+        },
+        {
+          "id": "ch21-p2-q8",
+          "question": "Nǐmen qù shāngdiàn gàn shénme?",
+          "answer": "Wǒmen qù shāngdiàn mǎi dōngxi."
+        },
+        {
+          "id": "ch21-p2-q9",
+          "question": "Tāmen yào qù nǎr zuò huǒchē?",
+          "answer": "Tāmen yào qù huǒchēzhàn zuò huǒchē."
+        },
+        {
+          "id": "ch21-p2-q10",
+          "question": "Nǐmen yào qù jīchǎng gàn shénme?",
+          "answer": "Wǒmen yào qù jīchǎng zuò fēijī."
+        },
+        {
+          "id": "ch21-p2-q11",
+          "question": "Tā de fángjiān zěnmeyàng?",
+          "answer": "Tā de fángjiān hěn piàoliang."
+        },
+        {
+          "id": "ch21-p2-q12",
+          "question": "Tā shì shéi?",
+          "answer": "Tā shì wǒ gōngsī de tóngshì."
+        },
+        {
+          "id": "ch21-p2-q13",
+          "question": "Nǐ shì zuò shénme gōngzuò de?",
+          "answer": "Wǒ shì lǎoshī."
+        },
+        {
+          "id": "ch21-p2-q14",
+          "question": "Nǐ zài nǎlǐ gōngzuò?",
+          "answer": "Wǒ zài xuéxiào gōngzuò."
+        },
+        {
+          "id": "ch21-p2-q15",
+          "question": "Nǐ gōngzuò de xuéxiào zài nǎr?",
+          "answer": "Zài jiǔdiàn de hòumiàn, pángbiān yǒu jiā kāfēi diàn."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch21-p3-q1",
+          "words": [
+            "gōngzuò",
+            "jiǔdiàn",
+            "zài",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zài jiǔdiàn gōngzuò."
+        },
+        {
+          "id": "ch21-p3-q2",
+          "words": [
+            "kāfēi",
+            "bēi",
+            "hē",
+            "diàn",
+            "kāfēi",
+            "qù",
+            "wǒmen",
+            "Zhōumò"
+          ],
+          "answer": "Zhōumò wǒmen qù kāfēi diàn hē bēi kāfēi."
+        },
+        {
+          "id": "ch21-p3-q3",
+          "words": [
+            "kāimén",
+            "diǎn",
+            "jǐ",
+            "Shūdiàn"
+          ],
+          "answer": "Shūdiàn jǐ diǎn kāimén?"
+        },
+        {
+          "id": "ch21-p3-q4",
+          "words": [
+            "liúlián",
+            "gè",
+            "liǎng",
+            "mǎi",
+            "shuǐguǒdiàn",
+            "qù",
+            "gēge",
+            "jiào",
+            "Māma"
+          ],
+          "answer": "Māma jiào gēge qù shuǐguǒdiàn mǎi liǎng gè liúlián."
+        },
+        {
+          "id": "ch21-p3-q5",
+          "words": [
+            "hǎochī",
+            "zhēn",
+            "miànbāo",
+            "de",
+            "miànbāodiàn",
+            "jiā",
+            "Zhè"
+          ],
+          "answer": "Zhè jiā miànbāodiàn de miànbāo zhēn hǎochī."
+        },
+        {
+          "id": "ch21-p3-q6",
+          "words": [
+            "gōngzuò",
+            "yīyuàn",
+            "zài",
+            "Yīshēng"
+          ],
+          "answer": "Yīshēng zài yīyuàn gōngzuò."
+        },
+        {
+          "id": "ch21-p3-q7",
+          "words": [
+            "xuéshēng",
+            "duō",
+            "hěn",
+            "yǒu",
+            "lǐ",
+            "Jiàoshì"
+          ],
+          "answer": "Jiàoshì lǐ yǒu hěn duō xuéshēng."
+        },
+        {
+          "id": "ch21-p3-q8",
+          "words": [
+            "ba",
+            "dōngxi",
+            "mǎi",
+            "shāngdiàn",
+            "qù",
+            "Wǒmen"
+          ],
+          "answer": "Wǒmen qù shāngdiàn mǎi dōngxi ba."
+        },
+        {
+          "id": "ch21-p3-q9",
+          "words": [
+            "huǒchē",
+            "zuò",
+            "huǒchēzhàn",
+            "qù",
+            "yào",
+            "Tāmen"
+          ],
+          "answer": "Tāmen yào qù huǒchēzhàn zuò huǒchē."
+        },
+        {
+          "id": "ch21-p3-q10",
+          "words": [
+            "fēijī",
+            "zuò",
+            "jīchǎng",
+            "qù",
+            "yào",
+            "Wǒmen"
+          ],
+          "answer": "Wǒmen yào qù jīchǎng zuò fēijī."
+        },
+        {
+          "id": "ch21-p3-q11",
+          "words": [
+            "piàoliang",
+            "hěn",
+            "fángjiān",
+            "de",
+            "Tā"
+          ],
+          "answer": "Tā de fángjiān hěn piàoliang."
+        },
+        {
+          "id": "ch21-p3-q12",
+          "words": [
+            "tóngshì",
+            "de",
+            "gōngsī",
+            "wǒ",
+            "shì",
+            "Tā"
+          ],
+          "answer": "Tā shì wǒ gōngsī de tóngshì."
+        },
+        {
+          "id": "ch21-p3-q13",
+          "words": [
+            "de",
+            "gōngzuò",
+            "shénme",
+            "zuò",
+            "shì",
+            "Nǐ",
+            "hǎo",
+            "Nǐ"
+          ],
+          "answer": "Nǐ hǎo Nǐ shì zuò shénme gōngzuò de?"
+        },
+        {
+          "id": "ch21-p3-q14",
+          "words": [
+            "lǎoshī",
+            "shì",
+            "Wǒ",
+            "hǎo",
+            "Nǐ"
+          ],
+          "answer": "Nǐ hǎo Wǒ shì lǎoshī."
+        },
+        {
+          "id": "ch21-p3-q15",
+          "words": [
+            "gōngzuò",
+            "nǎlǐ",
+            "zài",
+            "Nǐ"
+          ],
+          "answer": "Nǐ zài nǎlǐ gōngzuò?"
+        },
+        {
+          "id": "ch21-p3-q16",
+          "words": [
+            "gōngzuò",
+            "xuéxiào",
+            "zài",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zài xuéxiào gōngzuò."
+        },
+        {
+          "id": "ch21-p3-q17",
+          "words": [
+            "nǎr",
+            "zài",
+            "xuéxiào",
+            "de",
+            "gōngzuò",
+            "Nǐ"
+          ],
+          "answer": "Nǐ gōngzuò de xuéxiào zài nǎr?"
+        },
+        {
+          "id": "ch21-p3-q18",
+          "words": [
+            "diàn",
+            "kāfēi",
+            "jiā",
+            "yǒu",
+            "pángbiān",
+            "hòumiàn",
+            "de",
+            "jiǔdiàn",
+            "Zài"
+          ],
+          "answer": "Zài jiǔdiàn de hòumiàn pángbiān yǒu jiā kāfēi diàn."
+        }
+      ]
+    }
+  }
+}

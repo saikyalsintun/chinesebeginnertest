@@ -1,0 +1,288 @@
+{
+  "chapter": {
+    "id": "chapter-29",
+    "title": "Chapter 29",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch29-p1-q1",
+          "question": "ကျွန်တော့်ခေါင်းကိုက်တယ်။",
+          "answer": "Wǒ tóuténg."
+        },
+        {
+          "id": "ch29-p1-q2",
+          "question": "ကျွန်တော့်အဖျားတက်နေတယ်။",
+          "answer": "Wǒ fāshāo le."
+        },
+        {
+          "id": "ch29-p1-q3",
+          "question": "ကျွန်တော် ဝမ်းလျှောနေတယ်။",
+          "answer": "Wǒ lā dùzi le."
+        },
+        {
+          "id": "ch29-p1-q4",
+          "question": "လည်ချောင်းနာတယ်လို့ ခံစားရတယ်။",
+          "answer": "Wǒ gǎndào bózi téng."
+        },
+        {
+          "id": "ch29-p1-q5",
+          "question": "ကျွန်တော့်အရေပြား ယားတယ်။",
+          "answer": "Wǒ de pífū yǎng."
+        },
+        {
+          "id": "ch29-p1-q6",
+          "question": "ကျွန်တော့်လက်ချောင်းက သွေးထွက်နေတယ်။",
+          "answer": "Wǒ de shǒuzhǐ zài liúxuè."
+        },
+        {
+          "id": "ch29-p1-q7",
+          "question": "ကျွန်တော် ပြင်းထန်တဲ့ မိုင်ဂရိန်းခေါင်းကိုက်ရှိတယ်။",
+          "answer": "Wǒ yǒu yánzhòng de piāntóutòng."
+        },
+        {
+          "id": "ch29-p1-q8",
+          "question": "ကျွန်တော့်ပခုံး ဒဏ်ရာရသွားတယ်။",
+          "answer": "Wǒ de jiānbǎng shòushāng le."
+        },
+        {
+          "id": "ch29-p1-q9",
+          "question": "ကျွန်တော့်နှာခေါင်းပိတ်နေတယ်။",
+          "answer": "Wǒ bízi bùtōng le."
+        },
+        {
+          "id": "ch29-p1-q10",
+          "question": "နည်းနည်းအေးတယ်လို့ ခံစားရတယ်။",
+          "answer": "Wǒ juédé yǒudiǎn lěng."
+        },
+        {
+          "id": "ch29-p1-q11",
+          "question": "ကျွန်တော့်ရင်ဘတ်ကျပ်တယ်လို့ ခံစားရတယ်။",
+          "answer": "Wǒ gǎndào xiōngmèn."
+        },
+        {
+          "id": "ch29-p1-q12",
+          "question": "ကျွန်တော့်သွားတွေ အရမ်းနာတယ်။",
+          "answer": "Wǒ de yáchǐ hěn téng."
+        },
+        {
+          "id": "ch29-p1-q13",
+          "question": "ကျွန်တော့်နားကိုက်တယ်။",
+          "answer": "Wǒ ěr téng."
+        },
+        {
+          "id": "ch29-p1-q14",
+          "question": "ကျွန်တော့်ကျောနာတယ်။",
+          "answer": "Wǒ bèitòng."
+        },
+        {
+          "id": "ch29-p1-q15",
+          "question": "ကျွန်တော့်လည်ချောင်းနာတယ်။",
+          "answer": "Wǒ hóulóng tòng."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch29-p2-q1",
+          "question": "Nǐ zěnmeyàng?",
+          "answer": "Wǒ fāshāo le."
+        },
+        {
+          "id": "ch29-p2-q2",
+          "question": "Nǐ yǒu shénme wèntí?",
+          "answer": "Wǒ lā dùzi le."
+        },
+        {
+          "id": "ch29-p2-q3",
+          "question": "Nǐ gǎndào nǎr téng?",
+          "answer": "Wǒ gǎndào bózi téng."
+        },
+        {
+          "id": "ch29-p2-q4",
+          "question": "Nǐ de pífū zěnmeyàng?",
+          "answer": "Wǒ de pífū yǎng."
+        },
+        {
+          "id": "ch29-p2-q5",
+          "question": "Nǐ de shǒuzhǐ zěnmeyàng?",
+          "answer": "Wǒ de shǒuzhǐ zài liúxuè."
+        },
+        {
+          "id": "ch29-p2-q6",
+          "question": "Nǐ yǒu shénme tóuténg?",
+          "answer": "Wǒ yǒu yánzhòng de piāntóutòng."
+        },
+        {
+          "id": "ch29-p2-q7",
+          "question": "Nǐ de jiānbǎng zěnmeyàng?",
+          "answer": "Wǒ de jiānbǎng shòushāng le."
+        },
+        {
+          "id": "ch29-p2-q8",
+          "question": "Nǐ bízi zěnmeyàng?",
+          "answer": "Wǒ bízi bùtōng le."
+        },
+        {
+          "id": "ch29-p2-q9",
+          "question": "Nǐ juédé zěnmeyàng?",
+          "answer": "Wǒ juédé yǒudiǎn lěng."
+        },
+        {
+          "id": "ch29-p2-q10",
+          "question": "Nǐ gǎndào nǎlǐ bù shūfu?",
+          "answer": "Wǒ gǎndào xiōngmèn."
+        },
+        {
+          "id": "ch29-p2-q11",
+          "question": "Nǐ de yáchǐ zěnmeyàng?",
+          "answer": "Wǒ de yáchǐ hěn téng."
+        },
+        {
+          "id": "ch29-p2-q12",
+          "question": "Nǐ tóuténg ma?",
+          "answer": "Wǒ yǒu yánzhòng de piāntóutòng."
+        },
+        {
+          "id": "ch29-p2-q13",
+          "question": "Nǐ de shǒuzhǐ liúxuè ma?",
+          "answer": "Shì de, wǒ de shǒuzhǐ zài liúxuè."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch29-p3-q1",
+          "words": [
+            "pífū",
+            "de",
+            "nǐ",
+            "le",
+            "dīngténg",
+            "Chóngzi"
+          ],
+          "answer": "Chóngzi dīngténg le nǐ de pífū."
+        },
+        {
+          "id": "ch29-p3-q2",
+          "words": [
+            "le",
+            "fāshāo",
+            "Wǒ"
+          ],
+          "answer": "Wǒ fāshāo le."
+        },
+        {
+          "id": "ch29-p3-q3",
+          "words": [
+            "le",
+            "dùzi",
+            "lā",
+            "Wǒ"
+          ],
+          "answer": "Wǒ lā dùzi le."
+        },
+        {
+          "id": "ch29-p3-q4",
+          "words": [
+            "téng",
+            "bózi",
+            "gǎndào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ gǎndào bózi téng."
+        },
+        {
+          "id": "ch29-p3-q5",
+          "words": [
+            "yǎng",
+            "pífū",
+            "de",
+            "Wǒ"
+          ],
+          "answer": "Wǒ de pífū yǎng."
+        },
+        {
+          "id": "ch29-p3-q6",
+          "words": [
+            "liúxuè",
+            "zài",
+            "shǒuzhǐ",
+            "de",
+            "Wǒ"
+          ],
+          "answer": "Wǒ de shǒuzhǐ zài liúxuè."
+        },
+        {
+          "id": "ch29-p3-q7",
+          "words": [
+            "piāntóutòng",
+            "de",
+            "yánzhòng",
+            "yǒu",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yǒu yánzhòng de piāntóutòng."
+        },
+        {
+          "id": "ch29-p3-q8",
+          "words": [
+            "le",
+            "shòushāng",
+            "jiānbǎng",
+            "de",
+            "Wǒ"
+          ],
+          "answer": "Wǒ de jiānbǎng shòushāng le."
+        },
+        {
+          "id": "ch29-p3-q9",
+          "words": [
+            "le",
+            "bùtōng",
+            "bízi",
+            "Wǒ"
+          ],
+          "answer": "Wǒ bízi bùtōng le."
+        },
+        {
+          "id": "ch29-p3-q10",
+          "words": [
+            "lěng",
+            "yǒudiǎn",
+            "juédé",
+            "Wǒ"
+          ],
+          "answer": "Wǒ juédé yǒudiǎn lěng."
+        },
+        {
+          "id": "ch29-p3-q11",
+          "words": [
+            "xiōngmèn",
+            "gǎndào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ gǎndào xiōngmèn."
+        },
+        {
+          "id": "ch29-p3-q12",
+          "words": [
+            "téng",
+            "hěn",
+            "yáchǐ",
+            "de",
+            "Wǒ"
+          ],
+          "answer": "Wǒ de yáchǐ hěn téng."
+        }
+      ]
+    }
+  }
+}

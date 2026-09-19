@@ -1,0 +1,386 @@
+{
+  "chapter": {
+    "id": "chapter-22",
+    "title": "Chapter 22",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch22-p1-q1",
+          "question": "ကျွန်တော် အခန်းသစ်တစ်ခန်းပါတဲ့ တိုက်ခန်းတစ်ခန်းဝယ်လိုက်တယ်။",
+          "answer": "Wǒ mǎi le yì jiān xīn gōngyù."
+        },
+        {
+          "id": "ch22-p1-q2",
+          "question": "ကျွန်တော့်တိုက်ခန်းက အရမ်းကောင်းတယ်။",
+          "answer": "Wǒde gōngyù fēicháng bàng."
+        },
+        {
+          "id": "ch22-p1-q3",
+          "question": "ကျွန်တော့်တိုက်ခန်းက ကြီးလား။",
+          "answer": "Wǒde gōngyù dà bú dà?"
+        },
+        {
+          "id": "ch22-p1-q4",
+          "question": "ဧည့်ခန်းကြီးတစ်ခန်း၊ အိပ်ခန်းသုံးခန်း၊ ရေချိုးခန်းနှစ်ခန်းနဲ့ မီးဖိုချောင်တစ်ခန်းရှိတယ်။",
+          "answer": "Yǒu yì jiān hěn dà de kètīng, sān jiān wòshì, liǎng jiān yùshì hé yì jiān chúfáng."
+        },
+        {
+          "id": "ch22-p1-q5",
+          "question": "မင်းက မြို့ထဲမှာ နေတာလား။",
+          "answer": "Nǐ zhù zài shìqū ma?"
+        },
+        {
+          "id": "ch22-p1-q6",
+          "question": "မဟုတ်ဘူး။ ကျွန်တော် တက္ကသိုလ်အနီးမှာ နေတယ်။",
+          "answer": "Bú shì. Wǒ zhù zài dàxué fùjìn."
+        },
+        {
+          "id": "ch22-p1-q7",
+          "question": "မင်းနေတဲ့နေရာက ရှုခင်းလှလား။",
+          "answer": "Nǐ nàr de fēngjǐng měi ma?"
+        },
+        {
+          "id": "ch22-p1-q8",
+          "question": "လှတယ်။ ကျွန်တော့်တိုက်ခန်းရဲ့ ရှုခင်းက တခြားတိုက်ခန်းတွေထက် ပိုကောင်းတယ်။",
+          "answer": "Yǒu. Wǒ zhège gōngyù bǐ qítā gōngyù de fēngjǐng hǎo."
+        },
+        {
+          "id": "ch22-p1-q9",
+          "question": "ဒီအိမ်က အရမ်းလှတယ်။",
+          "answer": "Zhège jiā hǎo piàoliang."
+        },
+        {
+          "id": "ch22-p1-q10",
+          "question": "ကျွန်တော် ဒီအိမ်ကို အရမ်းကြိုက်တယ်၊ ဒါပေမယ့် ပရိဘောဂတချို့ လိုသေးတယ်။",
+          "answer": "Wǒ hěn xǐhuan zhè gè jiā, dànshì wǒ hái xūyào yìxiē jiājù."
+        },
+        {
+          "id": "ch22-p1-q11",
+          "question": "မင်းဘာတွေလိုအပ်လဲ။",
+          "answer": "Nǐ xūyào xiē shénme?"
+        },
+        {
+          "id": "ch22-p1-q12",
+          "question": "ကျွန်တော် ပစ္စည်းအများကြီးလိုတယ်။",
+          "answer": "Wǒ xūyào hěn duō dōngxi."
+        },
+        {
+          "id": "ch22-p1-q13",
+          "question": "မီးဖိုချောင်ထဲမှာ ထိုင်ခုံတချို့ရှိပေမယ့် စားပွဲတစ်လုံးမရှိဘူး။",
+          "answer": "Chúfáng lǐ yǒu yìxiē yǐzi, dànshì méiyǒu yì zhāng zhuōzi."
+        },
+        {
+          "id": "ch22-p1-q14",
+          "question": "ဒီဧည့်ခန်းမှာလည်း ဆိုဖာမရှိဘူး။",
+          "answer": "Zhège kètīng yě méiyǒu shāfā."
+        },
+        {
+          "id": "ch22-p1-q15",
+          "question": "ဒီမှာလည်း ထိုင်ခုံမရှိဘူး၊ မီးအိမ်တစ်လုံးပဲရှိတယ်။",
+          "answer": "Zhèr yě méiyǒu yǐzi, zhǐyǒu yì zhǎn dēng."
+        },
+        {
+          "id": "ch22-p1-q16",
+          "question": "ဒါဆို နောက်အပတ်ပိတ်ရက်မှာ ဈေးဝယ်သွားကြရအောင်။",
+          "answer": "Nà wǒmen xià zhōumò qù gòuwù ba."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch22-p2-q1",
+          "question": "Nǐde gōngyù zěnme yàng?",
+          "answer": "Fēicháng bàng."
+        },
+        {
+          "id": "ch22-p2-q2",
+          "question": "Nǐde gōngyù dà bú dà?",
+          "answer": "Hěn dà."
+        },
+        {
+          "id": "ch22-p2-q3",
+          "question": "Nǐde gōngyù yǒu jǐ jiān wòshì?",
+          "answer": "Yǒu sān jiān wòshì."
+        },
+        {
+          "id": "ch22-p2-q4",
+          "question": "Nǐ zhù zài shìqū ma?",
+          "answer": "Bú shì. Wǒ zhù zài dàxué fùjìn."
+        },
+        {
+          "id": "ch22-p2-q5",
+          "question": "Nǐ nàr de fēngjǐng měi ma?",
+          "answer": "Yǒu. Wǒ zhège gōngyù bǐ qítā gōngyù de fēngjǐng hǎo."
+        },
+        {
+          "id": "ch22-p2-q6",
+          "question": "Zhège jiā zěnmeyàng?",
+          "answer": "Zhège jiā hǎo piàoliang."
+        },
+        {
+          "id": "ch22-p2-q7",
+          "question": "Nǐ xūyào xiē shénme?",
+          "answer": "Wǒ xūyào hěn duō dōngxi."
+        },
+        {
+          "id": "ch22-p2-q8",
+          "question": "Chúfáng lǐ yǒu shénme?",
+          "answer": "Chúfáng lǐ yǒu yìxiē yǐzi, dànshì méiyǒu yì zhāng zhuōzi."
+        },
+        {
+          "id": "ch22-p2-q9",
+          "question": "Kètīng lǐ yǒu shāfā ma?",
+          "answer": "Méiyǒu. Zhège kètīng yě méiyǒu shāfā."
+        },
+        {
+          "id": "ch22-p2-q10",
+          "question": "Zhèr yǒu shénme?",
+          "answer": "Zhèr yě méiyǒu yǐzi, zhǐyǒu yì zhǎn dēng."
+        },
+        {
+          "id": "ch22-p2-q11",
+          "question": "Wǒmen shénme shíhou qù gòuwù?",
+          "answer": "Xià zhōumò qù gòuwù."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch22-p3-q1",
+          "words": [
+            "gōngyù",
+            "xīn",
+            "jiān",
+            "yì",
+            "le",
+            "mǎi",
+            "Wǒ"
+          ],
+          "answer": "Wǒ mǎi le yì jiān xīn gōngyù."
+        },
+        {
+          "id": "ch22-p3-q2",
+          "words": [
+            "yàng",
+            "zěnme",
+            "gōngyù",
+            "Nǐde"
+          ],
+          "answer": "Nǐde gōngyù zěnme yàng?"
+        },
+        {
+          "id": "ch22-p3-q3",
+          "words": [
+            "bàng",
+            "Fēicháng"
+          ],
+          "answer": "Fēicháng bàng."
+        },
+        {
+          "id": "ch22-p3-q4",
+          "words": [
+            "dà",
+            "bú",
+            "dà",
+            "gōngyù",
+            "Nǐde"
+          ],
+          "answer": "Nǐde gōngyù dà bú dà?"
+        },
+        {
+          "id": "ch22-p3-q5",
+          "words": [
+            "dà",
+            "Hěn"
+          ],
+          "answer": "Hěn dà."
+        },
+        {
+          "id": "ch22-p3-q6",
+          "words": [
+            "chúfáng",
+            "jiān",
+            "yì",
+            "hé",
+            "yùshì",
+            "jiān",
+            "liǎng",
+            "wòshì",
+            "jiān",
+            "sān",
+            "kètīng",
+            "de",
+            "dà",
+            "hěn",
+            "jiān",
+            "yì",
+            "Yǒu"
+          ],
+          "answer": "Yǒu yì jiān hěn dà de kètīng sān jiān wòshì liǎng jiān yùshì hé yì jiān chúfáng."
+        },
+        {
+          "id": "ch22-p3-q7",
+          "words": [
+            "ma",
+            "shìqū",
+            "zài",
+            "zhù",
+            "Nǐ"
+          ],
+          "answer": "Nǐ zhù zài shìqū ma?"
+        },
+        {
+          "id": "ch22-p3-q8",
+          "words": [
+            "fùjìn",
+            "dàxué",
+            "zài",
+            "zhù",
+            "Wǒ",
+            "shì",
+            "Bú"
+          ],
+          "answer": "Bú shì Wǒ zhù zài dàxué fùjìn."
+        },
+        {
+          "id": "ch22-p3-q9",
+          "words": [
+            "ma",
+            "měi",
+            "fēngjǐng",
+            "de",
+            "nàr",
+            "Nǐ"
+          ],
+          "answer": "Nǐ nàr de fēngjǐng měi ma?"
+        },
+        {
+          "id": "ch22-p3-q10",
+          "words": [
+            "hǎo",
+            "fēngjǐng",
+            "de",
+            "gōngyù",
+            "qítā",
+            "bǐ",
+            "gōngyù",
+            "zhège",
+            "Wǒ"
+          ],
+          "answer": "Wǒ zhège gōngyù bǐ qítā gōngyù de fēngjǐng hǎo."
+        },
+        {
+          "id": "ch22-p3-q11",
+          "words": [
+            "piàoliang",
+            "hǎo",
+            "jiā",
+            "Zhège"
+          ],
+          "answer": "Zhège jiā hǎo piàoliang."
+        },
+        {
+          "id": "ch22-p3-q12",
+          "words": [
+            "jiājù",
+            "yìxiē",
+            "xūyào",
+            "hái",
+            "wǒ",
+            "dànshì",
+            "jiā",
+            "gè",
+            "zhè",
+            "xǐhuan",
+            "hěn",
+            "Wǒ"
+          ],
+          "answer": "Wǒ hěn xǐhuan zhè gè jiā dànshì wǒ hái xūyào yìxiē jiājù."
+        },
+        {
+          "id": "ch22-p3-q13",
+          "words": [
+            "shénme",
+            "xiē",
+            "xūyào",
+            "Nǐ"
+          ],
+          "answer": "Nǐ xūyào xiē shénme?"
+        },
+        {
+          "id": "ch22-p3-q14",
+          "words": [
+            "dōngxi",
+            "duō",
+            "hěn",
+            "xūyào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ xūyào hěn duō dōngxi."
+        },
+        {
+          "id": "ch22-p3-q15",
+          "words": [
+            "zhuōzi",
+            "zhāng",
+            "yì",
+            "méiyǒu",
+            "dànshì",
+            "yǐzi",
+            "yìxiē",
+            "yǒu",
+            "lǐ",
+            "Chúfáng"
+          ],
+          "answer": "Chúfáng lǐ yǒu yìxiē yǐzi dànshì méiyǒu yì zhāng zhuōzi."
+        },
+        {
+          "id": "ch22-p3-q16",
+          "words": [
+            "shāfā",
+            "méiyǒu",
+            "yě",
+            "kètīng",
+            "Zhège"
+          ],
+          "answer": "Zhège kètīng yě méiyǒu shāfā."
+        },
+        {
+          "id": "ch22-p3-q17",
+          "words": [
+            "dēng",
+            "zhǎn",
+            "yì",
+            "zhǐyǒu",
+            "yǐzi",
+            "méiyǒu",
+            "yě",
+            "Zhèr"
+          ],
+          "answer": "Zhèr yě méiyǒu yǐzi zhǐyǒu yì zhǎn dēng."
+        },
+        {
+          "id": "ch22-p3-q18",
+          "words": [
+            "ba",
+            "gòuwù",
+            "qù",
+            "zhōumò",
+            "xià",
+            "wǒmen",
+            "Nà"
+          ],
+          "answer": "Nà wǒmen xià zhōumò qù gòuwù ba."
+        }
+      ]
+    }
+  }
+}

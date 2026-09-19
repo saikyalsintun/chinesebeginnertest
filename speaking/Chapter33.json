@@ -1,0 +1,267 @@
+{
+  "chapter": {
+    "id": "chapter-33",
+    "title": "Chapter 33",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch33-p1-q1",
+          "question": "ဒီမြို့မှာ နိုက်ကလပ်ရှိလား။",
+          "answer": "Zhè chéngshì lǐ yǒu yèdiàn ma?"
+        },
+        {
+          "id": "ch33-p1-q2",
+          "question": "ဟိုတယ်မှာ အခန်းတစ်ခန်းရှိတယ်။",
+          "answer": "Fàndiàn lǐ yǒu yì jiān fángjiān."
+        },
+        {
+          "id": "ch33-p1-q3",
+          "question": "အခန်းထဲမှာ အိပ်ရာတစ်လုံးရှိတယ်။",
+          "answer": "Fángjiān lǐ yǒu yì zhāng chuáng."
+        },
+        {
+          "id": "ch33-p1-q4",
+          "question": "ဒီအိပ်ခန်းက အရမ်းကျယ်တယ်။",
+          "answer": "Zhège wòshì hěn dà."
+        },
+        {
+          "id": "ch33-p1-q5",
+          "question": "ဓာတ်လှေကားက ဘယ်မှာလဲ။",
+          "answer": "Diàntī zài nǎr?"
+        },
+        {
+          "id": "ch33-p1-q6",
+          "question": "လေဆိပ်က ဘယ်မှာလဲ။",
+          "answer": "Jīchǎng zài nǎr?"
+        },
+        {
+          "id": "ch33-p1-q7",
+          "question": "Check-in လုပ်ဖို့ ကောင်တာကို သွားရမယ်။",
+          "answer": "Dēngjì yào qù guìtái."
+        },
+        {
+          "id": "ch33-p1-q8",
+          "question": "Check-out အချိန်က ဘယ်နာရီလဲ။",
+          "answer": "Tuìfáng shíjiān shì jǐ diǎnzhōng?"
+        },
+        {
+          "id": "ch33-p1-q9",
+          "question": "တစ်ညကို ဘယ်လောက်ကျလဲ။",
+          "answer": "Yígè wǎnshàng duōshǎo qián?"
+        },
+        {
+          "id": "ch33-p1-q10",
+          "question": "ဧည့်သည်တွေ အခန်းထဲမှာ အေးအေးဆေးဆေး နေနိုင်တယ်။",
+          "answer": "Kèrén kěyǐ zài fángjiān lǐ zìzài."
+        },
+        {
+          "id": "ch33-p1-q11",
+          "question": "ဒီဟိုတယ်မှာ ဆေးလိပ်မသောက်ရတဲ့နေရာရှိတယ်။",
+          "answer": "Zhè jiā fàndiàn yǒu fēi xīyān qū."
+        },
+        {
+          "id": "ch33-p1-q12",
+          "question": "ကျွန်တော် အခန်းတစ်ခန်း ကြိုတင်မှာပြီး အတည်ပြုချင်တယ်။",
+          "answer": "Wǒ yào dìngfáng hé quèrèn."
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch33-p2-q1",
+          "question": "Zhè chéngshì lǐ yǒu yèdiàn ma?",
+          "answer": "Yǒu."
+        },
+        {
+          "id": "ch33-p2-q2",
+          "question": "Tuìfáng shíjiān shì jǐ diǎnzhōng?",
+          "answer": "Tuìfáng shíjiān shì shí'èr diǎnzhōng."
+        },
+        {
+          "id": "ch33-p2-q3",
+          "question": "Yígè wǎnshàng duōshǎo qián?",
+          "answer": "Yígè wǎnshàng yìqiān kuài."
+        },
+        {
+          "id": "ch33-p2-q4",
+          "question": "Diàntī zài nǎr?",
+          "answer": "Diàntī zài nàr."
+        },
+        {
+          "id": "ch33-p2-q5",
+          "question": "Jīchǎng zài nǎr?",
+          "answer": "Jīchǎng zài nàr."
+        },
+        {
+          "id": "ch33-p2-q6",
+          "question": "Nǐ yào dēngjì ma?",
+          "answer": "Shì de, wǒ yào dēngjì."
+        },
+        {
+          "id": "ch33-p2-q7",
+          "question": "Nǐ yào dìng shénme fáng?",
+          "answer": "Wǒ yào dìng dānchuáng shuāngrénfáng."
+        },
+        {
+          "id": "ch33-p2-q8",
+          "question": "Nǐ yào dānchuáng háishì shuāngchuáng?",
+          "answer": "Wǒ yào shuāngchuáng shuāngrénfáng."
+        },
+        {
+          "id": "ch33-p2-q9",
+          "question": "Nǐ xūyào guìtái ma?",
+          "answer": "Shì de, wǒ xūyào guìtái."
+        },
+        {
+          "id": "ch33-p2-q10",
+          "question": "Fángjiān lǐ yǒu shénme?",
+          "answer": "Fángjiān lǐ yǒu chuáng, zhěntóu hé bèizi."
+        },
+        {
+          "id": "ch33-p2-q11",
+          "question": "Zhèlǐ ānjìng ma?",
+          "answer": "Shì de, zhèlǐ hěn ānjìng."
+        },
+        {
+          "id": "ch33-p2-q12",
+          "question": "Nǐ yào tuìfáng ma?",
+          "answer": "Shì de, wǒ yào tuìfáng."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch33-p3-q1",
+          "words": [
+            "ma",
+            "yèdiàn",
+            "yǒu",
+            "lǐ",
+            "chéngshì",
+            "Zhè"
+          ],
+          "answer": "Zhè chéngshì lǐ yǒu yèdiàn ma?"
+        },
+        {
+          "id": "ch33-p3-q2",
+          "words": [
+            "diǎnzhōng",
+            "jǐ",
+            "shì",
+            "shíjiān",
+            "Tuìfáng"
+          ],
+          "answer": "Tuìfáng shíjiān shì jǐ diǎnzhōng?"
+        },
+        {
+          "id": "ch33-p3-q3",
+          "words": [
+            "qián",
+            "duōshǎo",
+            "wǎnshàng",
+            "Yígè"
+          ],
+          "answer": "Yígè wǎnshàng duōshǎo qián?"
+        },
+        {
+          "id": "ch33-p3-q4",
+          "words": [
+            "nǎr",
+            "zài",
+            "Diàntī"
+          ],
+          "answer": "Diàntī zài nǎr?"
+        },
+        {
+          "id": "ch33-p3-q5",
+          "words": [
+            "nǎr",
+            "zài",
+            "Jīchǎng"
+          ],
+          "answer": "Jīchǎng zài nǎr?"
+        },
+        {
+          "id": "ch33-p3-q6",
+          "words": [
+            "dēngjì",
+            "yào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yào dēngjì."
+        },
+        {
+          "id": "ch33-p3-q7",
+          "words": [
+            "dìngfáng",
+            "yào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yào dìngfáng."
+        },
+        {
+          "id": "ch33-p3-q8",
+          "words": [
+            "dìngfáng",
+            "quèrèn",
+            "yào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yào quèrèn dìngfáng."
+        },
+        {
+          "id": "ch33-p3-q9",
+          "words": [
+            "bèizi",
+            "hé",
+            "zhěntóu",
+            "chuáng,",
+            "yǒu",
+            "lǐ",
+            "Fángjiān"
+          ],
+          "answer": "Fángjiān lǐ yǒu chuáng, zhěntóu hé bèizi."
+        },
+        {
+          "id": "ch33-p3-q10",
+          "words": [
+            "ānjìng",
+            "hěn",
+            "Zhèlǐ"
+          ],
+          "answer": "Zhèlǐ hěn ānjìng."
+        },
+        {
+          "id": "ch33-p3-q11",
+          "words": [
+            "qū",
+            "xīyān",
+            "fēi",
+            "yǒu",
+            "fàndiàn",
+            "jiā",
+            "Zhè"
+          ],
+          "answer": "Zhè jiā fàndiàn yǒu fēi xīyān qū."
+        },
+        {
+          "id": "ch33-p3-q12",
+          "words": [
+            "tuìfáng",
+            "yào",
+            "Wǒ"
+          ],
+          "answer": "Wǒ yào tuìfáng."
+        }
+      ]
+    }
+  }
+}

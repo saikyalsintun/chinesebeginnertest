@@ -1,0 +1,266 @@
+{
+  "chapter": {
+    "id": "chapter-12",
+    "title": "Chapter 12",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch12-p1-q1",
+          "question": "အိမ်မှာ ချစ်စရာခွေးလေးတစ်ကောင်ရှိတယ်။",
+          "answer": "Wǒ jiā yǒu zhī kě’ài de xiǎogǒu."
+        },
+        {
+          "id": "ch12-p1-q2",
+          "question": "လူတွေက ကြွက်တွေကို အရမ်းမုန်းကြတယ်။",
+          "answer": "Rénmen dōu hěn tǎoyàn lǎoshǔ."
+        },
+        {
+          "id": "ch12-p1-q3",
+          "question": "အထဲမှာ နွားတွေအများကြီးရှိတယ်။",
+          "answer": "Lǐmiàn yǒu hěn duō niú."
+        },
+        {
+          "id": "ch12-p1-q4",
+          "question": "ကျားက အမျက်မထွက်ရင် မင်းက ငါ့ကို ဖျားနေတဲ့ကြောင်လို့ ထင်တယ်။",
+          "answer": "Lǎohǔ bù fāwēi nǐ dāng wǒ shì bìng māo a."
+        },
+        {
+          "id": "ch12-p1-q5",
+          "question": "ယုန်လေးက အိမ်အပြင်မှာ ကစားနေတယ်။",
+          "answer": "Xiǎo tùzi zài jiā wàimiàn wánshuǎ."
+        },
+        {
+          "id": "ch12-p1-q6",
+          "question": "ညီမလေးက မြွေကို အရမ်းကြောက်တယ်။",
+          "answer": "Wǒ mèimei fēicháng pà shé."
+        },
+        {
+          "id": "ch12-p1-q7",
+          "question": "အမေက မြင်းကို နားလည်တယ်။",
+          "answer": "Wǒ māmɑ shú mǎ."
+        },
+        {
+          "id": "ch12-p1-q8",
+          "question": "ဒီငါးက စားလို့အရမ်းကောင်းတယ်။",
+          "answer": "Zhè yú tíng hǎochī de."
+        },
+        {
+          "id": "ch12-p1-q9",
+          "question": "သစ်ပင်ပေါ်မှာ ငှက်လေးတွေအများကြီးရှိတယ်။",
+          "answer": "Shù shàng yǒu hěn duō xiǎoniǎo."
+        },
+        {
+          "id": "ch12-p1-q10",
+          "question": "ကြောင်နဲ့ မျောက်က သူငယ်ချင်းကောင်းတွေပါ။",
+          "answer": "Māo hé hóuzi shì hǎo pengyou."
+        },
+        {
+          "id": "ch12-p1-q11",
+          "question": "ကြက်အော်သံကို မင်းကြားပြီးပြီလား။",
+          "answer": "Nǐ tīng dào jī jiào le ma?"
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch12-p2-q1",
+          "question": "Nǐ jiā yǒu shénme kě’ài de dòngwù?",
+          "answer": "Wǒ jiā yǒu zhī kě’ài de xiǎogǒu."
+        },
+        {
+          "id": "ch12-p2-q2",
+          "question": "Rénmen dōu hěn tǎoyàn shénme?",
+          "answer": "Rénmen dōu hěn tǎoyàn lǎoshǔ."
+        },
+        {
+          "id": "ch12-p2-q3",
+          "question": "Lǐmiàn yǒu shénme?",
+          "answer": "Lǐmiàn yǒu hěn duō niú."
+        },
+        {
+          "id": "ch12-p2-q4",
+          "question": "Xiǎo tùzi zài nǎlǐ wánshuǎ?",
+          "answer": "Xiǎo tùzi zài jiā wàimiàn wánshuǎ."
+        },
+        {
+          "id": "ch12-p2-q5",
+          "question": "Wǒ mèimei fēicháng pà shénme?",
+          "answer": "Wǒ mèimei fēicháng pà shé."
+        },
+        {
+          "id": "ch12-p2-q6",
+          "question": "Shù shàng yǒu shénme?",
+          "answer": "Shù shàng yǒu hěn duō xiǎoniǎo."
+        },
+        {
+          "id": "ch12-p2-q7",
+          "question": "Māo hé hóuzi shì shénme?",
+          "answer": "Māo hé hóuzi shì hǎo pengyou."
+        },
+        {
+          "id": "ch12-p2-q8",
+          "question": "Nǐ tīng dào jī jiào le ma?",
+          "answer": "Tīng dào le."
+        },
+        {
+          "id": "ch12-p2-q9",
+          "question": "Zhè yú zěnmeyàng?",
+          "answer": "Zhè yú tíng hǎochī de."
+        },
+        {
+          "id": "ch12-p2-q10",
+          "question": "Xiǎo tùzi zài jiā wàimiàn zuò shénme?",
+          "answer": "Xiǎo tùzi zài jiā wàimiàn wánshuǎ."
+        },
+        {
+          "id": "ch12-p2-q11",
+          "question": "Nǐ mèimei pà shé ma?",
+          "answer": "Shì, wǒ mèimei fēicháng pà shé."
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch12-p3-q1",
+          "words": [
+            "xiǎogǒu",
+            "de",
+            "kě’ài",
+            "zhī",
+            "yǒu",
+            "jiā",
+            "Wǒ"
+          ],
+          "answer": "Wǒ jiā yǒu zhī kě’ài de xiǎogǒu."
+        },
+        {
+          "id": "ch12-p3-q2",
+          "words": [
+            "lǎoshǔ",
+            "tǎoyàn",
+            "hěn",
+            "dōu",
+            "Rénmen"
+          ],
+          "answer": "Rénmen dōu hěn tǎoyàn lǎoshǔ."
+        },
+        {
+          "id": "ch12-p3-q3",
+          "words": [
+            "niú",
+            "duō",
+            "hěn",
+            "yǒu",
+            "Lǐmiàn"
+          ],
+          "answer": "Lǐmiàn yǒu hěn duō niú."
+        },
+        {
+          "id": "ch12-p3-q4",
+          "words": [
+            "a",
+            "māo",
+            "bìng",
+            "shì",
+            "wǒ",
+            "dāng",
+            "nǐ",
+            "fāwēi",
+            "bù",
+            "Lǎohǔ"
+          ],
+          "answer": "Lǎohǔ bù fāwēi nǐ dāng wǒ shì bìng māo a."
+        },
+        {
+          "id": "ch12-p3-q5",
+          "words": [
+            "wánshuǎ",
+            "wàimiàn",
+            "jiā",
+            "zài",
+            "tùzi",
+            "Xiǎo"
+          ],
+          "answer": "Xiǎo tùzi zài jiā wàimiàn wánshuǎ."
+        },
+        {
+          "id": "ch12-p3-q6",
+          "words": [
+            "shé",
+            "pà",
+            "fēicháng",
+            "mèimei",
+            "Wǒ"
+          ],
+          "answer": "Wǒ mèimei fēicháng pà shé."
+        },
+        {
+          "id": "ch12-p3-q7",
+          "words": [
+            "mǎ",
+            "shú",
+            "māmɑ",
+            "Wǒ"
+          ],
+          "answer": "Wǒ māmɑ shú mǎ."
+        },
+        {
+          "id": "ch12-p3-q8",
+          "words": [
+            "de",
+            "hǎochī",
+            "tíng",
+            "yú",
+            "Zhè"
+          ],
+          "answer": "Zhè yú tíng hǎochī de."
+        },
+        {
+          "id": "ch12-p3-q9",
+          "words": [
+            "xiǎoniǎo",
+            "duō",
+            "hěn",
+            "yǒu",
+            "shàng",
+            "Shù"
+          ],
+          "answer": "Shù shàng yǒu hěn duō xiǎoniǎo."
+        },
+        {
+          "id": "ch12-p3-q10",
+          "words": [
+            "pengyou",
+            "hǎo",
+            "shì",
+            "hóuzi",
+            "hé",
+            "Māo"
+          ],
+          "answer": "Māo hé hóuzi shì hǎo pengyou."
+        },
+        {
+          "id": "ch12-p3-q11",
+          "words": [
+            "ma",
+            "le",
+            "jiào",
+            "jī",
+            "dào",
+            "tīng",
+            "Nǐ"
+          ],
+          "answer": "Nǐ tīng dào jī jiào le ma?"
+        }
+      ]
+    }
+  }
+}
