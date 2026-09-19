@@ -1,25 +1,6 @@
 /* =========================================================
    CHINESE DAILY TEST
-   app.js
-   =========================================================
-   COURSE STRUCTURE
-
-   Beginner
-   └── chapters/
-       ├── Chapter1.json
-       ├── ...
-       └── Chapter15.json
-
-   Speaking
-   └── speaking/
-       ├── Chapter1.json
-       ├── ...
-       └── Chapter35.json
-
-   The JSON format remains:
-   Part 1 / Part 2 / Part 3
-
-   The student's Class is received from the Login API.
+   COMPLETE APP.JS
 ========================================================= */
 
 
@@ -32,45 +13,19 @@ const CONFIG = {
     API_URL:
         "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
-    /*
-     * Kept for compatibility.
-     * Actual folder is selected using CLASS_CONFIG.
-     */
-    CHAPTER_PATH:
-        "./chapters/",
+    CLASS_CONFIG: {
 
-    TOTAL_CHAPTERS:
-        15
+        Beginner: {
+            folder: "chapters",
+            totalChapters: 15
+        },
 
-};
+        Speaking: {
+            folder: "speaking",
+            totalChapters: 35
+        }
 
-
-/* =========================================================
-   CLASS / COURSE CONFIGURATION
-========================================================= */
-
-const CLASS_CONFIG = {
-
-    Beginner: {
-        folder: "chapters",
-        totalChapters: 15
-    },
-
-    Speaking: {
-        folder: "speaking",
-        totalChapters: 35
     }
-
-    /*
-     * Add future classes here.
-     *
-     * Example:
-     *
-     * Intermediate: {
-     *     folder: "intermediate",
-     *     totalChapters: 30
-     * }
-     */
 
 };
 
@@ -102,18 +57,17 @@ const state = {
     scores: {
         part1: 0,
         part2: 0,
-        part3: 0
+        part3: 0,
+        total: 0
     },
 
-    /*
-     * Keeps randomized word order stable
-     * while the student works on a question.
-     */
     randomOrders: {
         part1: {},
         part2: {},
         part3: {}
-    }
+    },
+
+    testSaved: false
 
 };
 
@@ -126,14 +80,17 @@ let loginScreen;
 let chapterScreen;
 let testScreen;
 let resultScreen;
+let historyScreen;
 
 let loginForm;
 let loginMessage;
 let loginButton;
+
 let usernameInput;
 let passwordInput;
 
 let welcomeUsername;
+let studentClassBadge;
 let chapterGrid;
 let logoutButton;
 
@@ -149,6 +106,7 @@ let wordBank;
 let clearAnswer;
 let previousButton;
 let nextButton;
+
 let partTabs;
 
 let resultChapter;
@@ -159,6 +117,14 @@ let totalScore;
 let percentageScore;
 let saveStatus;
 let backToChapterButton;
+
+let scoreHistoryButton;
+let chapterHistoryButton;
+let backFromHistory;
+let historyStudent;
+let historyLoading;
+let historyEmpty;
+let historyList;
 
 
 /* =========================================================
@@ -173,188 +139,239 @@ document.addEventListener(
 
 function initializeApp() {
 
-    loginScreen =
-        document.getElementById("loginScreen");
-
-    chapterScreen =
-        document.getElementById("chapterScreen");
-
-    testScreen =
-        document.getElementById("testScreen");
-
-    resultScreen =
-        document.getElementById("resultScreen");
-
-    loginForm =
-        document.getElementById("loginForm");
-
-    loginMessage =
-        document.getElementById("loginMessage");
-
-    loginButton =
-        document.getElementById("loginButton");
-
-    usernameInput =
-        document.getElementById("username");
-
-    passwordInput =
-        document.getElementById("password");
-
-    welcomeUsername =
-        document.getElementById("welcomeUsername");
-
-    chapterGrid =
-        document.getElementById("chapterGrid");
-
-    logoutButton =
-        document.getElementById("logoutButton");
-
-    backToChapters =
-        document.getElementById("backToChapters");
-
-    testChapter =
-        document.getElementById("testChapter");
-
-    partTitle =
-        document.getElementById("partTitle");
-
-    questionCounter =
-        document.getElementById("questionCounter");
-
-    progressBar =
-        document.getElementById("progressBar");
-
-    questionType =
-        document.getElementById("questionType");
-
-    questionText =
-        document.getElementById("questionText");
-
-    selectedWords =
-        document.getElementById("selectedWords");
-
-    wordBank =
-        document.getElementById("wordBank");
-
-    clearAnswer =
-        document.getElementById("clearAnswer");
-
-    previousButton =
-        document.getElementById("previousButton");
-
-    nextButton =
-        document.getElementById("nextButton");
-
-    partTabs =
-        document.querySelectorAll(".part-tab");
-
-    resultChapter =
-        document.getElementById("resultChapter");
-
-    part1Score =
-        document.getElementById("part1Score");
-
-    part2Score =
-        document.getElementById("part2Score");
-
-    part3Score =
-        document.getElementById("part3Score");
-
-    totalScore =
-        document.getElementById("totalScore");
-
-    percentageScore =
-        document.getElementById("percentageScore");
-
-    saveStatus =
-        document.getElementById("saveStatus");
-
-    backToChapterButton =
-        document.getElementById("backToChapterButton");
-
-
-    /*
-     * Check important HTML elements.
-     */
-
-    const requiredElements = [
-        ["loginScreen", loginScreen],
-        ["chapterScreen", chapterScreen],
-        ["testScreen", testScreen],
-        ["resultScreen", resultScreen],
-
-        ["loginForm", loginForm],
-        ["loginMessage", loginMessage],
-        ["loginButton", loginButton],
-
-        ["username", usernameInput],
-        ["password", passwordInput],
-
-        ["welcomeUsername", welcomeUsername],
-        ["chapterGrid", chapterGrid],
-        ["logoutButton", logoutButton],
-
-        ["backToChapters", backToChapters],
-        ["testChapter", testChapter],
-        ["partTitle", partTitle],
-        ["questionCounter", questionCounter],
-        ["progressBar", progressBar],
-        ["questionType", questionType],
-        ["questionText", questionText],
-
-        ["selectedWords", selectedWords],
-        ["wordBank", wordBank],
-        ["clearAnswer", clearAnswer],
-
-        ["previousButton", previousButton],
-        ["nextButton", nextButton],
-
-        ["resultChapter", resultChapter],
-        ["part1Score", part1Score],
-        ["part2Score", part2Score],
-        ["part3Score", part3Score],
-        ["totalScore", totalScore],
-        ["percentageScore", percentageScore],
-        ["saveStatus", saveStatus],
-        ["backToChapterButton", backToChapterButton]
-    ];
-
-
-    const missingElements =
-        requiredElements
-            .filter(
-                item => !item[1]
-            )
-            .map(
-                item => item[0]
-            );
-
-
-    if (
-        missingElements.length > 0
-    ) {
-
-        console.error(
-            "Missing HTML elements:",
-            missingElements
-        );
-
-        return;
-
-    }
-
-
-    /*
-     * Do NOT generate chapters here.
-     *
-     * We do not know the student's Class yet.
-     */
-
-    chapterGrid.innerHTML =
-        "";
-
+    cacheDOMElements();
 
     setupEventListeners();
+
+    showScreen(
+        loginScreen
+    );
+
+}
+
+
+/* =========================================================
+   CACHE DOM ELEMENTS
+========================================================= */
+
+function cacheDOMElements() {
+
+    loginScreen =
+        document.getElementById(
+            "loginScreen"
+        );
+
+    chapterScreen =
+        document.getElementById(
+            "chapterScreen"
+        );
+
+    testScreen =
+        document.getElementById(
+            "testScreen"
+        );
+
+    resultScreen =
+        document.getElementById(
+            "resultScreen"
+        );
+
+    historyScreen =
+        document.getElementById(
+            "historyScreen"
+        );
+
+
+    loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+    loginMessage =
+        document.getElementById(
+            "loginMessage"
+        );
+
+    loginButton =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    usernameInput =
+        document.getElementById(
+            "username"
+        );
+
+    passwordInput =
+        document.getElementById(
+            "password"
+        );
+
+
+    welcomeUsername =
+        document.getElementById(
+            "welcomeUsername"
+        );
+
+    studentClassBadge =
+        document.getElementById(
+            "studentClassBadge"
+        );
+
+    chapterGrid =
+        document.getElementById(
+            "chapterGrid"
+        );
+
+    logoutButton =
+        document.getElementById(
+            "logoutButton"
+        );
+
+
+    backToChapters =
+        document.getElementById(
+            "backToChapters"
+        );
+
+    testChapter =
+        document.getElementById(
+            "testChapter"
+        );
+
+    partTitle =
+        document.getElementById(
+            "partTitle"
+        );
+
+    questionCounter =
+        document.getElementById(
+            "questionCounter"
+        );
+
+    progressBar =
+        document.getElementById(
+            "progressBar"
+        );
+
+    questionType =
+        document.getElementById(
+            "questionType"
+        );
+
+    questionText =
+        document.getElementById(
+            "questionText"
+        );
+
+    selectedWords =
+        document.getElementById(
+            "selectedWords"
+        );
+
+    wordBank =
+        document.getElementById(
+            "wordBank"
+        );
+
+    clearAnswer =
+        document.getElementById(
+            "clearAnswer"
+        );
+
+    previousButton =
+        document.getElementById(
+            "previousButton"
+        );
+
+    nextButton =
+        document.getElementById(
+            "nextButton"
+        );
+
+
+    partTabs =
+        document.querySelectorAll(
+            ".part-tab"
+        );
+
+
+    resultChapter =
+        document.getElementById(
+            "resultChapter"
+        );
+
+    part1Score =
+        document.getElementById(
+            "part1Score"
+        );
+
+    part2Score =
+        document.getElementById(
+            "part2Score"
+        );
+
+    part3Score =
+        document.getElementById(
+            "part3Score"
+        );
+
+    totalScore =
+        document.getElementById(
+            "totalScore"
+        );
+
+    percentageScore =
+        document.getElementById(
+            "percentageScore"
+        );
+
+    saveStatus =
+        document.getElementById(
+            "saveStatus"
+        );
+
+    backToChapterButton =
+        document.getElementById(
+            "backToChapterButton"
+        );
+
+
+    scoreHistoryButton =
+        document.getElementById(
+            "scoreHistoryButton"
+        );
+
+    chapterHistoryButton =
+        document.getElementById(
+            "chapterHistoryButton"
+        );
+
+    backFromHistory =
+        document.getElementById(
+            "backFromHistory"
+        );
+
+    historyStudent =
+        document.getElementById(
+            "historyStudent"
+        );
+
+    historyLoading =
+        document.getElementById(
+            "historyLoading"
+        );
+
+    historyEmpty =
+        document.getElementById(
+            "historyEmpty"
+        );
+
+    historyList =
+        document.getElementById(
+            "historyList"
+        );
 
 }
 
@@ -365,28 +382,70 @@ function initializeApp() {
 
 function setupEventListeners() {
 
-    loginForm.addEventListener(
-        "submit",
-        handleLogin
-    );
+    if (loginForm) {
+
+        loginForm.addEventListener(
+            "submit",
+            handleLogin
+        );
+
+    }
 
 
-    clearAnswer.addEventListener(
-        "click",
-        handleClearAnswer
-    );
+    if (logoutButton) {
+
+        logoutButton.addEventListener(
+            "click",
+            handleLogout
+        );
+
+    }
 
 
-    nextButton.addEventListener(
-        "click",
-        handleNext
-    );
+    if (backToChapters) {
+
+        backToChapters.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
 
 
-    previousButton.addEventListener(
-        "click",
-        handlePrevious
-    );
+    if (clearAnswer) {
+
+        clearAnswer.addEventListener(
+            "click",
+            clearCurrentAnswer
+        );
+
+    }
+
+
+    if (previousButton) {
+
+        previousButton.addEventListener(
+            "click",
+            goToPreviousQuestion
+        );
+
+    }
+
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            goToNextQuestion
+        );
+
+    }
 
 
     partTabs.forEach(
@@ -396,25 +455,12 @@ function setupEventListeners() {
                 "click",
                 () => {
 
-                    const requestedPart =
+                    const part =
                         tab.dataset.part;
 
-
-                    if (
-                        [
-                            "part1",
-                            "part2",
-                            "part3"
-                        ].includes(
-                            requestedPart
-                        )
-                    ) {
-
-                        switchPart(
-                            requestedPart
-                        );
-
-                    }
+                    switchPart(
+                        part
+                    );
 
                 }
             );
@@ -423,74 +469,118 @@ function setupEventListeners() {
     );
 
 
-    backToChapters.addEventListener(
-        "click",
-        () => {
+    if (backToChapterButton) {
 
-            showScreen(
-                chapterScreen
-            );
+        backToChapterButton.addEventListener(
+            "click",
+            () => {
 
-        }
-    );
-
-
-    backToChapterButton.addEventListener(
-        "click",
-        () => {
-
-            showScreen(
-                chapterScreen
-            );
-
-        }
-    );
-
-
-    logoutButton.addEventListener(
-        "click",
-        handleLogout
-    );
-
-}
-
-
-/* =========================================================
-   SCREEN MANAGEMENT
-========================================================= */
-
-function showScreen(screen) {
-
-    if (!screen) {
-        return;
-    }
-
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(
-            item => {
-
-                item.classList.remove(
-                    "active"
+                showScreen(
+                    chapterScreen
                 );
 
             }
         );
 
+    }
 
-    screen.classList.add(
-        "active"
+
+    if (scoreHistoryButton) {
+
+        scoreHistoryButton.addEventListener(
+            "click",
+            showScoreHistory
+        );
+
+    }
+
+
+    if (chapterHistoryButton) {
+
+        chapterHistoryButton.addEventListener(
+            "click",
+            showScoreHistory
+        );
+
+    }
+
+
+    if (backFromHistory) {
+
+        backFromHistory.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOW SCREEN
+========================================================= */
+
+function showScreen(
+    screen
+) {
+
+    const screens = [
+        loginScreen,
+        chapterScreen,
+        testScreen,
+        resultScreen,
+        historyScreen
+    ];
+
+
+    screens.forEach(
+        currentScreen => {
+
+            if (
+                currentScreen
+            ) {
+
+                currentScreen.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+
+    if (screen) {
+
+        screen.classList.add(
+            "active"
+        );
+
+    }
+
+
+    window.scrollTo(
+        0,
+        0
     );
 
 }
 
 
 /* =========================================================
-   CLASS HELPERS
+   CLASS NORMALIZATION
 ========================================================= */
 
-function normalizeStudentClass(value) {
+function normalizeStudentClass(
+    value
+) {
 
     if (
         value === null ||
@@ -502,96 +592,52 @@ function normalizeStudentClass(value) {
     }
 
 
-    const rawValue =
-        String(value).trim();
+    const raw =
+        String(
+            value
+        ).trim();
 
 
-    if (!rawValue) {
+    if (!raw) {
+
         return "";
+
     }
 
 
-    /*
-     * Allows:
-     *
-     * Beginner
-     * beginner
-     * BEGINNER
-     *
-     * to resolve to:
-     *
-     * Beginner
-     */
-
-    const matchingClass =
-        Object.keys(CLASS_CONFIG)
-            .find(
-                className =>
-                    className.toLowerCase() ===
-                    rawValue.toLowerCase()
-            );
-
-
-    return (
-        matchingClass ||
-        rawValue
-    );
-
-}
-
-
-function getCurrentClassConfig() {
-
-    const studentClass =
-        normalizeStudentClass(
-            state.studentClass
+    const match =
+        Object.keys(
+            CONFIG.CLASS_CONFIG
+        ).find(
+            className =>
+                className.toLowerCase() ===
+                raw.toLowerCase()
         );
 
 
-    if (!studentClass) {
-        return null;
-    }
-
-
-    return (
-        CLASS_CONFIG[
-            studentClass
-        ] ||
-        null
-    );
+    return match || raw;
 
 }
 
 
 /* =========================================================
-   SAFE HTML
+   GET CLASS CONFIG
 ========================================================= */
 
-function escapeHTML(value) {
+function getClassConfig() {
 
-    return String(
-        value ?? ""
-    )
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+    if (
+        !state.studentClass
+    ) {
+
+        return null;
+
+    }
+
+
+    return CONFIG.CLASS_CONFIG[
+        state.studentClass
+    ] || null;
 
 }
 
@@ -602,51 +648,28 @@ function escapeHTML(value) {
 
 function generateChapterButtons() {
 
-    chapterGrid.innerHTML =
-        "";
+    if (!chapterGrid) {
+
+        return;
+
+    }
 
 
-    const studentClass =
-        normalizeStudentClass(
-            state.studentClass
-        );
-
-
-    state.studentClass =
-        studentClass;
+    chapterGrid.innerHTML = "";
 
 
     const classConfig =
-        CLASS_CONFIG[
-            studentClass
-        ];
+        getClassConfig();
 
 
     if (!classConfig) {
 
         chapterGrid.innerHTML = `
-            <div class="empty-state">
-                <h3>Course Not Available</h3>
-
-                <p>
-                    Your class
-                    <strong>
-                        ${escapeHTML(
-                            studentClass ||
-                            "Unknown"
-                        )}
-                    </strong>
-                    has not been configured yet.
-                </p>
+            <div class="history-error">
+                No chapter configuration found
+                for your class.
             </div>
         `;
-
-
-        console.error(
-            "No course configuration found for:",
-            studentClass
-        );
-
 
         return;
 
@@ -659,21 +682,21 @@ function generateChapterButtons() {
         i++
     ) {
 
-        const card =
+        const button =
             document.createElement(
                 "button"
             );
 
 
-        card.type =
+        button.type =
             "button";
 
 
-        card.className =
+        button.className =
             "chapter-card";
 
 
-        card.innerHTML = `
+        button.innerHTML = `
             <div class="chapter-number">
                 CHAPTER ${i}
             </div>
@@ -684,21 +707,26 @@ function generateChapterButtons() {
 
             <p>
                 ${escapeHTML(
-                    studentClass
-                )}
-                Chinese Test
+                    state.studentClass
+                )} Chinese Test
             </p>
         `;
 
 
-        card.addEventListener(
+        button.addEventListener(
             "click",
-            () => loadChapter(i)
+            () => {
+
+                loadChapter(
+                    i
+                );
+
+            }
         );
 
 
         chapterGrid.appendChild(
-            card
+            button
         );
 
     }
@@ -710,26 +738,35 @@ function generateChapterButtons() {
    LOGIN
 ========================================================= */
 
-async function handleLogin(event) {
+async function handleLogin(
+    event
+) {
 
     event.preventDefault();
 
 
     const username =
-        usernameInput.value.trim();
+        String(
+            usernameInput?.value ||
+            ""
+        ).trim();
 
 
     const password =
-        passwordInput.value;
+        String(
+            passwordInput?.value ||
+            ""
+        );
 
 
-    if (
-        !username ||
-        !password
-    ) {
+    clearLoginMessage();
 
-        showLoginError(
-            "Please enter username and password."
+
+    if (!username) {
+
+        showLoginMessage(
+            "Please enter your username.",
+            "error"
         );
 
         return;
@@ -737,20 +774,21 @@ async function handleLogin(event) {
     }
 
 
-    loginButton.disabled =
-        true;
+    if (!password) {
+
+        showLoginMessage(
+            "Please enter your password.",
+            "error"
+        );
+
+        return;
+
+    }
 
 
-    loginButton.textContent =
-        "Logging in...";
-
-
-    loginMessage.textContent =
-        "";
-
-
-    loginMessage.className =
-        "message";
+    setLoginLoading(
+        true
+    );
 
 
     try {
@@ -765,99 +803,124 @@ async function handleLogin(event) {
             );
 
 
+        console.log(
+            "Login API Response:",
+            result
+        );
+
+
         if (
-            result &&
-            result.success === true
+            !result ||
+            !result.success
         ) {
 
-            state.username =
-                result.username ||
-                username;
+            showLoginMessage(
+                result?.message ||
+                "Login failed.",
+                "error"
+            );
+
+            return;
+
+        }
 
 
-            /*
-             * IMPORTANT:
-             *
-             * Code.gs will later return:
-             *
-             * {
-             *   success: true,
-             *   username: "...",
-             *   class: "Beginner"
-             * }
-             *
-             * We also accept Class/studentClass
-             * to make the frontend flexible.
-             */
-
-            state.studentClass =
-                normalizeStudentClass(
-                    result.class ||
-                    result.Class ||
-                    result.studentClass ||
-                    ""
-                );
+        const studentClass =
+            normalizeStudentClass(
+                result.class ||
+                result.Class ||
+                result.studentClass
+            );
 
 
-            if (
-                !state.studentClass
-            ) {
+        if (!studentClass) {
 
-                showLoginError(
-                    "Login succeeded, but your class was not provided."
-                );
+            showLoginMessage(
+                "Your account does not have a class assigned.",
+                "error"
+            );
 
-                return;
+            return;
 
-            }
-
-
-            if (
-                !CLASS_CONFIG[
-                    state.studentClass
-                ]
-            ) {
-
-                showLoginError(
-                    `Your class "${state.studentClass}" has not been configured yet.`
-                );
+        }
 
 
-                console.error(
-                    "Unknown student class:",
-                    state.studentClass
-                );
+        if (
+            !CONFIG.CLASS_CONFIG[
+                studentClass
+            ]
+        ) {
+
+            showLoginMessage(
+                `Class "${studentClass}" is not configured yet.`,
+                "error"
+            );
+
+            return;
+
+        }
 
 
-                return;
+        /*
+         * Save login state.
+         */
 
-            }
+        state.username =
+            result.username ||
+            username;
 
+        state.studentClass =
+            studentClass;
+
+
+        /*
+         * Update UI.
+         */
+
+        if (welcomeUsername) {
 
             welcomeUsername.textContent =
                 state.username;
 
-
-            /*
-             * Generate the correct number of
-             * chapters for the student's class.
-             */
-
-            generateChapterButtons();
+        }
 
 
-            showScreen(
-                chapterScreen
-            );
+        if (studentClassBadge) {
 
-        } else {
-
-            showLoginError(
-                result?.message ||
-                "Invalid username or password."
-            );
+            studentClassBadge.textContent =
+                state.studentClass;
 
         }
+
+
+        /*
+         * Generate chapters
+         * only after class is known.
+         */
+
+        generateChapterButtons();
+
+
+        /*
+         * Clear password field.
+         */
+
+        if (passwordInput) {
+
+            passwordInput.value =
+                "";
+
+        }
+
+
+        /*
+         * Show chapter screen.
+         */
+
+        showScreen(
+            chapterScreen
+        );
+
 
     } catch (error) {
 
@@ -867,18 +930,18 @@ async function handleLogin(event) {
         );
 
 
-        showLoginError(
-            "Unable to connect to the server."
+        showLoginMessage(
+            error.message ||
+            "Unable to connect to the server.",
+            "error"
         );
+
 
     } finally {
 
-        loginButton.disabled =
-            false;
-
-
-        loginButton.textContent =
-            "Login";
+        setLoginLoading(
+            false
+        );
 
     }
 
@@ -886,23 +949,93 @@ async function handleLogin(event) {
 
 
 /* =========================================================
-   LOGIN ERROR
+   LOGIN MESSAGE
 ========================================================= */
 
-function showLoginError(message) {
+function showLoginMessage(
+    message,
+    type = "error"
+) {
+
+    if (!loginMessage) {
+
+        return;
+
+    }
+
 
     loginMessage.textContent =
         message;
 
 
-    loginMessage.className =
-        "message error";
+    loginMessage.style.display =
+        "block";
+
+
+    if (
+        type === "success"
+    ) {
+
+        loginMessage.style.color =
+            "#238636";
+
+    } else {
+
+        loginMessage.style.color =
+            "#d93636";
+
+    }
+
+}
+
+
+function clearLoginMessage() {
+
+    if (!loginMessage) {
+
+        return;
+
+    }
+
+
+    loginMessage.textContent =
+        "";
+
+    loginMessage.style.display =
+        "none";
 
 }
 
 
 /* =========================================================
-   GOOGLE APPS SCRIPT API
+   LOGIN BUTTON LOADING
+========================================================= */
+
+function setLoginLoading(
+    loading
+) {
+
+    if (!loginButton) {
+
+        return;
+
+    }
+
+
+    loginButton.disabled =
+        loading;
+
+
+    loginButton.textContent =
+        loading
+            ? "Logging in..."
+            : "Login";
+
+}
+
+
+/* =========================================================
+   API CALL
 ========================================================= */
 
 async function callAPI(
@@ -910,103 +1043,34 @@ async function callAPI(
     data = {}
 ) {
 
-    /*
-     * Development mode.
-     *
-     * Only used when API_URL is not configured.
-     */
-
     if (
-        !CONFIG.API_URL ||
-        CONFIG.API_URL ===
-        "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+        !CONFIG.API_URL
     ) {
 
-        if (
-            action === "login"
-        ) {
-
-            return {
-
-                success: true,
-
-                username:
-                    data.username,
-
-                class:
-                    data.class ||
-                    "Beginner"
-
-            };
-
-        }
-
-
-        if (
-            action === "saveScore"
-        ) {
-
-            console.log(
-                "Development mode - score:",
-                data
-            );
-
-
-            return {
-
-                success: true,
-
-                message:
-                    "Score saved in development mode."
-
-            };
-
-        }
-
-
-        return {
-            success: true
-        };
+        throw new Error(
+            "API URL is not configured."
+        );
 
     }
 
-
-    /*
-     * CURRENT API METHOD:
-     * GET
-     *
-     * Keep this because your existing
-     * Google Apps Script API is using GET.
-     */
 
     const params =
         new URLSearchParams();
 
 
-    params.append(
+    params.set(
         "action",
         action
     );
 
 
-    Object.keys(data).forEach(
+    Object.keys(
+        data
+    ).forEach(
         key => {
 
-            let value =
+            const value =
                 data[key];
-
-
-            if (
-                value !== null &&
-                typeof value === "object"
-            ) {
-
-                value =
-                    JSON.stringify(
-                        value
-                    );
-
-            }
 
 
             if (
@@ -1014,7 +1078,7 @@ async function callAPI(
                 value !== null
             ) {
 
-                params.append(
+                params.set(
                     key,
                     String(value)
                 );
@@ -1029,58 +1093,55 @@ async function callAPI(
         `${CONFIG.API_URL}?${params.toString()}`;
 
 
-    console.log(
-        "API Request:",
-        url
-    );
+    const response =
+        await fetch(
+            url,
+            {
+                method: "GET",
+                cache: "no-store"
+            }
+        );
+
+
+    if (!response.ok) {
+
+        throw new Error(
+            `Server returned ${response.status}.`
+        );
+
+    }
+
+
+    const text =
+        await response.text();
+
+
+    let result;
 
 
     try {
 
-        const response =
-            await fetch(
-                url,
-                {
-                    method: "GET",
-                    cache: "no-store"
-                }
+        result =
+            JSON.parse(
+                text
             );
-
-
-        if (
-            !response.ok
-        ) {
-
-            throw new Error(
-                `API Error: ${response.status}`
-            );
-
-        }
-
-
-        const result =
-            await response.json();
-
-
-        console.log(
-            "API Response:",
-            result
-        );
-
-
-        return result;
 
     } catch (error) {
 
         console.error(
-            "API Request Failed:",
-            error
+            "Invalid API response:",
+            text
         );
 
 
-        throw error;
+        throw new Error(
+            "The server returned an invalid response."
+        );
 
     }
+
+
+    return result;
 
 }
 
@@ -1093,51 +1154,92 @@ async function loadChapter(
     chapterNumber
 ) {
 
-    const studentClass =
-        normalizeStudentClass(
-            state.studentClass
-        );
-
-
     const classConfig =
-        CLASS_CONFIG[
-            studentClass
-        ];
+        getClassConfig();
 
 
     if (!classConfig) {
 
         alert(
-            "Your class is missing or has not been configured yet."
+            "Your class has not been configured."
         );
-
 
         return;
 
     }
+
+
+    const chapter =
+        Number(
+            chapterNumber
+        );
 
 
     if (
         !Number.isInteger(
-            chapterNumber
+            chapter
         ) ||
-        chapterNumber < 1 ||
-        chapterNumber >
-            classConfig.totalChapters
+        chapter < 1 ||
+        chapter > classConfig.totalChapters
     ) {
 
         alert(
-            `Chapter ${chapterNumber} is not available for ${studentClass}.`
+            "Invalid chapter."
         );
-
 
         return;
 
     }
 
 
+    state.currentChapter =
+        chapter;
+
+
+    state.currentPart =
+        "part1";
+
+
+    state.currentQuestionIndex =
+        0;
+
+
+    state.answers = {
+        part1: {},
+        part2: {},
+        part3: {}
+    };
+
+
+    state.scores = {
+        part1: 0,
+        part2: 0,
+        part3: 0,
+        total: 0
+    };
+
+
+    state.randomOrders = {
+        part1: {},
+        part2: {},
+        part3: {}
+    };
+
+
+    state.testSaved =
+        false;
+
+
+    showScreen(
+        testScreen
+    );
+
+
+    showTestLoading();
+
+
     const fileName =
-        `Chapter${chapterNumber}.json`;
+        `Chapter${chapter}.json`;
 
 
     const chapterPath =
@@ -1145,12 +1247,6 @@ async function loadChapter(
 
 
     try {
-
-        console.log(
-            "Loading chapter:",
-            chapterPath
-        );
-
 
         const response =
             await fetch(
@@ -1161,12 +1257,10 @@ async function loadChapter(
             );
 
 
-        if (
-            !response.ok
-        ) {
+        if (!response.ok) {
 
             throw new Error(
-                `Could not load ${chapterPath} (${response.status})`
+                `Could not load ${fileName}.`
             );
 
         }
@@ -1176,117 +1270,29 @@ async function loadChapter(
             await response.json();
 
 
-        if (
-            !data ||
-            typeof data !== "object"
-        ) {
-
-            throw new Error(
-                `${chapterPath} does not contain valid JSON.`
-            );
-
-        }
+        validateChapterData(
+            data
+        );
 
 
-        const chapter =
+        state.chapterData =
             data.chapter ||
             data;
 
 
         /*
-         * Every JSON must contain:
-         *
-         * part1
-         * part2
-         * part3
+         * Update chapter title.
          */
 
-        if (
-            !chapter.part1 ||
-            !chapter.part2 ||
-            !chapter.part3
-        ) {
+        if (testChapter) {
 
-            throw new Error(
-                `${chapterPath} must contain part1, part2 and part3.`
-            );
+            testChapter.textContent =
+                `Chapter ${chapter}`;
 
         }
 
 
-        state.currentChapter =
-            chapterNumber;
-
-
-        state.chapterData =
-            chapter;
-
-
-        /*
-         * Reset test.
-         */
-
-        state.currentPart =
-            "part1";
-
-
-        state.currentQuestionIndex =
-            0;
-
-
-        /*
-         * Reset answers.
-         */
-
-        state.answers = {
-
-            part1: {},
-            part2: {},
-            part3: {}
-
-        };
-
-
-        /*
-         * Reset scores.
-         */
-
-        state.scores = {
-
-            part1: 0,
-            part2: 0,
-            part3: 0
-
-        };
-
-
-        /*
-         * Create new random orders
-         * for this chapter.
-         */
-
-        state.randomOrders = {
-
-            part1: {},
-            part2: {},
-            part3: {}
-
-        };
-
-
-        testChapter.textContent =
-            `Chapter ${chapterNumber}`;
-
-
-        updatePartTabs();
-
-
-        showScreen(
-            testScreen
-        );
-
-
-        renderQuestion();
+        renderCurrentQuestion();
 
 
     } catch (error) {
@@ -1297,10 +1303,8 @@ async function loadChapter(
         );
 
 
-        alert(
-            `Unable to load Chapter ${chapterNumber}.\n\n` +
-            `Class: ${studentClass}\n` +
-            `Expected file: ${chapterPath}`
+        showTestError(
+            `Unable to load Chapter ${chapter}. Please check that ${chapterPath} exists.`
         );
 
     }
@@ -1309,132 +1313,308 @@ async function loadChapter(
 
 
 /* =========================================================
-   GET CURRENT QUESTIONS
+   VALIDATE CHAPTER DATA
 ========================================================= */
 
-function getCurrentQuestions() {
+function validateChapterData(
+    data
+) {
 
-    if (
-        !state.chapterData
-    ) {
+    const chapter =
+        data?.chapter ||
+        data;
 
-        return [];
+
+    if (!chapter) {
+
+        throw new Error(
+            "Chapter data is empty."
+        );
 
     }
 
 
-    return (
-        state.chapterData[
-            state.currentPart
-        ]?.questions ||
-        []
+    const requiredParts = [
+        "part1",
+        "part2",
+        "part3"
+    ];
+
+
+    requiredParts.forEach(
+        part => {
+
+            if (
+                !chapter[part]
+            ) {
+
+                throw new Error(
+                    `Chapter is missing ${part}.`
+                );
+
+            }
+
+
+            if (
+                !Array.isArray(
+                    chapter[part].questions
+                )
+            ) {
+
+                throw new Error(
+                    `${part} does not contain a questions array.`
+                );
+
+            }
+
+        }
     );
 
 }
 
 
 /* =========================================================
-   RENDER QUESTION
+   TEST LOADING STATE
 ========================================================= */
 
-function renderQuestion() {
+function showTestLoading() {
 
-    const questions =
-        getCurrentQuestions();
+    if (partTitle) {
+
+        partTitle.textContent =
+            "Loading...";
+
+    }
 
 
-    if (
-        !questions.length
-    ) {
-
-        questionText.textContent =
-            "No questions available.";
-
+    if (questionCounter) {
 
         questionCounter.textContent =
-            "0 / 0";
+            "Please wait";
+
+    }
 
 
-        progressBar.style.width =
-            "0%";
+    if (questionText) {
 
+        questionText.textContent =
+            "Loading chapter...";
+
+    }
+
+
+    if (selectedWords) {
 
         selectedWords.innerHTML =
             "";
 
+    }
+
+
+    if (wordBank) {
 
         wordBank.innerHTML =
             "";
 
-
-        previousButton.disabled =
-            true;
+    }
 
 
-        nextButton.disabled =
-            true;
+    if (progressBar) {
 
+        progressBar.style.width =
+            "0%";
+
+    }
+
+}
+
+
+/* =========================================================
+   TEST ERROR
+========================================================= */
+
+function showTestError(
+    message
+) {
+
+    if (partTitle) {
+
+        partTitle.textContent =
+            "Error";
+
+    }
+
+
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            "";
+
+    }
+
+
+    if (questionText) {
+
+        questionText.textContent =
+            message;
+
+    }
+
+
+    if (selectedWords) {
+
+        selectedWords.innerHTML =
+            "";
+
+    }
+
+
+    if (wordBank) {
+
+        wordBank.innerHTML =
+            "";
+
+    }
+
+}
+
+
+/* =========================================================
+   GET CURRENT PART
+========================================================= */
+
+function getCurrentPartData() {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return null;
+
+    }
+
+
+    return state.chapterData[
+        state.currentPart
+    ] || null;
+
+}
+
+
+/* =========================================================
+   GET CURRENT QUESTION
+========================================================= */
+
+function getCurrentQuestion() {
+
+    const part =
+        getCurrentPartData();
+
+
+    if (!part) {
+
+        return null;
+
+    }
+
+
+    return (
+        part.questions?.[
+            state.currentQuestionIndex
+        ] || null
+    );
+
+}
+
+
+/* =========================================================
+   RENDER CURRENT QUESTION
+========================================================= */
+
+function renderCurrentQuestion() {
+
+    const part =
+        getCurrentPartData();
+
+
+    const question =
+        getCurrentQuestion();
+
+
+    if (
+        !part ||
+        !question
+    ) {
 
         return;
 
     }
 
 
+    const questions =
+        part.questions;
+
+
+    const totalQuestions =
+        questions.length;
+
+
+    const currentNumber =
+        state.currentQuestionIndex + 1;
+
+
     /*
-     * Protect against invalid indexes.
+     * Part title.
      */
 
-    if (
-        state.currentQuestionIndex < 0
-    ) {
+    if (partTitle) {
 
-        state.currentQuestionIndex =
-            0;
+        partTitle.textContent =
+            part.title ||
+            getPartDisplayName(
+                state.currentPart
+            );
 
     }
 
 
-    if (
-        state.currentQuestionIndex >=
-        questions.length
-    ) {
+    /*
+     * Question counter.
+     */
 
-        state.currentQuestionIndex =
-            questions.length - 1;
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            `Question ${currentNumber} / ${totalQuestions}`;
 
     }
 
 
-    const question =
-        questions[
-            state.currentQuestionIndex
-        ];
+    /*
+     * Question type.
+     */
+
+    if (questionType) {
+
+        questionType.textContent =
+            getQuestionTypeLabel(
+                state.currentPart
+            );
+
+    }
 
 
     /*
-     * Header.
+     * Question text.
      */
 
-    testChapter.textContent =
-        `Chapter ${state.currentChapter}`;
+    if (questionText) {
 
+        questionText.textContent =
+            question.question ||
+            "";
 
-    partTitle.textContent =
-        state.chapterData[
-            state.currentPart
-        ]?.title ||
-        "Test";
-
-
-    questionType.textContent =
-        state.chapterData[
-            state.currentPart
-        ]?.title ||
-        "Question";
-
-
-    questionCounter.textContent =
-        `${state.currentQuestionIndex + 1} / ${questions.length}`;
+    }
 
 
     /*
@@ -1442,39 +1622,38 @@ function renderQuestion() {
      */
 
     const progress =
-        (
-            (
-                state.currentQuestionIndex + 1
-            )
-            /
-            questions.length
-        ) * 100;
+        totalQuestions > 0
+            ? (
+                currentNumber /
+                totalQuestions
+            ) * 100
+            : 0;
 
 
-    progressBar.style.width =
-        `${progress}%`;
+    if (progressBar) {
+
+        progressBar.style.width =
+            `${progress}%`;
+
+    }
 
 
     /*
-     * Question.
+     * Part tabs.
      */
 
-    questionText.textContent =
-        question.question ||
-        "Arrange the words correctly.";
+    updatePartTabs();
 
 
     /*
-     * Answer area.
+     * Render answer.
      */
 
-    renderSelectedWords(
-        question
-    );
+    renderSelectedWords();
 
 
     /*
-     * Word bank.
+     * Render word bank.
      */
 
     renderWordBank(
@@ -1483,166 +1662,229 @@ function renderQuestion() {
 
 
     /*
-     * Previous button.
+     * Navigation buttons.
      */
 
-    previousButton.disabled =
-        state.currentPart === "part1" &&
-        state.currentQuestionIndex === 0;
-
-
-    /*
-     * Next button.
-     */
-
-    nextButton.disabled =
-        false;
-
-
-    if (
-        state.currentQuestionIndex ===
-        questions.length - 1
-    ) {
-
-        if (
-            state.currentPart ===
-            "part3"
-        ) {
-
-            nextButton.textContent =
-                "Finish Test →";
-
-        } else {
-
-            nextButton.textContent =
-                "Next Part →";
-
-        }
-
-    } else {
-
-        nextButton.textContent =
-            "Next →";
-
-    }
+    updateNavigationButtons();
 
 }
 
 
 /* =========================================================
-   GET CURRENT ANSWER
+   PART DISPLAY NAME
 ========================================================= */
 
-function getCurrentAnswer() {
+function getPartDisplayName(
+    part
+) {
 
-    const part =
-        state.currentPart;
+    const names = {
 
+        part1: "Translation",
 
-    const index =
-        state.currentQuestionIndex;
+        part2: "Answer the Question",
+
+        part3: "Scramble"
+
+    };
 
 
     return (
-        state.answers[
-            part
-        ][index] ||
-        []
+        names[part] ||
+        part
     );
 
 }
 
 
 /* =========================================================
-   RENDER SELECTED WORDS
+   QUESTION TYPE LABEL
 ========================================================= */
 
-function renderSelectedWords(
-    question
+function getQuestionTypeLabel(
+    part
 ) {
 
-    selectedWords.innerHTML =
-        "";
+    const labels = {
+
+        part1: "TRANSLATION",
+
+        part2: "QUESTION",
+
+        part3: "SCRAMBLE"
+
+    };
 
 
-    const answer =
-        getCurrentAnswer();
+    return (
+        labels[part] ||
+        ""
+    );
 
+}
+
+
+/* =========================================================
+   UPDATE PART TABS
+========================================================= */
+
+function updatePartTabs() {
+
+    partTabs.forEach(
+        tab => {
+
+            if (
+                tab.dataset.part ===
+                state.currentPart
+            ) {
+
+                tab.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                tab.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SWITCH PART
+========================================================= */
+
+function switchPart(
+    part
+) {
 
     if (
-        !answer.length
+        !state.chapterData
     ) {
-
-        selectedWords.innerHTML = `
-            <span class="empty-answer">
-                Tap the words below
-            </span>
-        `;
-
 
         return;
 
     }
 
 
-    answer.forEach(
-        (
-            word,
-            index
-        ) => {
+    if (
+        ![
+            "part1",
+            "part2",
+            "part3"
+        ].includes(
+            part
+        )
+    ) {
 
-            const chip =
-                document.createElement(
-                    "button"
-                );
+        return;
 
-
-            chip.type =
-                "button";
-
-
-            chip.className =
-                "word-chip";
+    }
 
 
-            chip.textContent =
-                word;
+    const partData =
+        state.chapterData[
+            part
+        ];
 
 
-            chip.addEventListener(
-                "click",
-                () => {
+    if (
+        !partData ||
+        !Array.isArray(
+            partData.questions
+        )
+    ) {
 
-                    removeWord(
-                        index
-                    );
+        return;
 
-                }
-            );
+    }
 
 
-            selectedWords.appendChild(
-                chip
-            );
+    state.currentPart =
+        part;
 
-        }
+
+    state.currentQuestionIndex =
+        0;
+
+
+    renderCurrentQuestion();
+
+
+    window.scrollTo(
+        0,
+        0
     );
 
 }
 
 
 /* =========================================================
-   RENDER WORD BANK
-   RANDOMIZED DISPLAY
+   WORD RANDOMIZATION
 ========================================================= */
 
-function renderWordBank(
-    question
+function shuffleWords(
+    words
 ) {
 
-    wordBank.innerHTML =
-        "";
+    const items =
+        words.map(
+            (
+                word,
+                originalIndex
+            ) => ({
+                word,
+                originalIndex
+            })
+        );
 
+
+    /*
+     * Fisher-Yates shuffle.
+     */
+
+    for (
+        let i = items.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            items[i],
+            items[j]
+        ] = [
+            items[j],
+            items[i]
+        ];
+
+    }
+
+
+    return items;
+
+}
+
+
+/* =========================================================
+   GET RANDOM ORDER
+========================================================= */
+
+function getRandomOrder(
+    question
+) {
 
     const part =
         state.currentPart;
@@ -1652,78 +1894,73 @@ function renderWordBank(
         state.currentQuestionIndex;
 
 
-    const answer =
-        getCurrentAnswer();
+    if (
+        !state.randomOrders[part]
+    ) {
 
+        state.randomOrders[part] =
+            {};
 
-    const words =
-        Array.isArray(
-            question.words
-        )
-            ? question.words
-            : [];
+    }
 
 
     if (
-        !words.length
+        !state.randomOrders[
+            part
+        ][questionIndex]
     ) {
 
-        wordBank.innerHTML = `
-            <span class="empty-answer">
-                No word choices available.
-            </span>
-        `;
+        state.randomOrders[
+            part
+        ][questionIndex] =
+            shuffleWords(
+                question.words || []
+            );
 
+    }
+
+
+    return state.randomOrders[
+        part
+    ][questionIndex];
+
+}
+
+
+/* =========================================================
+   RENDER WORD BANK
+========================================================= */
+
+function renderWordBank(
+    question
+) {
+
+    if (!wordBank) {
 
         return;
 
     }
 
 
-    /*
-     * Randomize only once for each question.
-     */
-
-    if (
-        !state.randomOrders[
-            part
-        ][
-            questionIndex
-        ]
-    ) {
-
-        state.randomOrders[
-            part
-        ][
-            questionIndex
-        ] =
-            shuffleWords(
-                words
-            );
-
-    }
+    wordBank.innerHTML =
+        "";
 
 
-    const randomizedWords =
-        state.randomOrders[
-            part
-        ][
-            questionIndex
-        ];
-
-
-    /*
-     * Find selected original indexes.
-     */
-
-    const usedIndexes =
-        getUsedWordIndexes(
-            words,
-            answer
+    const order =
+        getRandomOrder(
+            question
         );
 
 
-    randomizedWords.forEach(
+    const currentAnswer =
+        state.answers[
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    order.forEach(
         item => {
 
             const button =
@@ -1744,10 +1981,22 @@ function renderWordBank(
                 item.word;
 
 
+            /*
+             * Determine whether this
+             * exact word instance has
+             * already been selected.
+             */
+
+            const selectedIndex =
+                currentAnswer.findIndex(
+                    answerItem =>
+                        answerItem.originalIndex ===
+                        item.originalIndex
+                );
+
+
             if (
-                usedIndexes.includes(
-                    item.originalIndex
-                )
+                selectedIndex !== -1
             ) {
 
                 button.classList.add(
@@ -1761,20 +2010,8 @@ function renderWordBank(
                 "click",
                 () => {
 
-                    if (
-                        usedIndexes.includes(
-                            item.originalIndex
-                        )
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    addWord(
-                        item.word,
-                        item.originalIndex
+                    addWordToAnswer(
+                        item
                     );
 
                 }
@@ -1792,150 +2029,11 @@ function renderWordBank(
 
 
 /* =========================================================
-   SHUFFLE WORDS
-========================================================= */
-
-function shuffleWords(
-    words
-) {
-
-    /*
-     * Create a new array.
-     *
-     * The original JSON array is never changed.
-     */
-
-    const shuffled =
-        words.map(
-            (
-                word,
-                index
-            ) => {
-
-                return {
-
-                    word:
-                        word,
-
-                    originalIndex:
-                        index
-
-                };
-
-            }
-        );
-
-
-    /*
-     * Fisher-Yates shuffle.
-     */
-
-    for (
-        let i = shuffled.length - 1;
-        i > 0;
-        i--
-    ) {
-
-        const randomIndex =
-            Math.floor(
-                Math.random() *
-                (i + 1)
-            );
-
-
-        const temporary =
-            shuffled[i];
-
-
-        shuffled[i] =
-            shuffled[randomIndex];
-
-
-        shuffled[randomIndex] =
-            temporary;
-
-    }
-
-
-    return shuffled;
-
-}
-
-
-/* =========================================================
-   FIND USED WORD INDEXES
-========================================================= */
-
-function getUsedWordIndexes(
-    words,
-    answer
-) {
-
-    const used = [];
-
-
-    /*
-     * Supports duplicate words.
-     */
-
-    const availableIndexes =
-        words.map(
-            (
-                word,
-                index
-            ) => index
-        );
-
-
-    answer.forEach(
-        word => {
-
-            const matchingPosition =
-                availableIndexes.findIndex(
-                    index =>
-                        words[index] ===
-                        word
-                );
-
-
-            if (
-                matchingPosition !== -1
-            ) {
-
-                const originalIndex =
-                    availableIndexes[
-                        matchingPosition
-                    ];
-
-
-                used.push(
-                    originalIndex
-                );
-
-
-                availableIndexes.splice(
-                    matchingPosition,
-                    1
-                );
-
-            }
-
-        }
-    );
-
-
-    return used;
-
-}
-
-
-/* =========================================================
    ADD WORD
 ========================================================= */
 
-function addWord(
-    word,
-    wordIndex
+function addWordToAnswer(
+    wordItem
 ) {
 
     const part =
@@ -1947,35 +2045,190 @@ function addWord(
 
 
     if (
-        !state.answers[
-            part
-        ][questionIndex]
+        !state.answers[part]
     ) {
 
-        state.answers[
-            part
-        ][questionIndex] =
-            [];
+        state.answers[part] =
+            {};
 
     }
 
 
+    if (
+        !Array.isArray(
+            state.answers[
+                part
+            ][
+                questionIndex
+            ]
+        )
+    ) {
+
+        state.answers[
+            part
+        ][
+            questionIndex
+        ] = [];
+
+    }
+
+
+    const answer =
+        state.answers[
+            part
+        ][
+            questionIndex
+        ];
+
+
     /*
-     * Keep wordIndex in the function signature
-     * for compatibility with the current logic.
+     * Do not allow the same
+     * word instance twice.
      */
 
-    void wordIndex;
+    const alreadySelected =
+        answer.some(
+            item =>
+                item.originalIndex ===
+                wordItem.originalIndex
+        );
 
 
-    state.answers[
-        part
-    ][questionIndex].push(
-        word
+    if (
+        alreadySelected
+    ) {
+
+        return;
+
+    }
+
+
+    answer.push({
+        word:
+            wordItem.word,
+
+        originalIndex:
+            wordItem.originalIndex
+    });
+
+
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
     );
 
+}
 
-    renderQuestion();
+
+/* =========================================================
+   RENDER SELECTED WORDS
+========================================================= */
+
+function renderSelectedWords() {
+
+    if (!selectedWords) {
+
+        return;
+
+    }
+
+
+    selectedWords.innerHTML =
+        "";
+
+
+    const answer =
+        state.answers[
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    if (
+        answer.length === 0
+    ) {
+
+        const placeholder =
+            document.createElement(
+                "span"
+            );
+
+
+        placeholder.textContent =
+            "Select words below to build your answer";
+
+
+        placeholder.style.color =
+            "#a0a7af";
+
+
+        placeholder.style.fontSize =
+            "13px";
+
+
+        placeholder.style.fontWeight =
+            "600";
+
+
+        selectedWords.appendChild(
+            placeholder
+        );
+
+
+        return;
+
+    }
+
+
+    answer.forEach(
+        (
+            item,
+            index
+        ) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+
+            button.className =
+                "selected-word";
+
+
+            button.textContent =
+                item.word;
+
+
+            button.title =
+                "Remove this word";
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    removeWordFromAnswer(
+                        index
+                    );
+
+                }
+            );
+
+
+            selectedWords.appendChild(
+                button
+            );
+
+        }
+    );
 
 }
 
@@ -1984,28 +2237,32 @@ function addWord(
    REMOVE WORD
 ========================================================= */
 
-function removeWord(
-    index
+function removeWordFromAnswer(
+    answerIndex
 ) {
-
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
-
 
     const answer =
         state.answers[
-            part
-        ][questionIndex];
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ];
 
 
     if (
-        !answer ||
-        index < 0 ||
-        index >= answer.length
+        !Array.isArray(
+            answer
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        answerIndex < 0 ||
+        answerIndex >= answer.length
     ) {
 
         return;
@@ -2014,53 +2271,59 @@ function removeWord(
 
 
     answer.splice(
-        index,
+        answerIndex,
         1
     );
 
 
-    renderQuestion();
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
+    );
 
 }
 
 
 /* =========================================================
-   CLEAR ANSWER
+   CLEAR CURRENT ANSWER
 ========================================================= */
 
-function handleClearAnswer() {
-
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
-
+function clearCurrentAnswer() {
 
     state.answers[
-        part
-    ][questionIndex] =
-        [];
+        state.currentPart
+    ][
+        state.currentQuestionIndex
+    ] = [];
 
 
-    renderQuestion();
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
+    );
 
 }
 
 
 /* =========================================================
-   NEXT BUTTON
+   NAVIGATION BUTTONS
 ========================================================= */
 
-function handleNext() {
+function updateNavigationButtons() {
 
-    const questions =
-        getCurrentQuestions();
+    const part =
+        getCurrentPartData();
 
 
     if (
-        !questions.length
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
     ) {
 
         return;
@@ -2068,18 +2331,133 @@ function handleNext() {
     }
 
 
-    /*
-     * Go to next question.
-     */
+    const totalQuestions =
+        part.questions.length;
+
+
+    const isFirstQuestion =
+        state.currentQuestionIndex === 0;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex ===
+        totalQuestions - 1;
+
+
+    if (previousButton) {
+
+        previousButton.disabled =
+            isFirstQuestion;
+
+    }
+
+
+    if (nextButton) {
+
+        if (
+            isLastQuestion
+        ) {
+
+            if (
+                state.currentPart ===
+                "part3"
+            ) {
+
+                nextButton.textContent =
+                    "Finish Test →";
+
+            } else {
+
+                nextButton.textContent =
+                    "Next Part →";
+
+            }
+
+        } else {
+
+            nextButton.textContent =
+                "Next →";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVIOUS QUESTION
+========================================================= */
+
+function goToPreviousQuestion() {
 
     if (
-        state.currentQuestionIndex <
-        questions.length - 1
+        state.currentQuestionIndex <= 0
     ) {
+
+        return;
+
+    }
+
+
+    state.currentQuestionIndex--;
+
+
+    renderCurrentQuestion();
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+function goToNextQuestion() {
+
+    const part =
+        getCurrentPartData();
+
+
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const totalQuestions =
+        part.questions.length;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex >=
+        totalQuestions - 1;
+
+
+    if (!isLastQuestion) {
 
         state.currentQuestionIndex++;
 
-        renderQuestion();
+
+        renderCurrentQuestion();
+
+
+        window.scrollTo(
+            0,
+            0
+        );
+
 
         return;
 
@@ -2087,7 +2465,7 @@ function handleNext() {
 
 
     /*
-     * Part 1 → Part 2
+     * Last question of current part.
      */
 
     if (
@@ -2104,10 +2482,6 @@ function handleNext() {
     }
 
 
-    /*
-     * Part 2 → Part 3
-     */
-
     if (
         state.currentPart ===
         "part2"
@@ -2123,157 +2497,10 @@ function handleNext() {
 
 
     /*
-     * Part 3 → Finish.
+     * Last question of Part 3.
      */
 
     finishTest();
-
-}
-
-
-/* =========================================================
-   PREVIOUS BUTTON
-========================================================= */
-
-function handlePrevious() {
-
-    /*
-     * Previous question.
-     */
-
-    if (
-        state.currentQuestionIndex > 0
-    ) {
-
-        state.currentQuestionIndex--;
-
-        renderQuestion();
-
-        return;
-
-    }
-
-
-    /*
-     * Part 2 → last question of Part 1.
-     */
-
-    if (
-        state.currentPart ===
-        "part2"
-    ) {
-
-        switchPart(
-            "part1",
-            true
-        );
-
-        return;
-
-    }
-
-
-    /*
-     * Part 3 → last question of Part 2.
-     */
-
-    if (
-        state.currentPart ===
-        "part3"
-    ) {
-
-        switchPart(
-            "part2",
-            true
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   SWITCH PART
-========================================================= */
-
-function switchPart(
-    part,
-    goToLastQuestion = false
-) {
-
-    if (
-        ![
-            "part1",
-            "part2",
-            "part3"
-        ].includes(part)
-    ) {
-
-        return;
-
-    }
-
-
-    if (
-        !state.chapterData
-    ) {
-
-        return;
-
-    }
-
-
-    state.currentPart =
-        part;
-
-
-    const questions =
-        getCurrentQuestions();
-
-
-    if (
-        goToLastQuestion
-    ) {
-
-        state.currentQuestionIndex =
-            Math.max(
-                questions.length - 1,
-                0
-            );
-
-    } else {
-
-        state.currentQuestionIndex =
-            0;
-
-    }
-
-
-    updatePartTabs();
-
-
-    renderQuestion();
-
-}
-
-
-/* =========================================================
-   UPDATE PART TABS
-========================================================= */
-
-function updatePartTabs() {
-
-    partTabs.forEach(
-        tab => {
-
-            tab.classList.toggle(
-                "active",
-                tab.dataset.part ===
-                state.currentPart
-            );
-
-        }
-    );
 
 }
 
@@ -2284,10 +2511,27 @@ function updatePartTabs() {
 
 async function finishTest() {
 
-    calculateScores();
+    /*
+     * Prevent double submission.
+     */
+
+    if (
+        state.testSaved
+    ) {
+
+        showScreen(
+            resultScreen
+        );
+
+        return;
+
+    }
 
 
-    displayResults();
+    calculateAllScores();
+
+
+    renderResults();
 
 
     showScreen(
@@ -2295,35 +2539,43 @@ async function finishTest() {
     );
 
 
+    /*
+     * Save score automatically.
+     */
+
     await saveScore();
 
 }
 
 
 /* =========================================================
-   CALCULATE SCORES
+   CALCULATE ALL SCORES
 ========================================================= */
 
-function calculateScores() {
+function calculateAllScores() {
 
-    state.scores = {
+    state.scores.part1 =
+        calculatePartScore(
+            "part1"
+        );
 
-        part1:
-            calculatePartScore(
-                "part1"
-            ),
 
-        part2:
-            calculatePartScore(
-                "part2"
-            ),
+    state.scores.part2 =
+        calculatePartScore(
+            "part2"
+        );
 
-        part3:
-            calculatePartScore(
-                "part3"
-            )
 
-    };
+    state.scores.part3 =
+        calculatePartScore(
+            "part3"
+        );
+
+
+    state.scores.total =
+        state.scores.part1 +
+        state.scores.part2 +
+        state.scores.part3;
 
 }
 
@@ -2333,21 +2585,31 @@ function calculateScores() {
 ========================================================= */
 
 function calculatePartScore(
-    part
+    partName
 ) {
 
-    const questions =
-        state.chapterData[
-            part
-        ]?.questions ||
-        [];
+    const part =
+        state.chapterData?.[
+            partName
+        ];
 
 
-    let score =
-        0;
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return 0;
+
+    }
 
 
-    questions.forEach(
+    let score = 0;
+
+
+    part.questions.forEach(
         (
             question,
             index
@@ -2355,31 +2617,17 @@ function calculatePartScore(
 
             const studentAnswer =
                 state.answers[
-                    part
-                ][index] ||
-                [];
-
-
-            const correctAnswers =
-                Array.isArray(
-                    question.answers
-                )
-                    ? question.answers
-                    : [];
-
-
-            const isCorrect =
-                correctAnswers.some(
-                    correctAnswer =>
-                        arraysEqual(
-                            studentAnswer,
-                            correctAnswer
-                        )
-                );
+                    partName
+                ][
+                    index
+                ] || [];
 
 
             if (
-                isCorrect
+                isAnswerCorrect(
+                    studentAnswer,
+                    question
+                )
             ) {
 
                 score++;
@@ -2396,121 +2644,286 @@ function calculatePartScore(
 
 
 /* =========================================================
-   ARRAY COMPARISON
+   ANSWER NORMALIZATION
 ========================================================= */
 
-function arraysEqual(
-    first,
-    second
+function normalizeAnswerWords(
+    answer
 ) {
 
     if (
-        !Array.isArray(first) ||
-        !Array.isArray(second)
+        !Array.isArray(
+            answer
+        )
     ) {
 
-        return false;
+        return [];
 
     }
 
 
-    if (
-        first.length !==
-        second.length
-    ) {
+    return answer.map(
+        item => {
 
-        return false;
+            if (
+                typeof item ===
+                "string"
+            ) {
 
-    }
+                return normalizeWord(
+                    item
+                );
+
+            }
 
 
-    return first.every(
-        (
-            value,
-            index
-        ) =>
-            value ===
-            second[index]
+            if (
+                item &&
+                typeof item.word ===
+                "string"
+            ) {
+
+                return normalizeWord(
+                    item.word
+                );
+
+            }
+
+
+            return "";
+
+        }
     );
 
 }
 
 
 /* =========================================================
-   DISPLAY RESULTS
+   NORMALIZE WORD
 ========================================================= */
 
-function displayResults() {
+function normalizeWord(
+    word
+) {
 
-    const p1Questions =
-        state.chapterData
-            .part1
-            ?.questions
-            ?.length ||
-        0;
+    return String(
+        word ?? ""
+    )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .toLowerCase();
 
-
-    const p2Questions =
-        state.chapterData
-            .part2
-            ?.questions
-            ?.length ||
-        0;
-
-
-    const p3Questions =
-        state.chapterData
-            .part3
-            ?.questions
-            ?.length ||
-        0;
+}
 
 
-    const totalQuestions =
-        p1Questions +
-        p2Questions +
-        p3Questions;
+/* =========================================================
+   ANSWER CORRECTNESS
+========================================================= */
+
+function isAnswerCorrect(
+    studentAnswer,
+    question
+) {
+
+    const studentWords =
+        normalizeAnswerWords(
+            studentAnswer
+        );
 
 
-    const total =
-        state.scores.part1 +
-        state.scores.part2 +
-        state.scores.part3;
+    const acceptedAnswers =
+        Array.isArray(
+            question?.answers
+        )
+            ? question.answers
+            : [];
+
+
+    /*
+     * If there is no answer key,
+     * do not automatically mark it.
+     */
+
+    if (
+        acceptedAnswers.length === 0
+    ) {
+
+        return false;
+
+    }
+
+
+    return acceptedAnswers.some(
+        accepted => {
+
+            const acceptedWords =
+                normalizeAnswerWords(
+                    accepted
+                );
+
+
+            if (
+                acceptedWords.length !==
+                studentWords.length
+            ) {
+
+                return false;
+
+            }
+
+
+            return acceptedWords.every(
+                (
+                    word,
+                    index
+                ) => {
+
+                    return (
+                        word ===
+                        studentWords[index]
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   RENDER RESULTS
+========================================================= */
+
+function renderResults() {
+
+    if (resultChapter) {
+
+        resultChapter.textContent =
+            `Chapter ${state.currentChapter}`;
+
+    }
+
+
+    if (part1Score) {
+
+        part1Score.textContent =
+            state.scores.part1;
+
+    }
+
+
+    if (part2Score) {
+
+        part2Score.textContent =
+            state.scores.part2;
+
+    }
+
+
+    if (part3Score) {
+
+        part3Score.textContent =
+            state.scores.part3;
+
+    }
+
+
+    if (totalScore) {
+
+        totalScore.textContent =
+            state.scores.total;
+
+    }
+
+
+    const maxScore =
+        getMaximumScore();
 
 
     const percentage =
-        totalQuestions > 0
+        maxScore > 0
             ? Math.round(
                 (
-                    total /
-                    totalQuestions
+                    state.scores.total /
+                    maxScore
                 ) * 100
             )
             : 0;
 
 
-    resultChapter.textContent =
-        `Chapter ${state.currentChapter}`;
+    if (percentageScore) {
+
+        percentageScore.textContent =
+            `${percentage}%`;
+
+    }
 
 
-    part1Score.textContent =
-        `${state.scores.part1} / ${p1Questions}`;
+    if (saveStatus) {
+
+        saveStatus.textContent =
+            "Saving your score...";
+
+        saveStatus.style.color =
+            "#6e767f";
+
+    }
+
+}
 
 
-    part2Score.textContent =
-        `${state.scores.part2} / ${p2Questions}`;
+/* =========================================================
+   GET MAXIMUM SCORE
+========================================================= */
+
+function getMaximumScore() {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return 0;
+
+    }
 
 
-    part3Score.textContent =
-        `${state.scores.part3} / ${p3Questions}`;
+    let maximum = 0;
 
 
-    totalScore.textContent =
-        `${total} / ${totalQuestions}`;
+    [
+        "part1",
+        "part2",
+        "part3"
+    ].forEach(
+        partName => {
+
+            const questions =
+                state.chapterData?.[
+                    partName
+                ]?.questions;
 
 
-    percentageScore.textContent =
-        `${percentage}%`;
+            if (
+                Array.isArray(
+                    questions
+                )
+            ) {
+
+                maximum +=
+                    questions.length;
+
+            }
+
+        }
+    );
+
+
+    return maximum;
 
 }
 
@@ -2521,42 +2934,52 @@ function displayResults() {
 
 async function saveScore() {
 
-    saveStatus.textContent =
-        "Saving your score...";
+    if (
+        state.testSaved
+    ) {
+
+        return;
+
+    }
 
 
-    const data = {
+    if (
+        !state.username ||
+        !state.studentClass
+    ) {
 
-        username:
-            state.username,
+        if (saveStatus) {
 
-        /*
-         * IMPORTANT:
-         * This will be saved to the Score sheet
-         * after Code.gs is updated.
-         */
+            saveStatus.textContent =
+                "Unable to save score: student information is missing.";
 
-        class:
-            state.studentClass,
+            saveStatus.style.color =
+                "#d93636";
 
-        chapter:
-            `Chapter ${state.currentChapter}`,
+        }
 
-        part1:
-            state.scores.part1,
+        return;
 
-        part2:
-            state.scores.part2,
+    }
 
-        part3:
-            state.scores.part3,
 
-        total:
-            state.scores.part1 +
-            state.scores.part2 +
-            state.scores.part3
+    if (
+        !state.currentChapter
+    ) {
 
-    };
+        if (saveStatus) {
+
+            saveStatus.textContent =
+                "Unable to save score: chapter is missing.";
+
+            saveStatus.style.color =
+                "#d93636";
+
+        }
+
+        return;
+
+    }
 
 
     try {
@@ -2564,25 +2987,71 @@ async function saveScore() {
         const result =
             await callAPI(
                 "saveScore",
-                data
+                {
+                    username:
+                        state.username,
+
+                    class:
+                        state.studentClass,
+
+                    chapter:
+                        `Chapter ${state.currentChapter}`,
+
+                    part1:
+                        state.scores.part1,
+
+                    part2:
+                        state.scores.part2,
+
+                    part3:
+                        state.scores.part3,
+
+                    total:
+                        state.scores.total
+                }
             );
+
+
+        console.log(
+            "Save Score Response:",
+            result
+        );
 
 
         if (
             result &&
-            result.success === true
+            result.success
         ) {
 
-            saveStatus.textContent =
-                "✓ Score saved successfully.";
+            state.testSaved =
+                true;
+
+
+            if (saveStatus) {
+
+                saveStatus.textContent =
+                    "✓ Score saved successfully.";
+
+                saveStatus.style.color =
+                    "#238636";
+
+            }
 
         } else {
 
-            saveStatus.textContent =
-                result?.message ||
-                "Score could not be saved.";
+            if (saveStatus) {
+
+                saveStatus.textContent =
+                    result?.message ||
+                    "Unable to save score.";
+
+                saveStatus.style.color =
+                    "#d93636";
+
+            }
 
         }
+
 
     } catch (error) {
 
@@ -2592,10 +3061,601 @@ async function saveScore() {
         );
 
 
-        saveStatus.textContent =
-            "Score could not be saved. Please try again later.";
+        if (saveStatus) {
+
+            saveStatus.textContent =
+                "Unable to save score. Please try again.";
+
+            saveStatus.style.color =
+                "#d93636";
+
+        }
 
     }
+
+}
+
+
+/* =========================================================
+   GET SCORE HISTORY
+========================================================= */
+
+async function getScoreHistory() {
+
+    if (
+        !state.username ||
+        !state.studentClass
+    ) {
+
+        return {
+
+            success: false,
+
+            message:
+                "Student information is missing."
+
+        };
+
+    }
+
+
+    return await callAPI(
+        "getScoreHistory",
+        {
+            username:
+                state.username,
+
+            class:
+                state.studentClass
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SHOW SCORE HISTORY
+========================================================= */
+
+async function showScoreHistory() {
+
+    if (
+        !state.username ||
+        !state.studentClass
+    ) {
+
+        return;
+
+    }
+
+
+    showScreen(
+        historyScreen
+    );
+
+
+    if (historyLoading) {
+
+        historyLoading.style.display =
+            "block";
+
+    }
+
+
+    if (historyEmpty) {
+
+        historyEmpty.style.display =
+            "none";
+
+    }
+
+
+    if (historyList) {
+
+        historyList.innerHTML =
+            "";
+
+    }
+
+
+    if (historyStudent) {
+
+        historyStudent.textContent =
+            `${state.username} • ${state.studentClass}`;
+
+    }
+
+
+    try {
+
+        const result =
+            await getScoreHistory();
+
+
+        console.log(
+            "Score History Response:",
+            result
+        );
+
+
+        if (
+            historyLoading
+        ) {
+
+            historyLoading.style.display =
+                "none";
+
+        }
+
+
+        if (
+            !result ||
+            !result.success
+        ) {
+
+            if (historyList) {
+
+                historyList.innerHTML = `
+                    <div class="history-error">
+                        ${escapeHTML(
+                            result?.message ||
+                            "Unable to load score history."
+                        )}
+                    </div>
+                `;
+
+            }
+
+            return;
+
+        }
+
+
+        const history =
+            Array.isArray(
+                result.history
+            )
+                ? result.history
+                : [];
+
+
+        if (
+            history.length === 0
+        ) {
+
+            if (historyEmpty) {
+
+                historyEmpty.style.display =
+                    "block";
+
+            }
+
+            return;
+
+        }
+
+
+        renderScoreHistory(
+            history
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Score history error:",
+            error
+        );
+
+
+        if (historyLoading) {
+
+            historyLoading.style.display =
+                "none";
+
+        }
+
+
+        if (historyList) {
+
+            historyList.innerHTML = `
+                <div class="history-error">
+                    Unable to load score history.
+                </div>
+            `;
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER SCORE HISTORY
+========================================================= */
+
+function renderScoreHistory(
+    history
+) {
+
+    if (!historyList) {
+
+        return;
+
+    }
+
+
+    historyList.innerHTML =
+        history.map(
+            (
+                item,
+                index
+            ) => {
+
+                const percentage =
+                    calculateHistoryPercentage(
+                        item
+                    );
+
+
+                return `
+                    <div class="history-card">
+
+                        <div class="history-card-top">
+
+                            <div>
+
+                                <div class="history-number">
+                                    TEST ${history.length - index}
+                                </div>
+
+                                <h3>
+                                    ${escapeHTML(
+                                        item.chapter ||
+                                        "Chapter"
+                                    )}
+                                </h3>
+
+                            </div>
+
+
+                            <div class="history-total">
+                                ${escapeHTML(
+                                    String(
+                                        item.total ?? 0
+                                    )
+                                )}
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-details">
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 1
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part1 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 2
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part2 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 3
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part3 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="history-bottom">
+
+                            <span>
+                                ${escapeHTML(
+                                    formatHistoryDate(
+                                        item.date
+                                    )
+                                )}
+                            </span>
+
+                            <strong>
+                                ${percentage}%
+                            </strong>
+
+                        </div>
+
+                    </div>
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   CALCULATE HISTORY PERCENTAGE
+========================================================= */
+
+function calculateHistoryPercentage(
+    item
+) {
+
+    const total =
+        Number(
+            item?.total
+        ) || 0;
+
+
+    /*
+     * If the API has maximum score
+     * in the future, use it.
+     */
+
+    if (
+        Number(
+            item?.maximum
+        ) > 0
+    ) {
+
+        return Math.round(
+            (
+                total /
+                Number(
+                    item.maximum
+                )
+            ) * 100
+        );
+
+    }
+
+
+    /*
+     * Current Score sheet does not
+     * store maximum score.
+     *
+     * We therefore calculate the
+     * maximum from the three parts.
+     */
+
+    const part1 =
+        Number(
+            item?.part1
+        ) || 0;
+
+
+    const part2 =
+        Number(
+            item?.part2
+        ) || 0;
+
+
+    const part3 =
+        Number(
+            item?.part3
+        ) || 0;
+
+
+    const recordedPartTotal =
+        part1 +
+        part2 +
+        part3;
+
+
+    /*
+     * This is only a fallback.
+     *
+     * If all three recorded scores
+     * are zero, return 0.
+     */
+
+    if (
+        recordedPartTotal <= 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If we don't know the original
+     * maximum score, don't falsely
+     * assume 100%.
+     *
+     * The current Code.gs returns
+     * the actual score values only.
+     *
+     * This fallback is replaced below
+     * by the chapter's known question
+     * count when available.
+     */
+
+    const knownMaximum =
+        getKnownMaximumForHistoryItem(
+            item
+        );
+
+
+    if (
+        knownMaximum > 0
+    ) {
+
+        return Math.round(
+            (
+                total /
+                knownMaximum
+            ) * 100
+        );
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* =========================================================
+   GET KNOWN MAXIMUM FOR HISTORY
+========================================================= */
+
+function getKnownMaximumForHistoryItem(
+    item
+) {
+
+    const chapterNumber =
+        extractChapterNumber(
+            item?.chapter
+        );
+
+
+    if (
+        !chapterNumber
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If this is the currently loaded
+     * chapter, we know its exact total.
+     */
+
+    if (
+        state.currentChapter ===
+        chapterNumber &&
+        state.chapterData
+    ) {
+
+        return getMaximumScore();
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* =========================================================
+   FORMAT HISTORY DATE
+========================================================= */
+
+function formatHistoryDate(
+    date
+) {
+
+    if (!date) {
+
+        return "";
+
+    }
+
+
+    const parsed =
+        new Date(
+            date
+        );
+
+
+    if (
+        Number.isNaN(
+            parsed.getTime()
+        )
+    ) {
+
+        return String(
+            date
+        );
+
+    }
+
+
+    return parsed.toLocaleDateString(
+        undefined,
+        {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   EXTRACT CHAPTER NUMBER
+========================================================= */
+
+function extractChapterNumber(
+    value
+) {
+
+    const text =
+        String(
+            value ||
+            ""
+        );
+
+
+    const match =
+        text.match(
+            /(\d+)/
+        );
+
+
+    if (!match) {
+
+        return 0;
+
+    }
+
+
+    return Number(
+        match[1]
+    );
 
 }
 
@@ -2605,6 +3665,19 @@ async function saveScore() {
 ========================================================= */
 
 function handleLogout() {
+
+    const confirmed =
+        window.confirm(
+            "Are you sure you want to logout?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
 
     state.username =
         null;
@@ -2639,6 +3712,16 @@ function handleLogout() {
     };
 
 
+    state.scores = {
+
+        part1: 0,
+        part2: 0,
+        part3: 0,
+        total: 0
+
+    };
+
+
     state.randomOrders = {
 
         part1: {},
@@ -2648,33 +3731,51 @@ function handleLogout() {
     };
 
 
-    state.scores = {
-
-        part1: 0,
-        part2: 0,
-        part3: 0
-
-    };
+    state.testSaved =
+        false;
 
 
-    usernameInput.value =
-        "";
+    if (usernameInput) {
+
+        usernameInput.value =
+            "";
+
+    }
 
 
-    passwordInput.value =
-        "";
+    if (passwordInput) {
+
+        passwordInput.value =
+            "";
+
+    }
 
 
-    loginMessage.textContent =
-        "";
+    if (welcomeUsername) {
+
+        welcomeUsername.textContent =
+            "Student";
+
+    }
 
 
-    loginMessage.className =
-        "message";
+    if (studentClassBadge) {
+
+        studentClassBadge.textContent =
+            "Beginner";
+
+    }
 
 
-    chapterGrid.innerHTML =
-        "";
+    if (chapterGrid) {
+
+        chapterGrid.innerHTML =
+            "";
+
+    }
+
+
+    clearLoginMessage();
 
 
     showScreen(
@@ -2682,3 +3783,43 @@ function handleLogout() {
     );
 
 }
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   END OF APP.JS
+========================================================= */
