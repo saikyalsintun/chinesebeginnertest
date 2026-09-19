@@ -9,7 +9,7 @@
    Do NOT change the login or score functions.
 ========================================================= */
 
- 
+
 /* =========================================================
    CONFIGURATION
 ========================================================= */
@@ -292,7 +292,7 @@ loginForm.addEventListener(
             /*
              * API FORMAT
              *
-             * Later Code.gs will receive:
+             * Code.gs receives:
              *
              * action=login
              * username=...
@@ -374,10 +374,18 @@ function showLoginError(message) {
  * This is the ONLY function that communicates
  * with Google Apps Script.
  *
- * Later we will make Code.gs match this format.
+ * IMPORTANT:
+ * We use GET parameters here instead of POST.
+ *
+ * This avoids the Google Apps Script redirect
+ * problem that was causing the 404 error.
  */
 
 async function callAPI(action, data = {}) {
+
+    /*
+     * Development mode
+     */
 
     if (
         !CONFIG.API_URL ||
@@ -387,9 +395,6 @@ async function callAPI(action, data = {}) {
 
         /*
          * Temporary development mode.
-         *
-         * This allows the website to be tested
-         * before Apps Script exists.
          */
 
         if (action === "login") {
@@ -432,6 +437,10 @@ async function callAPI(action, data = {}) {
     }
 
 
+    /*
+     * Create URL parameters
+     */
+
     const params =
         new URLSearchParams();
 
@@ -440,6 +449,11 @@ async function callAPI(action, data = {}) {
         action
     );
 
+
+    /*
+     * Add all data
+     */
+
     Object.keys(data).forEach(
         key => {
 
@@ -447,11 +461,12 @@ async function callAPI(action, data = {}) {
                 data[key];
 
             /*
-             * Objects / arrays are converted
+             * Convert objects / arrays
              * into JSON strings.
              */
 
             if (
+                value !== null &&
                 typeof value === "object"
             ) {
 
@@ -462,42 +477,82 @@ async function callAPI(action, data = {}) {
 
             params.append(
                 key,
-                value
+                String(value)
             );
 
         }
     );
 
 
-    const response =
-        await fetch(
-            CONFIG.API_URL,
-            {
+    /*
+     * Build GET URL
+     */
 
-                method: "POST",
+    const url =
+        `${CONFIG.API_URL}?${params.toString()}`;
 
-                headers: {
-                    "Content-Type":
-                        "application/x-www-form-urlencoded"
-                },
 
-                body:
-                    params.toString()
+    console.log(
+        "API Request:",
+        url
+    );
 
-            }
+
+    try {
+
+        /*
+         * Send GET request
+         */
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method: "GET",
+                    cache: "no-store"
+                }
+            );
+
+
+        /*
+         * Check HTTP status
+         */
+
+        if (!response.ok) {
+
+            throw new Error(
+                `API Error: ${response.status}`
+            );
+
+        }
+
+
+        /*
+         * Convert response to JSON
+         */
+
+        const result =
+            await response.json();
+
+
+        console.log(
+            "API Response:",
+            result
         );
 
 
-    if (!response.ok) {
+        return result;
 
-        throw new Error(
-            `API Error: ${response.status}`
+    } catch (error) {
+
+        console.error(
+            "API Request Failed:",
+            error
         );
+
+        throw error;
 
     }
-
-
-    return await response.json();
 
 }
 
@@ -782,6 +837,7 @@ function renderSelectedWords(question) {
             chip.textContent =
                 word;
 
+
             /*
              * Clicking selected word
              * removes it.
@@ -817,10 +873,8 @@ function renderWordBank(question) {
 
 
     /*
-     * We need to support duplicate words
-     * in the future.
-     *
-     * Therefore each word gets an index.
+     * We need to support duplicate words.
+     * Each word gets an index.
      */
 
     const usedIndexes =
@@ -892,8 +946,7 @@ function getUsedWordIndexes(
     answer
 ) {
 
-    const used =
-        [];
+    const used = [];
 
     const remaining =
         [...words];
@@ -944,7 +997,10 @@ function getUsedWordIndexes(
    ADD WORD
 ========================================================= */
 
-function addWord(word, wordIndex) {
+function addWord(
+    word,
+    wordIndex
+) {
 
     const part =
         state.currentPart;
@@ -1120,13 +1176,19 @@ previousButton.addEventListener(
             state.currentPart === "part2"
         ) {
 
-            switchPart("part1", true);
+            switchPart(
+                "part1",
+                true
+            );
 
         } else if (
             state.currentPart === "part3"
         ) {
 
-            switchPart("part2", true);
+            switchPart(
+                "part2",
+                true
+            );
 
         }
 
@@ -1150,7 +1212,7 @@ partTabs.forEach(
 
 
                 /*
-                 * For now students can navigate
+                 * Students can navigate
                  * directly between parts.
                  */
 
