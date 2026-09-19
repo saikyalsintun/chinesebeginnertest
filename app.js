@@ -1,6 +1,6 @@
 /* =========================================================
    CHINESE DAILY TEST
-   COMPLETE APP.JS
+   CLEAN APP.JS
 ========================================================= */
 
 
@@ -49,22 +49,28 @@ const state = {
     currentQuestionIndex: 0,
 
     answers: {
+
         part1: {},
         part2: {},
         part3: {}
+
     },
 
     scores: {
+
         part1: 0,
         part2: 0,
         part3: 0,
         total: 0
+
     },
 
     randomOrders: {
+
         part1: {},
         part2: {},
         part3: {}
+
     },
 
     testSaved: false
@@ -95,15 +101,18 @@ let chapterGrid;
 let logoutButton;
 
 let backToChapters;
+
 let testChapter;
 let partTitle;
 let questionCounter;
 let progressBar;
 let questionType;
 let questionText;
+
 let selectedWords;
 let wordBank;
 let clearAnswer;
+
 let previousButton;
 let nextButton;
 
@@ -120,6 +129,7 @@ let backToChapterButton;
 
 let scoreHistoryButton;
 let chapterHistoryButton;
+
 let backFromHistory;
 let historyStudent;
 let historyLoading;
@@ -235,6 +245,7 @@ function cacheDOMElements() {
             "backToChapters"
         );
 
+
     testChapter =
         document.getElementById(
             "testChapter"
@@ -265,6 +276,7 @@ function cacheDOMElements() {
             "questionText"
         );
 
+
     selectedWords =
         document.getElementById(
             "selectedWords"
@@ -279,6 +291,7 @@ function cacheDOMElements() {
         document.getElementById(
             "clearAnswer"
         );
+
 
     previousButton =
         document.getElementById(
@@ -347,6 +360,7 @@ function cacheDOMElements() {
         document.getElementById(
             "chapterHistoryButton"
         );
+
 
     backFromHistory =
         document.getElementById(
@@ -418,6 +432,22 @@ function setupEventListeners() {
     }
 
 
+    if (backToChapterButton) {
+
+        backToChapterButton.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
+
+
     if (clearAnswer) {
 
         clearAnswer.addEventListener(
@@ -455,11 +485,11 @@ function setupEventListeners() {
                 "click",
                 () => {
 
-                    const part =
+                    const requestedPart =
                         tab.dataset.part;
 
                     switchPart(
-                        part
+                        requestedPart
                     );
 
                 }
@@ -467,22 +497,6 @@ function setupEventListeners() {
 
         }
     );
-
-
-    if (backToChapterButton) {
-
-        backToChapterButton.addEventListener(
-            "click",
-            () => {
-
-                showScreen(
-                    chapterScreen
-                );
-
-            }
-        );
-
-    }
 
 
     if (scoreHistoryButton) {
@@ -524,37 +538,26 @@ function setupEventListeners() {
 
 
 /* =========================================================
-   SHOW SCREEN
+   SCREEN MANAGEMENT
 ========================================================= */
 
 function showScreen(
     screen
 ) {
 
-    const screens = [
-        loginScreen,
-        chapterScreen,
-        testScreen,
-        resultScreen,
-        historyScreen
-    ];
-
-
-    screens.forEach(
-        currentScreen => {
-
-            if (
-                currentScreen
-            ) {
+    document
+        .querySelectorAll(
+            ".screen"
+        )
+        .forEach(
+            currentScreen => {
 
                 currentScreen.classList.remove(
                     "active"
                 );
 
             }
-
-        }
-    );
+        );
 
 
     if (screen) {
@@ -575,7 +578,7 @@ function showScreen(
 
 
 /* =========================================================
-   CLASS NORMALIZATION
+   CLASS HELPERS
 ========================================================= */
 
 function normalizeStudentClass(
@@ -605,7 +608,7 @@ function normalizeStudentClass(
     }
 
 
-    const match =
+    const matchingClass =
         Object.keys(
             CONFIG.CLASS_CONFIG
         ).find(
@@ -615,14 +618,13 @@ function normalizeStudentClass(
         );
 
 
-    return match || raw;
+    return (
+        matchingClass ||
+        raw
+    );
 
 }
 
-
-/* =========================================================
-   GET CLASS CONFIG
-========================================================= */
 
 function getClassConfig() {
 
@@ -635,9 +637,47 @@ function getClassConfig() {
     }
 
 
-    return CONFIG.CLASS_CONFIG[
-        state.studentClass
-    ] || null;
+    return (
+        CONFIG.CLASS_CONFIG[
+            state.studentClass
+        ] ||
+        null
+    );
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
@@ -655,7 +695,8 @@ function generateChapterButtons() {
     }
 
 
-    chapterGrid.innerHTML = "";
+    chapterGrid.innerHTML =
+        "";
 
 
     const classConfig =
@@ -666,8 +707,7 @@ function generateChapterButtons() {
 
         chapterGrid.innerHTML = `
             <div class="history-error">
-                No chapter configuration found
-                for your class.
+                No chapter configuration found.
             </div>
         `;
 
@@ -682,21 +722,21 @@ function generateChapterButtons() {
         i++
     ) {
 
-        const button =
+        const card =
             document.createElement(
                 "button"
             );
 
 
-        button.type =
+        card.type =
             "button";
 
 
-        button.className =
+        card.className =
             "chapter-card";
 
 
-        button.innerHTML = `
+        card.innerHTML = `
             <div class="chapter-number">
                 CHAPTER ${i}
             </div>
@@ -713,7 +753,7 @@ function generateChapterButtons() {
         `;
 
 
-        button.addEventListener(
+        card.addEventListener(
             "click",
             () => {
 
@@ -726,7 +766,7 @@ function generateChapterButtons() {
 
 
         chapterGrid.appendChild(
-            button
+            card
         );
 
     }
@@ -762,23 +802,13 @@ async function handleLogin(
     clearLoginMessage();
 
 
-    if (!username) {
+    if (
+        !username ||
+        !password
+    ) {
 
         showLoginMessage(
-            "Please enter your username.",
-            "error"
-        );
-
-        return;
-
-    }
-
-
-    if (!password) {
-
-        showLoginMessage(
-            "Please enter your password.",
-            "error"
+            "Please enter username and password."
         );
 
         return;
@@ -804,20 +834,19 @@ async function handleLogin(
 
 
         console.log(
-            "Login API Response:",
+            "LOGIN RESPONSE:",
             result
         );
 
 
         if (
             !result ||
-            !result.success
+            result.success !== true
         ) {
 
             showLoginMessage(
                 result?.message ||
-                "Login failed.",
-                "error"
+                "Invalid username or password."
             );
 
             return;
@@ -827,8 +856,8 @@ async function handleLogin(
 
         const studentClass =
             normalizeStudentClass(
-                result.class ||
-                result.Class ||
+                result.class ??
+                result.Class ??
                 result.studentClass
             );
 
@@ -836,8 +865,7 @@ async function handleLogin(
         if (!studentClass) {
 
             showLoginMessage(
-                "Your account does not have a class assigned.",
-                "error"
+                "Your account does not have a class assigned."
             );
 
             return;
@@ -852,8 +880,7 @@ async function handleLogin(
         ) {
 
             showLoginMessage(
-                `Class "${studentClass}" is not configured yet.`,
-                "error"
+                `Class "${studentClass}" is not configured.`
             );
 
             return;
@@ -861,21 +888,14 @@ async function handleLogin(
         }
 
 
-        /*
-         * Save login state.
-         */
-
         state.username =
             result.username ||
             username;
 
+
         state.studentClass =
             studentClass;
 
-
-        /*
-         * Update UI.
-         */
 
         if (welcomeUsername) {
 
@@ -893,17 +913,8 @@ async function handleLogin(
         }
 
 
-        /*
-         * Generate chapters
-         * only after class is known.
-         */
-
         generateChapterButtons();
 
-
-        /*
-         * Clear password field.
-         */
 
         if (passwordInput) {
 
@@ -913,10 +924,6 @@ async function handleLogin(
         }
 
 
-        /*
-         * Show chapter screen.
-         */
-
         showScreen(
             chapterScreen
         );
@@ -925,15 +932,14 @@ async function handleLogin(
     } catch (error) {
 
         console.error(
-            "Login error:",
+            "LOGIN ERROR:",
             error
         );
 
 
         showLoginMessage(
             error.message ||
-            "Unable to connect to the server.",
-            "error"
+            "Unable to connect to the server."
         );
 
 
@@ -953,8 +959,7 @@ async function handleLogin(
 ========================================================= */
 
 function showLoginMessage(
-    message,
-    type = "error"
+    message
 ) {
 
     if (!loginMessage) {
@@ -972,19 +977,8 @@ function showLoginMessage(
         "block";
 
 
-    if (
-        type === "success"
-    ) {
-
-        loginMessage.style.color =
-            "#238636";
-
-    } else {
-
-        loginMessage.style.color =
-            "#d93636";
-
-    }
+    loginMessage.className =
+        "message error";
 
 }
 
@@ -1006,10 +1000,6 @@ function clearLoginMessage() {
 
 }
 
-
-/* =========================================================
-   LOGIN BUTTON LOADING
-========================================================= */
 
 function setLoginLoading(
     loading
@@ -1035,7 +1025,9 @@ function setLoginLoading(
 
 
 /* =========================================================
-   API CALL
+   GOOGLE APPS SCRIPT API
+   IMPORTANT:
+   POST REQUEST
 ========================================================= */
 
 async function callAPI(
@@ -1043,9 +1035,7 @@ async function callAPI(
     data = {}
 ) {
 
-    if (
-        !CONFIG.API_URL
-    ) {
+    if (!CONFIG.API_URL) {
 
         throw new Error(
             "API URL is not configured."
@@ -1069,13 +1059,27 @@ async function callAPI(
     ).forEach(
         key => {
 
-            const value =
+            let value =
                 data[key];
 
 
             if (
+                value !== null &&
                 value !== undefined &&
-                value !== null
+                typeof value === "object"
+            ) {
+
+                value =
+                    JSON.stringify(
+                        value
+                    );
+
+            }
+
+
+            if (
+                value !== null &&
+                value !== undefined
             ) {
 
                 params.set(
@@ -1089,16 +1093,33 @@ async function callAPI(
     );
 
 
-    const url =
-        `${CONFIG.API_URL}?${params.toString()}`;
+    console.log(
+        "API ACTION:",
+        action
+    );
 
 
     const response =
         await fetch(
-            url,
+            CONFIG.API_URL,
             {
-                method: "GET",
-                cache: "no-store"
+
+                method:
+                    "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/x-www-form-urlencoded;charset=UTF-8"
+
+                },
+
+                body:
+                    params.toString(),
+
+                cache:
+                    "no-store"
+
             }
         );
 
@@ -1116,6 +1137,12 @@ async function callAPI(
         await response.text();
 
 
+    console.log(
+        "API RAW RESPONSE:",
+        text
+    );
+
+
     let result;
 
 
@@ -1129,7 +1156,7 @@ async function callAPI(
     } catch (error) {
 
         console.error(
-            "Invalid API response:",
+            "INVALID API RESPONSE:",
             text
         );
 
@@ -1180,7 +1207,8 @@ async function loadChapter(
             chapter
         ) ||
         chapter < 1 ||
-        chapter > classConfig.totalChapters
+        chapter >
+        classConfig.totalChapters
     ) {
 
         alert(
@@ -1192,37 +1220,45 @@ async function loadChapter(
     }
 
 
+    /*
+     * Reset current test.
+     */
+
     state.currentChapter =
         chapter;
 
-
     state.currentPart =
         "part1";
-
 
     state.currentQuestionIndex =
         0;
 
 
     state.answers = {
+
         part1: {},
         part2: {},
         part3: {}
+
     };
 
 
     state.scores = {
+
         part1: 0,
         part2: 0,
         part3: 0,
         total: 0
+
     };
 
 
     state.randomOrders = {
+
         part1: {},
         part2: {},
         part3: {}
+
     };
 
 
@@ -1246,13 +1282,20 @@ async function loadChapter(
         `./${classConfig.folder}/${fileName}`;
 
 
+    console.log(
+        "LOADING CHAPTER:",
+        chapterPath
+    );
+
+
     try {
 
         const response =
             await fetch(
                 chapterPath,
                 {
-                    cache: "no-store"
+                    cache:
+                        "no-store"
                 }
             );
 
@@ -1260,7 +1303,7 @@ async function loadChapter(
         if (!response.ok) {
 
             throw new Error(
-                `Could not load ${fileName}.`
+                `HTTP ${response.status} - ${chapterPath}`
             );
 
         }
@@ -1280,10 +1323,6 @@ async function loadChapter(
             data;
 
 
-        /*
-         * Update chapter title.
-         */
-
         if (testChapter) {
 
             testChapter.textContent =
@@ -1298,13 +1337,20 @@ async function loadChapter(
     } catch (error) {
 
         console.error(
-            "Chapter loading error:",
+            "CHAPTER LOADING ERROR:",
             error
         );
 
 
         showTestError(
-            `Unable to load Chapter ${chapter}. Please check that ${chapterPath} exists.`
+            `Unable to load Chapter ${chapter}.
+
+Make sure this file exists:
+
+${chapterPath}
+
+Error:
+${error.message}`
         );
 
     }
@@ -1325,19 +1371,25 @@ function validateChapterData(
         data;
 
 
-    if (!chapter) {
+    if (
+        !chapter ||
+        typeof chapter !==
+        "object"
+    ) {
 
         throw new Error(
-            "Chapter data is empty."
+            "Chapter JSON is empty or invalid."
         );
 
     }
 
 
     const requiredParts = [
+
         "part1",
         "part2",
         "part3"
+
     ];
 
 
@@ -1357,12 +1409,14 @@ function validateChapterData(
 
             if (
                 !Array.isArray(
-                    chapter[part].questions
+                    chapter[
+                        part
+                    ].questions
                 )
             ) {
 
                 throw new Error(
-                    `${part} does not contain a questions array.`
+                    `${part}.questions must be an array.`
                 );
 
             }
@@ -1374,7 +1428,7 @@ function validateChapterData(
 
 
 /* =========================================================
-   TEST LOADING STATE
+   TEST LOADING
 ========================================================= */
 
 function showTestLoading() {
@@ -1391,6 +1445,14 @@ function showTestLoading() {
 
         questionCounter.textContent =
             "Please wait";
+
+    }
+
+
+    if (questionType) {
+
+        questionType.textContent =
+            "";
 
     }
 
@@ -1476,6 +1538,14 @@ function showTestError(
 
     }
 
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            "0%";
+
+    }
+
 }
 
 
@@ -1494,9 +1564,39 @@ function getCurrentPartData() {
     }
 
 
-    return state.chapterData[
-        state.currentPart
-    ] || null;
+    return (
+        state.chapterData[
+            state.currentPart
+        ] ||
+        null
+    );
+
+}
+
+
+/* =========================================================
+   GET CURRENT QUESTIONS
+========================================================= */
+
+function getCurrentQuestions() {
+
+    const part =
+        getCurrentPartData();
+
+
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return [];
+
+    }
+
+
+    return part.questions;
 
 }
 
@@ -1507,21 +1607,15 @@ function getCurrentPartData() {
 
 function getCurrentQuestion() {
 
-    const part =
-        getCurrentPartData();
-
-
-    if (!part) {
-
-        return null;
-
-    }
+    const questions =
+        getCurrentQuestions();
 
 
     return (
-        part.questions?.[
+        questions[
             state.currentQuestionIndex
-        ] || null
+        ] ||
+        null
     );
 
 }
@@ -1560,12 +1654,17 @@ function renderCurrentQuestion() {
 
 
     const currentNumber =
-        state.currentQuestionIndex + 1;
+        state.currentQuestionIndex +
+        1;
 
 
-    /*
-     * Part title.
-     */
+    if (testChapter) {
+
+        testChapter.textContent =
+            `Chapter ${state.currentChapter}`;
+
+    }
+
 
     if (partTitle) {
 
@@ -1578,10 +1677,6 @@ function renderCurrentQuestion() {
     }
 
 
-    /*
-     * Question counter.
-     */
-
     if (questionCounter) {
 
         questionCounter.textContent =
@@ -1589,10 +1684,6 @@ function renderCurrentQuestion() {
 
     }
 
-
-    /*
-     * Question type.
-     */
 
     if (questionType) {
 
@@ -1604,10 +1695,6 @@ function renderCurrentQuestion() {
     }
 
 
-    /*
-     * Question text.
-     */
-
     if (questionText) {
 
         questionText.textContent =
@@ -1616,10 +1703,6 @@ function renderCurrentQuestion() {
 
     }
 
-
-    /*
-     * Progress.
-     */
 
     const progress =
         totalQuestions > 0
@@ -1639,31 +1722,33 @@ function renderCurrentQuestion() {
 
 
     /*
-     * Part tabs.
+     * Directly update tabs.
+     *
+     * IMPORTANT:
+     * There is intentionally NO
+     * updatePartTabs() function.
      */
 
-    updatePartTabs();
+    partTabs.forEach(
+        tab => {
 
+            tab.classList.toggle(
+                "active",
+                tab.dataset.part ===
+                state.currentPart
+            );
 
-    /*
-     * Render answer.
-     */
+        }
+    );
+
 
     renderSelectedWords();
 
-
-    /*
-     * Render word bank.
-     */
 
     renderWordBank(
         question
     );
 
-
-    /*
-     * Navigation buttons.
-     */
 
     updateNavigationButtons();
 
@@ -1680,11 +1765,14 @@ function getPartDisplayName(
 
     const names = {
 
-        part1: "Translation",
+        part1:
+            "Translation",
 
-        part2: "Answer the Question",
+        part2:
+            "Answer the Question",
 
-        part3: "Scramble"
+        part3:
+            "Scramble"
 
     };
 
@@ -1698,7 +1786,7 @@ function getPartDisplayName(
 
 
 /* =========================================================
-   QUESTION TYPE LABEL
+   QUESTION TYPE
 ========================================================= */
 
 function getQuestionTypeLabel(
@@ -1707,50 +1795,21 @@ function getQuestionTypeLabel(
 
     const labels = {
 
-        part1: "TRANSLATION",
+        part1:
+            "TRANSLATION",
 
-        part2: "QUESTION",
+        part2:
+            "QUESTION",
 
-        part3: "SCRAMBLE"
+        part3:
+            "SCRAMBLE"
 
     };
 
 
     return (
         labels[part] ||
-        ""
-    );
-
-}
-
-
-/* =========================================================
-   UPDATE PART TABS
-========================================================= */
-
-function updatePartTabs() {
-
-    partTabs.forEach(
-        tab => {
-
-            if (
-                tab.dataset.part ===
-                state.currentPart
-            ) {
-
-                tab.classList.add(
-                    "active"
-                );
-
-            } else {
-
-                tab.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
+        "QUESTION"
     );
 
 }
@@ -1761,7 +1820,8 @@ function updatePartTabs() {
 ========================================================= */
 
 function switchPart(
-    part
+    part,
+    goToLastQuestion = false
 ) {
 
     if (
@@ -1810,8 +1870,23 @@ function switchPart(
         part;
 
 
-    state.currentQuestionIndex =
-        0;
+    if (
+        goToLastQuestion
+    ) {
+
+        state.currentQuestionIndex =
+            Math.max(
+                partData.questions.length -
+                1,
+                0
+            );
+
+    } else {
+
+        state.currentQuestionIndex =
+            0;
+
+    }
 
 
     renderCurrentQuestion();
@@ -1826,7 +1901,7 @@ function switchPart(
 
 
 /* =========================================================
-   WORD RANDOMIZATION
+   SHUFFLE WORDS
 ========================================================= */
 
 function shuffleWords(
@@ -1834,24 +1909,36 @@ function shuffleWords(
 ) {
 
     const items =
-        words.map(
+        (
+            Array.isArray(
+                words
+            )
+                ? words
+                : []
+        )
+        .map(
             (
                 word,
                 originalIndex
             ) => ({
-                word,
+
+                word:
+                    String(
+                        word
+                    ),
+
                 originalIndex
+
             })
         );
 
 
-    /*
-     * Fisher-Yates shuffle.
-     */
-
     for (
-        let i = items.length - 1;
+        let i =
+            items.length - 1;
+
         i > 0;
+
         i--
     ) {
 
@@ -1890,16 +1977,19 @@ function getRandomOrder(
         state.currentPart;
 
 
-    const questionIndex =
+    const index =
         state.currentQuestionIndex;
 
 
     if (
-        !state.randomOrders[part]
+        !state.randomOrders[
+            part
+        ]
     ) {
 
-        state.randomOrders[part] =
-            {};
+        state.randomOrders[
+            part
+        ] = {};
 
     }
 
@@ -1907,14 +1997,15 @@ function getRandomOrder(
     if (
         !state.randomOrders[
             part
-        ][questionIndex]
+        ][index]
     ) {
 
         state.randomOrders[
             part
-        ][questionIndex] =
+        ][index] =
             shuffleWords(
-                question.words || []
+                question?.words ||
+                []
             );
 
     }
@@ -1922,7 +2013,7 @@ function getRandomOrder(
 
     return state.randomOrders[
         part
-    ][questionIndex];
+    ][index];
 
 }
 
@@ -1957,7 +2048,8 @@ function renderWordBank(
             state.currentPart
         ][
             state.currentQuestionIndex
-        ] || [];
+        ] ||
+        [];
 
 
     order.forEach(
@@ -1981,23 +2073,15 @@ function renderWordBank(
                 item.word;
 
 
-            /*
-             * Determine whether this
-             * exact word instance has
-             * already been selected.
-             */
-
-            const selectedIndex =
-                currentAnswer.findIndex(
+            const selected =
+                currentAnswer.some(
                     answerItem =>
                         answerItem.originalIndex ===
                         item.originalIndex
                 );
 
 
-            if (
-                selectedIndex !== -1
-            ) {
+            if (selected) {
 
                 button.classList.add(
                     "selected"
@@ -2029,7 +2113,7 @@ function renderWordBank(
 
 
 /* =========================================================
-   ADD WORD
+   ADD WORD TO ANSWER
 ========================================================= */
 
 function addWordToAnswer(
@@ -2042,16 +2126,6 @@ function addWordToAnswer(
 
     const questionIndex =
         state.currentQuestionIndex;
-
-
-    if (
-        !state.answers[part]
-    ) {
-
-        state.answers[part] =
-            {};
-
-    }
 
 
     if (
@@ -2081,11 +2155,6 @@ function addWordToAnswer(
         ];
 
 
-    /*
-     * Do not allow the same
-     * word instance twice.
-     */
-
     const alreadySelected =
         answer.some(
             item =>
@@ -2104,11 +2173,13 @@ function addWordToAnswer(
 
 
     answer.push({
+
         word:
             wordItem.word,
 
         originalIndex:
             wordItem.originalIndex
+
     });
 
 
@@ -2144,7 +2215,8 @@ function renderSelectedWords() {
             state.currentPart
         ][
             state.currentQuestionIndex
-        ] || [];
+        ] ||
+        [];
 
 
     if (
@@ -2199,8 +2271,14 @@ function renderSelectedWords() {
                 "button";
 
 
+            /*
+             * IMPORTANT:
+             * Selected answer uses the
+             * same word-button design.
+             */
+
             button.className =
-                "selected-word";
+                "word-button selected-word";
 
 
             button.textContent =
@@ -2262,7 +2340,8 @@ function removeWordFromAnswer(
 
     if (
         answerIndex < 0 ||
-        answerIndex >= answer.length
+        answerIndex >=
+        answer.length
     ) {
 
         return;
@@ -2287,7 +2366,7 @@ function removeWordFromAnswer(
 
 
 /* =========================================================
-   CLEAR CURRENT ANSWER
+   CLEAR ANSWER
 ========================================================= */
 
 function clearCurrentAnswer() {
@@ -2315,15 +2394,12 @@ function clearCurrentAnswer() {
 
 function updateNavigationButtons() {
 
-    const part =
-        getCurrentPartData();
+    const questions =
+        getCurrentQuestions();
 
 
     if (
-        !part ||
-        !Array.isArray(
-            part.questions
-        )
+        questions.length === 0
     ) {
 
         return;
@@ -2331,23 +2407,21 @@ function updateNavigationButtons() {
     }
 
 
-    const totalQuestions =
-        part.questions.length;
-
-
-    const isFirstQuestion =
+    const firstQuestion =
         state.currentQuestionIndex === 0;
 
 
-    const isLastQuestion =
+    const lastQuestion =
         state.currentQuestionIndex ===
-        totalQuestions - 1;
+        questions.length - 1;
 
 
     if (previousButton) {
 
         previousButton.disabled =
-            isFirstQuestion;
+            firstQuestion &&
+            state.currentPart ===
+            "part1";
 
     }
 
@@ -2355,7 +2429,7 @@ function updateNavigationButtons() {
     if (nextButton) {
 
         if (
-            isLastQuestion
+            lastQuestion
         ) {
 
             if (
@@ -2392,24 +2466,45 @@ function updateNavigationButtons() {
 function goToPreviousQuestion() {
 
     if (
-        state.currentQuestionIndex <= 0
+        state.currentQuestionIndex >
+        0
     ) {
+
+        state.currentQuestionIndex--;
+
+        renderCurrentQuestion();
 
         return;
 
     }
 
 
-    state.currentQuestionIndex--;
+    if (
+        state.currentPart ===
+        "part2"
+    ) {
+
+        switchPart(
+            "part1",
+            true
+        );
+
+        return;
+
+    }
 
 
-    renderCurrentQuestion();
+    if (
+        state.currentPart ===
+        "part3"
+    ) {
 
+        switchPart(
+            "part2",
+            true
+        );
 
-    window.scrollTo(
-        0,
-        0
-    );
+    }
 
 }
 
@@ -2420,15 +2515,12 @@ function goToPreviousQuestion() {
 
 function goToNextQuestion() {
 
-    const part =
-        getCurrentPartData();
+    const questions =
+        getCurrentQuestions();
 
 
     if (
-        !part ||
-        !Array.isArray(
-            part.questions
-        )
+        questions.length === 0
     ) {
 
         return;
@@ -2436,37 +2528,21 @@ function goToNextQuestion() {
     }
 
 
-    const totalQuestions =
-        part.questions.length;
-
-
-    const isLastQuestion =
+    const lastQuestion =
         state.currentQuestionIndex >=
-        totalQuestions - 1;
+        questions.length - 1;
 
 
-    if (!isLastQuestion) {
+    if (!lastQuestion) {
 
         state.currentQuestionIndex++;
 
-
         renderCurrentQuestion();
-
-
-        window.scrollTo(
-            0,
-            0
-        );
-
 
         return;
 
     }
 
-
-    /*
-     * Last question of current part.
-     */
 
     if (
         state.currentPart ===
@@ -2496,54 +2572,219 @@ function goToNextQuestion() {
     }
 
 
-    /*
-     * Last question of Part 3.
-     */
-
     finishTest();
 
 }
 
 
 /* =========================================================
-   FINISH TEST
+   NORMALIZE ANSWER
 ========================================================= */
 
-async function finishTest() {
+function normalizeAnswerWords(
+    answer
+) {
 
     /*
-     * Prevent double submission.
+     * If answer is a string:
+     *
+     * "wǒ xǐhuān nǐ"
+     *
+     * becomes:
+     *
+     * ["wǒ", "xǐhuān", "nǐ"]
      */
 
     if (
-        state.testSaved
+        typeof answer ===
+        "string"
     ) {
 
-        showScreen(
-            resultScreen
-        );
-
-        return;
+        return answer
+            .trim()
+            .split(
+                /\s+/
+            )
+            .filter(
+                word => word.length > 0
+            )
+            .map(
+                word =>
+                    word
+                        .trim()
+                        .toLowerCase()
+            );
 
     }
 
 
-    calculateAllScores();
+    /*
+     * If answer is an array.
+     */
+
+    if (
+        Array.isArray(
+            answer
+        )
+    ) {
+
+        return answer
+            .map(
+                item => {
+
+                    if (
+                        item &&
+                        typeof item ===
+                        "object" &&
+                        "word" in item
+                    ) {
+
+                        return String(
+                            item.word
+                        )
+                            .trim()
+                            .toLowerCase();
+
+                    }
 
 
-    renderResults();
+                    return String(
+                        item
+                    )
+                        .trim()
+                        .toLowerCase();
+
+                }
+            )
+            .filter(
+                word =>
+                    word.length > 0
+            );
+
+    }
 
 
-    showScreen(
-        resultScreen
+    return [];
+
+}
+
+
+/* =========================================================
+   CHECK ANSWER
+========================================================= */
+
+function isAnswerCorrect(
+    studentAnswer,
+    question
+) {
+
+    const studentWords =
+        normalizeAnswerWords(
+            studentAnswer
+        );
+
+
+    const acceptedAnswers =
+        Array.isArray(
+            question?.answers
+        )
+            ? question.answers
+            : [];
+
+
+    if (
+        acceptedAnswers.length === 0
+    ) {
+
+        return false;
+
+    }
+
+
+    return acceptedAnswers.some(
+        acceptedAnswer => {
+
+            const acceptedWords =
+                normalizeAnswerWords(
+                    acceptedAnswer
+                );
+
+
+            if (
+                acceptedWords.length !==
+                studentWords.length
+            ) {
+
+                return false;
+
+            }
+
+
+            return acceptedWords.every(
+                (
+                    word,
+                    index
+                ) =>
+                    word ===
+                    studentWords[
+                        index
+                    ]
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CALCULATE PART SCORE
+========================================================= */
+
+function calculatePartScore(
+    partName
+) {
+
+    const questions =
+        state.chapterData?.[
+            partName
+        ]?.questions ||
+        [];
+
+
+    let score =
+        0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        ) => {
+
+            const studentAnswer =
+                state.answers[
+                    partName
+                ][index] ||
+                [];
+
+
+            if (
+                isAnswerCorrect(
+                    studentAnswer,
+                    question
+                )
+            ) {
+
+                score++;
+
+            }
+
+        }
     );
 
 
-    /*
-     * Save score automatically.
-     */
-
-    await saveScore();
+    return score;
 
 }
 
@@ -2581,303 +2822,6 @@ function calculateAllScores() {
 
 
 /* =========================================================
-   CALCULATE PART SCORE
-========================================================= */
-
-function calculatePartScore(
-    partName
-) {
-
-    const part =
-        state.chapterData?.[
-            partName
-        ];
-
-
-    if (
-        !part ||
-        !Array.isArray(
-            part.questions
-        )
-    ) {
-
-        return 0;
-
-    }
-
-
-    let score = 0;
-
-
-    part.questions.forEach(
-        (
-            question,
-            index
-        ) => {
-
-            const studentAnswer =
-                state.answers[
-                    partName
-                ][
-                    index
-                ] || [];
-
-
-            if (
-                isAnswerCorrect(
-                    studentAnswer,
-                    question
-                )
-            ) {
-
-                score++;
-
-            }
-
-        }
-    );
-
-
-    return score;
-
-}
-
-
-/* =========================================================
-   ANSWER NORMALIZATION
-========================================================= */
-
-function normalizeAnswerWords(
-    answer
-) {
-
-    if (
-        !Array.isArray(
-            answer
-        )
-    ) {
-
-        return [];
-
-    }
-
-
-    return answer.map(
-        item => {
-
-            if (
-                typeof item ===
-                "string"
-            ) {
-
-                return normalizeWord(
-                    item
-                );
-
-            }
-
-
-            if (
-                item &&
-                typeof item.word ===
-                "string"
-            ) {
-
-                return normalizeWord(
-                    item.word
-                );
-
-            }
-
-
-            return "";
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   NORMALIZE WORD
-========================================================= */
-
-function normalizeWord(
-    word
-) {
-
-    return String(
-        word ?? ""
-    )
-        .trim()
-        .replace(
-            /\s+/g,
-            " "
-        )
-        .toLowerCase();
-
-}
-
-
-/* =========================================================
-   ANSWER CORRECTNESS
-========================================================= */
-
-function isAnswerCorrect(
-    studentAnswer,
-    question
-) {
-
-    const studentWords =
-        normalizeAnswerWords(
-            studentAnswer
-        );
-
-
-    const acceptedAnswers =
-        Array.isArray(
-            question?.answers
-        )
-            ? question.answers
-            : [];
-
-
-    /*
-     * If there is no answer key,
-     * do not automatically mark it.
-     */
-
-    if (
-        acceptedAnswers.length === 0
-    ) {
-
-        return false;
-
-    }
-
-
-    return acceptedAnswers.some(
-        accepted => {
-
-            const acceptedWords =
-                normalizeAnswerWords(
-                    accepted
-                );
-
-
-            if (
-                acceptedWords.length !==
-                studentWords.length
-            ) {
-
-                return false;
-
-            }
-
-
-            return acceptedWords.every(
-                (
-                    word,
-                    index
-                ) => {
-
-                    return (
-                        word ===
-                        studentWords[index]
-                    );
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   RENDER RESULTS
-========================================================= */
-
-function renderResults() {
-
-    if (resultChapter) {
-
-        resultChapter.textContent =
-            `Chapter ${state.currentChapter}`;
-
-    }
-
-
-    if (part1Score) {
-
-        part1Score.textContent =
-            state.scores.part1;
-
-    }
-
-
-    if (part2Score) {
-
-        part2Score.textContent =
-            state.scores.part2;
-
-    }
-
-
-    if (part3Score) {
-
-        part3Score.textContent =
-            state.scores.part3;
-
-    }
-
-
-    if (totalScore) {
-
-        totalScore.textContent =
-            state.scores.total;
-
-    }
-
-
-    const maxScore =
-        getMaximumScore();
-
-
-    const percentage =
-        maxScore > 0
-            ? Math.round(
-                (
-                    state.scores.total /
-                    maxScore
-                ) * 100
-            )
-            : 0;
-
-
-    if (percentageScore) {
-
-        percentageScore.textContent =
-            `${percentage}%`;
-
-    }
-
-
-    if (saveStatus) {
-
-        saveStatus.textContent =
-            "Saving your score...";
-
-        saveStatus.style.color =
-            "#6e767f";
-
-    }
-
-}
-
-
-/* =========================================================
    GET MAXIMUM SCORE
 ========================================================= */
 
@@ -2892,7 +2836,8 @@ function getMaximumScore() {
     }
 
 
-    let maximum = 0;
+    let maximum =
+        0;
 
 
     [
@@ -2929,6 +2874,127 @@ function getMaximumScore() {
 
 
 /* =========================================================
+   FINISH TEST
+========================================================= */
+
+async function finishTest() {
+
+    if (
+        state.testSaved
+    ) {
+
+        showScreen(
+            resultScreen
+        );
+
+        return;
+
+    }
+
+
+    calculateAllScores();
+
+
+    renderResults();
+
+
+    showScreen(
+        resultScreen
+    );
+
+
+    await saveScore();
+
+}
+
+
+/* =========================================================
+   RENDER RESULTS
+========================================================= */
+
+function renderResults() {
+
+    const maximum =
+        getMaximumScore();
+
+
+    const total =
+        state.scores.total;
+
+
+    const percentage =
+        maximum > 0
+            ? Math.round(
+                (
+                    total /
+                    maximum
+                ) * 100
+            )
+            : 0;
+
+
+    if (resultChapter) {
+
+        resultChapter.textContent =
+            `Chapter ${state.currentChapter}`;
+
+    }
+
+
+    if (part1Score) {
+
+        part1Score.textContent =
+            state.scores.part1;
+
+    }
+
+
+    if (part2Score) {
+
+        part2Score.textContent =
+            state.scores.part2;
+
+    }
+
+
+    if (part3Score) {
+
+        part3Score.textContent =
+            state.scores.part3;
+
+    }
+
+
+    if (totalScore) {
+
+        totalScore.textContent =
+            total;
+
+    }
+
+
+    if (percentageScore) {
+
+        percentageScore.textContent =
+            `${percentage}%`;
+
+    }
+
+
+    if (saveStatus) {
+
+        saveStatus.textContent =
+            "Saving your score...";
+
+        saveStatus.style.color =
+            "#6e767f";
+
+    }
+
+}
+
+
+/* =========================================================
    SAVE SCORE
 ========================================================= */
 
@@ -2945,32 +3011,14 @@ async function saveScore() {
 
     if (
         !state.username ||
-        !state.studentClass
-    ) {
-
-        if (saveStatus) {
-
-            saveStatus.textContent =
-                "Unable to save score: student information is missing.";
-
-            saveStatus.style.color =
-                "#d93636";
-
-        }
-
-        return;
-
-    }
-
-
-    if (
+        !state.studentClass ||
         !state.currentChapter
     ) {
 
         if (saveStatus) {
 
             saveStatus.textContent =
-                "Unable to save score: chapter is missing.";
+                "Unable to save score.";
 
             saveStatus.style.color =
                 "#d93636";
@@ -2988,6 +3036,7 @@ async function saveScore() {
             await callAPI(
                 "saveScore",
                 {
+
                     username:
                         state.username,
 
@@ -3007,20 +3056,23 @@ async function saveScore() {
                         state.scores.part3,
 
                     total:
-                        state.scores.total
+                        state.scores.total,
+
+                    maximum:
+                        getMaximumScore()
+
                 }
             );
 
 
         console.log(
-            "Save Score Response:",
+            "SAVE SCORE RESPONSE:",
             result
         );
 
 
         if (
-            result &&
-            result.success
+            result?.success === true
         ) {
 
             state.testSaved =
@@ -3052,11 +3104,10 @@ async function saveScore() {
 
         }
 
-
     } catch (error) {
 
         console.error(
-            "Save score error:",
+            "SAVE SCORE ERROR:",
             error
         );
 
@@ -3089,7 +3140,8 @@ async function getScoreHistory() {
 
         return {
 
-            success: false,
+            success:
+                false,
 
             message:
                 "Student information is missing."
@@ -3102,11 +3154,13 @@ async function getScoreHistory() {
     return await callAPI(
         "getScoreHistory",
         {
+
             username:
                 state.username,
 
             class:
                 state.studentClass
+
         }
     );
 
@@ -3173,14 +3227,12 @@ async function showScoreHistory() {
 
 
         console.log(
-            "Score History Response:",
+            "SCORE HISTORY RESPONSE:",
             result
         );
 
 
-        if (
-            historyLoading
-        ) {
+        if (historyLoading) {
 
             historyLoading.style.display =
                 "none";
@@ -3190,7 +3242,7 @@ async function showScoreHistory() {
 
         if (
             !result ||
-            !result.success
+            result.success !== true
         ) {
 
             if (historyList) {
@@ -3211,16 +3263,32 @@ async function showScoreHistory() {
         }
 
 
-        const history =
+        /*
+         * New Code.gs:
+         *
+         * records: [...]
+         *
+         * Older version:
+         *
+         * history: [...]
+         */
+
+        const records =
             Array.isArray(
-                result.history
+                result.records
             )
-                ? result.history
-                : [];
+                ? result.records
+                : (
+                    Array.isArray(
+                        result.history
+                    )
+                        ? result.history
+                        : []
+                );
 
 
         if (
-            history.length === 0
+            records.length === 0
         ) {
 
             if (historyEmpty) {
@@ -3235,15 +3303,21 @@ async function showScoreHistory() {
         }
 
 
+        const normalizedRecords =
+            records.map(
+                normalizeHistoryRecord
+            );
+
+
         renderScoreHistory(
-            history
+            normalizedRecords
         );
 
 
     } catch (error) {
 
         console.error(
-            "Score history error:",
+            "SCORE HISTORY ERROR:",
             error
         );
 
@@ -3261,6 +3335,11 @@ async function showScoreHistory() {
             historyList.innerHTML = `
                 <div class="history-error">
                     Unable to load score history.
+                    <br><br>
+                    ${escapeHTML(
+                        error.message ||
+                        ""
+                    )}
                 </div>
             `;
 
@@ -3272,11 +3351,93 @@ async function showScoreHistory() {
 
 
 /* =========================================================
+   NORMALIZE HISTORY RECORD
+========================================================= */
+
+function normalizeHistoryRecord(
+    record
+) {
+
+    record =
+        record ||
+        {};
+
+
+    return {
+
+        chapter:
+            record.chapter ??
+            record.Chapter ??
+            "Chapter",
+
+
+        part1:
+            Number(
+                record.part1 ??
+                record["Part 1 Score"] ??
+                0
+            ) ||
+            0,
+
+
+        part2:
+            Number(
+                record.part2 ??
+                record["Part 2 Score"] ??
+                0
+            ) ||
+            0,
+
+
+        part3:
+            Number(
+                record.part3 ??
+                record["Part 3 Score"] ??
+                0
+            ) ||
+            0,
+
+
+        total:
+            Number(
+                record.total ??
+                record.Total ??
+                0
+            ) ||
+            0,
+
+
+        maximum:
+            Number(
+                record.maximum ??
+                record.Maximum ??
+                0
+            ) ||
+            0,
+
+
+        percentage:
+            record.percentage ??
+            record.Percentage ??
+            "",
+
+
+        date:
+            record.date ??
+            record.Date ??
+            ""
+
+    };
+
+}
+
+
+/* =========================================================
    RENDER SCORE HISTORY
 ========================================================= */
 
 function renderScoreHistory(
-    history
+    records
 ) {
 
     if (!historyList) {
@@ -3287,292 +3448,383 @@ function renderScoreHistory(
 
 
     historyList.innerHTML =
-        history.map(
-            (
-                item,
-                index
-            ) => {
-
-                const percentage =
-                    calculateHistoryPercentage(
-                        item
-                    );
+        "";
 
 
-                return `
-                    <div class="history-card">
+    records.forEach(
+        (
+            item,
+            index
+        ) => {
 
-                        <div class="history-card-top">
-
-                            <div>
-
-                                <div class="history-number">
-                                    TEST ${history.length - index}
-                                </div>
-
-                                <h3>
-                                    ${escapeHTML(
-                                        item.chapter ||
-                                        "Chapter"
-                                    )}
-                                </h3>
-
-                            </div>
+            const card =
+                document.createElement(
+                    "div"
+                );
 
 
-                            <div class="history-total">
-                                ${escapeHTML(
-                                    String(
-                                        item.total ?? 0
-                                    )
-                                )}
-                            </div>
+            card.className =
+                "history-card";
 
+
+            /*
+             * Inline design is intentional.
+             *
+             * This means we do not need
+             * to modify style.css.
+             */
+
+            card.style.background =
+                "#ffffff";
+
+            card.style.borderRadius =
+                "18px";
+
+            card.style.padding =
+                "18px";
+
+            card.style.marginBottom =
+                "16px";
+
+            card.style.border =
+                "1px solid #e7e7e7";
+
+            card.style.boxShadow =
+                "0 5px 18px rgba(0,0,0,.07)";
+
+            card.style.boxSizing =
+                "border-box";
+
+            card.style.width =
+                "100%";
+
+
+            const percentage =
+                getHistoryPercentage(
+                    item
+                );
+
+
+            card.innerHTML = `
+
+                <div
+                    style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        gap:12px;
+                        margin-bottom:16px;
+                    "
+                >
+
+                    <div
+                        style="
+                            min-width:0;
+                            flex:1;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size:11px;
+                                font-weight:700;
+                                letter-spacing:1px;
+                                color:#8a8f98;
+                                margin-bottom:5px;
+                            "
+                        >
+                            TEST ${records.length - index}
                         </div>
 
 
-                        <div class="history-details">
-
-                            <div class="history-part">
-
-                                <span>
-                                    Part 1
-                                </span>
-
-                                <strong>
-                                    ${escapeHTML(
-                                        String(
-                                            item.part1 ?? 0
-                                        )
-                                    )}
-                                </strong>
-
-                            </div>
-
-
-                            <div class="history-part">
-
-                                <span>
-                                    Part 2
-                                </span>
-
-                                <strong>
-                                    ${escapeHTML(
-                                        String(
-                                            item.part2 ?? 0
-                                        )
-                                    )}
-                                </strong>
-
-                            </div>
-
-
-                            <div class="history-part">
-
-                                <span>
-                                    Part 3
-                                </span>
-
-                                <strong>
-                                    ${escapeHTML(
-                                        String(
-                                            item.part3 ?? 0
-                                        )
-                                    )}
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="history-bottom">
-
-                            <span>
-                                ${escapeHTML(
-                                    formatHistoryDate(
-                                        item.date
-                                    )
-                                )}
-                            </span>
-
-                            <strong>
-                                ${percentage}%
-                            </strong>
-
+                        <div
+                            style="
+                                font-size:18px;
+                                font-weight:800;
+                                line-height:1.3;
+                                color:#222222;
+                                word-break:break-word;
+                                overflow-wrap:anywhere;
+                            "
+                        >
+                            ${escapeHTML(
+                                item.chapter
+                            )}
                         </div>
 
                     </div>
-                `;
 
-            }
-        )
-        .join("");
+
+                    <div
+                        style="
+                            flex-shrink:0;
+                            width:54px;
+                            height:54px;
+                            border-radius:14px;
+                            background:#383838;
+                            color:#ffffff;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:800;
+                        "
+                    >
+                        ${item.total}
+                    </div>
+
+                </div>
+
+
+                <div
+                    style="
+                        display:grid;
+                        grid-template-columns:
+                            repeat(3,minmax(0,1fr));
+                        gap:8px;
+                        width:100%;
+                    "
+                >
+
+                    ${createHistoryPart(
+                        "Part 1",
+                        item.part1
+                    )}
+
+                    ${createHistoryPart(
+                        "Part 2",
+                        item.part2
+                    )}
+
+                    ${createHistoryPart(
+                        "Part 3",
+                        item.part3
+                    )}
+
+                </div>
+
+
+                <div
+                    style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        gap:10px;
+                        margin-top:15px;
+                        padding-top:13px;
+                        border-top:1px solid #eeeeee;
+                    "
+                >
+
+                    <span
+                        style="
+                            font-size:12px;
+                            color:#8a8f98;
+                            word-break:break-word;
+                        "
+                    >
+                        ${escapeHTML(
+                            formatHistoryDate(
+                                item.date
+                            )
+                        )}
+                    </span>
+
+
+                    <strong
+                        style="
+                            font-size:15px;
+                            color:#383838;
+                            flex-shrink:0;
+                        "
+                    >
+                        ${percentage}%
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            historyList.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
 
 /* =========================================================
-   CALCULATE HISTORY PERCENTAGE
+   HISTORY PART CARD
 ========================================================= */
 
-function calculateHistoryPercentage(
+function createHistoryPart(
+    label,
+    score
+) {
+
+    return `
+
+        <div
+            style="
+                background:#f6f6f6;
+                border-radius:12px;
+                padding:11px 8px;
+                text-align:center;
+                min-width:0;
+                box-sizing:border-box;
+            "
+        >
+
+            <span
+                style="
+                    display:block;
+                    font-size:11px;
+                    color:#777777;
+                    margin-bottom:4px;
+                "
+            >
+                ${label}
+            </span>
+
+
+            <strong
+                style="
+                    display:block;
+                    font-size:16px;
+                    color:#222222;
+                "
+            >
+                ${score}
+            </strong>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   HISTORY PERCENTAGE
+========================================================= */
+
+function getHistoryPercentage(
     item
 ) {
 
     const total =
         Number(
-            item?.total
-        ) || 0;
+            item.total
+        ) ||
+        0;
+
+
+    const maximum =
+        Number(
+            item.maximum
+        ) ||
+        0;
 
 
     /*
-     * If the API has maximum score
-     * in the future, use it.
+     * Preferred:
+     * Code.gs sends Maximum.
      */
 
     if (
-        Number(
-            item?.maximum
-        ) > 0
+        maximum > 0
     ) {
 
         return Math.round(
             (
                 total /
-                Number(
-                    item.maximum
-                )
-            ) * 100
+                maximum
+            ) *
+            100
         );
 
     }
 
 
     /*
-     * Current Score sheet does not
-     * store maximum score.
-     *
-     * We therefore calculate the
-     * maximum from the three parts.
-     */
-
-    const part1 =
-        Number(
-            item?.part1
-        ) || 0;
-
-
-    const part2 =
-        Number(
-            item?.part2
-        ) || 0;
-
-
-    const part3 =
-        Number(
-            item?.part3
-        ) || 0;
-
-
-    const recordedPartTotal =
-        part1 +
-        part2 +
-        part3;
-
-
-    /*
-     * This is only a fallback.
-     *
-     * If all three recorded scores
-     * are zero, return 0.
+     * If Code.gs already sends
+     * Percentage.
      */
 
     if (
-        recordedPartTotal <= 0
+        item.percentage !== "" &&
+        item.percentage !== null &&
+        item.percentage !== undefined
     ) {
 
-        return 0;
+        const percentage =
+            Number(
+                item.percentage
+            );
+
+
+        if (
+            !Number.isNaN(
+                percentage
+            )
+        ) {
+
+            return Math.round(
+                percentage
+            );
+
+        }
 
     }
 
 
     /*
-     * If we don't know the original
-     * maximum score, don't falsely
-     * assume 100%.
-     *
-     * The current Code.gs returns
-     * the actual score values only.
-     *
-     * This fallback is replaced below
-     * by the chapter's known question
-     * count when available.
+     * If the same chapter is currently
+     * loaded, calculate using its
+     * actual question count.
      */
-
-    const knownMaximum =
-        getKnownMaximumForHistoryItem(
-            item
-        );
-
-
-    if (
-        knownMaximum > 0
-    ) {
-
-        return Math.round(
-            (
-                total /
-                knownMaximum
-            ) * 100
-        );
-
-    }
-
-
-    return 0;
-
-}
-
-
-/* =========================================================
-   GET KNOWN MAXIMUM FOR HISTORY
-========================================================= */
-
-function getKnownMaximumForHistoryItem(
-    item
-) {
 
     const chapterNumber =
         extractChapterNumber(
-            item?.chapter
+            item.chapter
         );
 
 
     if (
-        !chapterNumber
-    ) {
-
-        return 0;
-
-    }
-
-
-    /*
-     * If this is the currently loaded
-     * chapter, we know its exact total.
-     */
-
-    if (
+        chapterNumber &&
         state.currentChapter ===
         chapterNumber &&
         state.chapterData
     ) {
 
-        return getMaximumScore();
+        const knownMaximum =
+            getMaximumScore();
+
+
+        if (
+            knownMaximum > 0
+        ) {
+
+            return Math.round(
+                (
+                    total /
+                    knownMaximum
+                ) *
+                100
+            );
+
+        }
 
     }
 
+
+    /*
+     * We don't invent a percentage
+     * when maximum is unknown.
+     */
 
     return 0;
 
@@ -3616,9 +3868,16 @@ function formatHistoryDate(
     return parsed.toLocaleDateString(
         undefined,
         {
-            year: "numeric",
-            month: "short",
-            day: "numeric"
+
+            year:
+                "numeric",
+
+            month:
+                "short",
+
+            day:
+                "numeric"
+
         }
     );
 
@@ -3633,29 +3892,19 @@ function extractChapterNumber(
     value
 ) {
 
-    const text =
-        String(
-            value ||
-            ""
-        );
-
-
     const match =
-        text.match(
+        String(
+            value ?? ""
+        ).match(
             /(\d+)/
         );
 
 
-    if (!match) {
-
-        return 0;
-
-    }
-
-
-    return Number(
-        match[1]
-    );
+    return match
+        ? Number(
+            match[1]
+        )
+        : 0;
 
 }
 
@@ -3762,7 +4011,7 @@ function handleLogout() {
     if (studentClassBadge) {
 
         studentClassBadge.textContent =
-            "Beginner";
+            "";
 
     }
 
@@ -3781,41 +4030,6 @@ function handleLogout() {
     showScreen(
         loginScreen
     );
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHTML(
-    value
-) {
-
-    return String(
-        value ?? ""
-    )
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
 
 }
 
