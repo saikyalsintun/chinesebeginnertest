@@ -1,0 +1,807 @@
+{
+  "chapter": {
+    "id": "chapter-14",
+    "title": "Chapter 14",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch14-p1-q1",
+          "question": "ဒီနေ့ ဘာနေ့လဲ။",
+          "words": [
+            "jīntiān",
+            "xīngqī",
+            "jǐ",
+            "shì",
+            "míngtiān",
+            "sān",
+            "wǔ"
+          ],
+          "answers": [
+            [
+              "jīntiān",
+              "xīngqī",
+              "jǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q2",
+          "question": "ဒီနေ့ သောကြာနေ့ပါ။",
+          "words": [
+            "jīntiān",
+            "xīngqī",
+            "wǔ",
+            "sān",
+            "shì",
+            "míngtiān",
+            "jǐ"
+          ],
+          "answers": [
+            [
+              "jīntiān",
+              "xīngqī",
+              "wǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q3",
+          "question": "ငါ ဒီနေ့ အင်္ဂါနေ့လို့ ထင်ခဲ့တာ။",
+          "words": [
+            "wǒ",
+            "yǐwéi",
+            "cái",
+            "xīngqī",
+            "sān",
+            "jīntiān",
+            "wǔ",
+            "míngtiān"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yǐwéi",
+              "cái",
+              "xīngqī",
+              "sān"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q4",
+          "question": "မနက်ဖြန် ညီလေးအတွက် လက်ဆောင်ဝယ်ရမယ်။",
+          "words": [
+            "wǒ",
+            "míngtiān",
+            "děi",
+            "qù",
+            "mǎi",
+            "lǐwù",
+            "gěi",
+            "wǒ",
+            "dìdi"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "míngtiān",
+              "děi",
+              "qù",
+              "mǎi",
+              "lǐwù",
+              "gěi",
+              "wǒ",
+              "dìdi"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q5",
+          "question": "မနက်ဖြန်က သူ့မွေးနေ့ပါ။",
+          "words": [
+            "míngtiān",
+            "shì",
+            "tā",
+            "de",
+            "shēngrì",
+            "jīntiān",
+            "lǐwù",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "shì",
+              "tā",
+              "de",
+              "shēngrì"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q6",
+          "question": "မွေးနေ့ပျော်ရွှင်ပါစေလို့ ဆုတောင်းပေးပါ။",
+          "words": [
+            "zhù",
+            "tā",
+            "shēngrì",
+            "kuàilè",
+            "xièxie",
+            "míngtiān",
+            "gěi",
+            "lǐwù"
+          ],
+          "answers": [
+            [
+              "zhù",
+              "tā",
+              "shēngrì",
+              "kuàilè"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q7",
+          "question": "မနက်ဖြန် ညနေ ၅ နာရီမှာ ငါ့အိမ်ကို ထမင်းလာစားပါ။",
+          "words": [
+            "míngtiān",
+            "xiàwǔ",
+            "wǔ",
+            "diǎn",
+            "lái",
+            "wǒ",
+            "jiā",
+            "chīfàn",
+            "jīntiān"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "xiàwǔ",
+              "wǔ",
+              "diǎn",
+              "lái",
+              "wǒ",
+              "jiā",
+              "chīfàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q8",
+          "question": "မနက်ဖြန် ငါသေချာပေါက်လာမယ်။",
+          "words": [
+            "míngtiān",
+            "wǒ",
+            "yídìng",
+            "lái",
+            "xiàwǔ",
+            "wǔ",
+            "diǎn",
+            "hǎo"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "wǒ",
+              "yídìng",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q9",
+          "question": "မနှစ်က တရုတ်နိုင်ငံ ယူနန်က အိမ်မှာ နှစ်သစ်ကူးခဲ့တယ်။",
+          "words": [
+            "qùnián",
+            "wǒ",
+            "zài",
+            "Yúnnán",
+            "lǎojiā",
+            "guò",
+            "de",
+            "Běijīng",
+            "jīnnián"
+          ],
+          "answers": [
+            [
+              "qùnián",
+              "wǒ",
+              "zài",
+              "Yúnnán",
+              "lǎojiā",
+              "guò",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p1-q10",
+          "question": "အလုပ်များလို့ အိမ်မပြန်ဖြစ်ဘူး။",
+          "words": [
+            "yīnwèi",
+            "gōngzuò",
+            "máng",
+            "méiyǒu",
+            "huíqù",
+            "jīnnián",
+            "yào",
+            "de"
+          ],
+          "answers": [
+            [
+              "yīnwèi",
+              "gōngzuò",
+              "máng",
+              "méiyǒu",
+              "huíqù"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer the Question",
+      "instruction": "Answer the question by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch14-p2-q1",
+          "question": "Xiǎomíng, jīntiān xīngqī jǐ?",
+          "words": [
+            "jīntiān",
+            "xīngqī",
+            "wǔ",
+            "sān",
+            "jǐ",
+            "shì"
+          ],
+          "answers": [
+            [
+              "jīntiān",
+              "xīngqī",
+              "wǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q2",
+          "question": "Zěnme le?",
+          "words": [
+            "wǒ",
+            "yǐwéi",
+            "cái",
+            "xīngqī",
+            "sān",
+            "wǔ",
+            "jīntiān",
+            "míngtiān"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yǐwéi",
+              "cái",
+              "xīngqī",
+              "sān"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q3",
+          "question": "Wǒ míngtiān děi qù mǎi shénme?",
+          "words": [
+            "wǒ",
+            "míngtiān",
+            "děi",
+            "qù",
+            "mǎi",
+            "lǐwù",
+            "gěi",
+            "dìdi",
+            "shēngrì"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "míngtiān",
+              "děi",
+              "qù",
+              "mǎi",
+              "lǐwù",
+              "gěi",
+              "wǒ",
+              "dìdi"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q4",
+          "question": "Míngtiān shì tā de shénme?",
+          "words": [
+            "míngtiān",
+            "shì",
+            "tā",
+            "de",
+            "shēngrì",
+            "lǐwù",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "shì",
+              "tā",
+              "de",
+              "shēngrì"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q5",
+          "question": "Nà zhù tā shénme?",
+          "words": [
+            "zhù",
+            "tā",
+            "shēngrì",
+            "kuàilè",
+            "lǐwù",
+            "gěi",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "zhù",
+              "tā",
+              "shēngrì",
+              "kuàilè"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q6",
+          "question": "Míngtiān xiàwǔ wǔ diǎn lái nǎr chīfàn?",
+          "words": [
+            "míngtiān",
+            "xiàwǔ",
+            "wǔ",
+            "diǎn",
+            "lái",
+            "wǒ",
+            "jiā",
+            "chīfàn",
+            "nǐ"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "xiàwǔ",
+              "wǔ",
+              "diǎn",
+              "lái",
+              "wǒ",
+              "jiā",
+              "chīfàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q7",
+          "question": "Míngtiān wǒ yídìng lái ma?",
+          "words": [
+            "hǎo",
+            "a",
+            "míngtiān",
+            "wǒ",
+            "yídìng",
+            "lái",
+            "xièxie",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "a"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q8",
+          "question": "Qùnián guònián nǐ zài nǎr guò de?",
+          "words": [
+            "qùnián",
+            "wǒ",
+            "zài",
+            "Yúnnán",
+            "lǎojiā",
+            "guò",
+            "de",
+            "Běijīng",
+            "jīnnián"
+          ],
+          "answers": [
+            [
+              "qùnián",
+              "wǒ",
+              "zài",
+              "Yúnnán",
+              "lǎojiā",
+              "guò",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q9",
+          "question": "Nǐ zěnme bù huíqù ne?",
+          "words": [
+            "yīnwèi",
+            "gōngzuò",
+            "máng",
+            "méiyǒu",
+            "huíqù",
+            "jīnnián",
+            "Běijīng"
+          ],
+          "answers": [
+            [
+              "yīnwèi",
+              "gōngzuò",
+              "máng",
+              "méiyǒu",
+              "huíqù"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q10",
+          "question": "Jīnnián yào huíqù de, nǐ shénme shíhou huíqù?",
+          "words": [
+            "wǒ",
+            "yī",
+            "yuè",
+            "bā",
+            "hào",
+            "huíqù",
+            "xià",
+            "gè",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yī",
+              "yuè",
+              "bā",
+              "hào",
+              "huíqù"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q11",
+          "question": "Nǐ shénme shíhou huíqù?",
+          "words": [
+            "wǒ",
+            "yī",
+            "yuè",
+            "bā",
+            "hào",
+            "huíqù",
+            "nǐ",
+            "xià",
+            "gè",
+            "xīngqī"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yī",
+              "yuè",
+              "bā",
+              "hào",
+              "huíqù"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p2-q12",
+          "question": "Nǐ shénme shíhou zǒu?",
+          "words": [
+            "wǒ",
+            "xià",
+            "gè",
+            "xīngqī",
+            "jiù",
+            "zǒu",
+            "le",
+            "jīnnián",
+            "míngnián"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xià",
+              "gè",
+              "xīngqī",
+              "jiù",
+              "zǒu",
+              "le"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch14-p3-q1",
+          "question": "",
+          "words": [
+            "jīntiān",
+            "xīngqī",
+            "jǐ",
+            "wǔ",
+            "shì"
+          ],
+          "answers": [
+            [
+              "jīntiān",
+              "xīngqī",
+              "wǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q2",
+          "question": "",
+          "words": [
+            "yǐwéi",
+            "wǒ",
+            "xīngqī",
+            "cái",
+            "sān",
+            "jīntiān"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yǐwéi",
+              "cái",
+              "xīngqī",
+              "sān"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q3",
+          "question": "",
+          "words": [
+            "lǐwù",
+            "míngtiān",
+            "gěi",
+            "qù",
+            "wǒ",
+            "mǎi",
+            "dìdi",
+            "děi"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "míngtiān",
+              "děi",
+              "qù",
+              "mǎi",
+              "lǐwù",
+              "gěi",
+              "wǒ",
+              "dìdi"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q4",
+          "question": "",
+          "words": [
+            "tā",
+            "shēngrì",
+            "míngtiān",
+            "de",
+            "shì",
+            "lǐwù"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "shì",
+              "tā",
+              "de",
+              "shēngrì"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q5",
+          "question": "",
+          "words": [
+            "kuàilè",
+            "zhù",
+            "tā",
+            "shēngrì",
+            "gěi",
+            "xièxie"
+          ],
+          "answers": [
+            [
+              "zhù",
+              "tā",
+              "shēngrì",
+              "kuàilè"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q6",
+          "question": "",
+          "words": [
+            "xiàwǔ",
+            "míngtiān",
+            "wǔ",
+            "lái",
+            "wǒ",
+            "jiā",
+            "diǎn",
+            "chīfàn"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "xiàwǔ",
+              "wǔ",
+              "diǎn",
+              "lái",
+              "wǒ",
+              "jiā",
+              "chīfàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q7",
+          "question": "",
+          "words": [
+            "yídìng",
+            "míngtiān",
+            "wǒ",
+            "lái",
+            "hǎo",
+            "a"
+          ],
+          "answers": [
+            [
+              "míngtiān",
+              "wǒ",
+              "yídìng",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q8",
+          "question": "",
+          "words": [
+            "qùnián",
+            "Yúnnán",
+            "wǒ",
+            "zài",
+            "lǎojiā",
+            "guò",
+            "de"
+          ],
+          "answers": [
+            [
+              "qùnián",
+              "wǒ",
+              "zài",
+              "Yúnnán",
+              "lǎojiā",
+              "guò",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q9",
+          "question": "",
+          "words": [
+            "gōngzuò",
+            "méiyǒu",
+            "yīnwèi",
+            "huíqù",
+            "máng"
+          ],
+          "answers": [
+            [
+              "yīnwèi",
+              "gōngzuò",
+              "máng",
+              "méiyǒu",
+              "huíqù"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q10",
+          "question": "",
+          "words": [
+            "yī",
+            "huíqù",
+            "bā",
+            "wǒ",
+            "yuè",
+            "hào",
+            "de"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yī",
+              "yuè",
+              "bā",
+              "hào",
+              "huíqù"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q11",
+          "question": "",
+          "words": [
+            "xià",
+            "jiù",
+            "xīngqī",
+            "wǒ",
+            "zǒu",
+            "gè",
+            "le"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xià",
+              "gè",
+              "xīngqī",
+              "jiù",
+              "zǒu",
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch14-p3-q12",
+          "question": "",
+          "words": [
+            "xīnnián",
+            "zhù",
+            "nǐ",
+            "kuàilè",
+            "tóng",
+            "lè"
+          ],
+          "answers": [
+            [
+              "zhù",
+              "nǐ",
+              "xīnnián",
+              "kuàilè"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

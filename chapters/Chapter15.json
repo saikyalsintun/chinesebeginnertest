@@ -1,0 +1,964 @@
+{
+  "chapter": {
+    "id": "chapter-15",
+    "title": "Chapter 15",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch15-p1-q1",
+          "question": "ခင်ဗျား ဘာအရောင်ရှိလဲ။",
+          "words": [
+            "nǐ",
+            "yǒu",
+            "shénme",
+            "yánsè",
+            "hóngsè",
+            "hēisè",
+            "bǎisè"
+          ],
+          "answers": [
+            [
+              "nǐ",
+              "yǒu",
+              "shénme",
+              "yánsè"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q2",
+          "question": "ဒီဘောင်းဘီမှာ တခြားအရောင်ရှိလား။",
+          "words": [
+            "zhè",
+            "tiáo",
+            "kùzi",
+            "yǒu",
+            "biéde",
+            "yánsè",
+            "ma",
+            "hóngsè",
+            "hēisè"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "tiáo",
+              "kùzi",
+              "yǒu",
+              "biéde",
+              "yánsè",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q3",
+          "question": "ဒီဟာမှာ အနီ၊ အနက်၊ အဖြူနဲ့ အပြာရောင်ရှိတယ်။",
+          "words": [
+            "zhège",
+            "yǒu",
+            "hóngsè",
+            "hēisè",
+            "bǎisè",
+            "hé",
+            "lánsè",
+            "huángsè",
+            "lǜsè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "yǒu",
+              "hóngsè",
+              "hēisè",
+              "bǎisè",
+              "hé",
+              "lánsè"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q4",
+          "question": "ငါ အနက်ရောင်ကို လိုချင်တယ်။ ဘယ်လောက်လဲ။",
+          "words": [
+            "wǒ",
+            "yào",
+            "hēisè",
+            "de",
+            "duōshǎo",
+            "qián",
+            "hóngsè",
+            "bǎisè",
+            "kùzi"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yào",
+              "hēisè",
+              "de",
+              "duōshǎo",
+              "qián"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q5",
+          "question": "မြန်မာငွေ ၂၅,၀၀၀ ပါ။",
+          "words": [
+            "liǎngwàn",
+            "wǔqiān",
+            "miǎnbì",
+            "liǎng",
+            "wàn",
+            "qiān",
+            "yuán"
+          ],
+          "answers": [
+            [
+              "liǎngwàn",
+              "wǔqiān",
+              "miǎnbì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q6",
+          "question": "ကောင်းပြီ။ ဒီဟာပဲ လိုချင်တယ်။",
+          "words": [
+            "hǎo",
+            "jiù",
+            "yào",
+            "zhège",
+            "nàge",
+            "wǒ",
+            "hēisè",
+            "de"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "jiù",
+              "yào",
+              "zhège"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q7",
+          "question": "ကျေးဇူးတင်ပါတယ်။ နောက်တစ်ခါ ပြန်လာဖို့ကြိုဆိုပါတယ်။",
+          "words": [
+            "xièxie",
+            "huānyíng",
+            "xiàcì",
+            "zài",
+            "lái",
+            "hǎo",
+            "de",
+            "bú",
+            "kèqì"
+          ],
+          "answers": [
+            [
+              "xièxie",
+              "huānyíng",
+              "xiàcì",
+              "zài",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q8",
+          "question": "နောက်တစ်ခါလည်း ပြန်လာဦးမယ်။",
+          "words": [
+            "wǒ",
+            "xiàcì",
+            "háihuì",
+            "lái",
+            "huānyíng",
+            "zài",
+            "hǎo",
+            "de"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xiàcì",
+              "háihuì",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q9",
+          "question": "ဒီအဖြူရောင်အင်္ကျီကို စမ်းဝတ်ကြည့်လို့ရမလား။",
+          "words": [
+            "zhè",
+            "jiàn",
+            "yīfu",
+            "kěyǐ",
+            "shì",
+            "yíxià",
+            "ma",
+            "bǎisè",
+            "hēisè"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "jiàn",
+              "yīfu",
+              "kěyǐ",
+              "shì",
+              "yíxià",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q10",
+          "question": "ဒီအဖြူရောင်က စမ်းလို့မရဘူး။",
+          "words": [
+            "zhège",
+            "bǎisè",
+            "bù",
+            "néng",
+            "shì",
+            "wǒ",
+            "gěi",
+            "nǐ",
+            "hēisè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "bǎisè",
+              "bù",
+              "néng",
+              "shì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q11",
+          "question": "အနက်ရောင်ဟာကို စမ်းကြည့်ဖို့ ယူပေးမယ်။",
+          "words": [
+            "wǒ",
+            "gěi",
+            "nǐ",
+            "ná",
+            "hēisè",
+            "de",
+            "shì",
+            "yíxià",
+            "bǎisè"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "gěi",
+              "nǐ",
+              "ná",
+              "hēisè",
+              "de",
+              "shì",
+              "yíxià"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q12",
+          "question": "အဆင်ပြေပါတယ်။",
+          "words": [
+            "méishì",
+            "hǎo",
+            "de",
+            "bú",
+            "kèqì",
+            "xíng",
+            "xièxie"
+          ],
+          "answers": [
+            [
+              "méishì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q13",
+          "question": "ဒီဟာကို မင်းအတွက်။",
+          "words": [
+            "zhège",
+            "gěi",
+            "nǐ",
+            "hēisè",
+            "bǎisè",
+            "yīfu",
+            "shì"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "gěi",
+              "nǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q14",
+          "question": "စမ်းဝတ်တဲ့အခန်းက ဘယ်မှာလဲ။",
+          "words": [
+            "qǐngwèn",
+            "shìyījiān",
+            "zài",
+            "nǎr",
+            "zhèlǐ",
+            "wàimiàn",
+            "kùzi"
+          ],
+          "answers": [
+            [
+              "qǐngwèn",
+              "shìyījiān",
+              "zài",
+              "nǎr"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p1-q15",
+          "question": "တည့်တည့်သွားပြီး ဘယ်ဘက်ကွေ့ရင် ရောက်ပြီ။",
+          "words": [
+            "zhí",
+            "zǒu",
+            "zuó",
+            "zhuǎn",
+            "jiù",
+            "shì",
+            "le",
+            "yòu",
+            "zǒu"
+          ],
+          "answers": [
+            [
+              "zhí",
+              "zǒu",
+              "zuó",
+              "zhuǎn",
+              "jiù",
+              "shì",
+              "le"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer the Question",
+      "instruction": "Answer the question by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch15-p2-q1",
+          "question": "Xiānsheng, nǐ hǎo. Qǐngwèn yǒu shénme kěyǐ bāng nín de ma?",
+          "words": [
+            "zhè",
+            "tiáo",
+            "kùzi",
+            "yǒu",
+            "biéde",
+            "yánsè",
+            "hēisè",
+            "bǎisè",
+            "lánsè"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "tiáo",
+              "kùzi",
+              "yǒu",
+              "biéde",
+              "yánsè",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q2",
+          "question": "Zhè tiáo kùzi yǒu biéde yánsè ma?",
+          "words": [
+            "zhège",
+            "yǒu",
+            "hóngsè",
+            "hēisè",
+            "bǎisè",
+            "hé",
+            "lánsè",
+            "huángsè",
+            "lǜsè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "yǒu",
+              "hóngsè",
+              "hēisè",
+              "bǎisè",
+              "hé",
+              "lánsè"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q3",
+          "question": "Duōshǎo qián?",
+          "words": [
+            "liǎngwàn",
+            "wǔqiān",
+            "miǎnbì",
+            "hóngsè",
+            "hēisè",
+            "bǎisè"
+          ],
+          "answers": [
+            [
+              "liǎngwàn",
+              "wǔqiān",
+              "miǎnbì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q4",
+          "question": "Nǐ yào nǎge yánsè de?",
+          "words": [
+            "wǒ",
+            "yào",
+            "hēisè",
+            "de",
+            "hóngsè",
+            "bǎisè",
+            "lánsè"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yào",
+              "hēisè",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q5",
+          "question": "Jiù yào zhège ma?",
+          "words": [
+            "hǎo",
+            "jiù",
+            "yào",
+            "zhège",
+            "nàge",
+            "xièxie"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "jiù",
+              "yào",
+              "zhège"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q6",
+          "question": "Xiǎojiě, nǐ hǎo. Qǐngwèn yǒu shénme xūyào bāngmáng ma?",
+          "words": [
+            "shì",
+            "de",
+            "zhè",
+            "jiàn",
+            "yīfu",
+            "kěyǐ",
+            "shì",
+            "yíxià",
+            "ma"
+          ],
+          "answers": [
+            [
+              "shì",
+              "de"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q7",
+          "question": "Zhè jiàn yīfu kěyǐ shì yíxià ma?",
+          "words": [
+            "zhège",
+            "bǎisè",
+            "bù",
+            "néng",
+            "shì",
+            "wǒ",
+            "gěi",
+            "nǐ",
+            "hēisè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "bǎisè",
+              "bù",
+              "néng",
+              "shì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q8",
+          "question": "Nǐ gěi wǒ ná shénme yīfu shìyīxià?",
+          "words": [
+            "wǒ",
+            "gěi",
+            "nǐ",
+            "ná",
+            "hēisè",
+            "de",
+            "shì",
+            "yíxià",
+            "bǎisè"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "gěi",
+              "nǐ",
+              "ná",
+              "hēisè",
+              "de",
+              "shì",
+              "yíxià"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q9",
+          "question": "Shìyījiān zài nǎr?",
+          "words": [
+            "qǐngwèn",
+            "shìyījiān",
+            "zài",
+            "nǎr",
+            "zhílǐ",
+            "wàimiàn",
+            "kùzi"
+          ],
+          "answers": [
+            [
+              "qǐngwèn",
+              "shìyījiān",
+              "zài",
+              "nǎr"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q10",
+          "question": "Shìyījiān zài nǎr?",
+          "words": [
+            "zhí",
+            "zǒu",
+            "zuó",
+            "zhuǎn",
+            "jiù",
+            "shì",
+            "le",
+            "yòu",
+            "lái"
+          ],
+          "answers": [
+            [
+              "zhí",
+              "zǒu",
+              "zuó",
+              "zhuǎn",
+              "jiù",
+              "shì",
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q11",
+          "question": "Xiàcì háihuì lái ma?",
+          "words": [
+            "wǒ",
+            "xiàcì",
+            "háihuì",
+            "lái",
+            "hǎo",
+            "de",
+            "bú",
+            "kèqì"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xiàcì",
+              "háihuì",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p2-q12",
+          "question": "Zhège gěi nǐ.",
+          "words": [
+            "zhège",
+            "gěi",
+            "nǐ",
+            "hēisè",
+            "bǎisè",
+            "yīfu"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "gěi",
+              "nǐ"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch15-p3-q1",
+          "question": "",
+          "words": [
+            "kùzi",
+            "biéde",
+            "yǒu",
+            "zhè",
+            "tiáo",
+            "yánsè",
+            "ma"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "tiáo",
+              "kùzi",
+              "yǒu",
+              "biéde",
+              "yánsè",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q2",
+          "question": "",
+          "words": [
+            "zhège",
+            "hóngsè",
+            "yǒu",
+            "hēisè",
+            "bǎisè",
+            "hé",
+            "lánsè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "yǒu",
+              "hóngsè",
+              "hēisè",
+              "bǎisè",
+              "hé",
+              "lánsè"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q3",
+          "question": "",
+          "words": [
+            "hēisè",
+            "wǒ",
+            "yào",
+            "de",
+            "duōshǎo",
+            "qián"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "yào",
+              "hēisè",
+              "de",
+              "duōshǎo",
+              "qián"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q4",
+          "question": "",
+          "words": [
+            "liǎngwàn",
+            "miǎnbì",
+            "wǔqiān",
+            "qián",
+            "hóngsè"
+          ],
+          "answers": [
+            [
+              "liǎngwàn",
+              "wǔqiān",
+              "miǎnbì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q5",
+          "question": "",
+          "words": [
+            "jiù",
+            "hǎo",
+            "yào",
+            "zhège",
+            "xièxie"
+          ],
+          "answers": [
+            [
+              "hǎo",
+              "jiù",
+              "yào",
+              "zhège"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q6",
+          "question": "",
+          "words": [
+            "xièxie",
+            "huānyíng",
+            "xiàcì",
+            "zài",
+            "lái",
+            "bú",
+            "kèqì"
+          ],
+          "answers": [
+            [
+              "xièxie",
+              "huānyíng",
+              "xiàcì",
+              "zài",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q7",
+          "question": "",
+          "words": [
+            "wǒ",
+            "xiàcì",
+            "háihuì",
+            "lái",
+            "hǎo",
+            "de"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xiàcì",
+              "háihuì",
+              "lái"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q8",
+          "question": "",
+          "words": [
+            "zhè",
+            "jiàn",
+            "yīfu",
+            "kěyǐ",
+            "shì",
+            "yíxià",
+            "ma"
+          ],
+          "answers": [
+            [
+              "zhè",
+              "jiàn",
+              "yīfu",
+              "kěyǐ",
+              "shì",
+              "yíxià",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q9",
+          "question": "",
+          "words": [
+            "zhège",
+            "bǎisè",
+            "bù",
+            "néng",
+            "shì",
+            "hēisè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "bǎisè",
+              "bù",
+              "néng",
+              "shì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q10",
+          "question": "",
+          "words": [
+            "wǒ",
+            "gěi",
+            "nǐ",
+            "ná",
+            "hēisè",
+            "de",
+            "shì",
+            "yíxià"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "gěi",
+              "nǐ",
+              "ná",
+              "hēisè",
+              "de",
+              "shì",
+              "yíxià"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q11",
+          "question": "",
+          "words": [
+            "zhège",
+            "gěi",
+            "nǐ",
+            "hēisè",
+            "bǎisè"
+          ],
+          "answers": [
+            [
+              "zhège",
+              "gěi",
+              "nǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q12",
+          "question": "",
+          "words": [
+            "qǐngwèn",
+            "shìyījiān",
+            "zài",
+            "nǎr",
+            "zhèlǐ"
+          ],
+          "answers": [
+            [
+              "qǐngwèn",
+              "shìyījiān",
+              "zài",
+              "nǎr"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q13",
+          "question": "",
+          "words": [
+            "zhí",
+            "zǒu",
+            "zuó",
+            "zhuǎn",
+            "jiù",
+            "shì",
+            "le",
+            "yòu"
+          ],
+          "answers": [
+            [
+              "zhí",
+              "zǒu",
+              "zuó",
+              "zhuǎn",
+              "jiù",
+              "shì",
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q14",
+          "question": "",
+          "words": [
+            "hǎo",
+            "de",
+            "bú",
+            "kèqì",
+            "xièxie",
+            "wǒ"
+          ],
+          "answers": [
+            [
+              "bú",
+              "kèqì"
+            ]
+          ]
+        },
+        {
+          "id": "ch15-p3-q15",
+          "question": "",
+          "words": [
+            "wǒ",
+            "xiàcì",
+            "háihuì",
+            "lái",
+            "hǎo",
+            "de"
+          ],
+          "answers": [
+            [
+              "wǒ",
+              "xiàcì",
+              "háihuì",
+              "lái"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}
