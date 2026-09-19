@@ -2276,3 +2276,5 @@ input:focus-visible {
 #loginScreen .section-label {
     color: #f97316 !important;
 }
+#loginScreen .login-title .p .h1{
+   color:  #f97316;}
