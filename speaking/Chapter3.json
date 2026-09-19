@@ -1,0 +1,776 @@
+{
+  "chapter": {
+    "id": "chapter-3",
+    "title": "Chapter 3",
+    "part1": {
+      "title": "Speaking Practice",
+      "instruction": "Practice speaking the following sentences.",
+      "questions": [
+        {
+          "id": "ch3-p1-q1",
+          "question": "Nǐ chīfàn le ma?",
+          "words": [
+            "Nǐ",
+            "chīfàn",
+            "le",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "chīfàn",
+              "le",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q2",
+          "question": "Chī le.",
+          "words": [
+            "Chī",
+            "le"
+          ],
+          "answers": [
+            [
+              "Chī",
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q3",
+          "question": "Wǒ xiǎng hē shuǐ",
+          "words": [
+            "Wǒ",
+            "xiǎng",
+            "hē",
+            "shuǐ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xiǎng",
+              "hē",
+              "shuǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q4",
+          "question": "Tīng dǒng ma?",
+          "words": [
+            "Tīng",
+            "dǒng",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Tīng",
+              "dǒng",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q5",
+          "question": "Dǒng ma?",
+          "words": [
+            "Dǒng",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Dǒng",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q6",
+          "question": "Yǒu bù dǒng de ma?",
+          "words": [
+            "Yǒu",
+            "bù",
+            "dǒng",
+            "de",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Yǒu",
+              "bù",
+              "dǒng",
+              "de",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q7",
+          "question": "Wǒ bù zhīdào",
+          "words": [
+            "Wǒ",
+            "bù",
+            "zhīdào"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bù",
+              "zhīdào"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q8",
+          "question": "Wǒ bú qù",
+          "words": [
+            "Wǒ",
+            "bú",
+            "qù"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bú",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q9",
+          "question": "Tā yǒu píngguǒ",
+          "words": [
+            "Tā",
+            "yǒu",
+            "píngguǒ"
+          ],
+          "answers": [
+            [
+              "Tā",
+              "yǒu",
+              "píngguǒ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q10",
+          "question": "Wǒ méiyǒu píngguǒ",
+          "words": [
+            "Wǒ",
+            "méiyǒu",
+            "píngguǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "méiyǒu",
+              "píngguǒ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q11",
+          "question": "Nǐ chī píngguǒ ma?",
+          "words": [
+            "Nǐ",
+            "chī",
+            "píngguǒ",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "chī",
+              "píngguǒ",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q12",
+          "question": "Wǒ xiǎng qù",
+          "words": [
+            "Wǒ",
+            "xiǎng",
+            "qù"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xiǎng",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q13",
+          "question": "Nǐ zhīdào ma?",
+          "words": [
+            "Nǐ",
+            "zhīdào",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "zhīdào",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q14",
+          "question": "Tā bù xiǎng qù",
+          "words": [
+            "Tā",
+            "bù",
+            "xiǎng",
+            "qù"
+          ],
+          "answers": [
+            [
+              "Tā",
+              "bù",
+              "xiǎng",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q15",
+          "question": "Wǒ bù xiǎng tīng",
+          "words": [
+            "Wǒ",
+            "bù",
+            "xiǎng",
+            "tīng"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bù",
+              "xiǎng",
+              "tīng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q16",
+          "question": "Tāmen tīng bù dǒng",
+          "words": [
+            "Tāmen",
+            "tīng",
+            "bù",
+            "dǒng"
+          ],
+          "answers": [
+            [
+              "Tāmen",
+              "tīng",
+              "bù",
+              "dǒng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p1-q17",
+          "question": "Tāmen qù le ma?",
+          "words": [
+            "Tāmen",
+            "qù",
+            "le",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Tāmen",
+              "qù",
+              "le",
+              "ma"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Vocabulary",
+      "instruction": "Practice the following Pinyin vocabulary.",
+      "questions": [
+        {
+          "id": "ch3-p2-q1",
+          "question": "chī",
+          "words": [
+            "chī"
+          ],
+          "answers": [
+            [
+              "chī"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q2",
+          "question": "hē",
+          "words": [
+            "hē"
+          ],
+          "answers": [
+            [
+              "hē"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q3",
+          "question": "fàn",
+          "words": [
+            "fàn"
+          ],
+          "answers": [
+            [
+              "fàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q4",
+          "question": "shuǐ",
+          "words": [
+            "shuǐ"
+          ],
+          "answers": [
+            [
+              "shuǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q5",
+          "question": "tīng",
+          "words": [
+            "tīng"
+          ],
+          "answers": [
+            [
+              "tīng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q6",
+          "question": "dǒng",
+          "words": [
+            "dǒng"
+          ],
+          "answers": [
+            [
+              "dǒng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q7",
+          "question": "zhīdào",
+          "words": [
+            "zhīdào"
+          ],
+          "answers": [
+            [
+              "zhīdào"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q8",
+          "question": "bù/ bú",
+          "words": [
+            "bù/ bú"
+          ],
+          "answers": [
+            [
+              "bù/ bú"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q9",
+          "question": "yǒu",
+          "words": [
+            "yǒu"
+          ],
+          "answers": [
+            [
+              "yǒu"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q10",
+          "question": "méiyǒu",
+          "words": [
+            "méiyǒu"
+          ],
+          "answers": [
+            [
+              "méiyǒu"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q11",
+          "question": "ma",
+          "words": [
+            "ma"
+          ],
+          "answers": [
+            [
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q12",
+          "question": "le",
+          "words": [
+            "le"
+          ],
+          "answers": [
+            [
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q13",
+          "question": "qù",
+          "words": [
+            "qù"
+          ],
+          "answers": [
+            [
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q14",
+          "question": "xiǎng",
+          "words": [
+            "xiǎng"
+          ],
+          "answers": [
+            [
+              "xiǎng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p2-q15",
+          "question": "píngguǒ",
+          "words": [
+            "píngguǒ"
+          ],
+          "answers": [
+            [
+              "píngguǒ"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch3-p3-q1",
+          "question": "",
+          "words": [
+            "chīfàn",
+            "le",
+            "ma",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "chīfàn",
+              "le",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q2",
+          "question": "",
+          "words": [
+            "le",
+            "Chī"
+          ],
+          "answers": [
+            [
+              "Chī",
+              "le"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q3",
+          "question": "",
+          "words": [
+            "xiǎng",
+            "hē",
+            "shuǐ",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xiǎng",
+              "hē",
+              "shuǐ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q4",
+          "question": "",
+          "words": [
+            "dǒng",
+            "ma",
+            "Tīng"
+          ],
+          "answers": [
+            [
+              "Tīng",
+              "dǒng",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q5",
+          "question": "",
+          "words": [
+            "ma",
+            "Dǒng"
+          ],
+          "answers": [
+            [
+              "Dǒng",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q6",
+          "question": "",
+          "words": [
+            "bù",
+            "dǒng",
+            "de",
+            "ma",
+            "Yǒu"
+          ],
+          "answers": [
+            [
+              "Yǒu",
+              "bù",
+              "dǒng",
+              "de",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q7",
+          "question": "",
+          "words": [
+            "bù",
+            "zhīdào",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bù",
+              "zhīdào"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q8",
+          "question": "",
+          "words": [
+            "bú",
+            "qù",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bú",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q9",
+          "question": "",
+          "words": [
+            "yǒu",
+            "píngguǒ",
+            "Tā"
+          ],
+          "answers": [
+            [
+              "Tā",
+              "yǒu",
+              "píngguǒ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q10",
+          "question": "",
+          "words": [
+            "méiyǒu",
+            "píngguǒ",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "méiyǒu",
+              "píngguǒ"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q11",
+          "question": "",
+          "words": [
+            "chī",
+            "píngguǒ",
+            "ma",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "chī",
+              "píngguǒ",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q12",
+          "question": "",
+          "words": [
+            "xiǎng",
+            "qù",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xiǎng",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q13",
+          "question": "",
+          "words": [
+            "zhīdào",
+            "ma",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "zhīdào",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q14",
+          "question": "",
+          "words": [
+            "bù",
+            "xiǎng",
+            "qù",
+            "Tā"
+          ],
+          "answers": [
+            [
+              "Tā",
+              "bù",
+              "xiǎng",
+              "qù"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q15",
+          "question": "",
+          "words": [
+            "bù",
+            "xiǎng",
+            "tīng",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bù",
+              "xiǎng",
+              "tīng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q16",
+          "question": "",
+          "words": [
+            "tīng",
+            "bù",
+            "dǒng",
+            "Tāmen"
+          ],
+          "answers": [
+            [
+              "Tāmen",
+              "tīng",
+              "bù",
+              "dǒng"
+            ]
+          ]
+        },
+        {
+          "id": "ch3-p3-q17",
+          "question": "",
+          "words": [
+            "qù",
+            "le",
+            "ma",
+            "Tāmen"
+          ],
+          "answers": [
+            [
+              "Tāmen",
+              "qù",
+              "le",
+              "ma"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1016 @@
+{
+  "chapter": {
+    "id": "chapter-23",
+    "title": "Chapter 23",
+    "part1": {
+      "title": "Speaking Practice",
+      "instruction": "Practice speaking the following sentences.",
+      "questions": [
+        {
+          "id": "ch23-p1-q1",
+          "question": "Hei, Xiǎoqiáng! Nǐ zài yèyǔ shíjiān zuò shénme?",
+          "words": [
+            "Hei",
+            "Xiǎoqiáng",
+            "Nǐ",
+            "zài",
+            "yèyǔ",
+            "shíjiān",
+            "zuò",
+            "shénme"
+          ],
+          "answers": [
+            [
+              "Hei",
+              "Xiǎoqiáng",
+              "Nǐ",
+              "zài",
+              "yèyǔ",
+              "shíjiān",
+              "zuò",
+              "shénme"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q2",
+          "question": "Wǒ xǐhuan yùndòng.",
+          "words": [
+            "Wǒ",
+            "xǐhuan",
+            "yùndòng"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xǐhuan",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q3",
+          "question": "Zhēnde mɑ? Nǐ xǐhuan shénme yùndòng?",
+          "words": [
+            "Zhēnde",
+            "mɑ",
+            "Nǐ",
+            "xǐhuan",
+            "shénme",
+            "yùndòng"
+          ],
+          "answers": [
+            [
+              "Zhēnde",
+              "mɑ",
+              "Nǐ",
+              "xǐhuan",
+              "shénme",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q4",
+          "question": "Wǒ zuì xǐhuan yóuyǒng, dǎ pingpangqiú hé ti zúqiú.",
+          "words": [
+            "Wǒ",
+            "zuì",
+            "xǐhuan",
+            "yóuyǒng",
+            "dǎ",
+            "pingpangqiú",
+            "hé",
+            "ti",
+            "zúqiú"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "zuì",
+              "xǐhuan",
+              "yóuyǒng",
+              "dǎ",
+              "pingpangqiú",
+              "hé",
+              "ti",
+              "zúqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q5",
+          "question": "Wā! Nǐ zhēn shì yí gè yùndòngyuán.",
+          "words": [
+            "Wā",
+            "Nǐ",
+            "zhēn",
+            "shì",
+            "yí",
+            "gè",
+            "yùndòngyuán"
+          ],
+          "answers": [
+            [
+              "Wā",
+              "Nǐ",
+              "zhēn",
+              "shì",
+              "yí",
+              "gè",
+              "yùndòngyuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q6",
+          "question": "Nǐ shénme shíhou zuò zhèxiē yùndòng?",
+          "words": [
+            "Nǐ",
+            "shénme",
+            "shíhou",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "shénme",
+              "shíhou",
+              "zuò",
+              "zhèxiē",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q7",
+          "question": "Wǒ zhōumò xǐhuān zuò zhèxiē yùndòng.",
+          "words": [
+            "Wǒ",
+            "zhōumò",
+            "xǐhuān",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "zhōumò",
+              "xǐhuān",
+              "zuò",
+              "zhèxiē",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q8",
+          "question": "Xiǎolíng, nǐ ài yùndòng mɑ?",
+          "words": [
+            "Xiǎolíng",
+            "nǐ",
+            "ài",
+            "yùndòng",
+            "mɑ"
+          ],
+          "answers": [
+            [
+              "Xiǎolíng",
+              "nǐ",
+              "ài",
+              "yùndòng",
+              "mɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q9",
+          "question": "Wǒ bútài yùndòng zhǐ shì ǒu’ěr huì qù pǎobù, nǐ ne?",
+          "words": [
+            "Wǒ",
+            "bútài",
+            "yùndòng",
+            "zhǐ",
+            "shì",
+            "ǒu’ěr",
+            "huì",
+            "qù",
+            "pǎobù",
+            "nǐ",
+            "ne"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bútài",
+              "yùndòng",
+              "zhǐ",
+              "shì",
+              "ǒu’ěr",
+              "huì",
+              "qù",
+              "pǎobù",
+              "nǐ",
+              "ne"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q10",
+          "question": "Wǒ měitiān zǎoshàng dou huì dǎ yí gè xiǎoshí de yǔmáoqiú.",
+          "words": [
+            "Wǒ",
+            "měitiān",
+            "zǎoshàng",
+            "dou",
+            "huì",
+            "dǎ",
+            "yí",
+            "gè",
+            "xiǎoshí",
+            "de",
+            "yǔmáoqiú"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "měitiān",
+              "zǎoshàng",
+              "dou",
+              "huì",
+              "dǎ",
+              "yí",
+              "gè",
+              "xiǎoshí",
+              "de",
+              "yǔmáoqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q11",
+          "question": "Nǐ hé shéi yìqǐ dǎ?",
+          "words": [
+            "Nǐ",
+            "hé",
+            "shéi",
+            "yìqǐ",
+            "dǎ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "hé",
+              "shéi",
+              "yìqǐ",
+              "dǎ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q12",
+          "question": "Wǒ hé dìdi, mèimei yìqǐ dǎ.",
+          "words": [
+            "Wǒ",
+            "hé",
+            "dìdi",
+            "mèimei",
+            "yìqǐ",
+            "dǎ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "hé",
+              "dìdi",
+              "mèimei",
+              "yìqǐ",
+              "dǎ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q13",
+          "question": "Hěn hǎo. Měitiān yùndòng duì shēntǐ hǎo.",
+          "words": [
+            "Hěn",
+            "hǎo",
+            "Měitiān",
+            "yùndòng",
+            "duì",
+            "shēntǐ",
+            "hǎo"
+          ],
+          "answers": [
+            [
+              "Hěn",
+              "hǎo",
+              "Měitiān",
+              "yùndòng",
+              "duì",
+              "shēntǐ",
+              "hǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p1-q14",
+          "question": "Shì de. Gǎitiān wǒmen yìqǐ yùndòng ba.",
+          "words": [
+            "Shì",
+            "de",
+            "Gǎitiān",
+            "wǒmen",
+            "yìqǐ",
+            "yùndòng",
+            "ba"
+          ],
+          "answers": [
+            [
+              "Shì",
+              "de",
+              "Gǎitiān",
+              "wǒmen",
+              "yìqǐ",
+              "yùndòng",
+              "ba"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Vocabulary",
+      "instruction": "Practice the following Pinyin vocabulary.",
+      "questions": [
+        {
+          "id": "ch23-p2-q1",
+          "question": "dǎ lánqiú",
+          "words": [
+            "dǎ lánqiú"
+          ],
+          "answers": [
+            [
+              "dǎ lánqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q2",
+          "question": "dǎ bàngqiú",
+          "words": [
+            "dǎ bàngqiú"
+          ],
+          "answers": [
+            [
+              "dǎ bàngqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q3",
+          "question": "tī zúqiú",
+          "words": [
+            "tī zúqiú"
+          ],
+          "answers": [
+            [
+              "tī zúqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q4",
+          "question": "dǎ pingpangqiú",
+          "words": [
+            "dǎ pingpangqiú"
+          ],
+          "answers": [
+            [
+              "dǎ pingpangqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q5",
+          "question": "basketball",
+          "words": [
+            "basketball"
+          ],
+          "answers": [
+            [
+              "basketball"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q6",
+          "question": "baseball",
+          "words": [
+            "baseball"
+          ],
+          "answers": [
+            [
+              "baseball"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q7",
+          "question": "table tennis",
+          "words": [
+            "table tennis"
+          ],
+          "answers": [
+            [
+              "table tennis"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q8",
+          "question": "yóuyǒng",
+          "words": [
+            "yóuyǒng"
+          ],
+          "answers": [
+            [
+              "yóuyǒng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q9",
+          "question": "dǎ wǎngqiú",
+          "words": [
+            "dǎ wǎngqiú"
+          ],
+          "answers": [
+            [
+              "dǎ wǎngqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q10",
+          "question": "huáxuě",
+          "words": [
+            "huáxuě"
+          ],
+          "answers": [
+            [
+              "huáxuě"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q11",
+          "question": "dǎ páiqiú",
+          "words": [
+            "dǎ páiqiú"
+          ],
+          "answers": [
+            [
+              "dǎ páiqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q12",
+          "question": "tennis",
+          "words": [
+            "tennis"
+          ],
+          "answers": [
+            [
+              "tennis"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q13",
+          "question": "volley ball",
+          "words": [
+            "volley ball"
+          ],
+          "answers": [
+            [
+              "volley ball"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q14",
+          "question": "dǎ gāo’erfuqiú",
+          "words": [
+            "dǎ gāo’erfuqiú"
+          ],
+          "answers": [
+            [
+              "dǎ gāo’erfuqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q15",
+          "question": "pǎobù",
+          "words": [
+            "pǎobù"
+          ],
+          "answers": [
+            [
+              "pǎobù"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q16",
+          "question": "tiàoshéng",
+          "words": [
+            "tiàoshéng"
+          ],
+          "answers": [
+            [
+              "tiàoshéng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q17",
+          "question": "dǎ yǔmáoqiú",
+          "words": [
+            "dǎ yǔmáoqiú"
+          ],
+          "answers": [
+            [
+              "dǎ yǔmáoqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q18",
+          "question": "yèyǔ",
+          "words": [
+            "yèyǔ"
+          ],
+          "answers": [
+            [
+              "yèyǔ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q19",
+          "question": "shíjiān",
+          "words": [
+            "shíjiān"
+          ],
+          "answers": [
+            [
+              "shíjiān"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q20",
+          "question": "yùndòng",
+          "words": [
+            "yùndòng"
+          ],
+          "answers": [
+            [
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q21",
+          "question": "yùndòngyuán",
+          "words": [
+            "yùndòngyuán"
+          ],
+          "answers": [
+            [
+              "yùndòngyuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q22",
+          "question": "yìsi",
+          "words": [
+            "yìsi"
+          ],
+          "answers": [
+            [
+              "yìsi"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q23",
+          "question": "diànshì",
+          "words": [
+            "diànshì"
+          ],
+          "answers": [
+            [
+              "diànshì"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q24",
+          "question": "TV",
+          "words": [
+            "TV"
+          ],
+          "answers": [
+            [
+              "TV"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q25",
+          "question": "kàn",
+          "words": [
+            "kàn"
+          ],
+          "answers": [
+            [
+              "kàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q26",
+          "question": "ǒu’ěr",
+          "words": [
+            "ǒu’ěr"
+          ],
+          "answers": [
+            [
+              "ǒu’ěr"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p2-q27",
+          "question": "xiǎoshí",
+          "words": [
+            "xiǎoshí"
+          ],
+          "answers": [
+            [
+              "xiǎoshí"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch23-p3-q1",
+          "question": "",
+          "words": [
+            "Xiǎoqiáng",
+            "Nǐ",
+            "zài",
+            "yèyǔ",
+            "shíjiān",
+            "zuò",
+            "shénme",
+            "Hei"
+          ],
+          "answers": [
+            [
+              "Hei",
+              "Xiǎoqiáng",
+              "Nǐ",
+              "zài",
+              "yèyǔ",
+              "shíjiān",
+              "zuò",
+              "shénme"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q2",
+          "question": "",
+          "words": [
+            "xǐhuan",
+            "yùndòng",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xǐhuan",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q3",
+          "question": "",
+          "words": [
+            "mɑ",
+            "Nǐ",
+            "xǐhuan",
+            "shénme",
+            "yùndòng",
+            "Zhēnde"
+          ],
+          "answers": [
+            [
+              "Zhēnde",
+              "mɑ",
+              "Nǐ",
+              "xǐhuan",
+              "shénme",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q4",
+          "question": "",
+          "words": [
+            "zuì",
+            "xǐhuan",
+            "yóuyǒng",
+            "dǎ",
+            "pingpangqiú",
+            "hé",
+            "ti",
+            "zúqiú",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "zuì",
+              "xǐhuan",
+              "yóuyǒng",
+              "dǎ",
+              "pingpangqiú",
+              "hé",
+              "ti",
+              "zúqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q5",
+          "question": "",
+          "words": [
+            "Nǐ",
+            "zhēn",
+            "shì",
+            "yí",
+            "gè",
+            "yùndòngyuán",
+            "Wā"
+          ],
+          "answers": [
+            [
+              "Wā",
+              "Nǐ",
+              "zhēn",
+              "shì",
+              "yí",
+              "gè",
+              "yùndòngyuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q6",
+          "question": "",
+          "words": [
+            "shénme",
+            "shíhou",
+            "zuò",
+            "zhèxiē",
+            "yùndòng",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "shénme",
+              "shíhou",
+              "zuò",
+              "zhèxiē",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q7",
+          "question": "",
+          "words": [
+            "zhōumò",
+            "xǐhuān",
+            "zuò",
+            "zhèxiē",
+            "yùndòng",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "zhōumò",
+              "xǐhuān",
+              "zuò",
+              "zhèxiē",
+              "yùndòng"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q8",
+          "question": "",
+          "words": [
+            "nǐ",
+            "ài",
+            "yùndòng",
+            "mɑ",
+            "Xiǎolíng"
+          ],
+          "answers": [
+            [
+              "Xiǎolíng",
+              "nǐ",
+              "ài",
+              "yùndòng",
+              "mɑ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q9",
+          "question": "",
+          "words": [
+            "bútài",
+            "yùndòng",
+            "zhǐ",
+            "shì",
+            "ǒu’ěr",
+            "huì",
+            "qù",
+            "pǎobù",
+            "nǐ",
+            "ne",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bútài",
+              "yùndòng",
+              "zhǐ",
+              "shì",
+              "ǒu’ěr",
+              "huì",
+              "qù",
+              "pǎobù",
+              "nǐ",
+              "ne"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q10",
+          "question": "",
+          "words": [
+            "měitiān",
+            "zǎoshàng",
+            "dou",
+            "huì",
+            "dǎ",
+            "yí",
+            "gè",
+            "xiǎoshí",
+            "de",
+            "yǔmáoqiú",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "měitiān",
+              "zǎoshàng",
+              "dou",
+              "huì",
+              "dǎ",
+              "yí",
+              "gè",
+              "xiǎoshí",
+              "de",
+              "yǔmáoqiú"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q11",
+          "question": "",
+          "words": [
+            "hé",
+            "shéi",
+            "yìqǐ",
+            "dǎ",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "hé",
+              "shéi",
+              "yìqǐ",
+              "dǎ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q12",
+          "question": "",
+          "words": [
+            "hé",
+            "dìdi",
+            "mèimei",
+            "yìqǐ",
+            "dǎ",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "hé",
+              "dìdi",
+              "mèimei",
+              "yìqǐ",
+              "dǎ"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q13",
+          "question": "",
+          "words": [
+            "hǎo",
+            "Měitiān",
+            "yùndòng",
+            "duì",
+            "shēntǐ",
+            "hǎo",
+            "Hěn"
+          ],
+          "answers": [
+            [
+              "Hěn",
+              "hǎo",
+              "Měitiān",
+              "yùndòng",
+              "duì",
+              "shēntǐ",
+              "hǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch23-p3-q14",
+          "question": "",
+          "words": [
+            "de",
+            "Gǎitiān",
+            "wǒmen",
+            "yìqǐ",
+            "yùndòng",
+            "ba",
+            "Shì"
+          ],
+          "answers": [
+            [
+              "Shì",
+              "de",
+              "Gǎitiān",
+              "wǒmen",
+              "yìqǐ",
+              "yùndòng",
+              "ba"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

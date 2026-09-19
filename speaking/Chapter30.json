@@ -1,0 +1,852 @@
+{
+  "chapter": {
+    "id": "chapter-30",
+    "title": "Chapter 30",
+    "part1": {
+      "title": "Speaking Practice",
+      "instruction": "Practice speaking the following sentences.",
+      "questions": [
+        {
+          "id": "ch30-p1-q1",
+          "question": "Wǒ kéyǐ yùdìng liǎng gè xiānglín de zuòwèi ma?",
+          "words": [
+            "Wǒ",
+            "kéyǐ",
+            "yùdìng",
+            "liǎng",
+            "gè",
+            "xiānglín",
+            "de",
+            "zuòwèi",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "kéyǐ",
+              "yùdìng",
+              "liǎng",
+              "gè",
+              "xiānglín",
+              "de",
+              "zuòwèi",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q2",
+          "question": "Wó dǎsuàn mǎi bàomǐhuā hé yǐnliào.",
+          "words": [
+            "Wó",
+            "dǎsuàn",
+            "mǎi",
+            "bàomǐhuā",
+            "hé",
+            "yǐnliào"
+          ],
+          "answers": [
+            [
+              "Wó",
+              "dǎsuàn",
+              "mǎi",
+              "bàomǐhuā",
+              "hé",
+              "yǐnliào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q3",
+          "question": "Nǐ néng bāng wǒmen zhǎodao zuòwèi ma?",
+          "words": [
+            "Nǐ",
+            "néng",
+            "bāng",
+            "wǒmen",
+            "zhǎodao",
+            "zuòwèi",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "néng",
+              "bāng",
+              "wǒmen",
+              "zhǎodao",
+              "zuòwèi",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q4",
+          "question": "Zhèi pái shì duōshao hào?",
+          "words": [
+            "Zhèi",
+            "pái",
+            "shì",
+            "duōshao",
+            "hào"
+          ],
+          "answers": [
+            [
+              "Zhèi",
+              "pái",
+              "shì",
+              "duōshao",
+              "hào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q5",
+          "question": "Ní xiǎng qù nǎge diànyǐngyuàn?",
+          "words": [
+            "Ní",
+            "xiǎng",
+            "qù",
+            "nǎge",
+            "diànyǐngyuàn"
+          ],
+          "answers": [
+            [
+              "Ní",
+              "xiǎng",
+              "qù",
+              "nǎge",
+              "diànyǐngyuàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q6",
+          "question": "Wǒmen xūyào zài shòupiàochù ná piào.",
+          "words": [
+            "Wǒmen",
+            "xūyào",
+            "zài",
+            "shòupiàochù",
+            "ná",
+            "piào"
+          ],
+          "answers": [
+            [
+              "Wǒmen",
+              "xūyào",
+              "zài",
+              "shòupiàochù",
+              "ná",
+              "piào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q7",
+          "question": "Nàge jiémù míngtiān jiǔdiǎn bōchū.",
+          "words": [
+            "Nàge",
+            "jiémù",
+            "míngtiān",
+            "jiǔdiǎn",
+            "bōchū"
+          ],
+          "answers": [
+            [
+              "Nàge",
+              "jiémù",
+              "míngtiān",
+              "jiǔdiǎn",
+              "bōchū"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q8",
+          "question": "Nǐ zuì xǐhuān shénme diànshì jiémù?",
+          "words": [
+            "Nǐ",
+            "zuì",
+            "xǐhuān",
+            "shénme",
+            "diànshì",
+            "jiémù"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "zuì",
+              "xǐhuān",
+              "shénme",
+              "diànshì",
+              "jiémù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q9",
+          "question": "Nǐ xǐhuān kàn shénme diànyǐng?",
+          "words": [
+            "Nǐ",
+            "xǐhuān",
+            "kàn",
+            "shénme",
+            "diànyǐng"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "xǐhuān",
+              "kàn",
+              "shénme",
+              "diànyǐng"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q10",
+          "question": "Wǒ xǐhuān kàn dòngzuòpiàn, kǒngbùpiàn háiyǒu jùqíngpiàn.",
+          "words": [
+            "Wǒ",
+            "xǐhuān",
+            "kàn",
+            "dòngzuòpiàn",
+            "kǒngbùpiàn",
+            "háiyǒu",
+            "jùqíngpiàn"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xǐhuān",
+              "kàn",
+              "dòngzuòpiàn",
+              "kǒngbùpiàn",
+              "háiyǒu",
+              "jùqíngpiàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q11",
+          "question": "Nǐ xǐhuān kàn diànshìjù ma?",
+          "words": [
+            "Nǐ",
+            "xǐhuān",
+            "kàn",
+            "diànshìjù",
+            "ma"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "xǐhuān",
+              "kàn",
+              "diànshìjù",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p1-q12",
+          "question": "Wǒ bú tài xǐhuān kàn diànshìjù.",
+          "words": [
+            "Wǒ",
+            "bú",
+            "tài",
+            "xǐhuān",
+            "kàn",
+            "diànshìjù"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bú",
+              "tài",
+              "xǐhuān",
+              "kàn",
+              "diànshìjù"
+            ]
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Vocabulary",
+      "instruction": "Practice the following Pinyin vocabulary.",
+      "questions": [
+        {
+          "id": "ch30-p2-q1",
+          "question": "nán zhǔjiǎo",
+          "words": [
+            "nán zhǔjiǎo"
+          ],
+          "answers": [
+            [
+              "nán zhǔjiǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q2",
+          "question": "nǚ zhǔjiǎo",
+          "words": [
+            "nǚ zhǔjiǎo"
+          ],
+          "answers": [
+            [
+              "nǚ zhǔjiǎo"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q3",
+          "question": "yīnyuèjiā",
+          "words": [
+            "yīnyuèjiā"
+          ],
+          "answers": [
+            [
+              "yīnyuèjiā"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q4",
+          "question": "yuètuán",
+          "words": [
+            "yuètuán"
+          ],
+          "answers": [
+            [
+              "yuètuán"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q5",
+          "question": "gēshǒu",
+          "words": [
+            "gēshǒu"
+          ],
+          "answers": [
+            [
+              "gēshǒu"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q6",
+          "question": "wǔdǎojiā",
+          "words": [
+            "wǔdǎojiā"
+          ],
+          "answers": [
+            [
+              "wǔdǎojiā"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q7",
+          "question": "liúxíngyuè",
+          "words": [
+            "liúxíngyuè"
+          ],
+          "answers": [
+            [
+              "liúxíngyuè"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q8",
+          "question": "yáogǔnyuè",
+          "words": [
+            "yáogǔnyuè"
+          ],
+          "answers": [
+            [
+              "yáogǔnyuè"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q9",
+          "question": "xīhā yīnyuè",
+          "words": [
+            "xīhā yīnyuè"
+          ],
+          "answers": [
+            [
+              "xīhā yīnyuè"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q10",
+          "question": "xiāngcūn yīnyuè",
+          "words": [
+            "xiāngcūn yīnyuè"
+          ],
+          "answers": [
+            [
+              "xiāngcūn yīnyuè"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q11",
+          "question": "juéshìyuè",
+          "words": [
+            "juéshìyuè"
+          ],
+          "answers": [
+            [
+              "juéshìyuè"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q12",
+          "question": "diànyǐng",
+          "words": [
+            "diànyǐng"
+          ],
+          "answers": [
+            [
+              "diànyǐng"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q13",
+          "question": "jùqíng piàn",
+          "words": [
+            "jùqíng piàn"
+          ],
+          "answers": [
+            [
+              "jùqíng piàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q14",
+          "question": "xǐjù piàn",
+          "words": [
+            "xǐjù piàn"
+          ],
+          "answers": [
+            [
+              "xǐjù piàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q15",
+          "question": "kǎtōng",
+          "words": [
+            "kǎtōng"
+          ],
+          "answers": [
+            [
+              "kǎtōng"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q16",
+          "question": "jìlùpiàn",
+          "words": [
+            "jìlùpiàn"
+          ],
+          "answers": [
+            [
+              "jìlùpiàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q17",
+          "question": "dòngzuò piàn",
+          "words": [
+            "dòngzuò piàn"
+          ],
+          "answers": [
+            [
+              "dòngzuò piàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q18",
+          "question": "kǒngbù piàn",
+          "words": [
+            "kǒngbù piàn"
+          ],
+          "answers": [
+            [
+              "kǒngbù piàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q19",
+          "question": "kēhuàn piàn",
+          "words": [
+            "kēhuàn piàn"
+          ],
+          "answers": [
+            [
+              "kēhuàn piàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q20",
+          "question": "tuōkǒuxiù",
+          "words": [
+            "tuōkǒuxiù"
+          ],
+          "answers": [
+            [
+              "tuōkǒuxiù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q21",
+          "question": "yóuxì jiémù",
+          "words": [
+            "yóuxì jiémù"
+          ],
+          "answers": [
+            [
+              "yóuxì jiémù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q22",
+          "question": "zhēnshí diànshì jiémù",
+          "words": [
+            "zhēnshí diànshì jiémù"
+          ],
+          "answers": [
+            [
+              "zhēnshí diànshì jiémù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q23",
+          "question": "féizàojù",
+          "words": [
+            "féizàojù"
+          ],
+          "answers": [
+            [
+              "féizàojù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q24",
+          "question": "xīnwén jiémù",
+          "words": [
+            "xīnwén jiémù"
+          ],
+          "answers": [
+            [
+              "xīnwén jiémù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p2-q25",
+          "question": "tǐyù jiémù",
+          "words": [
+            "tǐyù jiémù"
+          ],
+          "answers": [
+            [
+              "tǐyù jiémù"
+            ]
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch30-p3-q1",
+          "question": "",
+          "words": [
+            "kéyǐ",
+            "yùdìng",
+            "liǎng",
+            "gè",
+            "xiānglín",
+            "de",
+            "zuòwèi",
+            "ma",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "kéyǐ",
+              "yùdìng",
+              "liǎng",
+              "gè",
+              "xiānglín",
+              "de",
+              "zuòwèi",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q2",
+          "question": "",
+          "words": [
+            "dǎsuàn",
+            "mǎi",
+            "bàomǐhuā",
+            "hé",
+            "yǐnliào",
+            "Wó"
+          ],
+          "answers": [
+            [
+              "Wó",
+              "dǎsuàn",
+              "mǎi",
+              "bàomǐhuā",
+              "hé",
+              "yǐnliào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q3",
+          "question": "",
+          "words": [
+            "néng",
+            "bāng",
+            "wǒmen",
+            "zhǎodao",
+            "zuòwèi",
+            "ma",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "néng",
+              "bāng",
+              "wǒmen",
+              "zhǎodao",
+              "zuòwèi",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q4",
+          "question": "",
+          "words": [
+            "pái",
+            "shì",
+            "duōshao",
+            "hào",
+            "Zhèi"
+          ],
+          "answers": [
+            [
+              "Zhèi",
+              "pái",
+              "shì",
+              "duōshao",
+              "hào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q5",
+          "question": "",
+          "words": [
+            "xiǎng",
+            "qù",
+            "nǎge",
+            "diànyǐngyuàn",
+            "Ní"
+          ],
+          "answers": [
+            [
+              "Ní",
+              "xiǎng",
+              "qù",
+              "nǎge",
+              "diànyǐngyuàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q6",
+          "question": "",
+          "words": [
+            "xūyào",
+            "zài",
+            "shòupiàochù",
+            "ná",
+            "piào",
+            "Wǒmen"
+          ],
+          "answers": [
+            [
+              "Wǒmen",
+              "xūyào",
+              "zài",
+              "shòupiàochù",
+              "ná",
+              "piào"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q7",
+          "question": "",
+          "words": [
+            "jiémù",
+            "míngtiān",
+            "jiǔdiǎn",
+            "bōchū",
+            "Nàge"
+          ],
+          "answers": [
+            [
+              "Nàge",
+              "jiémù",
+              "míngtiān",
+              "jiǔdiǎn",
+              "bōchū"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q8",
+          "question": "",
+          "words": [
+            "zuì",
+            "xǐhuān",
+            "shénme",
+            "diànshì",
+            "jiémù",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "zuì",
+              "xǐhuān",
+              "shénme",
+              "diànshì",
+              "jiémù"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q9",
+          "question": "",
+          "words": [
+            "xǐhuān",
+            "kàn",
+            "shénme",
+            "diànyǐng",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "xǐhuān",
+              "kàn",
+              "shénme",
+              "diànyǐng"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q10",
+          "question": "",
+          "words": [
+            "xǐhuān",
+            "kàn",
+            "dòngzuòpiàn",
+            "kǒngbùpiàn",
+            "háiyǒu",
+            "jùqíngpiàn",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "xǐhuān",
+              "kàn",
+              "dòngzuòpiàn",
+              "kǒngbùpiàn",
+              "háiyǒu",
+              "jùqíngpiàn"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q11",
+          "question": "",
+          "words": [
+            "xǐhuān",
+            "kàn",
+            "diànshìjù",
+            "ma",
+            "Nǐ"
+          ],
+          "answers": [
+            [
+              "Nǐ",
+              "xǐhuān",
+              "kàn",
+              "diànshìjù",
+              "ma"
+            ]
+          ]
+        },
+        {
+          "id": "ch30-p3-q12",
+          "question": "",
+          "words": [
+            "bú",
+            "tài",
+            "xǐhuān",
+            "kàn",
+            "diànshìjù",
+            "Wǒ"
+          ],
+          "answers": [
+            [
+              "Wǒ",
+              "bú",
+              "tài",
+              "xǐhuān",
+              "kàn",
+              "diànshìjù"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}
