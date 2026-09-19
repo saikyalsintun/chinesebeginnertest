@@ -1,11 +1,20 @@
 /* =========================================================
-   CHINESE DAILY TEST - app.js
-   ========================================================= */
+   CHINESE DAILY TEST
+   COMPLETE APP.JS
+========================================================= */
+
+
+/* =========================================================
+   CONFIGURATION
+========================================================= */
 
 const CONFIG = {
-    API_URL: "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
+
+    API_URL:
+        "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
     CLASS_CONFIG: {
+
         Beginner: {
             folder: "chapters",
             totalChapters: 15
@@ -15,7 +24,9 @@ const CONFIG = {
             folder: "speaking",
             totalChapters: 35
         }
+
     }
+
 };
 
 
@@ -185,6 +196,7 @@ function cacheDOMElements() {
         document.getElementById(
             "loginButton"
         );
+
 
     usernameInput =
         document.getElementById(
@@ -406,22 +418,6 @@ function setupEventListeners() {
     }
 
 
-    if (backToChapterButton) {
-
-        backToChapterButton.addEventListener(
-            "click",
-            () => {
-
-                showScreen(
-                    chapterScreen
-                );
-
-            }
-        );
-
-    }
-
-
     if (clearAnswer) {
 
         clearAnswer.addEventListener(
@@ -462,25 +458,31 @@ function setupEventListeners() {
                     const part =
                         tab.dataset.part;
 
-                    if (
-                        [
-                            "part1",
-                            "part2",
-                            "part3"
-                        ].includes(part)
-                    ) {
-
-                        switchPart(
-                            part
-                        );
-
-                    }
+                    switchPart(
+                        part
+                    );
 
                 }
             );
 
         }
     );
+
+
+    if (backToChapterButton) {
+
+        backToChapterButton.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
 
 
     if (scoreHistoryButton) {
@@ -522,24 +524,37 @@ function setupEventListeners() {
 
 
 /* =========================================================
-   SCREEN MANAGEMENT
+   SHOW SCREEN
 ========================================================= */
 
 function showScreen(
     screen
 ) {
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(
-            item => {
+    const screens = [
+        loginScreen,
+        chapterScreen,
+        testScreen,
+        resultScreen,
+        historyScreen
+    ];
 
-                item.classList.remove(
+
+    screens.forEach(
+        currentScreen => {
+
+            if (
+                currentScreen
+            ) {
+
+                currentScreen.classList.remove(
                     "active"
                 );
 
             }
-        );
+
+        }
+    );
 
 
     if (screen) {
@@ -560,16 +575,26 @@ function showScreen(
 
 
 /* =========================================================
-   CLASS HELPERS
+   CLASS NORMALIZATION
 ========================================================= */
 
 function normalizeStudentClass(
     value
 ) {
 
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+
+    }
+
+
     const raw =
         String(
-            value ?? ""
+            value
         ).trim();
 
 
@@ -580,69 +605,39 @@ function normalizeStudentClass(
     }
 
 
-    return (
+    const match =
         Object.keys(
             CONFIG.CLASS_CONFIG
         ).find(
             className =>
                 className.toLowerCase() ===
                 raw.toLowerCase()
-        ) ||
-        raw
-    );
-
-}
-
-
-function getClassConfig() {
-
-    const studentClass =
-        normalizeStudentClass(
-            state.studentClass
         );
 
 
-    return (
-        CONFIG.CLASS_CONFIG[
-            studentClass
-        ] ||
-        null
-    );
+    return match || raw;
 
 }
 
 
 /* =========================================================
-   ESCAPE HTML
+   GET CLASS CONFIG
 ========================================================= */
 
-function escapeHTML(
-    value
-) {
+function getClassConfig() {
 
-    return String(
-        value ?? ""
-    )
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+    if (
+        !state.studentClass
+    ) {
+
+        return null;
+
+    }
+
+
+    return CONFIG.CLASS_CONFIG[
+        state.studentClass
+    ] || null;
 
 }
 
@@ -660,8 +655,7 @@ function generateChapterButtons() {
     }
 
 
-    chapterGrid.innerHTML =
-        "";
+    chapterGrid.innerHTML = "";
 
 
     const classConfig =
@@ -672,7 +666,8 @@ function generateChapterButtons() {
 
         chapterGrid.innerHTML = `
             <div class="history-error">
-                No chapter configuration found for your class.
+                No chapter configuration found
+                for your class.
             </div>
         `;
 
@@ -687,21 +682,21 @@ function generateChapterButtons() {
         i++
     ) {
 
-        const card =
+        const button =
             document.createElement(
                 "button"
             );
 
 
-        card.type =
+        button.type =
             "button";
 
 
-        card.className =
+        button.className =
             "chapter-card";
 
 
-        card.innerHTML = `
+        button.innerHTML = `
             <div class="chapter-number">
                 CHAPTER ${i}
             </div>
@@ -711,12 +706,14 @@ function generateChapterButtons() {
             </h3>
 
             <p>
-                Daily Chinese Test
+                ${escapeHTML(
+                    state.studentClass
+                )} Chinese Test
             </p>
         `;
 
 
-        card.addEventListener(
+        button.addEventListener(
             "click",
             () => {
 
@@ -729,7 +726,7 @@ function generateChapterButtons() {
 
 
         chapterGrid.appendChild(
-            card
+            button
         );
 
     }
@@ -765,13 +762,23 @@ async function handleLogin(
     clearLoginMessage();
 
 
-    if (
-        !username ||
-        !password
-    ) {
+    if (!username) {
 
         showLoginMessage(
-            "Please enter username and password."
+            "Please enter your username.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!password) {
+
+        showLoginMessage(
+            "Please enter your password.",
+            "error"
         );
 
         return;
@@ -809,7 +816,8 @@ async function handleLogin(
 
             showLoginMessage(
                 result?.message ||
-                "Invalid username or password."
+                "Login failed.",
+                "error"
             );
 
             return;
@@ -819,8 +827,8 @@ async function handleLogin(
 
         const studentClass =
             normalizeStudentClass(
-                result.class ??
-                result.Class ??
+                result.class ||
+                result.Class ||
                 result.studentClass
             );
 
@@ -828,7 +836,8 @@ async function handleLogin(
         if (!studentClass) {
 
             showLoginMessage(
-                "Your account does not have a class assigned."
+                "Your account does not have a class assigned.",
+                "error"
             );
 
             return;
@@ -843,7 +852,8 @@ async function handleLogin(
         ) {
 
             showLoginMessage(
-                `Class "${studentClass}" is not configured yet.`
+                `Class "${studentClass}" is not configured yet.`,
+                "error"
             );
 
             return;
@@ -851,14 +861,21 @@ async function handleLogin(
         }
 
 
+        /*
+         * Save login state.
+         */
+
         state.username =
             result.username ||
             username;
 
-
         state.studentClass =
             studentClass;
 
+
+        /*
+         * Update UI.
+         */
 
         if (welcomeUsername) {
 
@@ -876,8 +893,17 @@ async function handleLogin(
         }
 
 
+        /*
+         * Generate chapters
+         * only after class is known.
+         */
+
         generateChapterButtons();
 
+
+        /*
+         * Clear password field.
+         */
 
         if (passwordInput) {
 
@@ -886,6 +912,10 @@ async function handleLogin(
 
         }
 
+
+        /*
+         * Show chapter screen.
+         */
 
         showScreen(
             chapterScreen
@@ -902,7 +932,8 @@ async function handleLogin(
 
         showLoginMessage(
             error.message ||
-            "Unable to connect to the server."
+            "Unable to connect to the server.",
+            "error"
         );
 
 
@@ -922,7 +953,8 @@ async function handleLogin(
 ========================================================= */
 
 function showLoginMessage(
-    message
+    message,
+    type = "error"
 ) {
 
     if (!loginMessage) {
@@ -940,8 +972,19 @@ function showLoginMessage(
         "block";
 
 
-    loginMessage.className =
-        "message error";
+    if (
+        type === "success"
+    ) {
+
+        loginMessage.style.color =
+            "#238636";
+
+    } else {
+
+        loginMessage.style.color =
+            "#d93636";
+
+    }
 
 }
 
@@ -963,6 +1006,10 @@ function clearLoginMessage() {
 
 }
 
+
+/* =========================================================
+   LOGIN BUTTON LOADING
+========================================================= */
 
 function setLoginLoading(
     loading
@@ -988,8 +1035,7 @@ function setLoginLoading(
 
 
 /* =========================================================
-   GOOGLE APPS SCRIPT API
-   IMPORTANT: POST, NOT GET
+   API CALL
 ========================================================= */
 
 async function callAPI(
@@ -997,7 +1043,9 @@ async function callAPI(
     data = {}
 ) {
 
-    if (!CONFIG.API_URL) {
+    if (
+        !CONFIG.API_URL
+    ) {
 
         throw new Error(
             "API URL is not configured."
@@ -1021,22 +1069,8 @@ async function callAPI(
     ).forEach(
         key => {
 
-            let value =
+            const value =
                 data[key];
-
-
-            if (
-                value !== undefined &&
-                value !== null &&
-                typeof value === "object"
-            ) {
-
-                value =
-                    JSON.stringify(
-                        value
-                    );
-
-            }
 
 
             if (
@@ -1055,29 +1089,16 @@ async function callAPI(
     );
 
 
-    console.log(
-        "API Request:",
-        action,
-        data
-    );
+    const url =
+        `${CONFIG.API_URL}?${params.toString()}`;
 
 
     const response =
         await fetch(
-            CONFIG.API_URL,
+            url,
             {
-                method: "POST",
-
-                headers: {
-                    "Content-Type":
-                        "application/x-www-form-urlencoded;charset=UTF-8"
-                },
-
-                body:
-                    params.toString(),
-
-                cache:
-                    "no-store"
+                method: "GET",
+                cache: "no-store"
             }
         );
 
@@ -1120,12 +1141,6 @@ async function callAPI(
     }
 
 
-    console.log(
-        "API Response:",
-        result
-    );
-
-
     return result;
 
 }
@@ -1165,8 +1180,7 @@ async function loadChapter(
             chapter
         ) ||
         chapter < 1 ||
-        chapter >
-            classConfig.totalChapters
+        chapter > classConfig.totalChapters
     ) {
 
         alert(
@@ -1191,30 +1205,24 @@ async function loadChapter(
 
 
     state.answers = {
-
         part1: {},
         part2: {},
         part3: {}
-
     };
 
 
     state.scores = {
-
         part1: 0,
         part2: 0,
         part3: 0,
         total: 0
-
     };
 
 
     state.randomOrders = {
-
         part1: {},
         part2: {},
         part3: {}
-
     };
 
 
@@ -1230,17 +1238,15 @@ async function loadChapter(
     showTestLoading();
 
 
+    const fileName =
+        `Chapter${chapter}.json`;
+
+
     const chapterPath =
-        `./${classConfig.folder}/Chapter${chapter}.json`;
+        `./${classConfig.folder}/${fileName}`;
 
 
     try {
-
-        console.log(
-            "Loading chapter:",
-            chapterPath
-        );
-
 
         const response =
             await fetch(
@@ -1254,7 +1260,7 @@ async function loadChapter(
         if (!response.ok) {
 
             throw new Error(
-                `Could not load ${chapterPath} (${response.status}).`
+                `Could not load ${fileName}.`
             );
 
         }
@@ -1273,6 +1279,10 @@ async function loadChapter(
             data.chapter ||
             data;
 
+
+        /*
+         * Update chapter title.
+         */
 
         if (testChapter) {
 
@@ -1294,9 +1304,7 @@ async function loadChapter(
 
 
         showTestError(
-            `Unable to load Chapter ${chapter}.\n\n` +
-            `Expected file: ${chapterPath}\n\n` +
-            `${error.message || "Unknown error."}`
+            `Unable to load Chapter ${chapter}. Please check that ${chapterPath} exists.`
         );
 
     }
@@ -1305,7 +1313,7 @@ async function loadChapter(
 
 
 /* =========================================================
-   VALIDATE CHAPTER
+   VALIDATE CHAPTER DATA
 ========================================================= */
 
 function validateChapterData(
@@ -1317,10 +1325,7 @@ function validateChapterData(
         data;
 
 
-    if (
-        !chapter ||
-        typeof chapter !== "object"
-    ) {
+    if (!chapter) {
 
         throw new Error(
             "Chapter data is empty."
@@ -1329,14 +1334,19 @@ function validateChapterData(
     }
 
 
-    [
+    const requiredParts = [
         "part1",
         "part2",
         "part3"
-    ].forEach(
+    ];
+
+
+    requiredParts.forEach(
         part => {
 
-            if (!chapter[part]) {
+            if (
+                !chapter[part]
+            ) {
 
                 throw new Error(
                     `Chapter is missing ${part}.`
@@ -1364,7 +1374,7 @@ function validateChapterData(
 
 
 /* =========================================================
-   TEST LOADING
+   TEST LOADING STATE
 ========================================================= */
 
 function showTestLoading() {
@@ -1380,7 +1390,7 @@ function showTestLoading() {
     if (questionCounter) {
 
         questionCounter.textContent =
-            "";
+            "Please wait";
 
     }
 
@@ -1388,6 +1398,14 @@ function showTestLoading() {
     if (questionText) {
 
         questionText.textContent =
+            "Loading chapter...";
+
+    }
+
+
+    if (selectedWords) {
+
+        selectedWords.innerHTML =
             "";
 
     }
@@ -1401,15 +1419,19 @@ function showTestLoading() {
     }
 
 
-    if (selectedWords) {
+    if (progressBar) {
 
-        selectedWords.innerHTML =
-            "";
+        progressBar.style.width =
+            "0%";
 
     }
 
 }
 
+
+/* =========================================================
+   TEST ERROR
+========================================================= */
 
 function showTestError(
     message
@@ -1418,7 +1440,15 @@ function showTestError(
     if (partTitle) {
 
         partTitle.textContent =
-            "Unable to load test";
+            "Error";
+
+    }
+
+
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            "";
 
     }
 
@@ -1431,14 +1461,6 @@ function showTestError(
     }
 
 
-    if (wordBank) {
-
-        wordBank.innerHTML =
-            "";
-
-    }
-
-
     if (selectedWords) {
 
         selectedWords.innerHTML =
@@ -1446,54 +1468,67 @@ function showTestError(
 
     }
 
+
+    if (wordBank) {
+
+        wordBank.innerHTML =
+            "";
+
+    }
+
 }
 
 
 /* =========================================================
-   QUESTION HELPERS
+   GET CURRENT PART
 ========================================================= */
 
 function getCurrentPartData() {
 
-    return (
-        state.chapterData?.[
-            state.currentPart
-        ] ||
-        null
-    );
+    if (
+        !state.chapterData
+    ) {
+
+        return null;
+
+    }
+
+
+    return state.chapterData[
+        state.currentPart
+    ] || null;
 
 }
 
 
-function getCurrentQuestions() {
-
-    return (
-        getCurrentPartData()
-            ?.questions ||
-        []
-    );
-
-}
-
+/* =========================================================
+   GET CURRENT QUESTION
+========================================================= */
 
 function getCurrentQuestion() {
 
-    const questions =
-        getCurrentQuestions();
+    const part =
+        getCurrentPartData();
+
+
+    if (!part) {
+
+        return null;
+
+    }
 
 
     return (
-        questions[
+        part.questions?.[
             state.currentQuestionIndex
-        ] ||
-        null
+        ] || null
     );
 
 }
 
 
 /* =========================================================
-   RENDER QUESTION
+   RENDER CURRENT QUESTION
 ========================================================= */
 
 function renderCurrentQuestion() {
@@ -1520,14 +1555,17 @@ function renderCurrentQuestion() {
         part.questions;
 
 
-    const currentNumber =
-        state.currentQuestionIndex +
-        1;
-
-
     const totalQuestions =
         questions.length;
 
+
+    const currentNumber =
+        state.currentQuestionIndex + 1;
+
+
+    /*
+     * Part title.
+     */
 
     if (partTitle) {
 
@@ -1540,6 +1578,10 @@ function renderCurrentQuestion() {
     }
 
 
+    /*
+     * Question counter.
+     */
+
     if (questionCounter) {
 
         questionCounter.textContent =
@@ -1547,6 +1589,10 @@ function renderCurrentQuestion() {
 
     }
 
+
+    /*
+     * Question type.
+     */
 
     if (questionType) {
 
@@ -1558,6 +1604,10 @@ function renderCurrentQuestion() {
     }
 
 
+    /*
+     * Question text.
+     */
+
     if (questionText) {
 
         questionText.textContent =
@@ -1567,31 +1617,53 @@ function renderCurrentQuestion() {
     }
 
 
+    /*
+     * Progress.
+     */
+
+    const progress =
+        totalQuestions > 0
+            ? (
+                currentNumber /
+                totalQuestions
+            ) * 100
+            : 0;
+
+
     if (progressBar) {
 
         progressBar.style.width =
-            `${
-                totalQuestions
-                    ? (
-                        currentNumber /
-                        totalQuestions
-                    ) * 100
-                    : 0
-            }%`;
+            `${progress}%`;
 
     }
 
 
+    /*
+     * Part tabs.
+     */
+
     updatePartTabs();
 
 
+    /*
+     * Render answer.
+     */
+
     renderSelectedWords();
 
+
+    /*
+     * Render word bank.
+     */
 
     renderWordBank(
         question
     );
 
+
+    /*
+     * Navigation buttons.
+     */
 
     updateNavigationButtons();
 
@@ -1599,7 +1671,7 @@ function renderCurrentQuestion() {
 
 
 /* =========================================================
-   PART NAME
+   PART DISPLAY NAME
 ========================================================= */
 
 function getPartDisplayName(
@@ -1608,14 +1680,11 @@ function getPartDisplayName(
 
     const names = {
 
-        part1:
-            "Translation",
+        part1: "Translation",
 
-        part2:
-            "Answer the Question",
+        part2: "Answer the Question",
 
-        part3:
-            "Scramble"
+        part3: "Scramble"
 
     };
 
@@ -1629,7 +1698,7 @@ function getPartDisplayName(
 
 
 /* =========================================================
-   QUESTION TYPE
+   QUESTION TYPE LABEL
 ========================================================= */
 
 function getQuestionTypeLabel(
@@ -1638,21 +1707,18 @@ function getQuestionTypeLabel(
 
     const labels = {
 
-        part1:
-            "TRANSLATION",
+        part1: "TRANSLATION",
 
-        part2:
-            "QUESTION",
+        part2: "QUESTION",
 
-        part3:
-            "SCRAMBLE"
+        part3: "SCRAMBLE"
 
     };
 
 
     return (
         labels[part] ||
-        "QUESTION"
+        ""
     );
 
 }
@@ -1660,26 +1726,29 @@ function getQuestionTypeLabel(
 
 /* =========================================================
    UPDATE PART TABS
-   THIS WAS MISSING IN YOUR CURRENT FILE
 ========================================================= */
 
 function updatePartTabs() {
 
-    if (!partTabs) {
-
-        return;
-
-    }
-
-
     partTabs.forEach(
         tab => {
 
-            tab.classList.toggle(
-                "active",
+            if (
                 tab.dataset.part ===
                 state.currentPart
-            );
+            ) {
+
+                tab.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                tab.classList.remove(
+                    "active"
+                );
+
+            }
 
         }
     );
@@ -1692,8 +1761,7 @@ function updatePartTabs() {
 ========================================================= */
 
 function switchPart(
-    part,
-    goToLastQuestion = false
+    part
 ) {
 
     if (
@@ -1710,7 +1778,27 @@ function switchPart(
             "part1",
             "part2",
             "part3"
-        ].includes(part)
+        ].includes(
+            part
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const partData =
+        state.chapterData[
+            part
+        ];
+
+
+    if (
+        !partData ||
+        !Array.isArray(
+            partData.questions
+        )
     ) {
 
         return;
@@ -1722,23 +1810,17 @@ function switchPart(
         part;
 
 
-    const questions =
-        getCurrentQuestions();
-
-
     state.currentQuestionIndex =
-        goToLastQuestion
-            ? Math.max(
-                questions.length - 1,
-                0
-            )
-            : 0;
-
-
-    updatePartTabs();
+        0;
 
 
     renderCurrentQuestion();
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
@@ -1752,29 +1834,23 @@ function shuffleWords(
 ) {
 
     const items =
-        (
-            Array.isArray(words)
-                ? words
-                : []
-        )
-        .map(
+        words.map(
             (
                 word,
                 originalIndex
             ) => ({
-
-                word:
-                    String(word),
-
+                word,
                 originalIndex
-
             })
         );
 
 
+    /*
+     * Fisher-Yates shuffle.
+     */
+
     for (
-        let i =
-            items.length - 1;
+        let i = items.length - 1;
         i > 0;
         i--
     ) {
@@ -1814,7 +1890,7 @@ function getRandomOrder(
         state.currentPart;
 
 
-    const index =
+    const questionIndex =
         state.currentQuestionIndex;
 
 
@@ -1831,15 +1907,14 @@ function getRandomOrder(
     if (
         !state.randomOrders[
             part
-        ][index]
+        ][questionIndex]
     ) {
 
         state.randomOrders[
             part
-        ][index] =
+        ][questionIndex] =
             shuffleWords(
-                question?.words ||
-                []
+                question.words || []
             );
 
     }
@@ -1847,7 +1922,7 @@ function getRandomOrder(
 
     return state.randomOrders[
         part
-    ][index];
+    ][questionIndex];
 
 }
 
@@ -1882,8 +1957,7 @@ function renderWordBank(
             state.currentPart
         ][
             state.currentQuestionIndex
-        ] ||
-        [];
+        ] || [];
 
 
     order.forEach(
@@ -1907,12 +1981,22 @@ function renderWordBank(
                 item.word;
 
 
-            if (
-                currentAnswer.some(
-                    answer =>
-                        answer.originalIndex ===
+            /*
+             * Determine whether this
+             * exact word instance has
+             * already been selected.
+             */
+
+            const selectedIndex =
+                currentAnswer.findIndex(
+                    answerItem =>
+                        answerItem.originalIndex ===
                         item.originalIndex
-                )
+                );
+
+
+            if (
+                selectedIndex !== -1
             ) {
 
                 button.classList.add(
@@ -1956,22 +2040,35 @@ function addWordToAnswer(
         state.currentPart;
 
 
-    const index =
+    const questionIndex =
         state.currentQuestionIndex;
+
+
+    if (
+        !state.answers[part]
+    ) {
+
+        state.answers[part] =
+            {};
+
+    }
 
 
     if (
         !Array.isArray(
             state.answers[
                 part
-            ][index]
+            ][
+                questionIndex
+            ]
         )
     ) {
 
         state.answers[
             part
-        ][index] =
-            [];
+        ][
+            questionIndex
+        ] = [];
 
     }
 
@@ -1979,15 +2076,26 @@ function addWordToAnswer(
     const answer =
         state.answers[
             part
-        ][index];
+        ][
+            questionIndex
+        ];
 
 
-    if (
+    /*
+     * Do not allow the same
+     * word instance twice.
+     */
+
+    const alreadySelected =
         answer.some(
             item =>
                 item.originalIndex ===
                 wordItem.originalIndex
-        )
+        );
+
+
+    if (
+        alreadySelected
     ) {
 
         return;
@@ -1996,13 +2104,11 @@ function addWordToAnswer(
 
 
     answer.push({
-
         word:
             wordItem.word,
 
         originalIndex:
             wordItem.originalIndex
-
     });
 
 
@@ -2017,7 +2123,7 @@ function addWordToAnswer(
 
 
 /* =========================================================
-   SELECTED ANSWER
+   RENDER SELECTED WORDS
 ========================================================= */
 
 function renderSelectedWords() {
@@ -2038,8 +2144,7 @@ function renderSelectedWords() {
             state.currentPart
         ][
             state.currentQuestionIndex
-        ] ||
-        [];
+        ] || [];
 
 
     if (
@@ -2094,13 +2199,8 @@ function renderSelectedWords() {
                 "button";
 
 
-            /*
-             * IMPORTANT:
-             * Same word-button design as word bank.
-             */
-
             button.className =
-                "word-button selected-word";
+                "selected-word";
 
 
             button.textContent =
@@ -2162,8 +2262,7 @@ function removeWordFromAnswer(
 
     if (
         answerIndex < 0 ||
-        answerIndex >=
-        answer.length
+        answerIndex >= answer.length
     ) {
 
         return;
@@ -2188,7 +2287,7 @@ function removeWordFromAnswer(
 
 
 /* =========================================================
-   CLEAR ANSWER
+   CLEAR CURRENT ANSWER
 ========================================================= */
 
 function clearCurrentAnswer() {
@@ -2216,12 +2315,15 @@ function clearCurrentAnswer() {
 
 function updateNavigationButtons() {
 
-    const questions =
-        getCurrentQuestions();
+    const part =
+        getCurrentPartData();
 
 
     if (
-        !questions.length
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
     ) {
 
         return;
@@ -2229,33 +2331,54 @@ function updateNavigationButtons() {
     }
 
 
+    const totalQuestions =
+        part.questions.length;
+
+
+    const isFirstQuestion =
+        state.currentQuestionIndex === 0;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex ===
+        totalQuestions - 1;
+
+
     if (previousButton) {
 
         previousButton.disabled =
-            state.currentQuestionIndex ===
-            0 &&
-            state.currentPart ===
-            "part1";
+            isFirstQuestion;
 
     }
 
 
     if (nextButton) {
 
-        const isLast =
-            state.currentQuestionIndex >=
-            questions.length - 1;
+        if (
+            isLastQuestion
+        ) {
 
+            if (
+                state.currentPart ===
+                "part3"
+            ) {
 
-        nextButton.textContent =
-            isLast
-                ? (
-                    state.currentPart ===
-                    "part3"
-                        ? "Finish Test →"
-                        : "Next Part →"
-                )
-                : "Next →";
+                nextButton.textContent =
+                    "Finish Test →";
+
+            } else {
+
+                nextButton.textContent =
+                    "Next Part →";
+
+            }
+
+        } else {
+
+            nextButton.textContent =
+                "Next →";
+
+        }
 
     }
 
@@ -2269,40 +2392,24 @@ function updateNavigationButtons() {
 function goToPreviousQuestion() {
 
     if (
-        state.currentQuestionIndex >
-        0
+        state.currentQuestionIndex <= 0
     ) {
-
-        state.currentQuestionIndex--;
-
-        renderCurrentQuestion();
 
         return;
 
     }
 
 
-    if (
-        state.currentPart ===
-        "part2"
-    ) {
+    state.currentQuestionIndex--;
 
-        switchPart(
-            "part1",
-            true
-        );
 
-    } else if (
-        state.currentPart ===
-        "part3"
-    ) {
+    renderCurrentQuestion();
 
-        switchPart(
-            "part2",
-            true
-        );
 
-    }
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
@@ -2313,12 +2420,15 @@ function goToPreviousQuestion() {
 
 function goToNextQuestion() {
 
-    const questions =
-        getCurrentQuestions();
+    const part =
+        getCurrentPartData();
 
 
     if (
-        !questions.length
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
     ) {
 
         return;
@@ -2326,19 +2436,37 @@ function goToNextQuestion() {
     }
 
 
-    if (
-        state.currentQuestionIndex <
-        questions.length - 1
-    ) {
+    const totalQuestions =
+        part.questions.length;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex >=
+        totalQuestions - 1;
+
+
+    if (!isLastQuestion) {
 
         state.currentQuestionIndex++;
 
+
         renderCurrentQuestion();
+
+
+        window.scrollTo(
+            0,
+            0
+        );
+
 
         return;
 
     }
 
+
+    /*
+     * Last question of current part.
+     */
 
     if (
         state.currentPart ===
@@ -2368,175 +2496,61 @@ function goToNextQuestion() {
     }
 
 
+    /*
+     * Last question of Part 3.
+     */
+
     finishTest();
 
 }
 
 
 /* =========================================================
-   ANSWER NORMALIZATION
+   FINISH TEST
 ========================================================= */
 
-function normalizeWord(
-    word
-) {
+async function finishTest() {
+
+    /*
+     * Prevent double submission.
+     */
 
     if (
-        word &&
-        typeof word ===
-        "object" &&
-        "word" in word
+        state.testSaved
     ) {
 
-        word =
-            word.word;
-
-    }
-
-
-    return String(
-        word ?? ""
-    )
-        .trim()
-        .replace(
-            /\s+/g,
-            " "
-        )
-        .toLowerCase();
-
-}
-
-
-function normalizeAnswerWords(
-    answer
-) {
-
-    if (
-        !Array.isArray(
-            answer
-        )
-    ) {
-
-        return [];
-
-    }
-
-
-    return answer.map(
-        normalizeWord
-    );
-
-}
-
-
-/* =========================================================
-   CHECK ANSWER
-========================================================= */
-
-function isAnswerCorrect(
-    studentAnswer,
-    question
-) {
-
-    const student =
-        normalizeAnswerWords(
-            studentAnswer
+        showScreen(
+            resultScreen
         );
 
+        return;
 
-    const accepted =
-        Array.isArray(
-            question?.answers
-        )
-            ? question.answers
-            : [];
+    }
 
 
-    return accepted.some(
-        correct => {
-
-            const expected =
-                normalizeAnswerWords(
-                    correct
-                );
+    calculateAllScores();
 
 
-            if (
-                expected.length !==
-                student.length
-            ) {
-
-                return false;
-
-            }
+    renderResults();
 
 
-            return expected.every(
-                (
-                    word,
-                    index
-                ) =>
-                    word ===
-                    student[index]
-            );
-
-        }
+    showScreen(
+        resultScreen
     );
+
+
+    /*
+     * Save score automatically.
+     */
+
+    await saveScore();
 
 }
 
 
 /* =========================================================
-   CALCULATE SCORE
+   CALCULATE ALL SCORES
 ========================================================= */
-
-function calculatePartScore(
-    part
-) {
-
-    const questions =
-        state.chapterData?.[
-            part
-        ]?.questions ||
-        [];
-
-
-    let score =
-        0;
-
-
-    questions.forEach(
-        (
-            question,
-            index
-        ) => {
-
-            const answer =
-                state.answers[
-                    part
-                ][index] ||
-                [];
-
-
-            if (
-                isAnswerCorrect(
-                    answer,
-                    question
-                )
-            ) {
-
-                score++;
-
-            }
-
-        }
-    );
-
-
-    return score;
-
-}
-
 
 function calculateAllScores() {
 
@@ -2567,103 +2581,225 @@ function calculateAllScores() {
 
 
 /* =========================================================
-   MAXIMUM SCORE
+   CALCULATE PART SCORE
 ========================================================= */
 
-function getMaximumScore() {
+function calculatePartScore(
+    partName
+) {
 
-    return [
-        "part1",
-        "part2",
-        "part3"
-    ].reduce(
+    const part =
+        state.chapterData?.[
+            partName
+        ];
+
+
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return 0;
+
+    }
+
+
+    let score = 0;
+
+
+    part.questions.forEach(
         (
-            total,
-            part
-        ) =>
-            total +
-            (
-                state.chapterData?.[
-                    part
-                ]?.questions?.length ||
-                0
-            ),
-        0
+            question,
+            index
+        ) => {
+
+            const studentAnswer =
+                state.answers[
+                    partName
+                ][
+                    index
+                ] || [];
+
+
+            if (
+                isAnswerCorrect(
+                    studentAnswer,
+                    question
+                )
+            ) {
+
+                score++;
+
+            }
+
+        }
     );
+
+
+    return score;
 
 }
 
 
 /* =========================================================
-   FINISH TEST
+   ANSWER NORMALIZATION
 ========================================================= */
 
-async function finishTest() {
+function normalizeAnswerWords(
+    answer
+) {
 
-    calculateAllScores();
+    if (
+        !Array.isArray(
+            answer
+        )
+    ) {
 
-    renderResults();
+        return [];
 
-    showScreen(
-        resultScreen
+    }
+
+
+    return answer.map(
+        item => {
+
+            if (
+                typeof item ===
+                "string"
+            ) {
+
+                return normalizeWord(
+                    item
+                );
+
+            }
+
+
+            if (
+                item &&
+                typeof item.word ===
+                "string"
+            ) {
+
+                return normalizeWord(
+                    item.word
+                );
+
+            }
+
+
+            return "";
+
+        }
     );
-
-    await saveScore();
 
 }
 
 
 /* =========================================================
-   RESULT
+   NORMALIZE WORD
+========================================================= */
+
+function normalizeWord(
+    word
+) {
+
+    return String(
+        word ?? ""
+    )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .toLowerCase();
+
+}
+
+
+/* =========================================================
+   ANSWER CORRECTNESS
+========================================================= */
+
+function isAnswerCorrect(
+    studentAnswer,
+    question
+) {
+
+    const studentWords =
+        normalizeAnswerWords(
+            studentAnswer
+        );
+
+
+    const acceptedAnswers =
+        Array.isArray(
+            question?.answers
+        )
+            ? question.answers
+            : [];
+
+
+    /*
+     * If there is no answer key,
+     * do not automatically mark it.
+     */
+
+    if (
+        acceptedAnswers.length === 0
+    ) {
+
+        return false;
+
+    }
+
+
+    return acceptedAnswers.some(
+        accepted => {
+
+            const acceptedWords =
+                normalizeAnswerWords(
+                    accepted
+                );
+
+
+            if (
+                acceptedWords.length !==
+                studentWords.length
+            ) {
+
+                return false;
+
+            }
+
+
+            return acceptedWords.every(
+                (
+                    word,
+                    index
+                ) => {
+
+                    return (
+                        word ===
+                        studentWords[index]
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   RENDER RESULTS
 ========================================================= */
 
 function renderResults() {
-
-    const p1 =
-        state.chapterData
-            ?.part1
-            ?.questions
-            ?.length ||
-        0;
-
-
-    const p2 =
-        state.chapterData
-            ?.part2
-            ?.questions
-            ?.length ||
-        0;
-
-
-    const p3 =
-        state.chapterData
-            ?.part3
-            ?.questions
-            ?.length ||
-        0;
-
-
-    const maximum =
-        p1 +
-        p2 +
-        p3;
-
-
-    const total =
-        state.scores.total;
-
-
-    const percentage =
-        maximum
-            ? Math.round(
-                (
-                    total /
-                    maximum
-                ) *
-                100
-            )
-            : 0;
-
 
     if (resultChapter) {
 
@@ -2676,7 +2812,7 @@ function renderResults() {
     if (part1Score) {
 
         part1Score.textContent =
-            `${state.scores.part1} / ${p1}`;
+            state.scores.part1;
 
     }
 
@@ -2684,7 +2820,7 @@ function renderResults() {
     if (part2Score) {
 
         part2Score.textContent =
-            `${state.scores.part2} / ${p2}`;
+            state.scores.part2;
 
     }
 
@@ -2692,7 +2828,7 @@ function renderResults() {
     if (part3Score) {
 
         part3Score.textContent =
-            `${state.scores.part3} / ${p3}`;
+            state.scores.part3;
 
     }
 
@@ -2700,9 +2836,24 @@ function renderResults() {
     if (totalScore) {
 
         totalScore.textContent =
-            `${total} / ${maximum}`;
+            state.scores.total;
 
     }
+
+
+    const maxScore =
+        getMaximumScore();
+
+
+    const percentage =
+        maxScore > 0
+            ? Math.round(
+                (
+                    state.scores.total /
+                    maxScore
+                ) * 100
+            )
+            : 0;
 
 
     if (percentageScore) {
@@ -2718,7 +2869,61 @@ function renderResults() {
         saveStatus.textContent =
             "Saving your score...";
 
+        saveStatus.style.color =
+            "#6e767f";
+
     }
+
+}
+
+
+/* =========================================================
+   GET MAXIMUM SCORE
+========================================================= */
+
+function getMaximumScore() {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return 0;
+
+    }
+
+
+    let maximum = 0;
+
+
+    [
+        "part1",
+        "part2",
+        "part3"
+    ].forEach(
+        partName => {
+
+            const questions =
+                state.chapterData?.[
+                    partName
+                ]?.questions;
+
+
+            if (
+                Array.isArray(
+                    questions
+                )
+            ) {
+
+                maximum +=
+                    questions.length;
+
+            }
+
+        }
+    );
+
+
+    return maximum;
 
 }
 
@@ -2740,14 +2945,35 @@ async function saveScore() {
 
     if (
         !state.username ||
-        !state.studentClass ||
-        !state.currentChapter
+        !state.studentClass
     ) {
 
         if (saveStatus) {
 
             saveStatus.textContent =
                 "Unable to save score: student information is missing.";
+
+            saveStatus.style.color =
+                "#d93636";
+
+        }
+
+        return;
+
+    }
+
+
+    if (
+        !state.currentChapter
+    ) {
+
+        if (saveStatus) {
+
+            saveStatus.textContent =
+                "Unable to save score: chapter is missing.";
+
+            saveStatus.style.color =
+                "#d93636";
 
         }
 
@@ -2762,7 +2988,6 @@ async function saveScore() {
             await callAPI(
                 "saveScore",
                 {
-
                     username:
                         state.username,
 
@@ -2782,22 +3007,20 @@ async function saveScore() {
                         state.scores.part3,
 
                     total:
-                        state.scores.total,
-
-                    /*
-                     * IMPORTANT:
-                     * Code.gs expects maximum.
-                     */
-
-                    maximum:
-                        getMaximumScore()
-
+                        state.scores.total
                 }
             );
 
 
+        console.log(
+            "Save Score Response:",
+            result
+        );
+
+
         if (
-            result?.success
+            result &&
+            result.success
         ) {
 
             state.testSaved =
@@ -2814,13 +3037,21 @@ async function saveScore() {
 
             }
 
-        } else if (saveStatus) {
+        } else {
 
-            saveStatus.textContent =
-                result?.message ||
-                "Unable to save score.";
+            if (saveStatus) {
+
+                saveStatus.textContent =
+                    result?.message ||
+                    "Unable to save score.";
+
+                saveStatus.style.color =
+                    "#d93636";
+
+            }
 
         }
+
 
     } catch (error) {
 
@@ -2834,6 +3065,9 @@ async function saveScore() {
 
             saveStatus.textContent =
                 "Unable to save score. Please try again.";
+
+            saveStatus.style.color =
+                "#d93636";
 
         }
 
@@ -2855,8 +3089,7 @@ async function getScoreHistory() {
 
         return {
 
-            success:
-                false,
+            success: false,
 
             message:
                 "Student information is missing."
@@ -2866,16 +3099,14 @@ async function getScoreHistory() {
     }
 
 
-    return callAPI(
+    return await callAPI(
         "getScoreHistory",
         {
-
             username:
                 state.username,
 
             class:
                 state.studentClass
-
         }
     );
 
@@ -2892,21 +3123,6 @@ async function showScoreHistory() {
         !state.username ||
         !state.studentClass
     ) {
-
-        showLoginMessage(
-            "Please login first."
-        );
-
-        return;
-
-    }
-
-
-    if (!historyScreen) {
-
-        console.error(
-            "historyScreen is missing from index.html"
-        );
 
         return;
 
@@ -2962,7 +3178,9 @@ async function showScoreHistory() {
         );
 
 
-        if (historyLoading) {
+        if (
+            historyLoading
+        ) {
 
             historyLoading.style.display =
                 "none";
@@ -2993,39 +3211,16 @@ async function showScoreHistory() {
         }
 
 
-        /*
-         * Code.gs returns:
-         *
-         * {
-         *   success: true,
-         *   records: [...]
-         * }
-         *
-         * "history" is kept as fallback.
-         */
-
-        const rawRecords =
+        const history =
             Array.isArray(
-                result.records
+                result.history
             )
-                ? result.records
-                : (
-                    Array.isArray(
-                        result.history
-                    )
-                        ? result.history
-                        : []
-                );
-
-
-        const records =
-            rawRecords.map(
-                normalizeHistoryRecord
-            );
+                ? result.history
+                : [];
 
 
         if (
-            records.length === 0
+            history.length === 0
         ) {
 
             if (historyEmpty) {
@@ -3041,7 +3236,7 @@ async function showScoreHistory() {
 
 
         renderScoreHistory(
-            records
+            history
         );
 
 
@@ -3077,93 +3272,11 @@ async function showScoreHistory() {
 
 
 /* =========================================================
-   NORMALIZE HISTORY RECORD
-========================================================= */
-
-function normalizeHistoryRecord(
-    record
-) {
-
-    record =
-        record ||
-        {};
-
-
-    return {
-
-        chapter:
-            record.chapter ??
-            record.Chapter ??
-            "Chapter",
-
-
-        part1:
-            Number(
-                record.part1 ??
-                record["Part 1 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        part2:
-            Number(
-                record.part2 ??
-                record["Part 2 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        part3:
-            Number(
-                record.part3 ??
-                record["Part 3 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        total:
-            Number(
-                record.total ??
-                record.Total ??
-                0
-            ) ||
-            0,
-
-
-        maximum:
-            Number(
-                record.maximum ??
-                record.Maximum ??
-                0
-            ) ||
-            0,
-
-
-        percentage:
-            record.percentage ??
-            record.Percentage ??
-            "",
-
-
-        date:
-            record.date ??
-            record.Date ??
-            ""
-
-    };
-
-}
-
-
-/* =========================================================
    RENDER SCORE HISTORY
 ========================================================= */
 
 function renderScoreHistory(
-    records
+    history
 ) {
 
     if (!historyList) {
@@ -3174,7 +3287,7 @@ function renderScoreHistory(
 
 
     historyList.innerHTML =
-        records.map(
+        history.map(
             (
                 item,
                 index
@@ -3187,139 +3300,95 @@ function renderScoreHistory(
 
 
                 return `
-                    <div
-                        class="history-card"
-                        style="
-                            background:#ffffff;
-                            border-radius:18px;
-                            padding:18px;
-                            margin-bottom:16px;
-                            border:1px solid #e7e7e7;
-                            box-shadow:0 5px 18px rgba(0,0,0,.07);
-                            overflow:hidden;
-                            width:100%;
-                            box-sizing:border-box;
-                        "
-                    >
+                    <div class="history-card">
 
-                        <div
-                            style="
-                                display:flex;
-                                justify-content:space-between;
-                                align-items:center;
-                                gap:12px;
-                                margin-bottom:16px;
-                            "
-                        >
+                        <div class="history-card-top">
 
-                            <div
-                                style="
-                                    min-width:0;
-                                    flex:1;
-                                "
-                            >
+                            <div>
 
-                                <div
-                                    style="
-                                        font-size:11px;
-                                        font-weight:700;
-                                        letter-spacing:1px;
-                                        color:#8a8f98;
-                                        margin-bottom:5px;
-                                    "
-                                >
-                                    TEST ${records.length - index}
+                                <div class="history-number">
+                                    TEST ${history.length - index}
                                 </div>
 
-
-                                <h3
-                                    style="
-                                        margin:0;
-                                        font-size:18px;
-                                        line-height:1.3;
-                                        color:#222;
-                                        word-break:break-word;
-                                        overflow-wrap:anywhere;
-                                    "
-                                >
+                                <h3>
                                     ${escapeHTML(
-                                        item.chapter
+                                        item.chapter ||
+                                        "Chapter"
                                     )}
                                 </h3>
 
                             </div>
 
 
-                            <div
-                                style="
-                                    flex-shrink:0;
-                                    min-width:52px;
-                                    height:52px;
-                                    border-radius:14px;
-                                    display:flex;
-                                    align-items:center;
-                                    justify-content:center;
-                                    background:#383838;
-                                    color:#ffffff;
-                                    font-size:18px;
-                                    font-weight:800;
-                                    box-sizing:border-box;
-                                "
-                            >
-                                ${item.total}
+                            <div class="history-total">
+                                ${escapeHTML(
+                                    String(
+                                        item.total ?? 0
+                                    )
+                                )}
                             </div>
 
                         </div>
 
 
-                        <div
-                            style="
-                                display:grid;
-                                grid-template-columns:repeat(3,minmax(0,1fr));
-                                gap:8px;
-                                width:100%;
-                                box-sizing:border-box;
-                            "
-                        >
+                        <div class="history-details">
 
-                            ${historyPartCard(
-                                "Part 1",
-                                item.part1
-                            )}
+                            <div class="history-part">
 
-                            ${historyPartCard(
-                                "Part 2",
-                                item.part2
-                            )}
+                                <span>
+                                    Part 1
+                                </span>
 
-                            ${historyPartCard(
-                                "Part 3",
-                                item.part3
-                            )}
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part1 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 2
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part2 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 3
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part3 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
 
                         </div>
 
 
-                        <div
-                            style="
-                                display:flex;
-                                justify-content:space-between;
-                                align-items:center;
-                                gap:12px;
-                                margin-top:15px;
-                                padding-top:13px;
-                                border-top:1px solid #eeeeee;
-                            "
-                        >
+                        <div class="history-bottom">
 
-                            <span
-                                style="
-                                    color:#8a8f98;
-                                    font-size:12px;
-                                    min-width:0;
-                                    word-break:break-word;
-                                "
-                            >
+                            <span>
                                 ${escapeHTML(
                                     formatHistoryDate(
                                         item.date
@@ -3327,19 +3396,8 @@ function renderScoreHistory(
                                 )}
                             </span>
 
-
-                            <strong
-                                style="
-                                    flex-shrink:0;
-                                    font-size:15px;
-                                    color:#383838;
-                                "
-                            >
-                                ${
-                                    percentage === null
-                                        ? "—"
-                                        : `${percentage}%`
-                                }
+                            <strong>
+                                ${percentage}%
                             </strong>
 
                         </div>
@@ -3355,56 +3413,7 @@ function renderScoreHistory(
 
 
 /* =========================================================
-   HISTORY PART CARD
-========================================================= */
-
-function historyPartCard(
-    label,
-    score
-) {
-
-    return `
-        <div
-            style="
-                background:#f6f6f6;
-                border-radius:12px;
-                padding:11px 8px;
-                text-align:center;
-                min-width:0;
-                box-sizing:border-box;
-            "
-        >
-
-            <span
-                style="
-                    display:block;
-                    font-size:11px;
-                    color:#777;
-                    margin-bottom:4px;
-                "
-            >
-                ${label}
-            </span>
-
-
-            <strong
-                style="
-                    display:block;
-                    font-size:16px;
-                    color:#222;
-                "
-            >
-                ${score}
-            </strong>
-
-        </div>
-    `;
-
-}
-
-
-/* =========================================================
-   HISTORY PERCENTAGE
+   CALCULATE HISTORY PERCENTAGE
 ========================================================= */
 
 function calculateHistoryPercentage(
@@ -3413,102 +3422,159 @@ function calculateHistoryPercentage(
 
     const total =
         Number(
-            item.total
-        ) ||
-        0;
-
-
-    const maximum =
-        Number(
-            item.maximum
-        ) ||
-        0;
+            item?.total
+        ) || 0;
 
 
     /*
-     * New records contain Maximum.
+     * If the API has maximum score
+     * in the future, use it.
      */
 
     if (
-        maximum > 0
+        Number(
+            item?.maximum
+        ) > 0
     ) {
 
         return Math.round(
             (
                 total /
-                maximum
-            ) *
-            100
+                Number(
+                    item.maximum
+                )
+            ) * 100
         );
 
     }
 
 
     /*
-     * If API already provides percentage.
+     * Current Score sheet does not
+     * store maximum score.
+     *
+     * We therefore calculate the
+     * maximum from the three parts.
      */
 
-    const apiPercentage =
+    const part1 =
         Number(
-            item.percentage
+            item?.part1
+        ) || 0;
+
+
+    const part2 =
+        Number(
+            item?.part2
+        ) || 0;
+
+
+    const part3 =
+        Number(
+            item?.part3
+        ) || 0;
+
+
+    const recordedPartTotal =
+        part1 +
+        part2 +
+        part3;
+
+
+    /*
+     * This is only a fallback.
+     *
+     * If all three recorded scores
+     * are zero, return 0.
+     */
+
+    if (
+        recordedPartTotal <= 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If we don't know the original
+     * maximum score, don't falsely
+     * assume 100%.
+     *
+     * The current Code.gs returns
+     * the actual score values only.
+     *
+     * This fallback is replaced below
+     * by the chapter's known question
+     * count when available.
+     */
+
+    const knownMaximum =
+        getKnownMaximumForHistoryItem(
+            item
         );
 
 
     if (
-        item.percentage !== "" &&
-        !Number.isNaN(
-            apiPercentage
-        )
+        knownMaximum > 0
     ) {
 
         return Math.round(
-            apiPercentage
+            (
+                total /
+                knownMaximum
+            ) * 100
         );
 
     }
 
 
-    /*
-     * If the currently loaded chapter
-     * matches this history record,
-     * we know the exact maximum.
-     */
+    return 0;
+
+}
+
+
+/* =========================================================
+   GET KNOWN MAXIMUM FOR HISTORY
+========================================================= */
+
+function getKnownMaximumForHistoryItem(
+    item
+) {
 
     const chapterNumber =
         extractChapterNumber(
-            item.chapter
+            item?.chapter
         );
 
 
     if (
-        chapterNumber &&
+        !chapterNumber
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If this is the currently loaded
+     * chapter, we know its exact total.
+     */
+
+    if (
         state.currentChapter ===
         chapterNumber &&
         state.chapterData
     ) {
 
-        const knownMaximum =
-            getMaximumScore();
-
-
-        if (
-            knownMaximum > 0
-        ) {
-
-            return Math.round(
-                (
-                    total /
-                    knownMaximum
-                ) *
-                100
-            );
-
-        }
+        return getMaximumScore();
 
     }
 
 
-    return null;
+    return 0;
 
 }
 
@@ -3550,15 +3616,9 @@ function formatHistoryDate(
     return parsed.toLocaleDateString(
         undefined,
         {
-            year:
-                "numeric",
-
-            month:
-                "short",
-
-            day:
-                "numeric"
-
+            year: "numeric",
+            month: "short",
+            day: "numeric"
         }
     );
 
@@ -3573,19 +3633,29 @@ function extractChapterNumber(
     value
 ) {
 
-    const match =
+    const text =
         String(
-            value ?? ""
-        ).match(
+            value ||
+            ""
+        );
+
+
+    const match =
+        text.match(
             /(\d+)/
         );
 
 
-    return match
-        ? Number(
-            match[1]
-        )
-        : 0;
+    if (!match) {
+
+        return 0;
+
+    }
+
+
+    return Number(
+        match[1]
+    );
 
 }
 
@@ -3596,20 +3666,38 @@ function extractChapterNumber(
 
 function handleLogout() {
 
+    const confirmed =
+        window.confirm(
+            "Are you sure you want to logout?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
     state.username =
         null;
+
 
     state.studentClass =
         null;
 
+
     state.currentChapter =
         null;
+
 
     state.chapterData =
         null;
 
+
     state.currentPart =
         "part1";
+
 
     state.currentQuestionIndex =
         0;
@@ -3663,7 +3751,20 @@ function handleLogout() {
     }
 
 
-    clearLoginMessage();
+    if (welcomeUsername) {
+
+        welcomeUsername.textContent =
+            "Student";
+
+    }
+
+
+    if (studentClassBadge) {
+
+        studentClassBadge.textContent =
+            "Beginner";
+
+    }
 
 
     if (chapterGrid) {
@@ -3674,8 +3775,51 @@ function handleLogout() {
     }
 
 
+    clearLoginMessage();
+
+
     showScreen(
         loginScreen
     );
 
 }
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   END OF APP.JS
+========================================================= */
