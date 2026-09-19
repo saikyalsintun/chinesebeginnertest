@@ -73,7 +73,9 @@ const state = {
 
     },
 
-    testSaved: false
+    testSaved: false,
+
+    answerRecordsSaved: false
 
 };
 
@@ -1026,8 +1028,6 @@ function setLoginLoading(
 
 /* =========================================================
    GOOGLE APPS SCRIPT API
-   IMPORTANT:
-   POST REQUEST
 ========================================================= */
 
 async function callAPI(
@@ -1220,10 +1220,6 @@ async function loadChapter(
     }
 
 
-    /*
-     * Reset current test.
-     */
-
     state.currentChapter =
         chapter;
 
@@ -1263,6 +1259,10 @@ async function loadChapter(
 
 
     state.testSaved =
+        false;
+
+
+    state.answerRecordsSaved =
         false;
 
 
@@ -1722,11 +1722,10 @@ function renderCurrentQuestion() {
 
 
     /*
-     * Directly update tabs.
+     * Directly update part tabs.
      *
-     * IMPORTANT:
-     * There is intentionally NO
-     * updatePartTabs() function.
+     * No updatePartTabs()
+     * function is used.
      */
 
     partTabs.forEach(
@@ -2271,12 +2270,6 @@ function renderSelectedWords() {
                 "button";
 
 
-            /*
-             * IMPORTANT:
-             * Selected answer uses the
-             * same word-button design.
-             */
-
             button.className =
                 "word-button selected-word";
 
@@ -2585,16 +2578,6 @@ function normalizeAnswerWords(
     answer
 ) {
 
-    /*
-     * If answer is a string:
-     *
-     * "wǒ xǐhuān nǐ"
-     *
-     * becomes:
-     *
-     * ["wǒ", "xǐhuān", "nǐ"]
-     */
-
     if (
         typeof answer ===
         "string"
@@ -2617,10 +2600,6 @@ function normalizeAnswerWords(
 
     }
 
-
-    /*
-     * If answer is an array.
-     */
 
     if (
         Array.isArray(
@@ -2880,7 +2859,8 @@ function getMaximumScore() {
 async function finishTest() {
 
     if (
-        state.testSaved
+        state.testSaved &&
+        state.answerRecordsSaved
     ) {
 
         showScreen(
@@ -2903,7 +2883,19 @@ async function finishTest() {
     );
 
 
+    /*
+     * Save the score.
+     */
+
     await saveScore();
+
+
+    /*
+     * Save every question and
+     * student's answer.
+     */
+
+    await saveAnswerRecords();
 
 }
 
@@ -3128,6 +3120,204 @@ async function saveScore() {
 
 
 /* =========================================================
+   SAVE ANSWER RECORDS
+========================================================= */
+
+async function saveAnswerRecords() {
+
+    if (
+        state.answerRecordsSaved
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        !state.username ||
+        !state.studentClass ||
+        !state.chapterData
+    ) {
+
+        console.error(
+            "Cannot save answer records: student or chapter information is missing."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const records = [];
+
+
+        /*
+         * Collect answers from all three parts.
+         */
+
+        const parts = [
+            "part1",
+            "part2",
+            "part3"
+        ];
+
+
+        parts.forEach(
+            partName => {
+
+                const questions =
+                    state.chapterData?.[
+                        partName
+                    ]?.questions ||
+                    [];
+
+
+                questions.forEach(
+                    (
+                        question,
+                        index
+                    ) => {
+
+                        /*
+                         * Student's selected words.
+                         */
+
+                        const studentAnswer =
+                            state.answers[
+                                partName
+                            ][index] ||
+                            [];
+
+
+                        /*
+                         * Convert selected word
+                         * objects into text.
+                         *
+                         * Example:
+                         *
+                         * [
+                         *   {word: "wǒ"},
+                         *   {word: "xǐhuān"},
+                         *   {word: "nǐ"}
+                         * ]
+                         *
+                         * becomes:
+                         *
+                         * wǒ xǐhuān nǐ
+                         */
+
+                        const answerText =
+                            normalizeAnswerWords(
+                                studentAnswer
+                            ).join(" ");
+
+
+                        /*
+                         * Save the actual question
+                         * text from the JSON.
+                         */
+
+                        const questionText =
+                            String(
+                                question?.question ||
+                                ""
+                            ).trim();
+
+
+                        records.push({
+
+                            question:
+                                questionText,
+
+                            answer:
+                                answerText
+
+                        });
+
+                    }
+                );
+
+            }
+        );
+
+
+        console.log(
+            "ANSWER RECORDS TO SAVE:",
+            records
+        );
+
+
+        /*
+         * Send all answers in one request.
+         */
+
+        const result =
+            await callAPI(
+                "saveAnswerRecords",
+                {
+
+                    username:
+                        state.username,
+
+                    class:
+                        state.studentClass,
+
+                    records:
+                        JSON.stringify(
+                            records
+                        )
+
+                }
+            );
+
+
+        console.log(
+            "SAVE ANSWER RECORDS RESPONSE:",
+            result
+        );
+
+
+        if (
+            result?.success === true
+        ) {
+
+            state.answerRecordsSaved =
+                true;
+
+
+            console.log(
+                `Saved ${
+                    result.saved ??
+                    records.length
+                } answer records.`
+            );
+
+        } else {
+
+            console.error(
+                "Answer records were not saved:",
+                result?.message ||
+                "Unknown error."
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "SAVE ANSWER RECORDS ERROR:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
    GET SCORE HISTORY
 ========================================================= */
 
@@ -3262,16 +3452,6 @@ async function showScoreHistory() {
 
         }
 
-
-        /*
-         * New Code.gs:
-         *
-         * records: [...]
-         *
-         * Older version:
-         *
-         * history: [...]
-         */
 
         const records =
             Array.isArray(
@@ -3466,13 +3646,6 @@ function renderScoreHistory(
             card.className =
                 "history-card";
 
-
-            /*
-             * Inline design is intentional.
-             *
-             * This means we do not need
-             * to modify style.css.
-             */
 
             card.style.background =
                 "#ffffff";
@@ -3729,11 +3902,6 @@ function getHistoryPercentage(
         0;
 
 
-    /*
-     * Preferred:
-     * Code.gs sends Maximum.
-     */
-
     if (
         maximum > 0
     ) {
@@ -3748,11 +3916,6 @@ function getHistoryPercentage(
 
     }
 
-
-    /*
-     * If Code.gs already sends
-     * Percentage.
-     */
 
     if (
         item.percentage !== "" &&
@@ -3780,12 +3943,6 @@ function getHistoryPercentage(
 
     }
 
-
-    /*
-     * If the same chapter is currently
-     * loaded, calculate using its
-     * actual question count.
-     */
 
     const chapterNumber =
         extractChapterNumber(
@@ -3820,11 +3977,6 @@ function getHistoryPercentage(
 
     }
 
-
-    /*
-     * We don't invent a percentage
-     * when maximum is unknown.
-     */
 
     return 0;
 
@@ -3981,6 +4133,10 @@ function handleLogout() {
 
 
     state.testSaved =
+        false;
+
+
+    state.answerRecordsSaved =
         false;
 
 
