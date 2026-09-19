@@ -21,7 +21,7 @@ const CONFIG = {
     // Replace ONLY this URL later.
     // =====================================================
 
-    API_URL: "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL",
+    API_URL: "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
     // =====================================================
     // JSON FILE LOCATION
