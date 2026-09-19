@@ -1241,7 +1241,49 @@ button:disabled {
 .next-button {
     min-width: 115px;
 }
+/* =========================================================
+   NEXT BUTTON — QUESTION CHANGE EFFECT
+========================================================= */
 
+.next-button {
+    position: relative;
+    overflow: hidden;
+
+    background: #f97316;
+    color: #ffffff;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+/* Hover */
+.next-button:hover {
+    background: #ea580c;
+    transform: translateX(2px);
+    box-shadow: 0 5px 14px rgba(249, 115, 22, 0.25);
+}
+
+/* When clicked */
+.next-button:active {
+    transform: translateX(5px) scale(0.97);
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.18);
+}
+
+/* Keyboard focus */
+.next-button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+/* Disabled */
+.next-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
 
 /* =========================================================
    RESULT SCREEN
