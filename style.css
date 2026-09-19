@@ -4,6 +4,7 @@
    Orange + Blue + Black
 ========================================================= */
 .login-title {
+   
     text-align: center;
     font-size: 36px;
     font-weight: 800;
@@ -1941,4 +1942,332 @@ input:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.2);
 
     outline-offset: 2px;
+}
+
+
+
+/* =========================================================
+   FINAL LOGIN PAGE OVERRIDE
+   Put this at the VERY BOTTOM of style.css
+========================================================= */
+
+#loginScreen {
+    display: none;
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111 0%,
+            #161616 55%,
+            #1d4ed8 100%
+        );
+}
+
+#loginScreen.active {
+    display: flex;
+}
+
+
+/* LOGIN CONTAINER */
+
+#loginScreen .login-container {
+    width: 100%;
+    max-width: 440px;
+
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* LOGIN CARD */
+
+#loginScreen .login-box {
+    width: 100%;
+
+    padding: 42px 38px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    border: none;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+#loginScreen .login-title {
+    width: 100%;
+
+    margin: 0 auto 10px;
+
+    text-align: center;
+
+    font-size: 36px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    color: #111111;
+}
+
+
+/* Subtitle */
+
+#loginScreen .login-subtitle {
+    width: 100%;
+
+    margin: 0 auto 30px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+#loginScreen .section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+#loginScreen input[type="text"],
+#loginScreen input[type="password"],
+#loginScreen input[type="email"] {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    background: #f9fafb !important;
+
+    color: #111111 !important;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#loginScreen input:hover {
+    border-color: #9ca3af;
+}
+
+
+#loginScreen input:focus {
+
+    background: #ffffff !important;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+
+}
+
+
+/* Firefox autofill */
+
+#loginScreen input:-moz-autofill {
+
+    background-color: #f9fafb !important;
+
+    color: #111111 !important;
+}
+
+
+/* Chromium / browser autofill */
+
+#loginScreen input:-webkit-autofill,
+#loginScreen input:-webkit-autofill:hover,
+#loginScreen input:-webkit-autofill:focus {
+
+    -webkit-text-fill-color: #111111 !important;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #f9fafb inset !important;
+
+    box-shadow:
+        0 0 0 1000px #f9fafb inset !important;
+
+    background-color: #f9fafb !important;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+#loginScreen #loginButton {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f97316,
+            #ea580c
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 16px rgba(249, 115, 22, 0.25);
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+#loginScreen #loginButton:hover:not(:disabled) {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ea580c,
+            #dc2626
+        );
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(249, 115, 22, 0.30);
+}
+
+
+#loginScreen #loginButton:active:not(:disabled) {
+
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* Only slightly dim while actually logging in */
+
+#loginScreen #loginButton:disabled {
+
+    opacity: 0.75;
+
+    cursor: wait;
+
+}
+
+
+/* =========================================================
+   LOGIN MESSAGE
+========================================================= */
+
+#loginScreen #loginMessage {
+
+    width: 100%;
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+#loginScreen #loginMessage.error {
+
+    padding: 10px 12px;
+
+    color: #dc2626;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   LOGIN MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #loginScreen {
+        padding: 16px;
+    }
+
+    #loginScreen .login-box {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    #loginScreen .login-title {
+        font-size: 30px;
+    }
+
+    #loginScreen .login-subtitle {
+        font-size: 13px;
+    }
+
 }
