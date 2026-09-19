@@ -1,6 +1,6 @@
 /* =========================================================
    CHINESE DAILY TEST
-   app.js
+   COMPLETE APP.JS
 ========================================================= */
 
 
@@ -13,29 +13,18 @@ const CONFIG = {
     API_URL:
         "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
-    CHAPTER_PATH:
-        "./chapters/",
+    CLASS_CONFIG: {
 
-    TOTAL_CHAPTERS:
-        15
+        Beginner: {
+            folder: "chapters",
+            totalChapters: 15
+        },
 
-};
+        Speaking: {
+            folder: "speaking",
+            totalChapters: 35
+        }
 
-
-/* =========================================================
-   CLASS CONFIGURATION
-========================================================= */
-
-const CLASS_CONFIG = {
-
-    Beginner: {
-        folder: "chapters",
-        totalChapters: 15
-    },
-
-    Speaking: {
-        folder: "speaking",
-        totalChapters: 35
     }
 
 };
@@ -60,30 +49,25 @@ const state = {
     currentQuestionIndex: 0,
 
     answers: {
-
         part1: {},
         part2: {},
         part3: {}
-
     },
 
     scores: {
-
         part1: 0,
         part2: 0,
-        part3: 0
-
+        part3: 0,
+        total: 0
     },
 
     randomOrders: {
-
         part1: {},
         part2: {},
         part3: {}
-
     },
 
-    answerRecordsSaved: false
+    testSaved: false
 
 };
 
@@ -92,160 +76,55 @@ const state = {
    DOM ELEMENTS
 ========================================================= */
 
-const loginScreen =
-    document.getElementById("loginScreen");
+let loginScreen;
+let chapterScreen;
+let testScreen;
+let resultScreen;
+let historyScreen;
 
-const chapterScreen =
-    document.getElementById("chapterScreen");
+let loginForm;
+let loginMessage;
+let loginButton;
 
-const testScreen =
-    document.getElementById("testScreen");
+let usernameInput;
+let passwordInput;
 
-const resultScreen =
-    document.getElementById("resultScreen");
+let welcomeUsername;
+let studentClassBadge;
+let chapterGrid;
+let logoutButton;
 
-const historyScreen =
-    document.getElementById("historyScreen");
+let backToChapters;
+let testChapter;
+let partTitle;
+let questionCounter;
+let progressBar;
+let questionType;
+let questionText;
+let selectedWords;
+let wordBank;
+let clearAnswer;
+let previousButton;
+let nextButton;
 
+let partTabs;
 
-const loginForm =
-    document.getElementById("loginForm");
+let resultChapter;
+let part1Score;
+let part2Score;
+let part3Score;
+let totalScore;
+let percentageScore;
+let saveStatus;
+let backToChapterButton;
 
-const loginMessage =
-    document.getElementById("loginMessage");
-
-const loginButton =
-    document.getElementById("loginButton");
-
-const usernameInput =
-    document.getElementById("username");
-
-const passwordInput =
-    document.getElementById("password");
-
-const welcomeUsername =
-    document.getElementById("welcomeUsername");
-
-const chapterGrid =
-    document.getElementById("chapterGrid");
-
-const logoutButton =
-    document.getElementById("logoutButton");
-
-const backToChapters =
-    document.getElementById("backToChapters");
-
-
-const testChapter =
-    document.getElementById("testChapter");
-
-const partTitle =
-    document.getElementById("partTitle");
-
-const questionCounter =
-    document.getElementById("questionCounter");
-
-const progressBar =
-    document.getElementById("progressBar");
-
-const questionType =
-    document.getElementById("questionType");
-
-const questionText =
-    document.getElementById("questionText");
-
-const selectedWords =
-    document.getElementById("selectedWords");
-
-const wordBank =
-    document.getElementById("wordBank");
-
-const clearAnswer =
-    document.getElementById("clearAnswer");
-
-const previousButton =
-    document.getElementById("previousButton");
-
-const nextButton =
-    document.getElementById("nextButton");
-
-const partTabs =
-    document.querySelectorAll(".part-tab");
-
-
-const resultChapter =
-    document.getElementById("resultChapter");
-
-const part1Score =
-    document.getElementById("part1Score");
-
-const part2Score =
-    document.getElementById("part2Score");
-
-const part3Score =
-    document.getElementById("part3Score");
-
-const totalScore =
-    document.getElementById("totalScore");
-
-const percentageScore =
-    document.getElementById("percentageScore");
-
-const saveStatus =
-    document.getElementById("saveStatus");
-
-const backToChapterButton =
-    document.getElementById("backToChapterButton");
-
-
-/* =========================================================
-   HISTORY ELEMENTS
-========================================================= */
-
-const backFromHistory =
-    document.getElementById("backFromHistory");
-
-const historyStudent =
-    document.getElementById("historyStudent");
-
-const historyLoading =
-    document.getElementById("historyLoading");
-
-const historyEmpty =
-    document.getElementById("historyEmpty");
-
-const historyList =
-    document.getElementById("historyList");
-
-const chapterHistoryButton =
-    document.getElementById("chapterHistoryButton");
-
-const scoreHistoryButton =
-    document.getElementById("scoreHistoryButton");
-
-
-/* =========================================================
-   SCREEN MANAGEMENT
-========================================================= */
-
-function showScreen(screen) {
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(item => {
-
-            item.classList.remove("active");
-
-        });
-
-
-    if (screen) {
-
-        screen.classList.add("active");
-
-    }
-
-}
+let scoreHistoryButton;
+let chapterHistoryButton;
+let backFromHistory;
+let historyStudent;
+let historyLoading;
+let historyEmpty;
+let historyList;
 
 
 /* =========================================================
@@ -254,27 +133,511 @@ function showScreen(screen) {
 
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    initializeApp
+);
 
-        /*
-         * Chapters are generated after login
-         * because Class determines the folder.
-         */
+
+function initializeApp() {
+
+    cacheDOMElements();
+
+    setupEventListeners();
+
+    showScreen(
+        loginScreen
+    );
+
+}
+
+
+/* =========================================================
+   CACHE DOM ELEMENTS
+========================================================= */
+
+function cacheDOMElements() {
+
+    loginScreen =
+        document.getElementById(
+            "loginScreen"
+        );
+
+    chapterScreen =
+        document.getElementById(
+            "chapterScreen"
+        );
+
+    testScreen =
+        document.getElementById(
+            "testScreen"
+        );
+
+    resultScreen =
+        document.getElementById(
+            "resultScreen"
+        );
+
+    historyScreen =
+        document.getElementById(
+            "historyScreen"
+        );
+
+
+    loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+    loginMessage =
+        document.getElementById(
+            "loginMessage"
+        );
+
+    loginButton =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    usernameInput =
+        document.getElementById(
+            "username"
+        );
+
+    passwordInput =
+        document.getElementById(
+            "password"
+        );
+
+
+    welcomeUsername =
+        document.getElementById(
+            "welcomeUsername"
+        );
+
+    studentClassBadge =
+        document.getElementById(
+            "studentClassBadge"
+        );
+
+    chapterGrid =
+        document.getElementById(
+            "chapterGrid"
+        );
+
+    logoutButton =
+        document.getElementById(
+            "logoutButton"
+        );
+
+
+    backToChapters =
+        document.getElementById(
+            "backToChapters"
+        );
+
+    testChapter =
+        document.getElementById(
+            "testChapter"
+        );
+
+    partTitle =
+        document.getElementById(
+            "partTitle"
+        );
+
+    questionCounter =
+        document.getElementById(
+            "questionCounter"
+        );
+
+    progressBar =
+        document.getElementById(
+            "progressBar"
+        );
+
+    questionType =
+        document.getElementById(
+            "questionType"
+        );
+
+    questionText =
+        document.getElementById(
+            "questionText"
+        );
+
+    selectedWords =
+        document.getElementById(
+            "selectedWords"
+        );
+
+    wordBank =
+        document.getElementById(
+            "wordBank"
+        );
+
+    clearAnswer =
+        document.getElementById(
+            "clearAnswer"
+        );
+
+    previousButton =
+        document.getElementById(
+            "previousButton"
+        );
+
+    nextButton =
+        document.getElementById(
+            "nextButton"
+        );
+
+
+    partTabs =
+        document.querySelectorAll(
+            ".part-tab"
+        );
+
+
+    resultChapter =
+        document.getElementById(
+            "resultChapter"
+        );
+
+    part1Score =
+        document.getElementById(
+            "part1Score"
+        );
+
+    part2Score =
+        document.getElementById(
+            "part2Score"
+        );
+
+    part3Score =
+        document.getElementById(
+            "part3Score"
+        );
+
+    totalScore =
+        document.getElementById(
+            "totalScore"
+        );
+
+    percentageScore =
+        document.getElementById(
+            "percentageScore"
+        );
+
+    saveStatus =
+        document.getElementById(
+            "saveStatus"
+        );
+
+    backToChapterButton =
+        document.getElementById(
+            "backToChapterButton"
+        );
+
+
+    scoreHistoryButton =
+        document.getElementById(
+            "scoreHistoryButton"
+        );
+
+    chapterHistoryButton =
+        document.getElementById(
+            "chapterHistoryButton"
+        );
+
+    backFromHistory =
+        document.getElementById(
+            "backFromHistory"
+        );
+
+    historyStudent =
+        document.getElementById(
+            "historyStudent"
+        );
+
+    historyLoading =
+        document.getElementById(
+            "historyLoading"
+        );
+
+    historyEmpty =
+        document.getElementById(
+            "historyEmpty"
+        );
+
+    historyList =
+        document.getElementById(
+            "historyList"
+        );
+
+}
+
+
+/* =========================================================
+   EVENT LISTENERS
+========================================================= */
+
+function setupEventListeners() {
+
+    if (loginForm) {
+
+        loginForm.addEventListener(
+            "submit",
+            handleLogin
+        );
 
     }
-);
+
+
+    if (logoutButton) {
+
+        logoutButton.addEventListener(
+            "click",
+            handleLogout
+        );
+
+    }
+
+
+    if (backToChapters) {
+
+        backToChapters.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
+
+
+    if (clearAnswer) {
+
+        clearAnswer.addEventListener(
+            "click",
+            clearCurrentAnswer
+        );
+
+    }
+
+
+    if (previousButton) {
+
+        previousButton.addEventListener(
+            "click",
+            goToPreviousQuestion
+        );
+
+    }
+
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            goToNextQuestion
+        );
+
+    }
+
+
+    partTabs.forEach(
+        tab => {
+
+            tab.addEventListener(
+                "click",
+                () => {
+
+                    const part =
+                        tab.dataset.part;
+
+                    switchPart(
+                        part
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    if (backToChapterButton) {
+
+        backToChapterButton.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
+
+
+    if (scoreHistoryButton) {
+
+        scoreHistoryButton.addEventListener(
+            "click",
+            showScoreHistory
+        );
+
+    }
+
+
+    if (chapterHistoryButton) {
+
+        chapterHistoryButton.addEventListener(
+            "click",
+            showScoreHistory
+        );
+
+    }
+
+
+    if (backFromHistory) {
+
+        backFromHistory.addEventListener(
+            "click",
+            () => {
+
+                showScreen(
+                    chapterScreen
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOW SCREEN
+========================================================= */
+
+function showScreen(
+    screen
+) {
+
+    const screens = [
+        loginScreen,
+        chapterScreen,
+        testScreen,
+        resultScreen,
+        historyScreen
+    ];
+
+
+    screens.forEach(
+        currentScreen => {
+
+            if (
+                currentScreen
+            ) {
+
+                currentScreen.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+
+    if (screen) {
+
+        screen.classList.add(
+            "active"
+        );
+
+    }
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =========================================================
+   CLASS NORMALIZATION
+========================================================= */
+
+function normalizeStudentClass(
+    value
+) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+
+        return "";
+
+    }
+
+
+    const raw =
+        String(
+            value
+        ).trim();
+
+
+    if (!raw) {
+
+        return "";
+
+    }
+
+
+    const match =
+        Object.keys(
+            CONFIG.CLASS_CONFIG
+        ).find(
+            className =>
+                className.toLowerCase() ===
+                raw.toLowerCase()
+        );
+
+
+    return match || raw;
+
+}
 
 
 /* =========================================================
    GET CLASS CONFIG
 ========================================================= */
 
-function getCurrentClassConfig() {
+function getClassConfig() {
 
-    return (
-        CLASS_CONFIG[state.studentClass] ||
-        CLASS_CONFIG.Beginner
-    );
+    if (
+        !state.studentClass
+    ) {
+
+        return null;
+
+    }
+
+
+    return CONFIG.CLASS_CONFIG[
+        state.studentClass
+    ] || null;
 
 }
 
@@ -292,12 +655,25 @@ function generateChapterButtons() {
     }
 
 
-    chapterGrid.innerHTML =
-        "";
+    chapterGrid.innerHTML = "";
 
 
     const classConfig =
-        getCurrentClassConfig();
+        getClassConfig();
+
+
+    if (!classConfig) {
+
+        chapterGrid.innerHTML = `
+            <div class="history-error">
+                No chapter configuration found
+                for your class.
+            </div>
+        `;
+
+        return;
+
+    }
 
 
     for (
@@ -306,26 +682,21 @@ function generateChapterButtons() {
         i++
     ) {
 
-        const card =
-            document.createElement("button");
+        const button =
+            document.createElement(
+                "button"
+            );
 
 
-        card.type =
+        button.type =
             "button";
 
 
-        /*
-         * ORIGINAL CLASS
-         */
-        card.className =
+        button.className =
             "chapter-card";
 
 
-        /*
-         * ORIGINAL DESIGN
-         */
-        card.innerHTML = `
-
+        button.innerHTML = `
             <div class="chapter-number">
                 CHAPTER ${i}
             </div>
@@ -335,24 +706,27 @@ function generateChapterButtons() {
             </h3>
 
             <p>
-                Daily Chinese Test
+                ${escapeHTML(
+                    state.studentClass
+                )} Chinese Test
             </p>
-
         `;
 
 
-        card.addEventListener(
+        button.addEventListener(
             "click",
             () => {
 
-                loadChapter(i);
+                loadChapter(
+                    i
+                );
 
             }
         );
 
 
         chapterGrid.appendChild(
-            card
+            button
         );
 
     }
@@ -364,134 +738,224 @@ function generateChapterButtons() {
    LOGIN
 ========================================================= */
 
-if (loginForm) {
+async function handleLogin(
+    event
+) {
 
-    loginForm.addEventListener(
-        "submit",
-        async function(event) {
-
-            event.preventDefault();
+    event.preventDefault();
 
 
-            const username =
-                usernameInput.value.trim();
-
-            const password =
-                passwordInput.value;
-
-
-            if (
-                !username ||
-                !password
-            ) {
-
-                showLoginError(
-                    "Please enter username and password."
-                );
-
-                return;
-
-            }
+    const username =
+        String(
+            usernameInput?.value ||
+            ""
+        ).trim();
 
 
-            loginButton.disabled =
-                true;
+    const password =
+        String(
+            passwordInput?.value ||
+            ""
+        );
 
 
-            loginButton.textContent =
-                "Logging in...";
+    clearLoginMessage();
 
 
-            loginMessage.textContent =
-                "";
+    if (!username) {
+
+        showLoginMessage(
+            "Please enter your username.",
+            "error"
+        );
+
+        return;
+
+    }
 
 
-            try {
+    if (!password) {
 
-                const result =
-                    await callAPI(
-                        "login",
-                        {
-                            username,
-                            password
-                        }
-                    );
+        showLoginMessage(
+            "Please enter your password.",
+            "error"
+        );
 
+        return;
 
-                if (
-                    result &&
-                    result.success === true
-                ) {
-
-                    state.username =
-                        result.username ||
-                        username;
+    }
 
 
-                    state.studentClass =
-                        result.class ||
-                        result.Class ||
-                        result.studentClass ||
-                        "Beginner";
+    setLoginLoading(
+        true
+    );
 
 
-                    welcomeUsername.textContent =
-                        state.username;
+    try {
 
-
-                    generateChapterButtons();
-
-
-                    showScreen(
-                        chapterScreen
-                    );
-
-
-                } else {
-
-                    showLoginError(
-                        result?.message ||
-                        "Invalid username or password."
-                    );
-
+        const result =
+            await callAPI(
+                "login",
+                {
+                    username,
+                    password
                 }
+            );
 
 
-            } catch(error) {
-
-                console.error(
-                    "Login error:",
-                    error
-                );
+        console.log(
+            "Login API Response:",
+            result
+        );
 
 
-                showLoginError(
-                    "Unable to connect to the server."
-                );
+        if (
+            !result ||
+            !result.success
+        ) {
 
+            showLoginMessage(
+                result?.message ||
+                "Login failed.",
+                "error"
+            );
 
-            } finally {
-
-                loginButton.disabled =
-                    false;
-
-
-                loginButton.textContent =
-                    "Login";
-
-            }
+            return;
 
         }
-    );
+
+
+        const studentClass =
+            normalizeStudentClass(
+                result.class ||
+                result.Class ||
+                result.studentClass
+            );
+
+
+        if (!studentClass) {
+
+            showLoginMessage(
+                "Your account does not have a class assigned.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            !CONFIG.CLASS_CONFIG[
+                studentClass
+            ]
+        ) {
+
+            showLoginMessage(
+                `Class "${studentClass}" is not configured yet.`,
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Save login state.
+         */
+
+        state.username =
+            result.username ||
+            username;
+
+        state.studentClass =
+            studentClass;
+
+
+        /*
+         * Update UI.
+         */
+
+        if (welcomeUsername) {
+
+            welcomeUsername.textContent =
+                state.username;
+
+        }
+
+
+        if (studentClassBadge) {
+
+            studentClassBadge.textContent =
+                state.studentClass;
+
+        }
+
+
+        /*
+         * Generate chapters
+         * only after class is known.
+         */
+
+        generateChapterButtons();
+
+
+        /*
+         * Clear password field.
+         */
+
+        if (passwordInput) {
+
+            passwordInput.value =
+                "";
+
+        }
+
+
+        /*
+         * Show chapter screen.
+         */
+
+        showScreen(
+            chapterScreen
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Login error:",
+            error
+        );
+
+
+        showLoginMessage(
+            error.message ||
+            "Unable to connect to the server.",
+            "error"
+        );
+
+
+    } finally {
+
+        setLoginLoading(
+            false
+        );
+
+    }
 
 }
 
 
 /* =========================================================
-   LOGIN ERROR
+   LOGIN MESSAGE
 ========================================================= */
 
-function showLoginError(message) {
+function showLoginMessage(
+    message,
+    type = "error"
+) {
 
     if (!loginMessage) {
 
@@ -504,19 +968,74 @@ function showLoginError(message) {
         message;
 
 
-    loginMessage.className =
-        "message error";
+    loginMessage.style.display =
+        "block";
+
+
+    if (
+        type === "success"
+    ) {
+
+        loginMessage.style.color =
+            "#238636";
+
+    } else {
+
+        loginMessage.style.color =
+            "#d93636";
+
+    }
+
+}
+
+
+function clearLoginMessage() {
+
+    if (!loginMessage) {
+
+        return;
+
+    }
+
+
+    loginMessage.textContent =
+        "";
+
+    loginMessage.style.display =
+        "none";
 
 }
 
 
 /* =========================================================
-   GOOGLE APPS SCRIPT API
-   ---------------------------------------------------------
-   IMPORTANT:
-   This MUST use POST.
+   LOGIN BUTTON LOADING
+========================================================= */
 
-   Do NOT change this to GET.
+function setLoginLoading(
+    loading
+) {
+
+    if (!loginButton) {
+
+        return;
+
+    }
+
+
+    loginButton.disabled =
+        loading;
+
+
+    loginButton.textContent =
+        loading
+            ? "Logging in..."
+            : "Login";
+
+}
+
+
+/* =========================================================
+   API CALL
 ========================================================= */
 
 async function callAPI(
@@ -524,192 +1043,105 @@ async function callAPI(
     data = {}
 ) {
 
-    /*
-     * Development mode
-     */
-
     if (
-        !CONFIG.API_URL ||
-        CONFIG.API_URL ===
-        "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+        !CONFIG.API_URL
     ) {
 
-        if (
-            action === "login"
-        ) {
-
-            return {
-
-                success: true,
-
-                username:
-                    data.username,
-
-                class:
-                    "Beginner"
-
-            };
-
-        }
-
-
-        if (
-            action === "saveScore"
-        ) {
-
-            console.log(
-                "Development mode - score:",
-                data
-            );
-
-
-            return {
-
-                success: true,
-
-                message:
-                    "Score saved in development mode."
-
-            };
-
-        }
-
-
-        if (
-            action === "saveAnswerRecords"
-        ) {
-
-            console.log(
-                "Development mode - answers:",
-                data
-            );
-
-
-            return {
-
-                success: true
-
-            };
-
-        }
-
-
-        if (
-            action === "getScoreHistory"
-        ) {
-
-            return {
-
-                success: true,
-
-                records: []
-
-            };
-
-        }
-
-
-        return {
-
-            success: true
-
-        };
+        throw new Error(
+            "API URL is not configured."
+        );
 
     }
 
-
-    /*
-     * Create form parameters
-     */
 
     const params =
         new URLSearchParams();
 
 
-    params.append(
+    params.set(
         "action",
         action
     );
 
 
-    Object.keys(data).forEach(
+    Object.keys(
+        data
+    ).forEach(
         key => {
 
-            let value =
+            const value =
                 data[key];
 
 
-            /*
-             * Convert objects / arrays
-             * into JSON strings.
-             */
-
             if (
-                value !== null &&
-                typeof value === "object"
+                value !== undefined &&
+                value !== null
             ) {
 
-                value =
-                    JSON.stringify(value);
+                params.set(
+                    key,
+                    String(value)
+                );
 
             }
-
-
-            params.append(
-                key,
-                String(value)
-            );
 
         }
     );
 
 
-    /*
-     * IMPORTANT:
-     *
-     * Keep this as POST.
-     *
-     * The previous version incorrectly
-     * changed this to GET and caused:
-     *
-     * CORS Missing Allow Origin
-     * 404
-     */
+    const url =
+        `${CONFIG.API_URL}?${params.toString()}`;
+
 
     const response =
         await fetch(
-            CONFIG.API_URL,
+            url,
             {
-
-                method:
-                    "POST",
-
-                headers: {
-
-                    "Content-Type":
-                        "application/x-www-form-urlencoded"
-
-                },
-
-                body:
-                    params.toString()
-
+                method: "GET",
+                cache: "no-store"
             }
         );
 
 
-    if (
-        !response.ok
-    ) {
+    if (!response.ok) {
 
         throw new Error(
-            `API Error: ${response.status}`
+            `Server returned ${response.status}.`
         );
 
     }
 
 
-    return await response.json();
+    const text =
+        await response.text();
+
+
+    let result;
+
+
+    try {
+
+        result =
+            JSON.parse(
+                text
+            );
+
+    } catch (error) {
+
+        console.error(
+            "Invalid API response:",
+            text
+        );
+
+
+        throw new Error(
+            "The server returned an invalid response."
+        );
+
+    }
+
+
+    return result;
 
 }
 
@@ -722,32 +1154,113 @@ async function loadChapter(
     chapterNumber
 ) {
 
+    const classConfig =
+        getClassConfig();
+
+
+    if (!classConfig) {
+
+        alert(
+            "Your class has not been configured."
+        );
+
+        return;
+
+    }
+
+
+    const chapter =
+        Number(
+            chapterNumber
+        );
+
+
+    if (
+        !Number.isInteger(
+            chapter
+        ) ||
+        chapter < 1 ||
+        chapter > classConfig.totalChapters
+    ) {
+
+        alert(
+            "Invalid chapter."
+        );
+
+        return;
+
+    }
+
+
+    state.currentChapter =
+        chapter;
+
+
+    state.currentPart =
+        "part1";
+
+
+    state.currentQuestionIndex =
+        0;
+
+
+    state.answers = {
+        part1: {},
+        part2: {},
+        part3: {}
+    };
+
+
+    state.scores = {
+        part1: 0,
+        part2: 0,
+        part3: 0,
+        total: 0
+    };
+
+
+    state.randomOrders = {
+        part1: {},
+        part2: {},
+        part3: {}
+    };
+
+
+    state.testSaved =
+        false;
+
+
+    showScreen(
+        testScreen
+    );
+
+
+    showTestLoading();
+
+
+    const fileName =
+        `Chapter${chapter}.json`;
+
+
+    const chapterPath =
+        `./${classConfig.folder}/${fileName}`;
+
+
     try {
-
-        const classConfig =
-            getCurrentClassConfig();
-
-
-        const fileName =
-            `Chapter${chapterNumber}.json`;
-
-
-        const chapterPath =
-            `./${classConfig.folder}/${fileName}`;
-
 
         const response =
             await fetch(
-                chapterPath
+                chapterPath,
+                {
+                    cache: "no-store"
+                }
             );
 
 
-        if (
-            !response.ok
-        ) {
+        if (!response.ok) {
 
             throw new Error(
-                `Could not load ${chapterPath}`
+                `Could not load ${fileName}.`
             );
 
         }
@@ -757,8 +1270,9 @@ async function loadChapter(
             await response.json();
 
 
-        state.currentChapter =
-            chapterNumber;
+        validateChapterData(
+            data
+        );
 
 
         state.chapterData =
@@ -767,60 +1281,21 @@ async function loadChapter(
 
 
         /*
-         * Reset test
+         * Update chapter title.
          */
 
-        state.currentPart =
-            "part1";
+        if (testChapter) {
+
+            testChapter.textContent =
+                `Chapter ${chapter}`;
+
+        }
 
 
-        state.currentQuestionIndex =
-            0;
+        renderCurrentQuestion();
 
 
-        state.answers = {
-
-            part1: {},
-            part2: {},
-            part3: {}
-
-        };
-
-
-        state.scores = {
-
-            part1: 0,
-            part2: 0,
-            part3: 0
-
-        };
-
-
-        state.randomOrders = {
-
-            part1: {},
-            part2: {},
-            part3: {}
-
-        };
-
-
-        state.answerRecordsSaved =
-            false;
-
-
-        updatePartTabs();
-
-
-        showScreen(
-            testScreen
-        );
-
-
-        renderQuestion();
-
-
-    } catch(error) {
+    } catch (error) {
 
         console.error(
             "Chapter loading error:",
@@ -828,14 +1303,8 @@ async function loadChapter(
         );
 
 
-        alert(
-
-            `Unable to load Chapter ${chapterNumber}.\n\n` +
-
-            `Make sure this file exists:\n` +
-
-            `${getCurrentClassConfig().folder}/Chapter${chapterNumber}.json`
-
+        showTestError(
+            `Unable to load Chapter ${chapter}. Please check that ${chapterPath} exists.`
         );
 
     }
@@ -844,149 +1313,76 @@ async function loadChapter(
 
 
 /* =========================================================
-   GET CURRENT QUESTIONS
+   VALIDATE CHAPTER DATA
 ========================================================= */
 
-function getCurrentQuestions() {
+function validateChapterData(
+    data
+) {
 
-    if (
-        !state.chapterData
-    ) {
+    const chapter =
+        data?.chapter ||
+        data;
 
-        return [];
+
+    if (!chapter) {
+
+        throw new Error(
+            "Chapter data is empty."
+        );
 
     }
 
 
-    return (
+    const requiredParts = [
+        "part1",
+        "part2",
+        "part3"
+    ];
 
-        state.chapterData[
-            state.currentPart
-        ]?.questions ||
 
-        []
+    requiredParts.forEach(
+        part => {
 
+            if (
+                !chapter[part]
+            ) {
+
+                throw new Error(
+                    `Chapter is missing ${part}.`
+                );
+
+            }
+
+
+            if (
+                !Array.isArray(
+                    chapter[part].questions
+                )
+            ) {
+
+                throw new Error(
+                    `${part} does not contain a questions array.`
+                );
+
+            }
+
+        }
     );
 
 }
 
 
 /* =========================================================
-   RENDER QUESTION
+   TEST LOADING STATE
 ========================================================= */
 
-function renderQuestion() {
-
-    const questions =
-        getCurrentQuestions();
-
-
-    if (
-        !questions.length
-    ) {
-
-        if (questionText) {
-
-            questionText.textContent =
-                "No questions available.";
-
-        }
-
-
-        if (questionCounter) {
-
-            questionCounter.textContent =
-                "0 / 0";
-
-        }
-
-
-        if (progressBar) {
-
-            progressBar.style.width =
-                "0%";
-
-        }
-
-
-        if (selectedWords) {
-
-            selectedWords.innerHTML =
-                "";
-
-        }
-
-
-        if (wordBank) {
-
-            wordBank.innerHTML =
-                "";
-
-        }
-
-
-        return;
-
-    }
-
-
-    if (
-        state.currentQuestionIndex < 0
-    ) {
-
-        state.currentQuestionIndex =
-            0;
-
-    }
-
-
-    if (
-        state.currentQuestionIndex >=
-        questions.length
-    ) {
-
-        state.currentQuestionIndex =
-            questions.length - 1;
-
-    }
-
-
-    const question =
-        questions[
-            state.currentQuestionIndex
-        ];
-
-
-    /*
-     * Header
-     */
-
-    if (testChapter) {
-
-        testChapter.textContent =
-            `Chapter ${state.currentChapter}`;
-
-    }
-
+function showTestLoading() {
 
     if (partTitle) {
 
         partTitle.textContent =
-            state.chapterData[
-                state.currentPart
-            ]?.title ||
-            "Test";
-
-    }
-
-
-    if (questionType) {
-
-        questionType.textContent =
-            state.chapterData[
-                state.currentPart
-            ]?.title ||
-            "Question";
+            "Loading...";
 
     }
 
@@ -994,30 +1390,247 @@ function renderQuestion() {
     if (questionCounter) {
 
         questionCounter.textContent =
-            `${
-                state.currentQuestionIndex + 1
-            } / ${
-                questions.length
-            }`;
+            "Please wait";
+
+    }
+
+
+    if (questionText) {
+
+        questionText.textContent =
+            "Loading chapter...";
+
+    }
+
+
+    if (selectedWords) {
+
+        selectedWords.innerHTML =
+            "";
+
+    }
+
+
+    if (wordBank) {
+
+        wordBank.innerHTML =
+            "";
+
+    }
+
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            "0%";
+
+    }
+
+}
+
+
+/* =========================================================
+   TEST ERROR
+========================================================= */
+
+function showTestError(
+    message
+) {
+
+    if (partTitle) {
+
+        partTitle.textContent =
+            "Error";
+
+    }
+
+
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            "";
+
+    }
+
+
+    if (questionText) {
+
+        questionText.textContent =
+            message;
+
+    }
+
+
+    if (selectedWords) {
+
+        selectedWords.innerHTML =
+            "";
+
+    }
+
+
+    if (wordBank) {
+
+        wordBank.innerHTML =
+            "";
+
+    }
+
+}
+
+
+/* =========================================================
+   GET CURRENT PART
+========================================================= */
+
+function getCurrentPartData() {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return null;
+
+    }
+
+
+    return state.chapterData[
+        state.currentPart
+    ] || null;
+
+}
+
+
+/* =========================================================
+   GET CURRENT QUESTION
+========================================================= */
+
+function getCurrentQuestion() {
+
+    const part =
+        getCurrentPartData();
+
+
+    if (!part) {
+
+        return null;
+
+    }
+
+
+    return (
+        part.questions?.[
+            state.currentQuestionIndex
+        ] || null
+    );
+
+}
+
+
+/* =========================================================
+   RENDER CURRENT QUESTION
+========================================================= */
+
+function renderCurrentQuestion() {
+
+    const part =
+        getCurrentPartData();
+
+
+    const question =
+        getCurrentQuestion();
+
+
+    if (
+        !part ||
+        !question
+    ) {
+
+        return;
+
+    }
+
+
+    const questions =
+        part.questions;
+
+
+    const totalQuestions =
+        questions.length;
+
+
+    const currentNumber =
+        state.currentQuestionIndex + 1;
+
+
+    /*
+     * Part title.
+     */
+
+    if (partTitle) {
+
+        partTitle.textContent =
+            part.title ||
+            getPartDisplayName(
+                state.currentPart
+            );
 
     }
 
 
     /*
-     * Progress
+     * Question counter.
      */
 
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            `Question ${currentNumber} / ${totalQuestions}`;
+
+    }
+
+
+    /*
+     * Question type.
+     */
+
+    if (questionType) {
+
+        questionType.textContent =
+            getQuestionTypeLabel(
+                state.currentPart
+            );
+
+    }
+
+
+    /*
+     * Question text.
+     */
+
+    if (questionText) {
+
+        questionText.textContent =
+            question.question ||
+            "";
+
+    }
+
+
+    /*
+     * Progress.
+     */
+
+    const progress =
+        totalQuestions > 0
+            ? (
+                currentNumber /
+                totalQuestions
+            ) * 100
+            : 0;
+
+
     if (progressBar) {
-
-        const progress =
-            (
-                (
-                    state.currentQuestionIndex + 1
-                )
-                /
-                questions.length
-            ) * 100;
-
 
         progressBar.style.width =
             `${progress}%`;
@@ -1026,29 +1639,21 @@ function renderQuestion() {
 
 
     /*
-     * Question
+     * Part tabs.
      */
 
-    if (questionText) {
-
-        questionText.textContent =
-            question.question ||
-            "Arrange the words correctly.";
-
-    }
+    updatePartTabs();
 
 
     /*
-     * Answer
+     * Render answer.
      */
 
-    renderSelectedWords(
-        question
-    );
+    renderSelectedWords();
 
 
     /*
-     * Word bank
+     * Render word bank.
      */
 
     renderWordBank(
@@ -1057,31 +1662,705 @@ function renderQuestion() {
 
 
     /*
-     * Previous button
+     * Navigation buttons.
      */
 
-    if (previousButton) {
+    updateNavigationButtons();
 
-        previousButton.disabled =
-            state.currentPart === "part1" &&
-            state.currentQuestionIndex === 0;
+}
+
+
+/* =========================================================
+   PART DISPLAY NAME
+========================================================= */
+
+function getPartDisplayName(
+    part
+) {
+
+    const names = {
+
+        part1: "Translation",
+
+        part2: "Answer the Question",
+
+        part3: "Scramble"
+
+    };
+
+
+    return (
+        names[part] ||
+        part
+    );
+
+}
+
+
+/* =========================================================
+   QUESTION TYPE LABEL
+========================================================= */
+
+function getQuestionTypeLabel(
+    part
+) {
+
+    const labels = {
+
+        part1: "TRANSLATION",
+
+        part2: "QUESTION",
+
+        part3: "SCRAMBLE"
+
+    };
+
+
+    return (
+        labels[part] ||
+        ""
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE PART TABS
+========================================================= */
+
+function updatePartTabs() {
+
+    partTabs.forEach(
+        tab => {
+
+            if (
+                tab.dataset.part ===
+                state.currentPart
+            ) {
+
+                tab.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                tab.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SWITCH PART
+========================================================= */
+
+function switchPart(
+    part
+) {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return;
 
     }
 
 
+    if (
+        ![
+            "part1",
+            "part2",
+            "part3"
+        ].includes(
+            part
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const partData =
+        state.chapterData[
+            part
+        ];
+
+
+    if (
+        !partData ||
+        !Array.isArray(
+            partData.questions
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    state.currentPart =
+        part;
+
+
+    state.currentQuestionIndex =
+        0;
+
+
+    renderCurrentQuestion();
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =========================================================
+   WORD RANDOMIZATION
+========================================================= */
+
+function shuffleWords(
+    words
+) {
+
+    const items =
+        words.map(
+            (
+                word,
+                originalIndex
+            ) => ({
+                word,
+                originalIndex
+            })
+        );
+
+
     /*
-     * Next button
+     * Fisher-Yates shuffle.
      */
+
+    for (
+        let i = items.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            items[i],
+            items[j]
+        ] = [
+            items[j],
+            items[i]
+        ];
+
+    }
+
+
+    return items;
+
+}
+
+
+/* =========================================================
+   GET RANDOM ORDER
+========================================================= */
+
+function getRandomOrder(
+    question
+) {
+
+    const part =
+        state.currentPart;
+
+
+    const questionIndex =
+        state.currentQuestionIndex;
+
+
+    if (
+        !state.randomOrders[part]
+    ) {
+
+        state.randomOrders[part] =
+            {};
+
+    }
+
+
+    if (
+        !state.randomOrders[
+            part
+        ][questionIndex]
+    ) {
+
+        state.randomOrders[
+            part
+        ][questionIndex] =
+            shuffleWords(
+                question.words || []
+            );
+
+    }
+
+
+    return state.randomOrders[
+        part
+    ][questionIndex];
+
+}
+
+
+/* =========================================================
+   RENDER WORD BANK
+========================================================= */
+
+function renderWordBank(
+    question
+) {
+
+    if (!wordBank) {
+
+        return;
+
+    }
+
+
+    wordBank.innerHTML =
+        "";
+
+
+    const order =
+        getRandomOrder(
+            question
+        );
+
+
+    const currentAnswer =
+        state.answers[
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    order.forEach(
+        item => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+
+            button.className =
+                "word-button";
+
+
+            button.textContent =
+                item.word;
+
+
+            /*
+             * Determine whether this
+             * exact word instance has
+             * already been selected.
+             */
+
+            const selectedIndex =
+                currentAnswer.findIndex(
+                    answerItem =>
+                        answerItem.originalIndex ===
+                        item.originalIndex
+                );
+
+
+            if (
+                selectedIndex !== -1
+            ) {
+
+                button.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    addWordToAnswer(
+                        item
+                    );
+
+                }
+            );
+
+
+            wordBank.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ADD WORD
+========================================================= */
+
+function addWordToAnswer(
+    wordItem
+) {
+
+    const part =
+        state.currentPart;
+
+
+    const questionIndex =
+        state.currentQuestionIndex;
+
+
+    if (
+        !state.answers[part]
+    ) {
+
+        state.answers[part] =
+            {};
+
+    }
+
+
+    if (
+        !Array.isArray(
+            state.answers[
+                part
+            ][
+                questionIndex
+            ]
+        )
+    ) {
+
+        state.answers[
+            part
+        ][
+            questionIndex
+        ] = [];
+
+    }
+
+
+    const answer =
+        state.answers[
+            part
+        ][
+            questionIndex
+        ];
+
+
+    /*
+     * Do not allow the same
+     * word instance twice.
+     */
+
+    const alreadySelected =
+        answer.some(
+            item =>
+                item.originalIndex ===
+                wordItem.originalIndex
+        );
+
+
+    if (
+        alreadySelected
+    ) {
+
+        return;
+
+    }
+
+
+    answer.push({
+        word:
+            wordItem.word,
+
+        originalIndex:
+            wordItem.originalIndex
+    });
+
+
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
+    );
+
+}
+
+
+/* =========================================================
+   RENDER SELECTED WORDS
+========================================================= */
+
+function renderSelectedWords() {
+
+    if (!selectedWords) {
+
+        return;
+
+    }
+
+
+    selectedWords.innerHTML =
+        "";
+
+
+    const answer =
+        state.answers[
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    if (
+        answer.length === 0
+    ) {
+
+        const placeholder =
+            document.createElement(
+                "span"
+            );
+
+
+        placeholder.textContent =
+            "Select words below to build your answer";
+
+
+        placeholder.style.color =
+            "#a0a7af";
+
+
+        placeholder.style.fontSize =
+            "13px";
+
+
+        placeholder.style.fontWeight =
+            "600";
+
+
+        selectedWords.appendChild(
+            placeholder
+        );
+
+
+        return;
+
+    }
+
+
+    answer.forEach(
+        (
+            item,
+            index
+        ) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+
+            button.className =
+                "selected-word";
+
+
+            button.textContent =
+                item.word;
+
+
+            button.title =
+                "Remove this word";
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    removeWordFromAnswer(
+                        index
+                    );
+
+                }
+            );
+
+
+            selectedWords.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REMOVE WORD
+========================================================= */
+
+function removeWordFromAnswer(
+    answerIndex
+) {
+
+    const answer =
+        state.answers[
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ];
+
+
+    if (
+        !Array.isArray(
+            answer
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        answerIndex < 0 ||
+        answerIndex >= answer.length
+    ) {
+
+        return;
+
+    }
+
+
+    answer.splice(
+        answerIndex,
+        1
+    );
+
+
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR CURRENT ANSWER
+========================================================= */
+
+function clearCurrentAnswer() {
+
+    state.answers[
+        state.currentPart
+    ][
+        state.currentQuestionIndex
+    ] = [];
+
+
+    renderSelectedWords();
+
+
+    renderWordBank(
+        getCurrentQuestion()
+    );
+
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+function updateNavigationButtons() {
+
+    const part =
+        getCurrentPartData();
+
+
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const totalQuestions =
+        part.questions.length;
+
+
+    const isFirstQuestion =
+        state.currentQuestionIndex === 0;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex ===
+        totalQuestions - 1;
+
+
+    if (previousButton) {
+
+        previousButton.disabled =
+            isFirstQuestion;
+
+    }
+
 
     if (nextButton) {
 
         if (
-            state.currentQuestionIndex ===
-            questions.length - 1
+            isLastQuestion
         ) {
 
             if (
-                state.currentPart === "part3"
+                state.currentPart ===
+                "part3"
             ) {
 
                 nextButton.textContent =
@@ -1107,763 +2386,121 @@ function renderQuestion() {
 
 
 /* =========================================================
-   GET CURRENT ANSWER
+   PREVIOUS QUESTION
 ========================================================= */
 
-function getCurrentAnswer() {
+function goToPreviousQuestion() {
 
-    const part =
-        state.currentPart;
-
-
-    const index =
-        state.currentQuestionIndex;
-
-
-    return (
-
-        state.answers[
-            part
-        ][index] ||
-
-        []
-
-    );
-
-}
-
-
-/* =========================================================
-   RENDER SELECTED WORDS
-   ---------------------------------------------------------
-   FIX #1
-   ---------------------------------------------------------
-   Selected words now use BOTH:
-
-   word-button
-   word-chip
-
-   "word-button" gives them exactly the
-   same design as the word bank buttons.
-
-   "word-chip" remains for compatibility.
-========================================================= */
-
-function renderSelectedWords(
-    question
-) {
-
-    if (!selectedWords) {
+    if (
+        state.currentQuestionIndex <= 0
+    ) {
 
         return;
 
     }
 
 
-    selectedWords.innerHTML =
-        "";
+    state.currentQuestionIndex--;
 
 
-    const answer =
-        getCurrentAnswer();
+    renderCurrentQuestion();
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+function goToNextQuestion() {
+
+    const part =
+        getCurrentPartData();
 
 
     if (
-        !answer.length
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
     ) {
 
-        selectedWords.innerHTML = `
-
-            <span class="empty-answer">
-                Tap the words below
-            </span>
-
-        `;
-
         return;
 
     }
 
 
-    answer.forEach(
-        (
-            word,
-            index
-        ) => {
-
-            const chip =
-                document.createElement(
-                    "button"
-                );
+    const totalQuestions =
+        part.questions.length;
 
 
-            chip.type =
-                "button";
+    const isLastQuestion =
+        state.currentQuestionIndex >=
+        totalQuestions - 1;
 
 
-            /*
-             * IMPORTANT FIX
-             *
-             * word-button = existing
-             * word bank design
-             *
-             * word-chip = compatibility
-             */
-            chip.className =
-                "word-button word-chip";
+    if (!isLastQuestion) {
+
+        state.currentQuestionIndex++;
 
 
-            chip.textContent =
-                word;
+        renderCurrentQuestion();
 
 
-            /*
-             * Selected word can be
-             * removed by clicking it.
-             */
+        window.scrollTo(
+            0,
+            0
+        );
 
-            chip.addEventListener(
-                "click",
-                () => {
-
-                    removeWord(
-                        index
-                    );
-
-                }
-            );
-
-
-            selectedWords.appendChild(
-                chip
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   RENDER WORD BANK
-========================================================= */
-
-function renderWordBank(
-    question
-) {
-
-    if (!wordBank) {
 
         return;
 
     }
-
-
-    wordBank.innerHTML =
-        "";
-
-
-    const answer =
-        getCurrentAnswer();
-
-
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
 
 
     /*
-     * Generate random order only once.
+     * Last question of current part.
      */
 
     if (
-        !state.randomOrders[
-            part
-        ][
-            questionIndex
-        ]
+        state.currentPart ===
+        "part1"
     ) {
 
-        state.randomOrders[
-            part
-        ][
-            questionIndex
-        ] =
-            shuffleWords(
-                question.words ||
-                []
-            );
+        switchPart(
+            "part2"
+        );
+
+        return;
 
     }
-
-
-    const randomizedWords =
-        state.randomOrders[
-            part
-        ][
-            questionIndex
-        ];
-
-
-    const usedIndexes =
-        getUsedWordIndexes(
-            question.words ||
-            [],
-            answer
-        );
-
-
-    randomizedWords.forEach(
-        item => {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.type =
-                "button";
-
-
-            button.className =
-                "word-button";
-
-
-            button.textContent =
-                item.word;
-
-
-            if (
-                usedIndexes.includes(
-                    item.originalIndex
-                )
-            ) {
-
-                button.classList.add(
-                    "selected"
-                );
-
-            }
-
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    if (
-                        usedIndexes.includes(
-                            item.originalIndex
-                        )
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    addWord(
-                        item.word,
-                        item.originalIndex
-                    );
-
-                }
-            );
-
-
-            wordBank.appendChild(
-                button
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SHUFFLE WORDS
-========================================================= */
-
-function shuffleWords(
-    words
-) {
-
-    const shuffled =
-        words.map(
-            (
-                word,
-                index
-            ) => {
-
-                return {
-
-                    word:
-                        word,
-
-                    originalIndex:
-                        index
-
-                };
-
-            }
-        );
-
-
-    for (
-        let i = shuffled.length - 1;
-        i > 0;
-        i--
-    ) {
-
-        const randomIndex =
-            Math.floor(
-                Math.random() *
-                (i + 1)
-            );
-
-
-        const temporary =
-            shuffled[i];
-
-
-        shuffled[i] =
-            shuffled[randomIndex];
-
-
-        shuffled[randomIndex] =
-            temporary;
-
-    }
-
-
-    return shuffled;
-
-}
-
-
-/* =========================================================
-   GET USED WORD INDEXES
-========================================================= */
-
-function getUsedWordIndexes(
-    words,
-    answer
-) {
-
-    const used =
-        [];
-
-
-    const availableIndexes =
-        words.map(
-            (
-                word,
-                index
-            ) => index
-        );
-
-
-    answer.forEach(
-        word => {
-
-            const matchingPosition =
-                availableIndexes.findIndex(
-                    index =>
-                        words[index] ===
-                        word
-                );
-
-
-            if (
-                matchingPosition !== -1
-            ) {
-
-                const originalIndex =
-                    availableIndexes[
-                        matchingPosition
-                    ];
-
-
-                used.push(
-                    originalIndex
-                );
-
-
-                availableIndexes.splice(
-                    matchingPosition,
-                    1
-                );
-
-            }
-
-        }
-    );
-
-
-    return used;
-
-}
-
-
-/* =========================================================
-   ADD WORD
-========================================================= */
-
-function addWord(
-    word,
-    wordIndex
-) {
-
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
 
 
     if (
-        !state.answers[
-            part
-        ][
-            questionIndex
-        ]
+        state.currentPart ===
+        "part2"
     ) {
 
-        state.answers[
-            part
-        ][
-            questionIndex
-        ] =
-            [];
-
-    }
-
-
-    state.answers[
-        part
-    ][
-        questionIndex
-    ].push(
-        word
-    );
-
-
-    renderQuestion();
-
-}
-
-
-/* =========================================================
-   REMOVE WORD
-========================================================= */
-
-function removeWord(
-    index
-) {
-
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
-
-
-    state.answers[
-        part
-    ][
-        questionIndex
-    ].splice(
-        index,
-        1
-    );
-
-
-    renderQuestion();
-
-}
-
-
-/* =========================================================
-   CLEAR ANSWER
-========================================================= */
-
-if (clearAnswer) {
-
-    clearAnswer.addEventListener(
-        "click",
-        () => {
-
-            const part =
-                state.currentPart;
-
-
-            const questionIndex =
-                state.currentQuestionIndex;
-
-
-            state.answers[
-                part
-            ][
-                questionIndex
-            ] =
-                [];
-
-
-            renderQuestion();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   NEXT BUTTON
-========================================================= */
-
-if (nextButton) {
-
-    nextButton.addEventListener(
-        "click",
-        () => {
-
-            const questions =
-                getCurrentQuestions();
-
-
-            /*
-             * Next question
-             */
-
-            if (
-                state.currentQuestionIndex <
-                questions.length - 1
-            ) {
-
-                state.currentQuestionIndex++;
-
-
-                renderQuestion();
-
-
-                return;
-
-            }
-
-
-            /*
-             * Part 1 -> Part 2
-             */
-
-            if (
-                state.currentPart ===
-                "part1"
-            ) {
-
-                switchPart(
-                    "part2"
-                );
-
-
-                return;
-
-            }
-
-
-            /*
-             * Part 2 -> Part 3
-             */
-
-            if (
-                state.currentPart ===
-                "part2"
-            ) {
-
-                switchPart(
-                    "part3"
-                );
-
-
-                return;
-
-            }
-
-
-            /*
-             * Part 3 -> Finish
-             */
-
-            finishTest();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   PREVIOUS BUTTON
-========================================================= */
-
-if (previousButton) {
-
-    previousButton.addEventListener(
-        "click",
-        () => {
-
-            /*
-             * Previous question
-             */
-
-            if (
-                state.currentQuestionIndex > 0
-            ) {
-
-                state.currentQuestionIndex--;
-
-
-                renderQuestion();
-
-
-                return;
-
-            }
-
-
-            /*
-             * Part 2 -> Part 1
-             */
-
-            if (
-                state.currentPart ===
-                "part2"
-            ) {
-
-                switchPart(
-                    "part1",
-                    true
-                );
-
-
-                return;
-
-            }
-
-
-            /*
-             * Part 3 -> Part 2
-             */
-
-            if (
-                state.currentPart ===
-                "part3"
-            ) {
-
-                switchPart(
-                    "part2",
-                    true
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   PART TABS
-========================================================= */
-
-partTabs.forEach(
-    tab => {
-
-        tab.addEventListener(
-            "click",
-            () => {
-
-                const requestedPart =
-                    tab.dataset.part;
-
-
-                switchPart(
-                    requestedPart
-                );
-
-            }
+        switchPart(
+            "part3"
         );
 
-    }
-);
-
-
-/* =========================================================
-   SWITCH PART
-========================================================= */
-
-function switchPart(
-    part,
-    goToLastQuestion = false
-) {
-
-    state.currentPart =
-        part;
-
-
-    const questions =
-        getCurrentQuestions();
-
-
-    if (
-        goToLastQuestion
-    ) {
-
-        state.currentQuestionIndex =
-            Math.max(
-                questions.length - 1,
-                0
-            );
-
-    } else {
-
-        state.currentQuestionIndex =
-            0;
+        return;
 
     }
 
 
-    updatePartTabs();
+    /*
+     * Last question of Part 3.
+     */
 
-
-    renderQuestion();
-
-}
-
-
-/* =========================================================
-   UPDATE PART TABS
-========================================================= */
-
-function updatePartTabs() {
-
-    partTabs.forEach(
-        tab => {
-
-            tab.classList.toggle(
-                "active",
-                tab.dataset.part ===
-                state.currentPart
-            );
-
-        }
-    );
+    finishTest();
 
 }
 
@@ -1874,10 +2511,27 @@ function updatePartTabs() {
 
 async function finishTest() {
 
-    calculateScores();
+    /*
+     * Prevent double submission.
+     */
+
+    if (
+        state.testSaved
+    ) {
+
+        showScreen(
+            resultScreen
+        );
+
+        return;
+
+    }
 
 
-    displayResults();
+    calculateAllScores();
+
+
+    renderResults();
 
 
     showScreen(
@@ -1885,38 +2539,43 @@ async function finishTest() {
     );
 
 
+    /*
+     * Save score automatically.
+     */
+
     await saveScore();
-
-
-    await saveAnswerRecords();
 
 }
 
 
 /* =========================================================
-   CALCULATE SCORES
+   CALCULATE ALL SCORES
 ========================================================= */
 
-function calculateScores() {
+function calculateAllScores() {
 
-    state.scores = {
+    state.scores.part1 =
+        calculatePartScore(
+            "part1"
+        );
 
-        part1:
-            calculatePartScore(
-                "part1"
-            ),
 
-        part2:
-            calculatePartScore(
-                "part2"
-            ),
+    state.scores.part2 =
+        calculatePartScore(
+            "part2"
+        );
 
-        part3:
-            calculatePartScore(
-                "part3"
-            )
 
-    };
+    state.scores.part3 =
+        calculatePartScore(
+            "part3"
+        );
+
+
+    state.scores.total =
+        state.scores.part1 +
+        state.scores.part2 +
+        state.scores.part3;
 
 }
 
@@ -1926,20 +2585,31 @@ function calculateScores() {
 ========================================================= */
 
 function calculatePartScore(
-    part
+    partName
 ) {
 
-    const questions =
-        state.chapterData[
-            part
-        ]?.questions || [];
+    const part =
+        state.chapterData?.[
+            partName
+        ];
 
 
-    let score =
-        0;
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return 0;
+
+    }
 
 
-    questions.forEach(
+    let score = 0;
+
+
+    part.questions.forEach(
         (
             question,
             index
@@ -1947,26 +2617,17 @@ function calculatePartScore(
 
             const studentAnswer =
                 state.answers[
-                    part
-                ][index] || [];
-
-
-            const correctAnswers =
-                question.answers || [];
-
-
-            const isCorrect =
-                correctAnswers.some(
-                    correctAnswer =>
-                        arraysEqual(
-                            studentAnswer,
-                            correctAnswer
-                        )
-                );
+                    partName
+                ][
+                    index
+                ] || [];
 
 
             if (
-                isCorrect
+                isAnswerCorrect(
+                    studentAnswer,
+                    question
+                )
             ) {
 
                 score++;
@@ -1983,17 +2644,111 @@ function calculatePartScore(
 
 
 /* =========================================================
-   ARRAY COMPARISON
+   ANSWER NORMALIZATION
 ========================================================= */
 
-function arraysEqual(
-    first,
-    second
+function normalizeAnswerWords(
+    answer
 ) {
 
     if (
-        first.length !==
-        second.length
+        !Array.isArray(
+            answer
+        )
+    ) {
+
+        return [];
+
+    }
+
+
+    return answer.map(
+        item => {
+
+            if (
+                typeof item ===
+                "string"
+            ) {
+
+                return normalizeWord(
+                    item
+                );
+
+            }
+
+
+            if (
+                item &&
+                typeof item.word ===
+                "string"
+            ) {
+
+                return normalizeWord(
+                    item.word
+                );
+
+            }
+
+
+            return "";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NORMALIZE WORD
+========================================================= */
+
+function normalizeWord(
+    word
+) {
+
+    return String(
+        word ?? ""
+    )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .toLowerCase();
+
+}
+
+
+/* =========================================================
+   ANSWER CORRECTNESS
+========================================================= */
+
+function isAnswerCorrect(
+    studentAnswer,
+    question
+) {
+
+    const studentWords =
+        normalizeAnswerWords(
+            studentAnswer
+        );
+
+
+    const acceptedAnswers =
+        Array.isArray(
+            question?.answers
+        )
+            ? question.answers
+            : [];
+
+
+    /*
+     * If there is no answer key,
+     * do not automatically mark it.
+     */
+
+    if (
+        acceptedAnswers.length === 0
     ) {
 
         return false;
@@ -2001,69 +2756,50 @@ function arraysEqual(
     }
 
 
-    return first.every(
-        (
-            value,
-            index
-        ) =>
-            value ===
-            second[index]
+    return acceptedAnswers.some(
+        accepted => {
+
+            const acceptedWords =
+                normalizeAnswerWords(
+                    accepted
+                );
+
+
+            if (
+                acceptedWords.length !==
+                studentWords.length
+            ) {
+
+                return false;
+
+            }
+
+
+            return acceptedWords.every(
+                (
+                    word,
+                    index
+                ) => {
+
+                    return (
+                        word ===
+                        studentWords[index]
+                    );
+
+                }
+            );
+
+        }
     );
 
 }
 
 
 /* =========================================================
-   DISPLAY RESULTS
+   RENDER RESULTS
 ========================================================= */
 
-function displayResults() {
-
-    const p1Questions =
-        state.chapterData
-            .part1
-            ?.questions
-            ?.length || 0;
-
-
-    const p2Questions =
-        state.chapterData
-            .part2
-            ?.questions
-            ?.length || 0;
-
-
-    const p3Questions =
-        state.chapterData
-            .part3
-            ?.questions
-            ?.length || 0;
-
-
-    const totalQuestions =
-        p1Questions +
-        p2Questions +
-        p3Questions;
-
-
-    const total =
-        state.scores.part1 +
-        state.scores.part2 +
-        state.scores.part3;
-
-
-    const percentage =
-        totalQuestions > 0
-
-            ? Math.round(
-                (
-                    total /
-                    totalQuestions
-                ) * 100
-            )
-
-            : 0;
-
+function renderResults() {
 
     if (resultChapter) {
 
@@ -2076,7 +2812,7 @@ function displayResults() {
     if (part1Score) {
 
         part1Score.textContent =
-            `${state.scores.part1} / ${p1Questions}`;
+            state.scores.part1;
 
     }
 
@@ -2084,7 +2820,7 @@ function displayResults() {
     if (part2Score) {
 
         part2Score.textContent =
-            `${state.scores.part2} / ${p2Questions}`;
+            state.scores.part2;
 
     }
 
@@ -2092,7 +2828,7 @@ function displayResults() {
     if (part3Score) {
 
         part3Score.textContent =
-            `${state.scores.part3} / ${p3Questions}`;
+            state.scores.part3;
 
     }
 
@@ -2100,9 +2836,24 @@ function displayResults() {
     if (totalScore) {
 
         totalScore.textContent =
-            `${total} / ${totalQuestions}`;
+            state.scores.total;
 
     }
+
+
+    const maxScore =
+        getMaximumScore();
+
+
+    const percentage =
+        maxScore > 0
+            ? Math.round(
+                (
+                    state.scores.total /
+                    maxScore
+                ) * 100
+            )
+            : 0;
 
 
     if (percentageScore) {
@@ -2111,6 +2862,68 @@ function displayResults() {
             `${percentage}%`;
 
     }
+
+
+    if (saveStatus) {
+
+        saveStatus.textContent =
+            "Saving your score...";
+
+        saveStatus.style.color =
+            "#6e767f";
+
+    }
+
+}
+
+
+/* =========================================================
+   GET MAXIMUM SCORE
+========================================================= */
+
+function getMaximumScore() {
+
+    if (
+        !state.chapterData
+    ) {
+
+        return 0;
+
+    }
+
+
+    let maximum = 0;
+
+
+    [
+        "part1",
+        "part2",
+        "part3"
+    ].forEach(
+        partName => {
+
+            const questions =
+                state.chapterData?.[
+                    partName
+                ]?.questions;
+
+
+            if (
+                Array.isArray(
+                    questions
+                )
+            ) {
+
+                maximum +=
+                    questions.length;
+
+            }
+
+        }
+    );
+
+
+    return maximum;
 
 }
 
@@ -2121,40 +2934,52 @@ function displayResults() {
 
 async function saveScore() {
 
-    if (saveStatus) {
+    if (
+        state.testSaved
+    ) {
 
-        saveStatus.textContent =
-            "Saving your score...";
+        return;
 
     }
 
 
-    const data = {
+    if (
+        !state.username ||
+        !state.studentClass
+    ) {
 
-        username:
-            state.username,
+        if (saveStatus) {
 
-        class:
-            state.studentClass,
+            saveStatus.textContent =
+                "Unable to save score: student information is missing.";
 
-        chapter:
-            `Chapter ${state.currentChapter}`,
+            saveStatus.style.color =
+                "#d93636";
 
-        part1:
-            state.scores.part1,
+        }
 
-        part2:
-            state.scores.part2,
+        return;
 
-        part3:
-            state.scores.part3,
+    }
 
-        total:
-            state.scores.part1 +
-            state.scores.part2 +
-            state.scores.part3
 
-    };
+    if (
+        !state.currentChapter
+    ) {
+
+        if (saveStatus) {
+
+            saveStatus.textContent =
+                "Unable to save score: chapter is missing.";
+
+            saveStatus.style.color =
+                "#d93636";
+
+        }
+
+        return;
+
+    }
 
 
     try {
@@ -2162,19 +2987,53 @@ async function saveScore() {
         const result =
             await callAPI(
                 "saveScore",
-                data
+                {
+                    username:
+                        state.username,
+
+                    class:
+                        state.studentClass,
+
+                    chapter:
+                        `Chapter ${state.currentChapter}`,
+
+                    part1:
+                        state.scores.part1,
+
+                    part2:
+                        state.scores.part2,
+
+                    part3:
+                        state.scores.part3,
+
+                    total:
+                        state.scores.total
+                }
             );
+
+
+        console.log(
+            "Save Score Response:",
+            result
+        );
 
 
         if (
             result &&
-            result.success === true
+            result.success
         ) {
+
+            state.testSaved =
+                true;
+
 
             if (saveStatus) {
 
                 saveStatus.textContent =
                     "✓ Score saved successfully.";
+
+                saveStatus.style.color =
+                    "#238636";
 
             }
 
@@ -2184,14 +3043,17 @@ async function saveScore() {
 
                 saveStatus.textContent =
                     result?.message ||
-                    "Score could not be saved.";
+                    "Unable to save score.";
+
+                saveStatus.style.color =
+                    "#d93636";
 
             }
 
         }
 
 
-    } catch(error) {
+    } catch (error) {
 
         console.error(
             "Save score error:",
@@ -2202,7 +3064,10 @@ async function saveScore() {
         if (saveStatus) {
 
             saveStatus.textContent =
-                "Score could not be saved. Please try again later.";
+                "Unable to save score. Please try again.";
+
+            saveStatus.style.color =
+                "#d93636";
 
         }
 
@@ -2212,135 +3077,52 @@ async function saveScore() {
 
 
 /* =========================================================
-   SAVE ANSWER RECORDS
+   GET SCORE HISTORY
 ========================================================= */
 
-async function saveAnswerRecords() {
+async function getScoreHistory() {
 
     if (
-        state.answerRecordsSaved
+        !state.username ||
+        !state.studentClass
     ) {
 
-        return;
+        return {
+
+            success: false,
+
+            message:
+                "Student information is missing."
+
+        };
 
     }
 
 
-    const records =
-        [];
-
-
-    const parts = [
-
+    return await callAPI(
+        "getScoreHistory",
         {
-            key: "part1",
-            name: "Part 1 - Translation"
-        },
+            username:
+                state.username,
 
-        {
-            key: "part2",
-            name: "Part 2 - Answer the Question"
-        },
-
-        {
-            key: "part3",
-            name: "Part 3 - Scramble"
-        }
-
-    ];
-
-
-    parts.forEach(
-        part => {
-
-            const questions =
-                state.chapterData[
-                    part.key
-                ]?.questions || [];
-
-
-            questions.forEach(
-                (
-                    question,
-                    index
-                ) => {
-
-                    const studentAnswer =
-                        state.answers[
-                            part.key
-                        ][index] || [];
-
-
-                    records.push({
-
-                        question:
-                            `${part.name} - ${
-                                question.question ||
-                                "Question"
-                            }`,
-
-                        answer:
-                            studentAnswer.join(" ")
-
-                    });
-
-                }
-            );
-
+            class:
+                state.studentClass
         }
     );
 
-
-    try {
-
-        const result =
-            await callAPI(
-                "saveAnswerRecords",
-                {
-
-                    username:
-                        state.username,
-
-                    class:
-                        state.studentClass,
-
-                    records:
-                        records
-
-                }
-            );
-
-
-        if (
-            result &&
-            result.success === true
-        ) {
-
-            state.answerRecordsSaved =
-                true;
-
-        }
-
-
-    } catch(error) {
-
-        console.error(
-            "Answer records error:",
-            error
-        );
-
-    }
-
 }
 
 
 /* =========================================================
-   SCORE HISTORY
+   SHOW SCORE HISTORY
 ========================================================= */
 
-async function loadHistory() {
+async function showScoreHistory() {
 
-    if (!historyScreen) {
+    if (
+        !state.username ||
+        !state.studentClass
+    ) {
 
         return;
 
@@ -2350,14 +3132,6 @@ async function loadHistory() {
     showScreen(
         historyScreen
     );
-
-
-    if (historyStudent) {
-
-        historyStudent.textContent =
-            state.username;
-
-    }
 
 
     if (historyLoading) {
@@ -2384,24 +3158,29 @@ async function loadHistory() {
     }
 
 
+    if (historyStudent) {
+
+        historyStudent.textContent =
+            `${state.username} • ${state.studentClass}`;
+
+    }
+
+
     try {
 
         const result =
-            await callAPI(
-                "getScoreHistory",
-                {
-
-                    username:
-                        state.username,
-
-                    class:
-                        state.studentClass
-
-                }
-            );
+            await getScoreHistory();
 
 
-        if (historyLoading) {
+        console.log(
+            "Score History Response:",
+            result
+        );
+
+
+        if (
+            historyLoading
+        ) {
 
             historyLoading.style.display =
                 "none";
@@ -2411,16 +3190,19 @@ async function loadHistory() {
 
         if (
             !result ||
-            result.success !== true
+            !result.success
         ) {
 
-            if (historyEmpty) {
+            if (historyList) {
 
-                historyEmpty.style.display =
-                    "block";
-
-                historyEmpty.textContent =
-                    "Unable to load score history.";
+                historyList.innerHTML = `
+                    <div class="history-error">
+                        ${escapeHTML(
+                            result?.message ||
+                            "Unable to load score history."
+                        )}
+                    </div>
+                `;
 
             }
 
@@ -2429,22 +3211,22 @@ async function loadHistory() {
         }
 
 
-        const records =
-            result.records ||
-            [];
+        const history =
+            Array.isArray(
+                result.history
+            )
+                ? result.history
+                : [];
 
 
         if (
-            records.length === 0
+            history.length === 0
         ) {
 
             if (historyEmpty) {
 
                 historyEmpty.style.display =
                     "block";
-
-                historyEmpty.textContent =
-                    "No score history yet.";
 
             }
 
@@ -2453,15 +3235,15 @@ async function loadHistory() {
         }
 
 
-        renderHistory(
-            records
+        renderScoreHistory(
+            history
         );
 
 
-    } catch(error) {
+    } catch (error) {
 
         console.error(
-            "History error:",
+            "Score history error:",
             error
         );
 
@@ -2474,13 +3256,13 @@ async function loadHistory() {
         }
 
 
-        if (historyEmpty) {
+        if (historyList) {
 
-            historyEmpty.style.display =
-                "block";
-
-            historyEmpty.textContent =
-                "Unable to load score history.";
+            historyList.innerHTML = `
+                <div class="history-error">
+                    Unable to load score history.
+                </div>
+            `;
 
         }
 
@@ -2491,15 +3273,10 @@ async function loadHistory() {
 
 /* =========================================================
    RENDER SCORE HISTORY
-   ---------------------------------------------------------
-   FIX #2
-   ---------------------------------------------------------
-   History is displayed as designed cards
-   instead of plain text.
 ========================================================= */
 
-function renderHistory(
-    records
+function renderScoreHistory(
+    history
 ) {
 
     if (!historyList) {
@@ -2510,357 +3287,499 @@ function renderHistory(
 
 
     historyList.innerHTML =
-        "";
+        history.map(
+            (
+                item,
+                index
+            ) => {
+
+                const percentage =
+                    calculateHistoryPercentage(
+                        item
+                    );
 
 
-    records.forEach(
-        record => {
+                return `
+                    <div class="history-card">
 
-            const card =
-                document.createElement(
-                    "div"
-                );
+                        <div class="history-card-top">
 
+                            <div>
 
-            card.className =
-                "history-card";
+                                <div class="history-number">
+                                    TEST ${history.length - index}
+                                </div>
 
+                                <h3>
+                                    ${escapeHTML(
+                                        item.chapter ||
+                                        "Chapter"
+                                    )}
+                                </h3>
 
-            /*
-             * Card design
-             */
-
-            card.style.background =
-                "#ffffff";
-
-            card.style.border =
-                "1px solid #e5e5e5";
-
-            card.style.borderRadius =
-                "16px";
-
-            card.style.padding =
-                "18px";
-
-            card.style.marginBottom =
-                "14px";
-
-            card.style.boxShadow =
-                "0 4px 14px rgba(0,0,0,0.07)";
+                            </div>
 
 
-            const chapter =
-                record.chapter ||
-                record.Chapter ||
-                "Chapter";
+                            <div class="history-total">
+                                ${escapeHTML(
+                                    String(
+                                        item.total ?? 0
+                                    )
+                                )}
+                            </div>
+
+                        </div>
 
 
-            const date =
-                record.date ||
-                record.Date ||
-                "";
+                        <div class="history-details">
+
+                            <div class="history-part">
+
+                                <span>
+                                    Part 1
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part1 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
 
 
-            const p1 =
-                record.part1 ??
-                record["Part 1 Score"] ??
-                0;
+                            <div class="history-part">
+
+                                <span>
+                                    Part 2
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part2 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
 
 
-            const p2 =
-                record.part2 ??
-                record["Part 2 Score"] ??
-                0;
+                            <div class="history-part">
+
+                                <span>
+                                    Part 3
+                                </span>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        String(
+                                            item.part3 ?? 0
+                                        )
+                                    )}
+                                </strong>
+
+                            </div>
+
+                        </div>
 
 
-            const p3 =
-                record.part3 ??
-                record["Part 3 Score"] ??
-                0;
+                        <div class="history-bottom">
 
+                            <span>
+                                ${escapeHTML(
+                                    formatHistoryDate(
+                                        item.date
+                                    )
+                                )}
+                            </span>
 
-            const total =
-                record.total ??
-                record.Total ??
-                0;
+                            <strong>
+                                ${percentage}%
+                            </strong>
 
+                        </div>
 
-            const maximum =
-                record.maximum ??
-                record.Maximum ??
-                (
-                    Number(p1) +
-                    Number(p2) +
-                    Number(p3)
-                );
-
-
-            let percentage =
-                record.percentage ??
-                record.Percentage;
-
-
-            if (
-                percentage === undefined ||
-                percentage === null ||
-                percentage === ""
-            ) {
-
-                percentage =
-                    maximum > 0
-
-                        ? Math.round(
-                            (
-                                Number(total) /
-                                Number(maximum)
-                            ) * 100
-                        )
-
-                        : 0;
+                    </div>
+                `;
 
             }
+        )
+        .join("");
+
+}
 
 
-            /*
-             * HISTORY CARD
-             */
+/* =========================================================
+   CALCULATE HISTORY PERCENTAGE
+========================================================= */
 
-            card.innerHTML = `
+function calculateHistoryPercentage(
+    item
+) {
 
-                <div
-                    class="history-card-header"
-                    style="
-                        display:flex;
-                        justify-content:space-between;
-                        align-items:center;
-                        gap:12px;
-                        margin-bottom:16px;
-                    "
-                >
-
-                    <div>
-
-                        <div
-                            class="history-chapter"
-                            style="
-                                font-size:19px;
-                                font-weight:800;
-                                color:#222;
-                                margin-bottom:5px;
-                            "
-                        >
-                            ${escapeHTML(
-                                chapter
-                            )}
-                        </div>
-
-                        <div
-                            class="history-date"
-                            style="
-                                font-size:12px;
-                                color:#888;
-                            "
-                        >
-                            ${escapeHTML(
-                                date
-                            )}
-                        </div>
-
-                    </div>
+    const total =
+        Number(
+            item?.total
+        ) || 0;
 
 
-                    <div
-                        class="history-percentage"
-                        style="
-                            min-width:72px;
-                            text-align:center;
-                            padding:9px 10px;
-                            border-radius:12px;
-                            background:#f3f3f3;
-                            font-size:20px;
-                            font-weight:800;
-                            color:#222;
-                        "
-                    >
-                        ${escapeHTML(
-                            percentage
-                        )}%
-                    </div>
+    /*
+     * If the API has maximum score
+     * in the future, use it.
+     */
 
-                </div>
+    if (
+        Number(
+            item?.maximum
+        ) > 0
+    ) {
 
+        return Math.round(
+            (
+                total /
+                Number(
+                    item.maximum
+                )
+            ) * 100
+        );
 
-                <div
-                    class="history-total-box"
-                    style="
-                        display:flex;
-                        justify-content:space-between;
-                        align-items:center;
-                        gap:12px;
-                        padding:13px 14px;
-                        border-radius:12px;
-                        background:#f7f7f7;
-                        margin-bottom:13px;
-                    "
-                >
-
-                    <span
-                        style="
-                            font-size:13px;
-                            font-weight:600;
-                            color:#777;
-                        "
-                    >
-                        Total Score
-                    </span>
+    }
 
 
-                    <strong
-                        style="
-                            font-size:20px;
-                            font-weight:800;
-                            color:#222;
-                        "
-                    >
-                        ${escapeHTML(
-                            total
-                        )}
-                        /
-                        ${escapeHTML(
-                            maximum
-                        )}
-                    </strong>
+    /*
+     * Current Score sheet does not
+     * store maximum score.
+     *
+     * We therefore calculate the
+     * maximum from the three parts.
+     */
 
-                </div>
+    const part1 =
+        Number(
+            item?.part1
+        ) || 0;
 
 
-                <div
-                    class="history-parts"
-                    style="
-                        display:grid;
-                        grid-template-columns:
-                            repeat(3, 1fr);
-                        gap:8px;
-                    "
-                >
-
-                    <div
-                        class="history-part"
-                        style="
-                            text-align:center;
-                            padding:10px 6px;
-                            border-radius:10px;
-                            background:#fafafa;
-                            border:1px solid #eeeeee;
-                        "
-                    >
-
-                        <div
-                            style="
-                                font-size:11px;
-                                color:#888;
-                                margin-bottom:4px;
-                                font-weight:600;
-                            "
-                        >
-                            Part 1
-                        </div>
-
-                        <strong
-                            style="
-                                font-size:15px;
-                                color:#222;
-                            "
-                        >
-                            ${escapeHTML(
-                                p1
-                            )}
-                        </strong>
-
-                    </div>
+    const part2 =
+        Number(
+            item?.part2
+        ) || 0;
 
 
-                    <div
-                        class="history-part"
-                        style="
-                            text-align:center;
-                            padding:10px 6px;
-                            border-radius:10px;
-                            background:#fafafa;
-                            border:1px solid #eeeeee;
-                        "
-                    >
-
-                        <div
-                            style="
-                                font-size:11px;
-                                color:#888;
-                                margin-bottom:4px;
-                                font-weight:600;
-                            "
-                        >
-                            Part 2
-                        </div>
-
-                        <strong
-                            style="
-                                font-size:15px;
-                                color:#222;
-                            "
-                        >
-                            ${escapeHTML(
-                                p2
-                            )}
-                        </strong>
-
-                    </div>
+    const part3 =
+        Number(
+            item?.part3
+        ) || 0;
 
 
-                    <div
-                        class="history-part"
-                        style="
-                            text-align:center;
-                            padding:10px 6px;
-                            border-radius:10px;
-                            background:#fafafa;
-                            border:1px solid #eeeeee;
-                        "
-                    >
-
-                        <div
-                            style="
-                                font-size:11px;
-                                color:#888;
-                                margin-bottom:4px;
-                                font-weight:600;
-                            "
-                        >
-                            Part 3
-                        </div>
-
-                        <strong
-                            style="
-                                font-size:15px;
-                                color:#222;
-                            "
-                        >
-                            ${escapeHTML(
-                                p3
-                            )}
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            `;
+    const recordedPartTotal =
+        part1 +
+        part2 +
+        part3;
 
 
-            historyList.appendChild(
-                card
-            );
+    /*
+     * This is only a fallback.
+     *
+     * If all three recorded scores
+     * are zero, return 0.
+     */
 
+    if (
+        recordedPartTotal <= 0
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If we don't know the original
+     * maximum score, don't falsely
+     * assume 100%.
+     *
+     * The current Code.gs returns
+     * the actual score values only.
+     *
+     * This fallback is replaced below
+     * by the chapter's known question
+     * count when available.
+     */
+
+    const knownMaximum =
+        getKnownMaximumForHistoryItem(
+            item
+        );
+
+
+    if (
+        knownMaximum > 0
+    ) {
+
+        return Math.round(
+            (
+                total /
+                knownMaximum
+            ) * 100
+        );
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* =========================================================
+   GET KNOWN MAXIMUM FOR HISTORY
+========================================================= */
+
+function getKnownMaximumForHistoryItem(
+    item
+) {
+
+    const chapterNumber =
+        extractChapterNumber(
+            item?.chapter
+        );
+
+
+    if (
+        !chapterNumber
+    ) {
+
+        return 0;
+
+    }
+
+
+    /*
+     * If this is the currently loaded
+     * chapter, we know its exact total.
+     */
+
+    if (
+        state.currentChapter ===
+        chapterNumber &&
+        state.chapterData
+    ) {
+
+        return getMaximumScore();
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* =========================================================
+   FORMAT HISTORY DATE
+========================================================= */
+
+function formatHistoryDate(
+    date
+) {
+
+    if (!date) {
+
+        return "";
+
+    }
+
+
+    const parsed =
+        new Date(
+            date
+        );
+
+
+    if (
+        Number.isNaN(
+            parsed.getTime()
+        )
+    ) {
+
+        return String(
+            date
+        );
+
+    }
+
+
+    return parsed.toLocaleDateString(
+        undefined,
+        {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
         }
+    );
+
+}
+
+
+/* =========================================================
+   EXTRACT CHAPTER NUMBER
+========================================================= */
+
+function extractChapterNumber(
+    value
+) {
+
+    const text =
+        String(
+            value ||
+            ""
+        );
+
+
+    const match =
+        text.match(
+            /(\d+)/
+        );
+
+
+    if (!match) {
+
+        return 0;
+
+    }
+
+
+    return Number(
+        match[1]
+    );
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function handleLogout() {
+
+    const confirmed =
+        window.confirm(
+            "Are you sure you want to logout?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
+    state.username =
+        null;
+
+
+    state.studentClass =
+        null;
+
+
+    state.currentChapter =
+        null;
+
+
+    state.chapterData =
+        null;
+
+
+    state.currentPart =
+        "part1";
+
+
+    state.currentQuestionIndex =
+        0;
+
+
+    state.answers = {
+
+        part1: {},
+        part2: {},
+        part3: {}
+
+    };
+
+
+    state.scores = {
+
+        part1: 0,
+        part2: 0,
+        part3: 0,
+        total: 0
+
+    };
+
+
+    state.randomOrders = {
+
+        part1: {},
+        part2: {},
+        part3: {}
+
+    };
+
+
+    state.testSaved =
+        false;
+
+
+    if (usernameInput) {
+
+        usernameInput.value =
+            "";
+
+    }
+
+
+    if (passwordInput) {
+
+        passwordInput.value =
+            "";
+
+    }
+
+
+    if (welcomeUsername) {
+
+        welcomeUsername.textContent =
+            "Student";
+
+    }
+
+
+    if (studentClassBadge) {
+
+        studentClassBadge.textContent =
+            "Beginner";
+
+    }
+
+
+    if (chapterGrid) {
+
+        chapterGrid.innerHTML =
+            "";
+
+    }
+
+
+    clearLoginMessage();
+
+
+    showScreen(
+        loginScreen
     );
 
 }
@@ -2874,28 +3793,25 @@ function escapeHTML(
     value
 ) {
 
-    return String(value)
-
+    return String(
+        value ?? ""
+    )
         .replace(
             /&/g,
             "&amp;"
         )
-
         .replace(
             /</g,
             "&lt;"
         )
-
         .replace(
             />/g,
             "&gt;"
         )
-
         .replace(
             /"/g,
             "&quot;"
         )
-
         .replace(
             /'/g,
             "&#039;"
@@ -2905,199 +3821,5 @@ function escapeHTML(
 
 
 /* =========================================================
-   HISTORY BUTTONS
+   END OF APP.JS
 ========================================================= */
-
-if (
-    chapterHistoryButton
-) {
-
-    chapterHistoryButton.addEventListener(
-        "click",
-        () => {
-
-            loadHistory();
-
-        }
-    );
-
-}
-
-
-if (
-    scoreHistoryButton
-) {
-
-    scoreHistoryButton.addEventListener(
-        "click",
-        () => {
-
-            loadHistory();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   BACK FROM HISTORY
-========================================================= */
-
-if (
-    backFromHistory
-) {
-
-    backFromHistory.addEventListener(
-        "click",
-        () => {
-
-            showScreen(
-                chapterScreen
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   BACK TO CHAPTERS
-========================================================= */
-
-if (
-    backToChapters
-) {
-
-    backToChapters.addEventListener(
-        "click",
-        () => {
-
-            showScreen(
-                chapterScreen
-            );
-
-        }
-    );
-
-}
-
-
-if (
-    backToChapterButton
-) {
-
-    backToChapterButton.addEventListener(
-        "click",
-        () => {
-
-            showScreen(
-                chapterScreen
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-if (
-    logoutButton
-) {
-
-    logoutButton.addEventListener(
-        "click",
-        () => {
-
-            state.username =
-                null;
-
-
-            state.studentClass =
-                null;
-
-
-            state.currentChapter =
-                null;
-
-
-            state.chapterData =
-                null;
-
-
-            state.currentPart =
-                "part1";
-
-
-            state.currentQuestionIndex =
-                0;
-
-
-            state.answers = {
-
-                part1: {},
-                part2: {},
-                part3: {}
-
-            };
-
-
-            state.scores = {
-
-                part1: 0,
-                part2: 0,
-                part3: 0
-
-            };
-
-
-            state.randomOrders = {
-
-                part1: {},
-                part2: {},
-                part3: {}
-
-            };
-
-
-            state.answerRecordsSaved =
-                false;
-
-
-            if (usernameInput) {
-
-                usernameInput.value =
-                    "";
-
-            }
-
-
-            if (passwordInput) {
-
-                passwordInput.value =
-                    "";
-
-            }
-
-
-            if (loginMessage) {
-
-                loginMessage.textContent =
-                    "";
-
-            }
-
-
-            showScreen(
-                loginScreen
-            );
-
-        }
-    );
-
-}
