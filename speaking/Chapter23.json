@@ -1,0 +1,707 @@
+{
+  "chapter": {
+    "id": "chapter-23",
+    "title": "Chapter 23",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p1-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "zài",
+            "shénme",
+            "Nǐ",
+            "zuò",
+            "shíjiān",
+            "yèyǔ",
+            "māo",
+            "xiāngjiāo",
+            "shǒujī"
+          ],
+          "answers": [
+            "Nǐ",
+            "zài",
+            "yèyǔ",
+            "shíjiān",
+            "zuò",
+            "shénme"
+          ]
+        },
+        {
+          "id": "ch23-p1-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xǐhuan",
+            "yùndòng",
+            "Wǒ",
+            "yú",
+            "yǔsǎn",
+            "shǒujī"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p1-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "shénme",
+            "yùndòng",
+            "xǐhuan",
+            "Nǐ",
+            "yú",
+            "xiāngjiāo",
+            "shū"
+          ],
+          "answers": [
+            "Nǐ",
+            "xǐhuan",
+            "shénme",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p1-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Wǒ",
+            "zúqiú",
+            "dǎ",
+            "tī",
+            "pīngpāngqiú",
+            "hé",
+            "zuì",
+            "yóuyǒng",
+            "xǐhuan",
+            "fēijī",
+            "yīfu",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "zuì",
+            "xǐhuan",
+            "yóuyǒng",
+            "dǎ",
+            "pīngpāngqiú",
+            "hé",
+            "tī",
+            "zúqiú"
+          ]
+        },
+        {
+          "id": "ch23-p1-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Nǐ",
+            "zhèxiē",
+            "shénme",
+            "shíhou",
+            "yùndòng",
+            "zuò",
+            "huā",
+            "shū",
+            "yǔsǎn"
+          ],
+          "answers": [
+            "Nǐ",
+            "shénme",
+            "shíhou",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p1-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xǐhuān",
+            "Wǒ",
+            "zuò",
+            "zhèxiē",
+            "yùndòng",
+            "zhōumò",
+            "chē",
+            "huā",
+            "hǎi"
+          ],
+          "answers": [
+            "Wǒ",
+            "zhōumò",
+            "xǐhuān",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p1-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yùndòng",
+            "ma",
+            "Nǐ",
+            "ài",
+            "chē",
+            "yǔsǎn",
+            "yú"
+          ],
+          "answers": [
+            "Nǐ",
+            "ài",
+            "yùndòng",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch23-p1-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yùndòng",
+            "huì",
+            "ǒu’ěr",
+            "Wǒ",
+            "zhǐshì",
+            "bútài",
+            "pǎobù",
+            "qù",
+            "xiāngjiāo",
+            "kāfēi",
+            "shū"
+          ],
+          "answers": [
+            "Wǒ",
+            "bútài",
+            "yùndòng",
+            "zhǐshì",
+            "ǒu’ěr",
+            "huì",
+            "qù",
+            "pǎobù"
+          ]
+        },
+        {
+          "id": "ch23-p1-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "huì",
+            "gè",
+            "yí",
+            "dōu",
+            "měitiān",
+            "dǎ",
+            "zǎoshàng",
+            "yǔmáoqiú",
+            "xiǎoshí",
+            "de",
+            "Wǒ",
+            "kāfēi",
+            "dàngāo",
+            "huā"
+          ],
+          "answers": [
+            "Wǒ",
+            "měitiān",
+            "zǎoshàng",
+            "dōu",
+            "huì",
+            "dǎ",
+            "yí",
+            "gè",
+            "xiǎoshí",
+            "de",
+            "yǔmáoqiú"
+          ]
+        },
+        {
+          "id": "ch23-p1-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hé",
+            "Nǐ",
+            "shéi",
+            "yìqǐ",
+            "dǎ",
+            "shū",
+            "dàngāo",
+            "yǔsǎn"
+          ],
+          "answers": [
+            "Nǐ",
+            "hé",
+            "shéi",
+            "yìqǐ",
+            "dǎ"
+          ]
+        },
+        {
+          "id": "ch23-p1-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "dǎ",
+            "yìqǐ",
+            "dìdi",
+            "Wǒ",
+            "mèimei",
+            "hé",
+            "fēijī",
+            "yǔsǎn",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "hé",
+            "dìdi",
+            "mèimei",
+            "yìqǐ",
+            "dǎ"
+          ]
+        },
+        {
+          "id": "ch23-p1-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hǎo",
+            "Měitiān",
+            "yùndòng",
+            "shēntǐ",
+            "duì",
+            "hǎi",
+            "yǔsǎn",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Měitiān",
+            "yùndòng",
+            "duì",
+            "shēntǐ",
+            "hǎo"
+          ]
+        },
+        {
+          "id": "ch23-p1-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Gǎitiān",
+            "yìqǐ",
+            "yùndòng",
+            "ba",
+            "wǒmen",
+            "yǔsǎn",
+            "zhuōzi",
+            "hǎi"
+          ],
+          "answers": [
+            "Gǎitiān",
+            "wǒmen",
+            "yìqǐ",
+            "yùndòng",
+            "ba"
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p2-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Wǒ",
+            "yùndòng",
+            "xǐhuan",
+            "bēizi",
+            "yīfu",
+            "fēijī"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p2-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Wǒ",
+            "zuì",
+            "tī",
+            "zúqiú",
+            "hé",
+            "pīngpāngqiú",
+            "dǎ",
+            "yóuyǒng",
+            "xǐhuan",
+            "chē",
+            "yīfu",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "zuì",
+            "xǐhuan",
+            "yóuyǒng",
+            "dǎ",
+            "pīngpāngqiú",
+            "hé",
+            "tī",
+            "zúqiú"
+          ]
+        },
+        {
+          "id": "ch23-p2-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xǐhuān",
+            "zhèxiē",
+            "zhōumò",
+            "yùndòng",
+            "Wǒ",
+            "zuò",
+            "shū",
+            "chē",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "zhōumò",
+            "xǐhuān",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p2-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "bútài",
+            "zhǐshì",
+            "huì",
+            "pǎobù",
+            "Wǒ",
+            "qù",
+            "yùndòng",
+            "ǒu’ěr",
+            "diànnǎo",
+            "yīfu",
+            "hǎi"
+          ],
+          "answers": [
+            "Wǒ",
+            "bútài",
+            "yùndòng",
+            "zhǐshì",
+            "ǒu’ěr",
+            "huì",
+            "qù",
+            "pǎobù"
+          ]
+        },
+        {
+          "id": "ch23-p2-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "huì",
+            "Wǒ",
+            "gè",
+            "měitiān",
+            "yǔmáoqiú",
+            "dōu",
+            "dǎ",
+            "de",
+            "xiǎoshí",
+            "zǎoshàng",
+            "yí",
+            "dàngāo",
+            "shū",
+            "píngguǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "měitiān",
+            "zǎoshàng",
+            "dōu",
+            "huì",
+            "dǎ",
+            "yí",
+            "gè",
+            "xiǎoshí",
+            "de",
+            "yǔmáoqiú"
+          ]
+        },
+        {
+          "id": "ch23-p2-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Wǒ",
+            "dǎ",
+            "dìdi",
+            "yìqǐ",
+            "mèimei",
+            "hé",
+            "kāfēi",
+            "shǒujī",
+            "bēizi"
+          ],
+          "answers": [
+            "Wǒ",
+            "hé",
+            "dìdi",
+            "mèimei",
+            "yìqǐ",
+            "dǎ"
+          ]
+        },
+        {
+          "id": "ch23-p2-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "duì",
+            "Měitiān",
+            "yùndòng",
+            "shēntǐ",
+            "Shì",
+            "de",
+            "hǎo",
+            "māo",
+            "huā",
+            "yú"
+          ],
+          "answers": [
+            "Shì",
+            "de",
+            "Měitiān",
+            "yùndòng",
+            "duì",
+            "shēntǐ",
+            "hǎo"
+          ]
+        },
+        {
+          "id": "ch23-p2-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Hǎo",
+            "diànnǎo",
+            "xiāngjiāo",
+            "hǎi"
+          ],
+          "answers": [
+            "Hǎo"
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch23-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yùndòng",
+            "xǐhuan",
+            "Wǒ",
+            "yīfu",
+            "yǔsǎn",
+            "yú"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "zúqiú",
+            "tī",
+            "hé",
+            "pīngpāngqiú",
+            "dǎ",
+            "yóuyǒng",
+            "xǐhuan",
+            "zuì",
+            "Wǒ",
+            "chē",
+            "xiāngjiāo",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "zuì",
+            "xǐhuan",
+            "yóuyǒng",
+            "dǎ",
+            "pīngpāngqiú",
+            "hé",
+            "tī",
+            "zúqiú"
+          ]
+        },
+        {
+          "id": "ch23-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yùndòng",
+            "zhèxiē",
+            "zuò",
+            "xǐhuān",
+            "zhōumò",
+            "Wǒ",
+            "xiāngjiāo",
+            "huā",
+            "huǒchē"
+          ],
+          "answers": [
+            "Wǒ",
+            "zhōumò",
+            "xǐhuān",
+            "zuò",
+            "zhèxiē",
+            "yùndòng"
+          ]
+        },
+        {
+          "id": "ch23-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "pǎobù",
+            "qù",
+            "huì",
+            "ǒu’ěr",
+            "zhǐshì",
+            "yùndòng",
+            "bútài",
+            "Wǒ",
+            "chē",
+            "shǒujī",
+            "huā"
+          ],
+          "answers": [
+            "Wǒ",
+            "bútài",
+            "yùndòng",
+            "zhǐshì",
+            "ǒu’ěr",
+            "huì",
+            "qù",
+            "pǎobù"
+          ]
+        },
+        {
+          "id": "ch23-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yǔmáoqiú",
+            "de",
+            "xiǎoshí",
+            "gè",
+            "yí",
+            "dǎ",
+            "huì",
+            "dōu",
+            "zǎoshàng",
+            "měitiān",
+            "Wǒ",
+            "xiāngjiāo",
+            "dàngāo",
+            "bēizi"
+          ],
+          "answers": [
+            "Wǒ",
+            "měitiān",
+            "zǎoshàng",
+            "dōu",
+            "huì",
+            "dǎ",
+            "yí",
+            "gè",
+            "xiǎoshí",
+            "de",
+            "yǔmáoqiú"
+          ]
+        },
+        {
+          "id": "ch23-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "dǎ",
+            "yìqǐ",
+            "mèimei",
+            "dìdi",
+            "hé",
+            "Wǒ",
+            "huā",
+            "shǒujī",
+            "chē"
+          ],
+          "answers": [
+            "Wǒ",
+            "hé",
+            "dìdi",
+            "mèimei",
+            "yìqǐ",
+            "dǎ"
+          ]
+        },
+        {
+          "id": "ch23-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hǎo",
+            "shēntǐ",
+            "duì",
+            "yùndòng",
+            "Měitiān",
+            "bēizi",
+            "diànnǎo",
+            "hǎi"
+          ],
+          "answers": [
+            "Měitiān",
+            "yùndòng",
+            "duì",
+            "shēntǐ",
+            "hǎo"
+          ]
+        },
+        {
+          "id": "ch23-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ba",
+            "yùndòng",
+            "yìqǐ",
+            "wǒmen",
+            "Gǎitiān",
+            "xiāngjiāo",
+            "bēizi",
+            "huā"
+          ],
+          "answers": [
+            "Gǎitiān",
+            "wǒmen",
+            "yìqǐ",
+            "yùndòng",
+            "ba"
+          ]
+        }
+      ]
+    }
+  }
+}

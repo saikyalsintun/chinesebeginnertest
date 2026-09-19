@@ -1,0 +1,1246 @@
+{
+  "chapter": {
+    "id": "chapter-18",
+    "title": "Chapter 18",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch18-p1-q1",
+          "question": "မင်္ဂလာပါ၊ နာမည်ဘယ်လိုခေါ်လဲ။",
+          "words": [
+            "Nǐ",
+            "guìxìng",
+            "nǐ",
+            "hǎo",
+            "yú",
+            "diànnǎo",
+            "kāfēi"
+          ],
+          "answers": [
+            "Nǐ",
+            "hǎo",
+            "nǐ",
+            "guìxìng"
+          ]
+        },
+        {
+          "id": "ch18-p1-q2",
+          "question": "ကျွန်တော် မျိုးရိုးနာမည် ဝမ်ပါ။ မင်းရော။",
+          "words": [
+            "Wáng",
+            "nǐ",
+            "Wǒ",
+            "xìng",
+            "ne",
+            "dàngāo",
+            "chē",
+            "hǎi"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Wáng",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p1-q3",
+          "question": "ကျွန်မ မျိုးရိုးနာမည် ချန်ပါ။",
+          "words": [
+            "xìng",
+            "Wǒ",
+            "Chén",
+            "huǒchē",
+            "yú",
+            "fēijī"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Chén"
+          ]
+        },
+        {
+          "id": "ch18-p1-q4",
+          "question": "မစ္စချန်၊ ဘာအလုပ်လုပ်သလဲ။",
+          "words": [
+            "nǚshì",
+            "zuò",
+            "shénme",
+            "Chén",
+            "nǐ",
+            "gōngzuò",
+            "huā",
+            "kāfēi",
+            "fēijī"
+          ],
+          "answers": [
+            "Chén",
+            "nǚshì",
+            "nǐ",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p1-q5",
+          "question": "ကျွန်မ ဆရာမပါ။ မင်းရော။",
+          "words": [
+            "shì",
+            "lǎoshī",
+            "ne",
+            "nǐ",
+            "Wǒ",
+            "dàngāo",
+            "fēijī",
+            "huǒchē"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "lǎoshī",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p1-q6",
+          "question": "ကျွန်တော် အင်ဂျင်နီယာပါ။",
+          "words": [
+            "Wǒ",
+            "gōngchéngshī",
+            "shì",
+            "yǔsǎn",
+            "shǒujī",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "gōngchéngshī"
+          ]
+        },
+        {
+          "id": "ch18-p1-q7",
+          "question": "ရှောင်ယွီ၊ မင်းက ကျောင်းသားလား။",
+          "words": [
+            "xuéshēng",
+            "Xiǎoyù",
+            "shì",
+            "nǐ",
+            "ma",
+            "diànnǎo",
+            "chē",
+            "bēizi"
+          ],
+          "answers": [
+            "Xiǎoyù",
+            "nǐ",
+            "shì",
+            "xuéshēng",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch18-p1-q8",
+          "question": "ဟုတ်တယ်၊ ကျွန်တော် ကျောင်းသားပါ။",
+          "words": [
+            "shì",
+            "xuéshēng",
+            "wǒ",
+            "Shì",
+            "diànnǎo",
+            "yīfu",
+            "dàngāo"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "shì",
+            "xuéshēng"
+          ]
+        },
+        {
+          "id": "ch18-p1-q9",
+          "question": "မင်းအဖေ ဘာအလုပ်လုပ်သလဲ။",
+          "words": [
+            "de",
+            "Nǐ",
+            "zuò",
+            "shénme",
+            "bàba",
+            "gōngzuò",
+            "zhuōzi",
+            "bēizi",
+            "dàngāo"
+          ],
+          "answers": [
+            "Nǐ",
+            "de",
+            "bàba",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p1-q10",
+          "question": "ကျွန်တော့်အဖေက လယ်သမားပါ။",
+          "words": [
+            "shì",
+            "nóngmín",
+            "bàba",
+            "de",
+            "Wǒ",
+            "diànnǎo",
+            "huǒchē",
+            "yīfu"
+          ],
+          "answers": [
+            "Wǒ",
+            "de",
+            "bàba",
+            "shì",
+            "nóngmín"
+          ]
+        },
+        {
+          "id": "ch18-p1-q11",
+          "question": "လျိုဖန်း၊ ဘာအလုပ်လုပ်သလဲ။",
+          "words": [
+            "zuò",
+            "Liúfang",
+            "gōngzuò",
+            "nǐ",
+            "shénme",
+            "shū",
+            "dàngāo",
+            "shǒujī"
+          ],
+          "answers": [
+            "Liúfang",
+            "nǐ",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p1-q12",
+          "question": "ကျွန်မ ဆရာဝန်ပါ။ မင်းရော။",
+          "words": [
+            "yīshēng",
+            "ne",
+            "Wǒ",
+            "shì",
+            "nǐ",
+            "bēizi",
+            "huǒchē",
+            "huā"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "yīshēng",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p1-q13",
+          "question": "ကျွန်တော် စားဖိုမှူးပါ။",
+          "words": [
+            "chúshī",
+            "shì",
+            "Wǒ",
+            "dàngāo",
+            "bēizi",
+            "māo"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "chúshī"
+          ]
+        },
+        {
+          "id": "ch18-p1-q14",
+          "question": "မင်းကိုတွေ့ရတာ အရမ်းဝမ်းသာပါတယ်။",
+          "words": [
+            "Hěn",
+            "rènshi",
+            "nǐ",
+            "gāoxìng",
+            "fēijī",
+            "yǔsǎn",
+            "yú"
+          ],
+          "answers": [
+            "Hěn",
+            "gāoxìng",
+            "rènshi",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch18-p1-q15",
+          "question": "ကျွန်မလည်း မင်းကိုတွေ့ရတာ အရမ်းဝမ်းသာပါတယ်။",
+          "words": [
+            "gāoxìng",
+            "yě",
+            "nǐ",
+            "rènshi",
+            "Wǒ",
+            "hěn",
+            "dàngāo",
+            "píngguǒ",
+            "huǒchē"
+          ],
+          "answers": [
+            "Wǒ",
+            "yě",
+            "hěn",
+            "gāoxìng",
+            "rènshi",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch18-p1-q16",
+          "question": "ရှောင်ဟွေ့၊ မင်းအစ်မက ဘာအလုပ်လုပ်သလဲ။",
+          "words": [
+            "shénme",
+            "gōngzuò",
+            "jiějie",
+            "nǐ",
+            "Xiǎohuì",
+            "zuò",
+            "bēizi",
+            "shǒujī",
+            "píngguǒ"
+          ],
+          "answers": [
+            "Xiǎohuì",
+            "nǐ",
+            "jiějie",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p1-q17",
+          "question": "ကျွန်မအစ်မက စာရင်းကိုင်တစ်ယောက်ပါ။",
+          "words": [
+            "shì",
+            "jiějie",
+            "Wǒ",
+            "kuàijìyuán",
+            "gè",
+            "yí",
+            "māo",
+            "hǎi",
+            "huǒchē"
+          ],
+          "answers": [
+            "Wǒ",
+            "jiějie",
+            "shì",
+            "yí",
+            "gè",
+            "kuàijìyuán"
+          ]
+        },
+        {
+          "id": "ch18-p1-q18",
+          "question": "အရမ်းကောင်းတယ်။",
+          "words": [
+            "hǎo",
+            "Zhēn",
+            "yīfu",
+            "yǔsǎn",
+            "hǎi"
+          ],
+          "answers": [
+            "Zhēn",
+            "hǎo"
+          ]
+        },
+        {
+          "id": "ch18-p1-q19",
+          "question": "မင်းအစ်မကရော။",
+          "words": [
+            "ne",
+            "jiějie",
+            "Nǐ",
+            "xiāngjiāo",
+            "huā",
+            "shū"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiějie",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p1-q20",
+          "question": "သူက အထွေထွေမန်နေဂျာရဲ့ အတွင်းရေးမှူးပါ။",
+          "words": [
+            "zǒngjīnglǐ",
+            "shì",
+            "Tā",
+            "mìshū",
+            "hǎi",
+            "dàngāo",
+            "bēizi"
+          ],
+          "answers": [
+            "Tā",
+            "shì",
+            "zǒngjīnglǐ",
+            "mìshū"
+          ]
+        },
+        {
+          "id": "ch18-p1-q21",
+          "question": "မင်းအစ်မက တကယ်တော်တယ်။",
+          "words": [
+            "jiějie",
+            "hěn",
+            "Nǐ",
+            "lìhài",
+            "yǔsǎn",
+            "huā",
+            "dàngāo"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiějie",
+            "hěn",
+            "lìhài"
+          ]
+        },
+        {
+          "id": "ch18-p1-q22",
+          "question": "သူက ဘယ်နေရာမှာ အလုပ်လုပ်တာလဲ။",
+          "words": [
+            "shì",
+            "gōngzuò",
+            "shénme",
+            "de",
+            "zài",
+            "dìfāng",
+            "Tā",
+            "diànnǎo",
+            "píngguǒ",
+            "hǎi"
+          ],
+          "answers": [
+            "Tā",
+            "shì",
+            "zài",
+            "shénme",
+            "dìfāng",
+            "gōngzuò",
+            "de"
+          ]
+        },
+        {
+          "id": "ch18-p1-q23",
+          "question": "သူက ဝမ်ဒါဈေးဝယ်စင်တာမှာ အလုပ်လုပ်တယ်။",
+          "words": [
+            "Tā",
+            "gōngzuò",
+            "Wàndá",
+            "shāngchǎng",
+            "zài",
+            "yǔsǎn",
+            "māo",
+            "shū"
+          ],
+          "answers": [
+            "Tā",
+            "zài",
+            "Wàndá",
+            "shāngchǎng",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p1-q24",
+          "question": "တိုက်ဆိုင်လိုက်တာ။ ကျွန်မအစ်မလည်း အဲဒီမှာပဲ အလုပ်လုပ်တယ်။",
+          "words": [
+            "qiǎo",
+            "shì",
+            "a",
+            "yě",
+            "Wǒ",
+            "nàr",
+            "zài",
+            "Hǎo",
+            "jiějie",
+            "diànnǎo",
+            "shū",
+            "dàngāo"
+          ],
+          "answers": [
+            "Hǎo",
+            "qiǎo",
+            "a",
+            "Wǒ",
+            "jiějie",
+            "yě",
+            "shì",
+            "zài",
+            "nàr"
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "answers Question",
+      "instruction": "answers the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch18-p2-q1",
+          "question": "Nǐ guìxìng?",
+          "words": [
+            "xìng",
+            "Wǒ",
+            "Wáng",
+            "huǒchē",
+            "fēijī",
+            "shǒujī"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Wáng"
+          ]
+        },
+        {
+          "id": "ch18-p2-q2",
+          "question": "Nǐ xìng shénme?",
+          "words": [
+            "xìng",
+            "Wǒ",
+            "Chén",
+            "shǒujī",
+            "huā",
+            "yǔsǎn"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Chén"
+          ]
+        },
+        {
+          "id": "ch18-p2-q3",
+          "question": "Chén nǚshì zuò shénme gōngzuò?",
+          "words": [
+            "shì",
+            "lǎoshī",
+            "Wǒ",
+            "chē",
+            "huā",
+            "diànnǎo"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "lǎoshī"
+          ]
+        },
+        {
+          "id": "ch18-p2-q4",
+          "question": "Nǐ shì gōngchéngshī ma?",
+          "words": [
+            "shì",
+            "gōngchéngshī",
+            "wǒ",
+            "Shì",
+            "māo",
+            "chē",
+            "yīfu"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "shì",
+            "gōngchéngshī"
+          ]
+        },
+        {
+          "id": "ch18-p2-q5",
+          "question": "Xiǎoyù, nǐ shì xuéshēng ma?",
+          "words": [
+            "Shì",
+            "xuéshēng",
+            "wǒ",
+            "shì",
+            "huǒchē",
+            "zhuōzi",
+            "shū"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "shì",
+            "xuéshēng"
+          ]
+        },
+        {
+          "id": "ch18-p2-q6",
+          "question": "Nǐ de bàba zuò shénme gōngzuò?",
+          "words": [
+            "shì",
+            "Wǒ",
+            "bàba",
+            "de",
+            "nóngmín",
+            "fēijī",
+            "hǎi",
+            "shū"
+          ],
+          "answers": [
+            "Wǒ",
+            "de",
+            "bàba",
+            "shì",
+            "nóngmín"
+          ]
+        },
+        {
+          "id": "ch18-p2-q7",
+          "question": "Liúfang zuò shénme gōngzuò?",
+          "words": [
+            "yīshēng",
+            "shì",
+            "Wǒ",
+            "zhuōzi",
+            "píngguǒ",
+            "yīfu"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "yīshēng"
+          ]
+        },
+        {
+          "id": "ch18-p2-q8",
+          "question": "Nǐ shì chúshī ma?",
+          "words": [
+            "chúshī",
+            "Shì",
+            "wǒ",
+            "shì",
+            "shū",
+            "zhuōzi",
+            "fēijī"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "shì",
+            "chúshī"
+          ]
+        },
+        {
+          "id": "ch18-p2-q9",
+          "question": "Nǐ jiějie zuò shénme gōngzuò?",
+          "words": [
+            "gè",
+            "jiějie",
+            "yí",
+            "kuàijìyuán",
+            "Wǒ",
+            "shì",
+            "dàngāo",
+            "xiāngjiāo",
+            "shǒujī"
+          ],
+          "answers": [
+            "Wǒ",
+            "jiějie",
+            "shì",
+            "yí",
+            "gè",
+            "kuàijìyuán"
+          ]
+        },
+        {
+          "id": "ch18-p2-q10",
+          "question": "Nǐ jiějie zài shénme dìfāng gōngzuò?",
+          "words": [
+            "Wàndá",
+            "Tā",
+            "gōngzuò",
+            "zài",
+            "shāngchǎng",
+            "māo",
+            "yǔsǎn",
+            "shǒujī"
+          ],
+          "answers": [
+            "Tā",
+            "zài",
+            "Wàndá",
+            "shāngchǎng",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p2-q11",
+          "question": "Nǐ jiějie hěn lìhài ma?",
+          "words": [
+            "tā",
+            "hěn",
+            "Shì",
+            "lìhài",
+            "yīfu",
+            "dàngāo",
+            "kāfēi"
+          ],
+          "answers": [
+            "Shì",
+            "tā",
+            "hěn",
+            "lìhài"
+          ]
+        },
+        {
+          "id": "ch18-p2-q12",
+          "question": "Nǐ jiějie yě zài nàr gōngzuò ma?",
+          "words": [
+            "wǒ",
+            "zài",
+            "yě",
+            "nàr",
+            "jiějie",
+            "shì",
+            "Shì",
+            "chē",
+            "fēijī",
+            "dàngāo"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "jiějie",
+            "yě",
+            "shì",
+            "zài",
+            "nàr"
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch18-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "guìxìng",
+            "nǐ",
+            "hǎo",
+            "Nǐ",
+            "diànnǎo",
+            "shǒujī",
+            "huā"
+          ],
+          "answers": [
+            "Nǐ",
+            "hǎo",
+            "nǐ",
+            "guìxìng"
+          ]
+        },
+        {
+          "id": "ch18-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ne",
+            "nǐ",
+            "Wáng",
+            "xìng",
+            "Wǒ",
+            "māo",
+            "fēijī",
+            "diànnǎo"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Wáng",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Chén",
+            "xìng",
+            "Wǒ",
+            "fēijī",
+            "yú",
+            "diànnǎo"
+          ],
+          "answers": [
+            "Wǒ",
+            "xìng",
+            "Chén"
+          ]
+        },
+        {
+          "id": "ch18-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngzuò",
+            "shénme",
+            "zuò",
+            "nǐ",
+            "nǚshì",
+            "Chén",
+            "huā",
+            "yú",
+            "yǔsǎn"
+          ],
+          "answers": [
+            "Chén",
+            "nǚshì",
+            "nǐ",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ne",
+            "nǐ",
+            "lǎoshī",
+            "shì",
+            "Wǒ",
+            "hǎi",
+            "dàngāo",
+            "zhuōzi"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "lǎoshī",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngchéngshī",
+            "shì",
+            "Wǒ",
+            "kāfēi",
+            "yǔsǎn",
+            "dàngāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "gōngchéngshī"
+          ]
+        },
+        {
+          "id": "ch18-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ma",
+            "xuéshēng",
+            "shì",
+            "nǐ",
+            "Xiǎoyù",
+            "bēizi",
+            "shū",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Xiǎoyù",
+            "nǐ",
+            "shì",
+            "xuéshēng",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch18-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xuéshēng",
+            "shì",
+            "wǒ",
+            "Shì",
+            "huā",
+            "huǒchē",
+            "shǒujī"
+          ],
+          "answers": [
+            "Shì",
+            "wǒ",
+            "shì",
+            "xuéshēng"
+          ]
+        },
+        {
+          "id": "ch18-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngzuò",
+            "shénme",
+            "zuò",
+            "bàba",
+            "de",
+            "Nǐ",
+            "zhuōzi",
+            "chē",
+            "yú"
+          ],
+          "answers": [
+            "Nǐ",
+            "de",
+            "bàba",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nóngmín",
+            "shì",
+            "bàba",
+            "de",
+            "Wǒ",
+            "píngguǒ",
+            "shū",
+            "shǒujī"
+          ],
+          "answers": [
+            "Wǒ",
+            "de",
+            "bàba",
+            "shì",
+            "nóngmín"
+          ]
+        },
+        {
+          "id": "ch18-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngzuò",
+            "shénme",
+            "zuò",
+            "nǐ",
+            "Liúfang",
+            "shū",
+            "bēizi",
+            "diànnǎo"
+          ],
+          "answers": [
+            "Liúfang",
+            "nǐ",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ne",
+            "nǐ",
+            "yīshēng",
+            "shì",
+            "Wǒ",
+            "shū",
+            "xiāngjiāo",
+            "māo"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "yīshēng",
+            "nǐ",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "chúshī",
+            "shì",
+            "Wǒ",
+            "diànnǎo",
+            "bēizi",
+            "yú"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "chúshī"
+          ]
+        },
+        {
+          "id": "ch18-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nǐ",
+            "rènshi",
+            "gāoxìng",
+            "Hěn",
+            "hǎi",
+            "yú",
+            "bēizi"
+          ],
+          "answers": [
+            "Hěn",
+            "gāoxìng",
+            "rènshi",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch18-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nǐ",
+            "rènshi",
+            "gāoxìng",
+            "hěn",
+            "yě",
+            "Wǒ",
+            "kāfēi",
+            "māo",
+            "fēijī"
+          ],
+          "answers": [
+            "Wǒ",
+            "yě",
+            "hěn",
+            "gāoxìng",
+            "rènshi",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch18-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngzuò",
+            "shénme",
+            "zuò",
+            "jiějie",
+            "nǐ",
+            "Xiǎohuì",
+            "bēizi",
+            "huā",
+            "māo"
+          ],
+          "answers": [
+            "Xiǎohuì",
+            "nǐ",
+            "jiějie",
+            "zuò",
+            "shénme",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p3-q17",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "kuàijìyuán",
+            "gè",
+            "yí",
+            "shì",
+            "jiějie",
+            "Wǒ",
+            "fēijī",
+            "kāfēi",
+            "shǒujī"
+          ],
+          "answers": [
+            "Wǒ",
+            "jiějie",
+            "shì",
+            "yí",
+            "gè",
+            "kuàijìyuán"
+          ]
+        },
+        {
+          "id": "ch18-p3-q18",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hǎo",
+            "Zhēn",
+            "bēizi",
+            "māo",
+            "fēijī"
+          ],
+          "answers": [
+            "Zhēn",
+            "hǎo"
+          ]
+        },
+        {
+          "id": "ch18-p3-q19",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "ne",
+            "jiějie",
+            "Nǐ",
+            "yǔsǎn",
+            "bēizi",
+            "fēijī"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiějie",
+            "ne"
+          ]
+        },
+        {
+          "id": "ch18-p3-q20",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "mìshū",
+            "zǒngjīnglǐ",
+            "shì",
+            "Tā",
+            "chē",
+            "yīfu",
+            "shū"
+          ],
+          "answers": [
+            "Tā",
+            "shì",
+            "zǒngjīnglǐ",
+            "mìshū"
+          ]
+        },
+        {
+          "id": "ch18-p3-q21",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "lìhài",
+            "hěn",
+            "jiějie",
+            "Nǐ",
+            "huā",
+            "chē",
+            "zhuōzi"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiějie",
+            "hěn",
+            "lìhài"
+          ]
+        },
+        {
+          "id": "ch18-p3-q22",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "de",
+            "gōngzuò",
+            "dìfāng",
+            "shénme",
+            "zài",
+            "shì",
+            "Tā",
+            "yǔsǎn",
+            "zhuōzi",
+            "kāfēi"
+          ],
+          "answers": [
+            "Tā",
+            "shì",
+            "zài",
+            "shénme",
+            "dìfāng",
+            "gōngzuò",
+            "de"
+          ]
+        },
+        {
+          "id": "ch18-p3-q23",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gōngzuò",
+            "shāngchǎng",
+            "Wàndá",
+            "zài",
+            "Tā",
+            "chē",
+            "dàngāo",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Tā",
+            "zài",
+            "Wàndá",
+            "shāngchǎng",
+            "gōngzuò"
+          ]
+        },
+        {
+          "id": "ch18-p3-q24",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nàr",
+            "zài",
+            "shì",
+            "yě",
+            "jiějie",
+            "Wǒ",
+            "a",
+            "qiǎo",
+            "Hǎo",
+            "bēizi",
+            "xiāngjiāo",
+            "yú"
+          ],
+          "answers": [
+            "Hǎo",
+            "qiǎo",
+            "a",
+            "Wǒ",
+            "jiějie",
+            "yě",
+            "shì",
+            "zài",
+            "nàr"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1052 @@
+{
+  "chapter": {
+    "id": "chapter-35",
+    "title": "Chapter 35",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch35-p1-q1",
+          "question": "ကျွန်တော်/ကျွန်မ တစ်ယောက်တည်းပါ။",
+          "words": [
+            "dānshēnde",
+            "huǒchē",
+            "xiāngjiāo",
+            "shì",
+            "Wǒ",
+            "xuéxiào"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "dānshēnde"
+          ]
+        },
+        {
+          "id": "ch35-p1-q2",
+          "question": "ကျွန်တော်/ကျွန်မ အိမ်ထောင်မရှိသေးဘူး။",
+          "words": [
+            "jiéhūn",
+            "yīfu",
+            "hái",
+            "méiyou",
+            "Wǒ",
+            "shū",
+            "māo"
+          ],
+          "answers": [
+            "Wǒ",
+            "hái",
+            "méiyou",
+            "jiéhūn"
+          ]
+        },
+        {
+          "id": "ch35-p1-q3",
+          "question": "ကျွန်တော်/ကျွန်မ မင်းကို သဘောကျတယ်။",
+          "words": [
+            "Wǒ",
+            "dàngāo",
+            "nǐ",
+            "kāfēi",
+            "yú",
+            "xǐhuan"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q4",
+          "question": "ကျွန်တော်/ကျွန်မ မင်းကို လွမ်းတယ်။",
+          "words": [
+            "nǐ",
+            "xiǎng",
+            "hǎi",
+            "yīfu",
+            "Wǒ",
+            "fēijī"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q5",
+          "question": "ကျွန်တော်/ကျွန်မ မင်းကို ချစ်တယ်။",
+          "words": [
+            "hǎi",
+            "huā",
+            "ài",
+            "Wǒ",
+            "nǐ",
+            "píngguǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "ài",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q6",
+          "question": "ကျွန်တော်/ကျွန်မ မင်းကို အရမ်းလွမ်းတယ်။",
+          "words": [
+            "bēizi",
+            "hǎo",
+            "xiǎng",
+            "nǐ",
+            "Wǒ",
+            "huā",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q7",
+          "question": "ကျွန်တော်/ကျွန်မ မင်းကို ပိုပြီး သိကျွမ်းချင်တယ်။",
+          "words": [
+            "liǎojiě",
+            "dàngāo",
+            "chē",
+            "Wǒ",
+            "xiǎng",
+            "gèng",
+            "nǐ",
+            "yú"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "gèng",
+            "liǎojiě",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q8",
+          "question": "ငါတို့ လက်ထပ်ကြရအောင်။",
+          "words": [
+            "ba",
+            "hūn",
+            "Wǒmen",
+            "jié",
+            "huā",
+            "hǎi",
+            "yú"
+          ],
+          "answers": [
+            "Wǒmen",
+            "jié",
+            "hūn",
+            "ba"
+          ]
+        },
+        {
+          "id": "ch35-p1-q9",
+          "question": "ကျွန်တော် မင်းကို လက်ထပ်ချင်တယ်။",
+          "words": [
+            "Wǒ",
+            "qǔ",
+            "xiǎng",
+            "huǒchē",
+            "nǐ",
+            "huā",
+            "chē"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "qǔ",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p1-q10",
+          "question": "မင်း ငါ့ကို လက်ထပ်ချင်လား။",
+          "words": [
+            "ma",
+            "fēijī",
+            "wǒ",
+            "diànnǎo",
+            "Nǐ",
+            "zhuōzi",
+            "yuànyì",
+            "gěi",
+            "jià"
+          ],
+          "answers": [
+            "Nǐ",
+            "yuànyì",
+            "jià",
+            "gěi",
+            "wǒ",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p1-q11",
+          "question": "မင်း ငါ့ရဲ့ ချစ်သူမဖြစ်ချင်ဘူးလား။",
+          "words": [
+            "zhuōzi",
+            "de",
+            "wǒ",
+            "péngyou",
+            "māo",
+            "Nǐ",
+            "ma",
+            "nǚ",
+            "yīfu",
+            "yuànyì",
+            "zuò"
+          ],
+          "answers": [
+            "Nǐ",
+            "yuànyì",
+            "zuò",
+            "wǒ",
+            "de",
+            "nǚ",
+            "péngyou",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p1-q12",
+          "question": "ကျွန်တော်/ကျွန်မ သဘောတူတယ်။",
+          "words": [
+            "Wǒ",
+            "yuànyì",
+            "yǔsǎn",
+            "huǒchē",
+            "bēizi"
+          ],
+          "answers": [
+            "Wǒ",
+            "yuànyì"
+          ]
+        },
+        {
+          "id": "ch35-p1-q13",
+          "question": "ကျွန်တော်/ကျွန်မ သူ့အပေါ် ခံစားချက်ရှိတယ်။",
+          "words": [
+            "tā",
+            "kāfēi",
+            "Wǒ",
+            "gǎnjué",
+            "yú",
+            "duì",
+            "māo",
+            "yǒu"
+          ],
+          "answers": [
+            "Wǒ",
+            "duì",
+            "tā",
+            "yǒu",
+            "gǎnjué"
+          ]
+        },
+        {
+          "id": "ch35-p1-q14",
+          "question": "သူတို့ ချစ်ကြိုက်နေကြတယ်။",
+          "words": [
+            "dàngāo",
+            "zài",
+            "liàn’ài",
+            "shū",
+            "Tāmen",
+            "tán",
+            "māo"
+          ],
+          "answers": [
+            "Tāmen",
+            "zài",
+            "tán",
+            "liàn’ài"
+          ]
+        },
+        {
+          "id": "ch35-p1-q15",
+          "question": "သူတို့ လမ်းခွဲလိုက်ကြပြီ။",
+          "words": [
+            "yīfu",
+            "bēizi",
+            "fēnshǒu",
+            "le",
+            "Tāmen",
+            "hǎi"
+          ],
+          "answers": [
+            "Tāmen",
+            "fēnshǒu",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p1-q16",
+          "question": "မင်း အိမ်ထောင်ကျပြီးပြီလား။",
+          "words": [
+            "fēijī",
+            "jiéhūn",
+            "shū",
+            "Nǐ",
+            "ma",
+            "yǔsǎn",
+            "le"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiéhūn",
+            "le",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p1-q17",
+          "question": "မင်း ဘယ်လောက်ကြာကြာ တစ်ယောက်တည်းနေခဲ့တာလဲ။",
+          "words": [
+            "diànnǎo",
+            "zhuōzi",
+            "le",
+            "xiāngjiāo",
+            "dānshen",
+            "duōjiǔ",
+            "Nǐ"
+          ],
+          "answers": [
+            "Nǐ",
+            "dānshen",
+            "duōjiǔ",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p1-q18",
+          "question": "ကျွန်တော်/ကျွန်မ သူ့ကို တိတ်တိတ်လေး သဘောကျမိပြီ။",
+          "words": [
+            "le",
+            "Wǒ",
+            "tā",
+            "chē",
+            "píngguǒ",
+            "hǎo",
+            "xiàng",
+            "huā",
+            "ànliàn"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiàng",
+            "ànliàn",
+            "tā",
+            "le"
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch35-p2-q1",
+          "question": "Wǒ xǐhuan nǐ.",
+          "words": [
+            "yú",
+            "Wǒ",
+            "xǐhuan",
+            "nǐ",
+            "zhuōzi",
+            "dàngāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q2",
+          "question": "Wǒ xiǎng nǐ.",
+          "words": [
+            "Wǒ",
+            "yǔsǎn",
+            "xiǎng",
+            "nǐ",
+            "diànnǎo",
+            "huǒchē"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q3",
+          "question": "Wǒ ài nǐ.",
+          "words": [
+            "hǎi",
+            "yǔsǎn",
+            "nǐ",
+            "yú",
+            "Wǒ",
+            "ài"
+          ],
+          "answers": [
+            "Wǒ",
+            "ài",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q4",
+          "question": "Wǒ hǎo xiǎng nǐ.",
+          "words": [
+            "hǎo",
+            "xiǎng",
+            "chē",
+            "nǐ",
+            "xiāngjiāo",
+            "Wǒ",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q5",
+          "question": "Wǒ xiǎng gèng liǎojiě nǐ.",
+          "words": [
+            "gèng",
+            "liǎojiě",
+            "yǔsǎn",
+            "shū",
+            "Wǒ",
+            "xiǎng",
+            "yīfu",
+            "nǐ"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "gèng",
+            "liǎojiě",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q6",
+          "question": "Wǒmen jié hūn ba.",
+          "words": [
+            "māo",
+            "hūn",
+            "Wǒmen",
+            "kāfēi",
+            "yǔsǎn",
+            "ba",
+            "jié"
+          ],
+          "answers": [
+            "Wǒmen",
+            "jié",
+            "hūn",
+            "ba"
+          ]
+        },
+        {
+          "id": "ch35-p2-q7",
+          "question": "Wǒ xiǎng qǔ nǐ.",
+          "words": [
+            "Wǒ",
+            "shū",
+            "dàngāo",
+            "xiǎng",
+            "zhuōzi",
+            "nǐ",
+            "qǔ"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "qǔ",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p2-q8",
+          "question": "Nǐ yuànyì jià gěi wǒ ma?",
+          "words": [
+            "bēizi",
+            "Wǒ",
+            "yuànyì",
+            "shū",
+            "dàngāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "yuànyì"
+          ]
+        },
+        {
+          "id": "ch35-p2-q9",
+          "question": "Nǐ yuànyì zuò wǒ de nǚ péngyou ma?",
+          "words": [
+            "huǒchē",
+            "yuànyì",
+            "píngguǒ",
+            "shū",
+            "Wǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "yuànyì"
+          ]
+        },
+        {
+          "id": "ch35-p2-q10",
+          "question": "Wǒ yuànyì.",
+          "words": [
+            "Wǒ",
+            "bēizi",
+            "fēijī",
+            "yuànyì",
+            "hǎi"
+          ],
+          "answers": [
+            "Wǒ",
+            "yuànyì"
+          ]
+        },
+        {
+          "id": "ch35-p2-q11",
+          "question": "Wǒ duì tā yǒu gǎnjué.",
+          "words": [
+            "Wǒ",
+            "tā",
+            "shū",
+            "duì",
+            "bēizi",
+            "yǒu",
+            "gǎnjué",
+            "yú"
+          ],
+          "answers": [
+            "Wǒ",
+            "duì",
+            "tā",
+            "yǒu",
+            "gǎnjué"
+          ]
+        },
+        {
+          "id": "ch35-p2-q12",
+          "question": "Tāmen zài tán liàn’ài.",
+          "words": [
+            "yú",
+            "tán",
+            "hǎi",
+            "zài",
+            "shū",
+            "Tāmen",
+            "liàn’ài"
+          ],
+          "answers": [
+            "Tāmen",
+            "zài",
+            "tán",
+            "liàn’ài"
+          ]
+        },
+        {
+          "id": "ch35-p2-q13",
+          "question": "Tāmen fēnshǒu le.",
+          "words": [
+            "kāfēi",
+            "diànnǎo",
+            "le",
+            "fēnshǒu",
+            "Tāmen",
+            "chē"
+          ],
+          "answers": [
+            "Tāmen",
+            "fēnshǒu",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p2-q14",
+          "question": "Nǐ jiéhūn le ma?",
+          "words": [
+            "diànnǎo",
+            "yǔsǎn",
+            "méiyou",
+            "jiéhūn",
+            "hái",
+            "Wǒ",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "hái",
+            "méiyou",
+            "jiéhūn"
+          ]
+        },
+        {
+          "id": "ch35-p2-q15",
+          "question": "Wǒ hái méiyou jiéhūn.",
+          "words": [
+            "jiéhūn",
+            "Wǒ",
+            "hǎi",
+            "méiyou",
+            "yīfu",
+            "huā",
+            "hái"
+          ],
+          "answers": [
+            "Wǒ",
+            "hái",
+            "méiyou",
+            "jiéhūn"
+          ]
+        },
+        {
+          "id": "ch35-p2-q16",
+          "question": "Wǒ shì dānshende.",
+          "words": [
+            "dàngāo",
+            "huǒchē",
+            "dānshende",
+            "Wǒ",
+            "shū",
+            "shì"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "dānshende"
+          ]
+        },
+        {
+          "id": "ch35-p2-q17",
+          "question": "Nǐ dānshen duōjiǔ le?",
+          "words": [
+            "Wǒ",
+            "hěn",
+            "jiǔ",
+            "le",
+            "dānshen",
+            "hǎi",
+            "yǔsǎn",
+            "yǐjīng",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "dānshen",
+            "yǐjīng",
+            "hěn",
+            "jiǔ",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p2-q18",
+          "question": "Wǒ hǎo xiàng ànliàn tā le.",
+          "words": [
+            "tā",
+            "zhuōzi",
+            "hǎo",
+            "le",
+            "Wǒ",
+            "dàngāo",
+            "bēizi",
+            "ànliàn",
+            "xiàng"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiàng",
+            "ànliàn",
+            "tā",
+            "le"
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch35-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "kāfēi",
+            "Wǒ",
+            "huā",
+            "xǐhuan",
+            "chē",
+            "nǐ"
+          ],
+          "answers": [
+            "Wǒ",
+            "xǐhuan",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nǐ",
+            "kāfēi",
+            "yǔsǎn",
+            "xiǎng",
+            "yīfu",
+            "Wǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yú",
+            "dàngāo",
+            "hǎi",
+            "nǐ",
+            "ài",
+            "Wǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "ài",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nǐ",
+            "hǎo",
+            "yú",
+            "Wǒ",
+            "xiǎng",
+            "píngguǒ",
+            "dàngāo"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiǎng",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hǎi",
+            "liǎojiě",
+            "gèng",
+            "xiǎng",
+            "nǐ",
+            "Wǒ",
+            "yīfu",
+            "chē"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "gèng",
+            "liǎojiě",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "bēizi",
+            "Wǒmen",
+            "ba",
+            "chē",
+            "diànnǎo",
+            "hūn",
+            "jié"
+          ],
+          "answers": [
+            "Wǒmen",
+            "jié",
+            "hūn",
+            "ba"
+          ]
+        },
+        {
+          "id": "ch35-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "nǐ",
+            "xiǎng",
+            "yīfu",
+            "Wǒ",
+            "qǔ",
+            "huā",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "xiǎng",
+            "qǔ",
+            "nǐ"
+          ]
+        },
+        {
+          "id": "ch35-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "fēijī",
+            "ma",
+            "gěi",
+            "yīfu",
+            "wǒ",
+            "chē",
+            "yuànyì",
+            "jià",
+            "Nǐ"
+          ],
+          "answers": [
+            "Nǐ",
+            "yuànyì",
+            "jià",
+            "gěi",
+            "wǒ",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "de",
+            "zuò",
+            "chē",
+            "wǒ",
+            "xuéxiào",
+            "yǔsǎn",
+            "nǚ",
+            "yuànyì",
+            "péngyou",
+            "Nǐ",
+            "ma"
+          ],
+          "answers": [
+            "Nǐ",
+            "yuànyì",
+            "zuò",
+            "wǒ",
+            "de",
+            "nǚ",
+            "péngyou",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "māo",
+            "yuànyì",
+            "Wǒ",
+            "yīfu",
+            "zhuōzi"
+          ],
+          "answers": [
+            "Wǒ",
+            "yuànyì"
+          ]
+        },
+        {
+          "id": "ch35-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "gǎnjué",
+            "yǒu",
+            "māo",
+            "tā",
+            "duì",
+            "fēijī",
+            "Wǒ",
+            "kāfēi"
+          ],
+          "answers": [
+            "Wǒ",
+            "duì",
+            "tā",
+            "yǒu",
+            "gǎnjué"
+          ]
+        },
+        {
+          "id": "ch35-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "liàn’ài",
+            "māo",
+            "zài",
+            "huǒchē",
+            "yīfu",
+            "tán",
+            "Tāmen"
+          ],
+          "answers": [
+            "Tāmen",
+            "zài",
+            "tán",
+            "liàn’ài"
+          ]
+        },
+        {
+          "id": "ch35-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yú",
+            "fēnshǒu",
+            "le",
+            "fēijī",
+            "zhuōzi",
+            "Tāmen"
+          ],
+          "answers": [
+            "Tāmen",
+            "fēnshǒu",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "kāfēi",
+            "xuéxiào",
+            "le",
+            "Nǐ",
+            "hǎi",
+            "ma",
+            "jiéhūn"
+          ],
+          "answers": [
+            "Nǐ",
+            "jiéhūn",
+            "le",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch35-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xuéxiào",
+            "Wǒ",
+            "hǎi",
+            "hái",
+            "méiyou",
+            "bēizi",
+            "jiéhūn"
+          ],
+          "answers": [
+            "Wǒ",
+            "hái",
+            "méiyou",
+            "jiéhūn"
+          ]
+        },
+        {
+          "id": "ch35-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "dàngāo",
+            "dānshende",
+            "Wǒ",
+            "chē",
+            "bēizi",
+            "shì"
+          ],
+          "answers": [
+            "Wǒ",
+            "shì",
+            "dānshende"
+          ]
+        },
+        {
+          "id": "ch35-p3-q17",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yīfu",
+            "yú",
+            "le",
+            "shū",
+            "duōjiǔ",
+            "dānshen",
+            "Nǐ"
+          ],
+          "answers": [
+            "Nǐ",
+            "dānshen",
+            "duōjiǔ",
+            "le"
+          ]
+        },
+        {
+          "id": "ch35-p3-q18",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "le",
+            "ànliàn",
+            "hǎo",
+            "huǒchē",
+            "tā",
+            "Wǒ",
+            "diànnǎo",
+            "xiàng",
+            "shū"
+          ],
+          "answers": [
+            "Wǒ",
+            "hǎo",
+            "xiàng",
+            "ànliàn",
+            "tā",
+            "le"
+          ]
+        }
+      ]
+    }
+  }
+}

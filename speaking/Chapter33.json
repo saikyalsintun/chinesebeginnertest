@@ -1,0 +1,852 @@
+{
+  "chapter": {
+    "id": "chapter-33",
+    "title": "Chapter 33",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch33-p1-q1",
+          "question": "ဒီမြို့မှာ နိုက်ကလပ်ရှိလား။",
+          "words": [
+            "lǐ",
+            "Zhè",
+            "ma",
+            "māo",
+            "yǒu",
+            "chéngshì",
+            "xuéxiào",
+            "yú",
+            "yèdiàn"
+          ],
+          "answers": [
+            "Zhè",
+            "chéngshì",
+            "lǐ",
+            "yǒu",
+            "yèdiàn",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch33-p1-q2",
+          "question": "ဟိုတယ်မှာ အခန်းတစ်ခန်းရှိတယ်။",
+          "words": [
+            "lǐ",
+            "yì",
+            "huā",
+            "Fàndiàn",
+            "chē",
+            "jiān",
+            "yǒu",
+            "yú",
+            "fángjiān"
+          ],
+          "answers": [
+            "Fàndiàn",
+            "lǐ",
+            "yǒu",
+            "yì",
+            "jiān",
+            "fángjiān"
+          ]
+        },
+        {
+          "id": "ch33-p1-q3",
+          "question": "အခန်းထဲမှာ အိပ်ရာတစ်လုံးရှိတယ်။",
+          "words": [
+            "chuáng",
+            "lǐ",
+            "xuéxiào",
+            "yì",
+            "Fángjiān",
+            "zhāng",
+            "yǒu",
+            "píngguǒ",
+            "dàngāo"
+          ],
+          "answers": [
+            "Fángjiān",
+            "lǐ",
+            "yǒu",
+            "yì",
+            "zhāng",
+            "chuáng"
+          ]
+        },
+        {
+          "id": "ch33-p1-q4",
+          "question": "ဒီအိပ်ခန်းက အရမ်းကျယ်တယ်။",
+          "words": [
+            "hěn",
+            "wòshì",
+            "píngguǒ",
+            "diànnǎo",
+            "dà",
+            "chē",
+            "Zhège"
+          ],
+          "answers": [
+            "Zhège",
+            "wòshì",
+            "hěn",
+            "dà"
+          ]
+        },
+        {
+          "id": "ch33-p1-q5",
+          "question": "ဓာတ်လှေကားက ဘယ်မှာလဲ။",
+          "words": [
+            "zài",
+            "nǎr",
+            "yǔsǎn",
+            "huǒchē",
+            "diànnǎo",
+            "Diàntī"
+          ],
+          "answers": [
+            "Diàntī",
+            "zài",
+            "nǎr"
+          ]
+        },
+        {
+          "id": "ch33-p1-q6",
+          "question": "လေဆိပ်က ဘယ်မှာလဲ။",
+          "words": [
+            "huā",
+            "kāfēi",
+            "nǎr",
+            "xuéxiào",
+            "zài",
+            "Jīchǎng"
+          ],
+          "answers": [
+            "Jīchǎng",
+            "zài",
+            "nǎr"
+          ]
+        },
+        {
+          "id": "ch33-p1-q7",
+          "question": "Check-in လုပ်ဖို့ ကောင်တာကို သွားရမယ်။",
+          "words": [
+            "yǔsǎn",
+            "zhuōzi",
+            "qù",
+            "yào",
+            "fēijī",
+            "guìtái",
+            "Dēngjì"
+          ],
+          "answers": [
+            "Dēngjì",
+            "yào",
+            "qù",
+            "guìtái"
+          ]
+        },
+        {
+          "id": "ch33-p1-q8",
+          "question": "Check-out အချိန်က ဘယ်နာရီလဲ။",
+          "words": [
+            "xuéxiào",
+            "Tuìfáng",
+            "fēijī",
+            "shíjiān",
+            "shì",
+            "jǐ",
+            "diǎnzhōng",
+            "chē"
+          ],
+          "answers": [
+            "Tuìfáng",
+            "shíjiān",
+            "shì",
+            "jǐ",
+            "diǎnzhōng"
+          ]
+        },
+        {
+          "id": "ch33-p1-q9",
+          "question": "တစ်ညကို ဘယ်လောက်ကျလဲ။",
+          "words": [
+            "dàngāo",
+            "zhuōzi",
+            "wǎnshàng",
+            "yǔsǎn",
+            "Yígè",
+            "qián",
+            "duōshǎo"
+          ],
+          "answers": [
+            "Yígè",
+            "wǎnshàng",
+            "duōshǎo",
+            "qián"
+          ]
+        },
+        {
+          "id": "ch33-p1-q10",
+          "question": "ဧည့်သည်တွေ အခန်းထဲမှာ အေးအေးဆေးဆေး နေနိုင်တယ်။",
+          "words": [
+            "lǐ",
+            "huā",
+            "Kèrén",
+            "kěyǐ",
+            "fángjiān",
+            "yú",
+            "zài",
+            "zìzài",
+            "māo"
+          ],
+          "answers": [
+            "Kèrén",
+            "kěyǐ",
+            "zài",
+            "fángjiān",
+            "lǐ",
+            "zìzài"
+          ]
+        },
+        {
+          "id": "ch33-p1-q11",
+          "question": "ဒီဟိုတယ်မှာ ဆေးလိပ်မသောက်ရတဲ့နေရာရှိတယ်။",
+          "words": [
+            "yǒu",
+            "qū",
+            "xīyān",
+            "māo",
+            "yú",
+            "Zhè",
+            "jiā",
+            "fēi",
+            "fàndiàn",
+            "shū"
+          ],
+          "answers": [
+            "Zhè",
+            "jiā",
+            "fàndiàn",
+            "yǒu",
+            "fēi",
+            "xīyān",
+            "qū"
+          ]
+        },
+        {
+          "id": "ch33-p1-q12",
+          "question": "ကျွန်တော် အခန်းတစ်ခန်း ကြိုတင်မှာပြီး အတည်ပြုချင်တယ်။",
+          "words": [
+            "diànnǎo",
+            "Wǒ",
+            "hé",
+            "kāfēi",
+            "quèrèn",
+            "dìngfáng",
+            "shū",
+            "yào"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "dìngfáng",
+            "hé",
+            "quèrèn"
+          ]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch33-p2-q1",
+          "question": "Zhè chéngshì lǐ yǒu yèdiàn ma?",
+          "words": [
+            "xuéxiào",
+            "māo",
+            "huǒchē",
+            "Yǒu"
+          ],
+          "answers": [
+            "Yǒu"
+          ]
+        },
+        {
+          "id": "ch33-p2-q2",
+          "question": "Tuìfáng shíjiān shì jǐ diǎnzhōng?",
+          "words": [
+            "yǔsǎn",
+            "shíjiān",
+            "shì",
+            "xuéxiào",
+            "shí'èr",
+            "fēijī",
+            "Tuìfáng",
+            "diǎnzhōng"
+          ],
+          "answers": [
+            "Tuìfáng",
+            "shíjiān",
+            "shì",
+            "shí'èr",
+            "diǎnzhōng"
+          ]
+        },
+        {
+          "id": "ch33-p2-q3",
+          "question": "Yígè wǎnshàng duōshǎo qián?",
+          "words": [
+            "yìqiān",
+            "huǒchē",
+            "kuài",
+            "xuéxiào",
+            "hǎi",
+            "Yígè",
+            "wǎnshàng"
+          ],
+          "answers": [
+            "Yígè",
+            "wǎnshàng",
+            "yìqiān",
+            "kuài"
+          ]
+        },
+        {
+          "id": "ch33-p2-q4",
+          "question": "Diàntī zài nǎr?",
+          "words": [
+            "nàr",
+            "yīfu",
+            "Diàntī",
+            "dàngāo",
+            "fēijī",
+            "zài"
+          ],
+          "answers": [
+            "Diàntī",
+            "zài",
+            "nàr"
+          ]
+        },
+        {
+          "id": "ch33-p2-q5",
+          "question": "Jīchǎng zài nǎr?",
+          "words": [
+            "nàr",
+            "dàngāo",
+            "kāfēi",
+            "hǎi",
+            "zài",
+            "Jīchǎng"
+          ],
+          "answers": [
+            "Jīchǎng",
+            "zài",
+            "nàr"
+          ]
+        },
+        {
+          "id": "ch33-p2-q6",
+          "question": "Nǐ yào dēngjì ma?",
+          "words": [
+            "dàngāo",
+            "Shì",
+            "dēngjì",
+            "yào",
+            "huǒchē",
+            "píngguǒ",
+            "de",
+            "wǒ"
+          ],
+          "answers": [
+            "Shì",
+            "de",
+            "wǒ",
+            "yào",
+            "dēngjì"
+          ]
+        },
+        {
+          "id": "ch33-p2-q7",
+          "question": "Nǐ yào dìng shénme fáng?",
+          "words": [
+            "shū",
+            "dānchuáng",
+            "yào",
+            "yīfu",
+            "dàngāo",
+            "shuāngrénfáng",
+            "dìng",
+            "Wǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "dìng",
+            "dānchuáng",
+            "shuāngrénfáng"
+          ]
+        },
+        {
+          "id": "ch33-p2-q8",
+          "question": "Nǐ yào dānchuáng háishì shuāngchuáng?",
+          "words": [
+            "yīfu",
+            "yào",
+            "chē",
+            "shuāngchuáng",
+            "Wǒ",
+            "bēizi",
+            "shuāngrénfáng"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "shuāngchuáng",
+            "shuāngrénfáng"
+          ]
+        },
+        {
+          "id": "ch33-p2-q9",
+          "question": "Nǐ xūyào guìtái ma?",
+          "words": [
+            "Shì",
+            "de",
+            "guìtái",
+            "kāfēi",
+            "yǔsǎn",
+            "wǒ",
+            "xūyào",
+            "māo"
+          ],
+          "answers": [
+            "Shì",
+            "de",
+            "wǒ",
+            "xūyào",
+            "guìtái"
+          ]
+        },
+        {
+          "id": "ch33-p2-q10",
+          "question": "Fángjiān lǐ yǒu shénme?",
+          "words": [
+            "chuáng",
+            "diànnǎo",
+            "zhěntóu",
+            "yǒu",
+            "lǐ",
+            "hé",
+            "Fángjiān",
+            "māo",
+            "bèizi",
+            "zhuōzi"
+          ],
+          "answers": [
+            "Fángjiān",
+            "lǐ",
+            "yǒu",
+            "chuáng",
+            "zhěntóu",
+            "hé",
+            "bèizi"
+          ]
+        },
+        {
+          "id": "ch33-p2-q11",
+          "question": "Zhèlǐ ānjìng ma?",
+          "words": [
+            "shū",
+            "ānjìng",
+            "zhèlǐ",
+            "de",
+            "Shì",
+            "bēizi",
+            "hěn",
+            "xiāngjiāo"
+          ],
+          "answers": [
+            "Shì",
+            "de",
+            "zhèlǐ",
+            "hěn",
+            "ānjìng"
+          ]
+        },
+        {
+          "id": "ch33-p2-q12",
+          "question": "Nǐ yào tuìfáng ma?",
+          "words": [
+            "yào",
+            "wǒ",
+            "de",
+            "tuìfáng",
+            "diànnǎo",
+            "hǎi",
+            "Shì",
+            "yú"
+          ],
+          "answers": [
+            "Shì",
+            "de",
+            "wǒ",
+            "yào",
+            "tuìfáng"
+          ]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch33-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yīfu",
+            "yǒu",
+            "bēizi",
+            "chéngshì",
+            "fēijī",
+            "xuéxiào",
+            "lǐ",
+            "yèdiàn",
+            "hǎi",
+            "chē",
+            "ma",
+            "Zhè",
+            "dàngāo",
+            "yǔsǎn",
+            "māo",
+            "píngguǒ",
+            "huǒchē",
+            "zhuōzi"
+          ],
+          "answers": [
+            "Zhè",
+            "chéngshì",
+            "lǐ",
+            "yǒu",
+            "yèdiàn",
+            "ma"
+          ]
+        },
+        {
+          "id": "ch33-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xiāngjiāo",
+            "māo",
+            "píngguǒ",
+            "huǒchē",
+            "diànnǎo",
+            "kāfēi",
+            "huā",
+            "shíjiān",
+            "xuéxiào",
+            "chē",
+            "shū",
+            "fēijī",
+            "shì",
+            "yīfu",
+            "jǐ",
+            "diǎnzhōng",
+            "Tuìfáng"
+          ],
+          "answers": [
+            "Tuìfáng",
+            "shíjiān",
+            "shì",
+            "jǐ",
+            "diǎnzhōng"
+          ]
+        },
+        {
+          "id": "ch33-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "diànnǎo",
+            "Yígè",
+            "huā",
+            "wǎnshàng",
+            "kāfēi",
+            "shū",
+            "fēijī",
+            "bēizi",
+            "yīfu",
+            "chē",
+            "xiāngjiāo",
+            "píngguǒ",
+            "zhuōzi",
+            "duōshǎo",
+            "yǔsǎn",
+            "qián"
+          ],
+          "answers": [
+            "Yígè",
+            "wǎnshàng",
+            "duōshǎo",
+            "qián"
+          ]
+        },
+        {
+          "id": "ch33-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "Diàntī",
+            "yú",
+            "māo",
+            "zài",
+            "píngguǒ",
+            "huǒchē",
+            "hǎi",
+            "fēijī",
+            "bēizi",
+            "xuéxiào",
+            "chē",
+            "nǎr",
+            "diànnǎo",
+            "zhuōzi",
+            "yǔsǎn"
+          ],
+          "answers": [
+            "Diàntī",
+            "zài",
+            "nǎr"
+          ]
+        },
+        {
+          "id": "ch33-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "kāfēi",
+            "zài",
+            "zhuōzi",
+            "hǎi",
+            "fēijī",
+            "māo",
+            "píngguǒ",
+            "shū",
+            "chē",
+            "huǒchē",
+            "Jīchǎng",
+            "bēizi",
+            "dàngāo",
+            "xuéxiào",
+            "nǎr"
+          ],
+          "answers": [
+            "Jīchǎng",
+            "zài",
+            "nǎr"
+          ]
+        },
+        {
+          "id": "ch33-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "xuéxiào",
+            "dēngjì",
+            "zhuōzi",
+            "xiāngjiāo",
+            "chē",
+            "hǎi",
+            "bēizi",
+            "dàngāo",
+            "māo",
+            "yú",
+            "fēijī",
+            "shū",
+            "Wǒ",
+            "huā",
+            "yào"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "dēngjì"
+          ]
+        },
+        {
+          "id": "ch33-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "huā",
+            "dàngāo",
+            "yú",
+            "yǔsǎn",
+            "diànnǎo",
+            "chē",
+            "dìngfáng",
+            "Wǒ",
+            "hǎi",
+            "fēijī",
+            "shū",
+            "xuéxiào",
+            "xiāngjiāo",
+            "zhuōzi",
+            "yào"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "dìngfáng"
+          ]
+        },
+        {
+          "id": "ch33-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "yào",
+            "dìngfáng",
+            "xiāngjiāo",
+            "zhuōzi",
+            "yīfu",
+            "diànnǎo",
+            "fēijī",
+            "huǒchē",
+            "hǎi",
+            "kāfēi",
+            "quèrèn",
+            "chē",
+            "yǔsǎn",
+            "dàngāo",
+            "huā",
+            "Wǒ"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "quèrèn",
+            "dìngfáng"
+          ]
+        },
+        {
+          "id": "ch33-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "zhěntóu",
+            "chuáng",
+            "hǎi",
+            "yīfu",
+            "xuéxiào",
+            "bèizi",
+            "yú",
+            "shū",
+            "fēijī",
+            "Fángjiān",
+            "hé",
+            "diànnǎo",
+            "yǔsǎn",
+            "chē",
+            "yǒu",
+            "dàngāo",
+            "píngguǒ",
+            "xiāngjiāo",
+            "lǐ"
+          ],
+          "answers": [
+            "Fángjiān",
+            "lǐ",
+            "yǒu",
+            "chuáng",
+            "zhěntóu",
+            "hé",
+            "bèizi"
+          ]
+        },
+        {
+          "id": "ch33-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "hěn",
+            "diànnǎo",
+            "yú",
+            "hǎi",
+            "huā",
+            "ānjìng",
+            "fēijī",
+            "kāfēi",
+            "shū",
+            "yǔsǎn",
+            "huǒchē",
+            "dàngāo",
+            "Zhèlǐ",
+            "chē",
+            "píngguǒ"
+          ],
+          "answers": [
+            "Zhèlǐ",
+            "hěn",
+            "ānjìng"
+          ]
+        },
+        {
+          "id": "ch33-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "dàngāo",
+            "māo",
+            "Zhè",
+            "qū",
+            "fàndiàn",
+            "jiā",
+            "yīfu",
+            "yú",
+            "huǒchē",
+            "hǎi",
+            "fēi",
+            "kāfēi",
+            "fēijī",
+            "huā",
+            "chē",
+            "diànnǎo",
+            "xīyān",
+            "xuéxiào",
+            "yǒu"
+          ],
+          "answers": [
+            "Zhè",
+            "jiā",
+            "fàndiàn",
+            "yǒu",
+            "fēi",
+            "xīyān",
+            "qū"
+          ]
+        },
+        {
+          "id": "ch33-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": [
+            "diànnǎo",
+            "kāfēi",
+            "huǒchē",
+            "hǎi",
+            "tuìfáng",
+            "píngguǒ",
+            "Wǒ",
+            "xiāngjiāo",
+            "yǔsǎn",
+            "xuéxiào",
+            "fēijī",
+            "bēizi",
+            "chē",
+            "zhuōzi",
+            "yào"
+          ],
+          "answers": [
+            "Wǒ",
+            "yào",
+            "tuìfáng"
+          ]
+        }
+      ]
+    }
+  }
+}
