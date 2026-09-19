@@ -1,12 +1,6 @@
 /* =========================================================
    CHINESE DAILY TEST
    app.js
-
-   IMPORTANT:
-   When we create Google Apps Script later,
-   you ONLY need to change API_URL below.
-
-   Do NOT change the login or score functions.
 ========================================================= */
 
 
@@ -16,24 +10,17 @@
 
 const CONFIG = {
 
-    // =====================================================
-    // GOOGLE APPS SCRIPT API
-    // Replace ONLY this URL later.
-    // =====================================================
+    // Google Apps Script Web App URL
+    API_URL:
+        "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
-    API_URL: "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
+    // JSON files
+    CHAPTER_PATH:
+        "./chapters/",
 
-    // =====================================================
-    // JSON FILE LOCATION
-    // =====================================================
-
-    CHAPTER_PATH: "./chapters/",
-
-    // =====================================================
-    // TOTAL CHAPTERS
-    // =====================================================
-
-    TOTAL_CHAPTERS: 15
+    // Total chapters
+    TOTAL_CHAPTERS:
+        15
 
 };
 
@@ -71,6 +58,29 @@ const state = {
         part2: 0,
 
         part3: 0
+
+    },
+
+    /*
+     * Stores randomized word order for each question.
+     *
+     * Example:
+     *
+     * randomOrders.part1[0]
+     * randomOrders.part2[3]
+     * randomOrders.part3[5]
+     *
+     * This means the word order stays the same
+     * when the student comes back to a question.
+     */
+
+    randomOrders: {
+
+        part1: {},
+
+        part2: {},
+
+        part3: {}
 
     }
 
@@ -190,7 +200,9 @@ function showScreen(screen) {
     document
         .querySelectorAll(".screen")
         .forEach(item => {
+
             item.classList.remove("active");
+
         });
 
     screen.classList.add("active");
@@ -202,11 +214,14 @@ function showScreen(screen) {
    INITIALIZATION
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    generateChapterButtons();
+        generateChapterButtons();
 
-});
+    }
+);
 
 
 /* =========================================================
@@ -226,7 +241,8 @@ function generateChapterButtons() {
         const card =
             document.createElement("button");
 
-        card.className = "chapter-card";
+        card.className =
+            "chapter-card";
 
         card.innerHTML = `
             <div class="chapter-number">
@@ -270,7 +286,11 @@ loginForm.addEventListener(
         const password =
             passwordInput.value;
 
-        if (!username || !password) {
+
+        if (
+            !username ||
+            !password
+        ) {
 
             showLoginError(
                 "Please enter username and password."
@@ -280,6 +300,7 @@ loginForm.addEventListener(
 
         }
 
+
         loginButton.disabled = true;
 
         loginButton.textContent =
@@ -287,17 +308,8 @@ loginForm.addEventListener(
 
         loginMessage.textContent = "";
 
-        try {
 
-            /*
-             * API FORMAT
-             *
-             * Code.gs receives:
-             *
-             * action=login
-             * username=...
-             * password=...
-             */
+        try {
 
             const result =
                 await callAPI(
@@ -308,18 +320,22 @@ loginForm.addEventListener(
                     }
                 );
 
+
             if (
                 result &&
                 result.success === true
             ) {
 
                 state.username =
-                    result.username || username;
+                    result.username ||
+                    username;
 
                 welcomeUsername.textContent =
                     state.username;
 
-                showScreen(chapterScreen);
+                showScreen(
+                    chapterScreen
+                );
 
             } else {
 
@@ -332,7 +348,10 @@ loginForm.addEventListener(
 
         } catch (error) {
 
-            console.error(error);
+            console.error(
+                "Login error:",
+                error
+            );
 
             showLoginError(
                 "Unable to connect to the server."
@@ -367,21 +386,29 @@ function showLoginError(message) {
 
 
 /* =========================================================
-   API FUNCTION
+   GOOGLE APPS SCRIPT API
 ========================================================= */
 
 /*
- * This is the ONLY function that communicates
- * with Google Apps Script.
+ * IMPORTANT
  *
- * IMPORTANT:
- * We use GET parameters here instead of POST.
+ * We use GET instead of POST.
  *
  * This avoids the Google Apps Script redirect
- * problem that was causing the 404 error.
+ * problem that caused the previous 404 error.
+ *
+ * Example login request:
+ *
+ * /exec?action=login
+ * &username=student01
+ * &password=123456
+ *
  */
 
-async function callAPI(action, data = {}) {
+async function callAPI(
+    action,
+    data = {}
+) {
 
     /*
      * Development mode
@@ -393,11 +420,9 @@ async function callAPI(action, data = {}) {
         "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
     ) {
 
-        /*
-         * Temporary development mode.
-         */
-
-        if (action === "login") {
+        if (
+            action === "login"
+        ) {
 
             return {
 
@@ -410,7 +435,10 @@ async function callAPI(action, data = {}) {
 
         }
 
-        if (action === "saveScore") {
+
+        if (
+            action === "saveScore"
+        ) {
 
             console.log(
                 "Development mode - score:",
@@ -428,6 +456,7 @@ async function callAPI(action, data = {}) {
 
         }
 
+
         return {
 
             success: true
@@ -444,6 +473,7 @@ async function callAPI(action, data = {}) {
     const params =
         new URLSearchParams();
 
+
     params.append(
         "action",
         action
@@ -451,7 +481,7 @@ async function callAPI(action, data = {}) {
 
 
     /*
-     * Add all data
+     * Add data
      */
 
     Object.keys(data).forEach(
@@ -460,8 +490,9 @@ async function callAPI(action, data = {}) {
             let value =
                 data[key];
 
+
             /*
-             * Convert objects / arrays
+             * Convert objects and arrays
              * into JSON strings.
              */
 
@@ -475,6 +506,7 @@ async function callAPI(action, data = {}) {
 
             }
 
+
             params.append(
                 key,
                 String(value)
@@ -485,7 +517,7 @@ async function callAPI(action, data = {}) {
 
 
     /*
-     * Build GET URL
+     * Build API URL
      */
 
     const url =
@@ -500,10 +532,6 @@ async function callAPI(action, data = {}) {
 
     try {
 
-        /*
-         * Send GET request
-         */
-
         const response =
             await fetch(
                 url,
@@ -514,10 +542,6 @@ async function callAPI(action, data = {}) {
             );
 
 
-        /*
-         * Check HTTP status
-         */
-
         if (!response.ok) {
 
             throw new Error(
@@ -526,10 +550,6 @@ async function callAPI(action, data = {}) {
 
         }
 
-
-        /*
-         * Convert response to JSON
-         */
 
         const result =
             await response.json();
@@ -561,17 +581,21 @@ async function callAPI(action, data = {}) {
    LOAD CHAPTER
 ========================================================= */
 
-async function loadChapter(chapterNumber) {
+async function loadChapter(
+    chapterNumber
+) {
 
     try {
 
         const fileName =
             `Chapter${chapterNumber}.json`;
 
+
         const response =
             await fetch(
                 `${CONFIG.CHAPTER_PATH}${fileName}`
             );
+
 
         if (!response.ok) {
 
@@ -581,6 +605,7 @@ async function loadChapter(chapterNumber) {
 
         }
 
+
         const data =
             await response.json();
 
@@ -589,7 +614,8 @@ async function loadChapter(chapterNumber) {
             chapterNumber;
 
         state.chapterData =
-            data.chapter || data;
+            data.chapter ||
+            data;
 
 
         /*
@@ -602,6 +628,11 @@ async function loadChapter(chapterNumber) {
         state.currentQuestionIndex =
             0;
 
+
+        /*
+         * Reset answers
+         */
+
         state.answers = {
 
             part1: {},
@@ -611,6 +642,11 @@ async function loadChapter(chapterNumber) {
             part3: {}
 
         };
+
+
+        /*
+         * Reset scores
+         */
 
         state.scores = {
 
@@ -623,15 +659,35 @@ async function loadChapter(chapterNumber) {
         };
 
 
+        /*
+         * Reset random word orders
+         */
+
+        state.randomOrders = {
+
+            part1: {},
+
+            part2: {},
+
+            part3: {}
+
+        };
+
+
         updatePartTabs();
 
-        showScreen(testScreen);
+        showScreen(
+            testScreen
+        );
 
         renderQuestion();
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Chapter loading error:",
+            error
+        );
 
         alert(
             `Unable to load Chapter ${chapterNumber}.\n\n` +
@@ -649,11 +705,14 @@ async function loadChapter(chapterNumber) {
 
 function getCurrentQuestions() {
 
-    if (!state.chapterData) {
+    if (
+        !state.chapterData
+    ) {
 
         return [];
 
     }
+
 
     return (
         state.chapterData[
@@ -673,7 +732,10 @@ function renderQuestion() {
     const questions =
         getCurrentQuestions();
 
-    if (!questions.length) {
+
+    if (
+        !questions.length
+    ) {
 
         questionText.textContent =
             "No questions available.";
@@ -698,11 +760,13 @@ function renderQuestion() {
     testChapter.textContent =
         `Chapter ${state.currentChapter}`;
 
+
     partTitle.textContent =
         state.chapterData[
             state.currentPart
         ]?.title ||
         "Test";
+
 
     questionType.textContent =
         state.chapterData[
@@ -721,10 +785,13 @@ function renderQuestion() {
 
     const progress =
         (
-            (state.currentQuestionIndex + 1)
+            (
+                state.currentQuestionIndex + 1
+            )
             /
             questions.length
         ) * 100;
+
 
     progressBar.style.width =
         `${progress}%`;
@@ -740,26 +807,34 @@ function renderQuestion() {
 
 
     /*
-     * Render answer
+     * Render selected answer
      */
 
-    renderSelectedWords(question);
+    renderSelectedWords(
+        question
+    );
 
 
     /*
-     * Render word bank
+     * Render randomized word bank
      */
 
-    renderWordBank(question);
+    renderWordBank(
+        question
+    );
 
 
     /*
-     * Buttons
+     * Previous button
      */
 
     previousButton.disabled =
         state.currentQuestionIndex === 0;
 
+
+    /*
+     * Next button
+     */
 
     if (
         state.currentQuestionIndex ===
@@ -791,6 +866,7 @@ function getCurrentAnswer() {
     const index =
         state.currentQuestionIndex;
 
+
     return (
         state.answers[
             part
@@ -804,15 +880,20 @@ function getCurrentAnswer() {
    RENDER SELECTED WORDS
 ========================================================= */
 
-function renderSelectedWords(question) {
+function renderSelectedWords(
+    question
+) {
 
     selectedWords.innerHTML = "";
+
 
     const answer =
         getCurrentAnswer();
 
 
-    if (!answer.length) {
+    if (
+        !answer.length
+    ) {
 
         selectedWords.innerHTML = `
             <span class="empty-answer">
@@ -826,20 +907,27 @@ function renderSelectedWords(question) {
 
 
     answer.forEach(
-        (word, index) => {
+        (
+            word,
+            index
+        ) => {
 
             const chip =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             chip.className =
                 "word-chip";
+
 
             chip.textContent =
                 word;
 
 
             /*
-             * Clicking selected word
+             * Clicking a selected word
              * removes it.
              */
 
@@ -847,12 +935,17 @@ function renderSelectedWords(question) {
                 "click",
                 () => {
 
-                    removeWord(index);
+                    removeWord(
+                        index
+                    );
 
                 }
             );
 
-            selectedWords.appendChild(chip);
+
+            selectedWords.appendChild(
+                chip
+            );
 
         }
     );
@@ -862,19 +955,96 @@ function renderSelectedWords(question) {
 
 /* =========================================================
    RENDER WORD BANK
+   RANDOM WORD ORDER
 ========================================================= */
 
-function renderWordBank(question) {
+/*
+ * This is the important part.
+ *
+ * Your JSON can remain exactly as it is.
+ *
+ * Example JSON:
+ *
+ * "words": [
+ *     "wǒ",
+ *     "xǐhuān",
+ *     "nǐ",
+ *     "tā"
+ * ]
+ *
+ * The student might see:
+ *
+ *     nǐ   tā   wǒ   xǐhuān
+ *
+ * instead of:
+ *
+ *     wǒ   xǐhuān   nǐ   tā
+ *
+ */
+
+function renderWordBank(
+    question
+) {
 
     wordBank.innerHTML = "";
+
 
     const answer =
         getCurrentAnswer();
 
 
     /*
-     * We need to support duplicate words.
-     * Each word gets an index.
+     * Get current part
+     */
+
+    const part =
+        state.currentPart;
+
+
+    /*
+     * Get current question
+     */
+
+    const questionIndex =
+        state.currentQuestionIndex;
+
+
+    /*
+     * If this question has not been
+     * randomized yet, create a random order.
+     *
+     * If it has already been randomized,
+     * use the same order.
+     *
+     * This prevents the words from changing
+     * every time renderQuestion() runs.
+     */
+
+    if (
+        !state.randomOrders[
+            part
+        ][questionIndex]
+    ) {
+
+        state.randomOrders[
+            part
+        ][questionIndex] =
+            createRandomOrder(
+                question.words
+            );
+
+    }
+
+
+    const randomOrder =
+        state.randomOrders[
+            part
+        ][questionIndex];
+
+
+    /*
+     * Find which original word indexes
+     * have already been selected.
      */
 
     const usedIndexes =
@@ -884,21 +1054,41 @@ function renderWordBank(question) {
         );
 
 
-    question.words.forEach(
-        (word, index) => {
+    /*
+     * Display words using randomized order
+     */
+
+    randomOrder.forEach(
+        originalIndex => {
+
+            const word =
+                question.words[
+                    originalIndex
+                ];
+
 
             const button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
+
 
             button.className =
                 "word-button";
+
 
             button.textContent =
                 word;
 
 
+            /*
+             * Highlight selected words
+             */
+
             if (
-                usedIndexes.includes(index)
+                usedIndexes.includes(
+                    originalIndex
+                )
             ) {
 
                 button.classList.add(
@@ -908,31 +1098,110 @@ function renderWordBank(question) {
             }
 
 
+            /*
+             * Word button click
+             */
+
             button.addEventListener(
                 "click",
                 () => {
 
+                    /*
+                     * Do nothing if already selected.
+                     */
+
                     if (
-                        usedIndexes.includes(index)
+                        usedIndexes.includes(
+                            originalIndex
+                        )
                     ) {
 
                         return;
 
                     }
 
+
                     addWord(
                         word,
-                        index
+                        originalIndex
                     );
 
                 }
             );
 
 
-            wordBank.appendChild(button);
+            wordBank.appendChild(
+                button
+            );
 
         }
     );
+
+}
+
+
+/* =========================================================
+   CREATE RANDOM WORD ORDER
+========================================================= */
+
+/*
+ * Fisher-Yates shuffle
+ *
+ * Returns an array of indexes.
+ *
+ * Example:
+ *
+ * Original:
+ * [0, 1, 2, 3]
+ *
+ * Random:
+ * [2, 0, 3, 1]
+ *
+ * The actual JSON words are NEVER changed.
+ */
+
+function createRandomOrder(
+    words
+) {
+
+    const indexes =
+        words.map(
+            (
+                word,
+                index
+            ) => index
+        );
+
+
+    /*
+     * Fisher-Yates shuffle
+     */
+
+    for (
+        let i = indexes.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            indexes[i],
+            indexes[randomIndex]
+        ] = [
+            indexes[randomIndex],
+            indexes[i]
+        ];
+
+    }
+
+
+    return indexes;
 
 }
 
@@ -948,37 +1217,55 @@ function getUsedWordIndexes(
 
     const used = [];
 
-    const remaining =
-        [...words];
 
+    /*
+     * Keep track of which indexes
+     * are still available.
+     */
+
+    const availableIndexes =
+        words.map(
+            (
+                word,
+                index
+            ) => index
+        );
+
+
+    /*
+     * Find each selected word.
+     *
+     * This works even when the same word
+     * appears more than once.
+     */
 
     answer.forEach(
         word => {
 
-            const index =
-                remaining.indexOf(word);
+            const matchingIndex =
+                availableIndexes.findIndex(
+                    index =>
+                        words[index] === word
+                );
 
-            if (index !== -1) {
+
+            if (
+                matchingIndex !== -1
+            ) {
 
                 const originalIndex =
-                    words.findIndex(
-                        (item, i) =>
-                            item === word &&
-                            !used.includes(i)
-                    );
+                    availableIndexes[
+                        matchingIndex
+                    ];
 
-                if (
-                    originalIndex !== -1
-                ) {
 
-                    used.push(
-                        originalIndex
-                    );
+                used.push(
+                    originalIndex
+                );
 
-                }
 
-                remaining.splice(
-                    index,
+                availableIndexes.splice(
+                    matchingIndex,
                     1
                 );
 
@@ -1005,16 +1292,24 @@ function addWord(
     const part =
         state.currentPart;
 
+
     const questionIndex =
         state.currentQuestionIndex;
 
 
     if (
-        !state.answers[part][questionIndex]
+        !state.answers[
+            part
+        ][
+            questionIndex
+        ]
     ) {
 
-        state.answers[part][questionIndex] =
-            [];
+        state.answers[
+            part
+        ][
+            questionIndex
+        ] = [];
 
     }
 
@@ -1023,7 +1318,9 @@ function addWord(
         part
     ][
         questionIndex
-    ].push(word);
+    ].push(
+        word
+    );
 
 
     renderQuestion();
@@ -1035,10 +1332,13 @@ function addWord(
    REMOVE WORD
 ========================================================= */
 
-function removeWord(index) {
+function removeWord(
+    index
+) {
 
     const part =
         state.currentPart;
+
 
     const questionIndex =
         state.currentQuestionIndex;
@@ -1048,7 +1348,10 @@ function removeWord(index) {
         part
     ][
         questionIndex
-    ].splice(index, 1);
+    ].splice(
+        index,
+        1
+    );
 
 
     renderQuestion();
@@ -1066,6 +1369,7 @@ clearAnswer.addEventListener(
 
         const part =
             state.currentPart;
+
 
         const questionIndex =
             state.currentQuestionIndex;
@@ -1096,6 +1400,10 @@ nextButton.addEventListener(
             getCurrentQuestions();
 
 
+        /*
+         * Go to next question
+         */
+
         if (
             state.currentQuestionIndex <
             questions.length - 1
@@ -1103,7 +1411,9 @@ nextButton.addEventListener(
 
             state.currentQuestionIndex++;
 
+
             renderQuestion();
+
 
             return;
 
@@ -1111,25 +1421,18 @@ nextButton.addEventListener(
 
 
         /*
-         * Current part finished.
+         * Part 1 → Part 2
          */
 
         if (
-            state.currentPart === "part1"
+            state.currentPart ===
+            "part1"
         ) {
 
-            switchPart("part2");
+            switchPart(
+                "part2"
+            );
 
-            return;
-
-        }
-
-
-        if (
-            state.currentPart === "part2"
-        ) {
-
-            switchPart("part3");
 
             return;
 
@@ -1137,7 +1440,26 @@ nextButton.addEventListener(
 
 
         /*
-         * Part 3 finished.
+         * Part 2 → Part 3
+         */
+
+        if (
+            state.currentPart ===
+            "part2"
+        ) {
+
+            switchPart(
+                "part3"
+            );
+
+
+            return;
+
+        }
+
+
+        /*
+         * Part 3 → Finish
          */
 
         finishTest();
@@ -1154,13 +1476,19 @@ previousButton.addEventListener(
     "click",
     () => {
 
+        /*
+         * Previous question
+         */
+
         if (
             state.currentQuestionIndex > 0
         ) {
 
             state.currentQuestionIndex--;
 
+
             renderQuestion();
+
 
             return;
 
@@ -1168,12 +1496,12 @@ previousButton.addEventListener(
 
 
         /*
-         * If at beginning of a part,
-         * move to previous part.
+         * Part 2 → Part 1
          */
 
         if (
-            state.currentPart === "part2"
+            state.currentPart ===
+            "part2"
         ) {
 
             switchPart(
@@ -1181,8 +1509,17 @@ previousButton.addEventListener(
                 true
             );
 
-        } else if (
-            state.currentPart === "part3"
+
+        }
+
+
+        /*
+         * Part 3 → Part 2
+         */
+
+        else if (
+            state.currentPart ===
+            "part3"
         ) {
 
             switchPart(
@@ -1210,11 +1547,6 @@ partTabs.forEach(
                 const requestedPart =
                     tab.dataset.part;
 
-
-                /*
-                 * Students can navigate
-                 * directly between parts.
-                 */
 
                 switchPart(
                     requestedPart
@@ -1244,7 +1576,9 @@ function switchPart(
         getCurrentQuestions();
 
 
-    if (goToLastQuestion) {
+    if (
+        goToLastQuestion
+    ) {
 
         state.currentQuestionIndex =
             Math.max(
@@ -1261,6 +1595,7 @@ function switchPart(
 
 
     updatePartTabs();
+
 
     renderQuestion();
 
@@ -1296,9 +1631,14 @@ async function finishTest() {
 
     calculateScores();
 
+
     displayResults();
 
-    showScreen(resultScreen);
+
+    showScreen(
+        resultScreen
+    );
+
 
     await saveScore();
 
@@ -1337,7 +1677,9 @@ function calculateScores() {
    CALCULATE PART SCORE
 ========================================================= */
 
-function calculatePartScore(part) {
+function calculatePartScore(
+    part
+) {
 
     const questions =
         state.chapterData[
@@ -1349,7 +1691,10 @@ function calculatePartScore(part) {
 
 
     questions.forEach(
-        (question, index) => {
+        (
+            question,
+            index
+        ) => {
 
             const studentAnswer =
                 state.answers[
@@ -1371,7 +1716,9 @@ function calculatePartScore(part) {
                 );
 
 
-            if (isCorrect) {
+            if (
+                isCorrect
+            ) {
 
                 score++;
 
@@ -1406,8 +1753,12 @@ function arraysEqual(
 
 
     return first.every(
-        (value, index) =>
-            value === second[index]
+        (
+            value,
+            index
+        ) =>
+            value ===
+            second[index]
     );
 
 }
@@ -1425,11 +1776,13 @@ function displayResults() {
             ?.questions
             ?.length || 0;
 
+
     const p2Questions =
         state.chapterData
             .part2
             ?.questions
             ?.length || 0;
+
 
     const p3Questions =
         state.chapterData
@@ -1453,7 +1806,10 @@ function displayResults() {
     const percentage =
         totalQuestions > 0
             ? Math.round(
-                (total / totalQuestions) * 100
+                (
+                    total /
+                    totalQuestions
+                ) * 100
             )
             : 0;
 
@@ -1546,7 +1902,11 @@ async function saveScore() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Save score error:",
+            error
+        );
+
 
         saveStatus.textContent =
             "Score could not be saved. Please try again later.";
@@ -1564,7 +1924,9 @@ backToChapters.addEventListener(
     "click",
     () => {
 
-        showScreen(chapterScreen);
+        showScreen(
+            chapterScreen
+        );
 
     }
 );
@@ -1574,7 +1936,9 @@ backToChapterButton.addEventListener(
     "click",
     () => {
 
-        showScreen(chapterScreen);
+        showScreen(
+            chapterScreen
+        );
 
     }
 );
@@ -1588,21 +1952,72 @@ logoutButton.addEventListener(
     "click",
     () => {
 
-        state.username = null;
-
-        state.currentChapter = null;
-
-        state.chapterData = null;
+        state.username =
+            null;
 
 
-        usernameInput.value = "";
-
-        passwordInput.value = "";
-
-        loginMessage.textContent = "";
+        state.currentChapter =
+            null;
 
 
-        showScreen(loginScreen);
+        state.chapterData =
+            null;
+
+
+        state.currentPart =
+            "part1";
+
+
+        state.currentQuestionIndex =
+            0;
+
+
+        state.answers = {
+
+            part1: {},
+
+            part2: {},
+
+            part3: {}
+
+        };
+
+
+        state.randomOrders = {
+
+            part1: {},
+
+            part2: {},
+
+            part3: {}
+
+        };
+
+
+        state.scores = {
+
+            part1: 0,
+
+            part2: 0,
+
+            part3: 0
+
+        };
+
+
+        usernameInput.value =
+            "";
+
+        passwordInput.value =
+            "";
+
+        loginMessage.textContent =
+            "";
+
+
+        showScreen(
+            loginScreen
+        );
 
     }
 );
