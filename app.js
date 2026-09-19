@@ -10,15 +10,12 @@
 
 const CONFIG = {
 
-    // Google Apps Script Web App URL
     API_URL:
         "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
-    // JSON files
     CHAPTER_PATH:
         "./chapters/",
 
-    // Total chapters
     TOTAL_CHAPTERS:
         15
 
@@ -42,46 +39,31 @@ const state = {
     currentQuestionIndex: 0,
 
     answers: {
-
         part1: {},
-
         part2: {},
-
         part3: {}
-
     },
 
     scores: {
-
         part1: 0,
-
         part2: 0,
-
         part3: 0
-
     },
 
     /*
-     * Stores randomized word order for each question.
+     * Stores the randomized display order.
      *
      * Example:
      *
      * randomOrders.part1[0]
-     * randomOrders.part2[3]
-     * randomOrders.part3[5]
      *
-     * This means the word order stays the same
-     * when the student comes back to a question.
+     * contains the randomized word objects
+     * for Part 1 Question 1.
      */
-
     randomOrders: {
-
         part1: {},
-
         part2: {},
-
         part3: {}
-
     }
 
 };
@@ -389,22 +371,6 @@ function showLoginError(message) {
    GOOGLE APPS SCRIPT API
 ========================================================= */
 
-/*
- * IMPORTANT
- *
- * We use GET instead of POST.
- *
- * This avoids the Google Apps Script redirect
- * problem that caused the previous 404 error.
- *
- * Example login request:
- *
- * /exec?action=login
- * &username=student01
- * &password=123456
- *
- */
-
 async function callAPI(
     action,
     data = {}
@@ -458,16 +424,14 @@ async function callAPI(
 
 
         return {
-
             success: true
-
         };
 
     }
 
 
     /*
-     * Create URL parameters
+     * Create GET parameters
      */
 
     const params =
@@ -480,21 +444,12 @@ async function callAPI(
     );
 
 
-    /*
-     * Add data
-     */
-
     Object.keys(data).forEach(
         key => {
 
             let value =
                 data[key];
 
-
-            /*
-             * Convert objects and arrays
-             * into JSON strings.
-             */
 
             if (
                 value !== null &&
@@ -517,7 +472,7 @@ async function callAPI(
 
 
     /*
-     * Build API URL
+     * Build URL
      */
 
     const url =
@@ -636,9 +591,7 @@ async function loadChapter(
         state.answers = {
 
             part1: {},
-
             part2: {},
-
             part3: {}
 
         };
@@ -651,24 +604,24 @@ async function loadChapter(
         state.scores = {
 
             part1: 0,
-
             part2: 0,
-
             part3: 0
 
         };
 
 
         /*
-         * Reset random word orders
+         * IMPORTANT:
+         * Reset randomized word order.
+         *
+         * Every time a student starts a chapter,
+         * the word positions will be randomized again.
          */
 
         state.randomOrders = {
 
             part1: {},
-
             part2: {},
-
             part3: {}
 
         };
@@ -807,7 +760,7 @@ function renderQuestion() {
 
 
     /*
-     * Render selected answer
+     * Selected answer
      */
 
     renderSelectedWords(
@@ -816,7 +769,7 @@ function renderQuestion() {
 
 
     /*
-     * Render randomized word bank
+     * Randomized word bank
      */
 
     renderWordBank(
@@ -862,6 +815,7 @@ function getCurrentAnswer() {
 
     const part =
         state.currentPart;
+
 
     const index =
         state.currentQuestionIndex;
@@ -918,6 +872,10 @@ function renderSelectedWords(
                 );
 
 
+            chip.type =
+                "button";
+
+
             chip.className =
                 "word-chip";
 
@@ -925,11 +883,6 @@ function renderSelectedWords(
             chip.textContent =
                 word;
 
-
-            /*
-             * Clicking a selected word
-             * removes it.
-             */
 
             chip.addEventListener(
                 "click",
@@ -955,46 +908,22 @@ function renderSelectedWords(
 
 /* =========================================================
    RENDER WORD BANK
-   RANDOM WORD ORDER
+   RANDOMIZED DISPLAY
 ========================================================= */
-
-/*
- * This is the important part.
- *
- * Your JSON can remain exactly as it is.
- *
- * Example JSON:
- *
- * "words": [
- *     "wǒ",
- *     "xǐhuān",
- *     "nǐ",
- *     "tā"
- * ]
- *
- * The student might see:
- *
- *     nǐ   tā   wǒ   xǐhuān
- *
- * instead of:
- *
- *     wǒ   xǐhuān   nǐ   tā
- *
- */
 
 function renderWordBank(
     question
 ) {
 
+    /*
+     * Clear current buttons
+     */
+
     wordBank.innerHTML = "";
 
 
-    const answer =
-        getCurrentAnswer();
-
-
     /*
-     * Get current part
+     * Current part
      */
 
     const part =
@@ -1002,7 +931,7 @@ function renderWordBank(
 
 
     /*
-     * Get current question
+     * Current question number
      */
 
     const questionIndex =
@@ -1010,41 +939,66 @@ function renderWordBank(
 
 
     /*
-     * If this question has not been
-     * randomized yet, create a random order.
+     * Current student answer
+     */
+
+    const answer =
+        getCurrentAnswer();
+
+
+    /*
+     * -----------------------------------------------------
+     * CREATE RANDOM ORDER
+     * -----------------------------------------------------
      *
-     * If it has already been randomized,
-     * use the same order.
+     * This happens ONLY once for each question.
      *
-     * This prevents the words from changing
-     * every time renderQuestion() runs.
+     * Therefore:
+     *
+     * Question 1:
+     *     random order is created
+     *
+     * Question 1 again:
+     *     SAME random order is used
+     *
+     * New test:
+     *     NEW random order
      */
 
     if (
         !state.randomOrders[
             part
-        ][questionIndex]
+        ][
+            questionIndex
+        ]
     ) {
 
         state.randomOrders[
             part
-        ][questionIndex] =
-            createRandomOrder(
+        ][
+            questionIndex
+        ] =
+            shuffleWords(
                 question.words
             );
 
     }
 
 
-    const randomOrder =
+    /*
+     * Get randomized items
+     */
+
+    const randomizedWords =
         state.randomOrders[
             part
-        ][questionIndex];
+        ][
+            questionIndex
+        ];
 
 
     /*
-     * Find which original word indexes
-     * have already been selected.
+     * Find selected words
      */
 
     const usedIndexes =
@@ -1055,17 +1009,13 @@ function renderWordBank(
 
 
     /*
-     * Display words using randomized order
+     * -----------------------------------------------------
+     * DISPLAY RANDOMIZED WORDS
+     * -----------------------------------------------------
      */
 
-    randomOrder.forEach(
-        originalIndex => {
-
-            const word =
-                question.words[
-                    originalIndex
-                ];
-
+    randomizedWords.forEach(
+        item => {
 
             const button =
                 document.createElement(
@@ -1073,21 +1023,29 @@ function renderWordBank(
                 );
 
 
+            button.type =
+                "button";
+
+
             button.className =
                 "word-button";
 
 
+            /*
+             * Display the actual word
+             */
+
             button.textContent =
-                word;
+                item.word;
 
 
             /*
-             * Highlight selected words
+             * Selected state
              */
 
             if (
                 usedIndexes.includes(
-                    originalIndex
+                    item.originalIndex
                 )
             ) {
 
@@ -1099,7 +1057,7 @@ function renderWordBank(
 
 
             /*
-             * Word button click
+             * Click event
              */
 
             button.addEventListener(
@@ -1107,12 +1065,13 @@ function renderWordBank(
                 () => {
 
                     /*
-                     * Do nothing if already selected.
+                     * Prevent selecting the
+                     * same word again.
                      */
 
                     if (
                         usedIndexes.includes(
-                            originalIndex
+                            item.originalIndex
                         )
                     ) {
 
@@ -1122,13 +1081,17 @@ function renderWordBank(
 
 
                     addWord(
-                        word,
-                        originalIndex
+                        item.word,
+                        item.originalIndex
                     );
 
                 }
             );
 
+
+            /*
+             * Add button to screen
+             */
 
             wordBank.appendChild(
                 button
@@ -1141,35 +1104,76 @@ function renderWordBank(
 
 
 /* =========================================================
-   CREATE RANDOM WORD ORDER
+   SHUFFLE WORDS
 ========================================================= */
 
 /*
- * Fisher-Yates shuffle
+ * IMPORTANT:
  *
- * Returns an array of indexes.
+ * This function does NOT modify question.words.
+ *
+ * It creates a completely separate array.
  *
  * Example:
  *
- * Original:
- * [0, 1, 2, 3]
+ * JSON:
  *
- * Random:
- * [2, 0, 3, 1]
+ * [
+ *   "wǒ",
+ *   "xǐhuān",
+ *   "nǐ",
+ *   "tā"
+ * ]
  *
- * The actual JSON words are NEVER changed.
+ * Could become:
+ *
+ * [
+ *   {
+ *      word: "tā",
+ *      originalIndex: 3
+ *   },
+ *   {
+ *      word: "nǐ",
+ *      originalIndex: 2
+ *   },
+ *   {
+ *      word: "wǒ",
+ *      originalIndex: 0
+ *   },
+ *   {
+ *      word: "xǐhuān",
+ *      originalIndex: 1
+ *   }
+ * ]
+ *
  */
 
-function createRandomOrder(
+function shuffleWords(
     words
 ) {
 
-    const indexes =
+    /*
+     * Create independent objects.
+     */
+
+    const shuffled =
         words.map(
             (
                 word,
                 index
-            ) => index
+            ) => {
+
+                return {
+
+                    word:
+                        word,
+
+                    originalIndex:
+                        index
+
+                };
+
+            }
         );
 
 
@@ -1178,7 +1182,7 @@ function createRandomOrder(
      */
 
     for (
-        let i = indexes.length - 1;
+        let i = shuffled.length - 1;
         i > 0;
         i--
     ) {
@@ -1190,18 +1194,35 @@ function createRandomOrder(
             );
 
 
-        [
-            indexes[i],
-            indexes[randomIndex]
-        ] = [
-            indexes[randomIndex],
-            indexes[i]
-        ];
+        const temporary =
+            shuffled[i];
+
+
+        shuffled[i] =
+            shuffled[randomIndex];
+
+
+        shuffled[randomIndex] =
+            temporary;
 
     }
 
 
-    return indexes;
+    /*
+     * DEBUG:
+     * You can see the random order
+     * in browser Console.
+     */
+
+    console.log(
+        "Randomized words:",
+        shuffled.map(
+            item => item.word
+        )
+    );
+
+
+    return shuffled;
 
 }
 
@@ -1219,8 +1240,7 @@ function getUsedWordIndexes(
 
 
     /*
-     * Keep track of which indexes
-     * are still available.
+     * Keep track of indexes that are available.
      */
 
     const availableIndexes =
@@ -1235,14 +1255,13 @@ function getUsedWordIndexes(
     /*
      * Find each selected word.
      *
-     * This works even when the same word
-     * appears more than once.
+     * This also supports duplicate words.
      */
 
     answer.forEach(
         word => {
 
-            const matchingIndex =
+            const matchingPosition =
                 availableIndexes.findIndex(
                     index =>
                         words[index] === word
@@ -1250,12 +1269,12 @@ function getUsedWordIndexes(
 
 
             if (
-                matchingIndex !== -1
+                matchingPosition !== -1
             ) {
 
                 const originalIndex =
                     availableIndexes[
-                        matchingIndex
+                        matchingPosition
                     ];
 
 
@@ -1265,7 +1284,7 @@ function getUsedWordIndexes(
 
 
                 availableIndexes.splice(
-                    matchingIndex,
+                    matchingPosition,
                     1
                 );
 
@@ -1314,6 +1333,10 @@ function addWord(
     }
 
 
+    /*
+     * Add selected word to answer
+     */
+
     state.answers[
         part
     ][
@@ -1322,6 +1345,13 @@ function addWord(
         word
     );
 
+
+    /*
+     * Re-render.
+     *
+     * Random order is NOT regenerated because
+     * randomOrders already contains this question.
+     */
 
     renderQuestion();
 
@@ -1401,7 +1431,7 @@ nextButton.addEventListener(
 
 
         /*
-         * Go to next question
+         * Next question
          */
 
         if (
@@ -1510,6 +1540,8 @@ previousButton.addEventListener(
             );
 
 
+            return;
+
         }
 
 
@@ -1517,7 +1549,7 @@ previousButton.addEventListener(
          * Part 3 → Part 2
          */
 
-        else if (
+        if (
             state.currentPart ===
             "part3"
         ) {
@@ -1526,6 +1558,9 @@ previousButton.addEventListener(
                 "part2",
                 true
             );
+
+
+            return;
 
         }
 
@@ -1975,9 +2010,7 @@ logoutButton.addEventListener(
         state.answers = {
 
             part1: {},
-
             part2: {},
-
             part3: {}
 
         };
@@ -1986,9 +2019,7 @@ logoutButton.addEventListener(
         state.randomOrders = {
 
             part1: {},
-
             part2: {},
-
             part3: {}
 
         };
@@ -1997,9 +2028,7 @@ logoutButton.addEventListener(
         state.scores = {
 
             part1: 0,
-
             part2: 0,
-
             part3: 0
 
         };
