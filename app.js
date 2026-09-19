@@ -1,6 +1,6 @@
 /* =========================================================
    CHINESE DAILY TEST
-   CLEAN APP.JS
+   APP.JS
 ========================================================= */
 
 
@@ -1721,13 +1721,6 @@ function renderCurrentQuestion() {
     }
 
 
-    /*
-     * Directly update part tabs.
-     *
-     * No updatePartTabs()
-     * function is used.
-     */
-
     partTabs.forEach(
         tab => {
 
@@ -2270,6 +2263,10 @@ function renderSelectedWords() {
                 "button";
 
 
+            /*
+             * Same design as the word bank.
+             */
+
             button.className =
                 "word-button selected-word";
 
@@ -2571,7 +2568,7 @@ function goToNextQuestion() {
 
 
 /* =========================================================
-   NORMALIZE ANSWER
+   NORMALIZE ANSWER WORDS
 ========================================================= */
 
 function normalizeAnswerWords(
@@ -2589,7 +2586,8 @@ function normalizeAnswerWords(
                 /\s+/
             )
             .filter(
-                word => word.length > 0
+                word =>
+                    word.length > 0
             )
             .map(
                 word =>
@@ -2858,18 +2856,17 @@ function getMaximumScore() {
 
 async function finishTest() {
 
-    if (
-        state.testSaved &&
-        state.answerRecordsSaved
-    ) {
+    console.log(
+        "================================="
+    );
 
-        showScreen(
-            resultScreen
-        );
+    console.log(
+        "FINISHING TEST"
+    );
 
-        return;
-
-    }
+    console.log(
+        "================================="
+    );
 
 
     calculateAllScores();
@@ -2884,15 +2881,14 @@ async function finishTest() {
 
 
     /*
-     * Save the score.
+     * Save score.
      */
 
     await saveScore();
 
 
     /*
-     * Save every question and
-     * student's answer.
+     * Save all student answers.
      */
 
     await saveAnswerRecords();
@@ -2996,6 +2992,10 @@ async function saveScore() {
         state.testSaved
     ) {
 
+        console.log(
+            "Score already saved."
+        );
+
         return;
 
     }
@@ -3006,6 +3006,10 @@ async function saveScore() {
         !state.studentClass ||
         !state.currentChapter
     ) {
+
+        console.error(
+            "Cannot save score: missing student information."
+        );
 
         if (saveStatus) {
 
@@ -3125,9 +3129,26 @@ async function saveScore() {
 
 async function saveAnswerRecords() {
 
+    console.log(
+        "================================="
+    );
+
+    console.log(
+        "START SAVING ANSWER RECORDS"
+    );
+
+    console.log(
+        "================================="
+    );
+
+
     if (
         state.answerRecordsSaved
     ) {
+
+        console.log(
+            "Answer records already saved."
+        );
 
         return;
 
@@ -3141,7 +3162,19 @@ async function saveAnswerRecords() {
     ) {
 
         console.error(
-            "Cannot save answer records: student or chapter information is missing."
+            "Missing information:",
+            {
+
+                username:
+                    state.username,
+
+                class:
+                    state.studentClass,
+
+                chapterData:
+                    !!state.chapterData
+
+            }
         );
 
         return;
@@ -3155,103 +3188,243 @@ async function saveAnswerRecords() {
 
 
         /*
-         * Collect answers from all three parts.
+         * ================================================
+         * PART 1
+         * ================================================
          */
 
-        const parts = [
-            "part1",
-            "part2",
-            "part3"
-        ];
+        const part1Questions =
+            state.chapterData?.part1?.questions ||
+            [];
 
 
-        parts.forEach(
-            partName => {
+        part1Questions.forEach(
+            (
+                question,
+                index
+            ) => {
 
-                const questions =
-                    state.chapterData?.[
-                        partName
-                    ]?.questions ||
+                const studentAnswer =
+                    state.answers.part1[index] ||
                     [];
 
 
-                questions.forEach(
-                    (
-                        question,
-                        index
-                    ) => {
+                const answerText =
+                    studentAnswer
+                        .map(
+                            item => {
 
-                        /*
-                         * Student's selected words.
-                         */
+                                if (
+                                    item &&
+                                    typeof item ===
+                                    "object" &&
+                                    item.word !==
+                                    undefined
+                                ) {
 
-                        const studentAnswer =
-                            state.answers[
-                                partName
-                            ][index] ||
-                            [];
+                                    return String(
+                                        item.word
+                                    );
 
-
-                        /*
-                         * Convert selected word
-                         * objects into text.
-                         *
-                         * Example:
-                         *
-                         * [
-                         *   {word: "wǒ"},
-                         *   {word: "xǐhuān"},
-                         *   {word: "nǐ"}
-                         * ]
-                         *
-                         * becomes:
-                         *
-                         * wǒ xǐhuān nǐ
-                         */
-
-                        const answerText =
-                            normalizeAnswerWords(
-                                studentAnswer
-                            ).join(" ");
+                                }
 
 
-                        /*
-                         * Save the actual question
-                         * text from the JSON.
-                         */
+                                return String(
+                                    item
+                                );
 
-                        const questionText =
-                            String(
-                                question?.question ||
-                                ""
-                            ).trim();
+                            }
+                        )
+                        .join(" ");
 
 
-                        records.push({
+                records.push({
 
-                            question:
-                                questionText,
+                    question:
+                        String(
+                            question?.question ||
+                            ""
+                        ).trim(),
 
-                            answer:
-                                answerText
+                    answer:
+                        answerText.trim()
 
-                        });
-
-                    }
-                );
+                });
 
             }
         );
 
 
+        /*
+         * ================================================
+         * PART 2
+         * ================================================
+         */
+
+        const part2Questions =
+            state.chapterData?.part2?.questions ||
+            [];
+
+
+        part2Questions.forEach(
+            (
+                question,
+                index
+            ) => {
+
+                const studentAnswer =
+                    state.answers.part2[index] ||
+                    [];
+
+
+                const answerText =
+                    studentAnswer
+                        .map(
+                            item => {
+
+                                if (
+                                    item &&
+                                    typeof item ===
+                                    "object" &&
+                                    item.word !==
+                                    undefined
+                                ) {
+
+                                    return String(
+                                        item.word
+                                    );
+
+                                }
+
+
+                                return String(
+                                    item
+                                );
+
+                            }
+                        )
+                        .join(" ");
+
+
+                records.push({
+
+                    question:
+                        String(
+                            question?.question ||
+                            ""
+                        ).trim(),
+
+                    answer:
+                        answerText.trim()
+
+                });
+
+            }
+        );
+
+
+        /*
+         * ================================================
+         * PART 3
+         * ================================================
+         */
+
+        const part3Questions =
+            state.chapterData?.part3?.questions ||
+            [];
+
+
+        part3Questions.forEach(
+            (
+                question,
+                index
+            ) => {
+
+                const studentAnswer =
+                    state.answers.part3[index] ||
+                    [];
+
+
+                const answerText =
+                    studentAnswer
+                        .map(
+                            item => {
+
+                                if (
+                                    item &&
+                                    typeof item ===
+                                    "object" &&
+                                    item.word !==
+                                    undefined
+                                ) {
+
+                                    return String(
+                                        item.word
+                                    );
+
+                                }
+
+
+                                return String(
+                                    item
+                                );
+
+                            }
+                        )
+                        .join(" ");
+
+
+                records.push({
+
+                    question:
+                        String(
+                            question?.question ||
+                            ""
+                        ).trim(),
+
+                    answer:
+                        answerText.trim()
+
+                });
+
+            }
+        );
+
+
+        /*
+         * ================================================
+         * CHECK RECORDS BEFORE SENDING
+         * ================================================
+         */
+
         console.log(
-            "ANSWER RECORDS TO SAVE:",
+            "Username:",
+            state.username
+        );
+
+
+        console.log(
+            "Class:",
+            state.studentClass
+        );
+
+
+        console.log(
+            "Number of records:",
+            records.length
+        );
+
+
+        console.log(
+            "Records:",
             records
         );
 
 
         /*
-         * Send all answers in one request.
+         * ================================================
+         * SEND TO GOOGLE APPS SCRIPT
+         * ================================================
          */
 
         const result =
@@ -3274,14 +3447,21 @@ async function saveAnswerRecords() {
             );
 
 
+        /*
+         * ================================================
+         * SHOW SERVER RESPONSE
+         * ================================================
+         */
+
         console.log(
-            "SAVE ANSWER RECORDS RESPONSE:",
+            "GOOGLE APPS SCRIPT RESPONSE:",
             result
         );
 
 
         if (
-            result?.success === true
+            result &&
+            result.success === true
         ) {
 
             state.answerRecordsSaved =
@@ -3289,18 +3469,39 @@ async function saveAnswerRecords() {
 
 
             console.log(
-                `Saved ${
-                    result.saved ??
-                    records.length
-                } answer records.`
+                "================================="
+            );
+
+            console.log(
+                "ANSWER RECORDS SAVED SUCCESSFULLY"
+            );
+
+            console.log(
+                "Saved:",
+                result.saved
+            );
+
+            console.log(
+                "================================="
             );
 
         } else {
 
             console.error(
-                "Answer records were not saved:",
+                "================================="
+            );
+
+            console.error(
+                "ANSWER RECORDS FAILED"
+            );
+
+            console.error(
                 result?.message ||
-                "Unknown error."
+                "Unknown error"
+            );
+
+            console.error(
+                "================================="
             );
 
         }
@@ -3308,8 +3509,19 @@ async function saveAnswerRecords() {
     } catch (error) {
 
         console.error(
-            "SAVE ANSWER RECORDS ERROR:",
+            "================================="
+        );
+
+        console.error(
+            "SAVE ANSWER RECORDS ERROR"
+        );
+
+        console.error(
             error
+        );
+
+        console.error(
+            "================================="
         );
 
     }
