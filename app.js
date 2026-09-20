@@ -1,57 +1,48 @@
-/* =========================================================
-   CHINESE DAILY TEST
-   APP.JS
-========================================================= */
-
-
-/* =========================================================
-   CONFIGURATION
-========================================================= */
+/*******************************************************
+ * CHINESE DAILY TEST - APP.JS
+ *******************************************************/
 
 const CONFIG = {
 
     API_URL:
         "https://script.google.com/macros/s/AKfycbwS3UyHA-h6D9nsJ7fO1cm7zPFna8DyGJnKuwdwQPw39WSVSFKaYlVh-qt05qK7S6Bl/exec",
 
-    CLASS_CONFIG: {
+    CHAPTER_PATH:
+        "chapters/",
 
-        Beginner: {
-            folder: "chapters",
-            totalChapters: 15
-        },
+    BEGINNER_CHAPTERS:
+        15,
 
-        Speaking: {
-            folder: "speaking",
-            totalChapters: 35
-        }
-
-    }
+    SPEAKING_CHAPTERS:
+        35
 
 };
 
 
-/* =========================================================
-   APPLICATION STATE
-========================================================= */
+/*******************************************************
+ * APPLICATION STATE
+ *******************************************************/
 
 const state = {
 
-    username: null,
+    username: "",
 
-    studentClass: null,
+    studentClass: "",
 
-    currentChapter: null,
+    currentChapter: 1,
 
     chapterData: null,
 
-    currentPart: "part1",
+    currentPart: 1,
 
     currentQuestionIndex: 0,
 
     answers: {
 
         part1: {},
+
         part2: {},
+
         part3: {}
 
     },
@@ -59,16 +50,19 @@ const state = {
     scores: {
 
         part1: 0,
+
         part2: 0,
-        part3: 0,
-        total: 0
+
+        part3: 0
 
     },
 
     randomOrders: {
 
         part1: {},
+
         part2: {},
+
         part3: {}
 
     },
@@ -80,321 +74,118 @@ const state = {
 };
 
 
-/* =========================================================
-   DOM ELEMENTS
-========================================================= */
+/*******************************************************
+ * DOM ELEMENTS
+ *******************************************************/
 
-let loginScreen;
-let chapterScreen;
-let testScreen;
-let resultScreen;
-let historyScreen;
+const loginScreen =
+    document.getElementById("loginScreen");
 
-let loginForm;
-let loginMessage;
-let loginButton;
+const testScreen =
+    document.getElementById("testScreen");
 
-let usernameInput;
-let passwordInput;
+const resultScreen =
+    document.getElementById("resultScreen");
 
-let welcomeUsername;
-let studentClassBadge;
-let chapterGrid;
-let logoutButton;
+const loginForm =
+    document.getElementById("loginForm");
 
-let backToChapters;
+const usernameInput =
+    document.getElementById("username");
 
-let testChapter;
-let partTitle;
-let questionCounter;
-let progressBar;
-let questionType;
-let questionText;
+const passwordInput =
+    document.getElementById("password");
 
-let selectedWords;
-let wordBank;
-let clearAnswer;
+const loginMessage =
+    document.getElementById("loginMessage");
 
-let previousButton;
-let nextButton;
+const loginButton =
+    document.getElementById("loginButton");
 
-let partTabs;
+const studentName =
+    document.getElementById("studentName");
 
-let resultChapter;
-let part1Score;
-let part2Score;
-let part3Score;
-let totalScore;
-let percentageScore;
-let saveStatus;
-let backToChapterButton;
+const studentClassElement =
+    document.getElementById("studentClass");
 
-let scoreHistoryButton;
-let chapterHistoryButton;
+const chapterSelect =
+    document.getElementById("chapterSelect");
 
-let backFromHistory;
-let historyStudent;
-let historyLoading;
-let historyEmpty;
-let historyList;
+const chapterTitle =
+    document.getElementById("chapterTitle");
+
+const questionNumber =
+    document.getElementById("questionNumber");
+
+const questionText =
+    document.getElementById("questionText");
+
+const wordBank =
+    document.getElementById("wordBank");
+
+const answerArea =
+    document.getElementById("answerArea");
+
+const checkButton =
+    document.getElementById("checkButton");
+
+const nextButton =
+    document.getElementById("nextButton");
+
+const previousButton =
+    document.getElementById("previousButton");
+
+const finishButton =
+    document.getElementById("finishButton");
+
+const part1Tab =
+    document.getElementById("part1Tab");
+
+const part2Tab =
+    document.getElementById("part2Tab");
+
+const part3Tab =
+    document.getElementById("part3Tab");
+
+const part1Score =
+    document.getElementById("part1Score");
+
+const part2Score =
+    document.getElementById("part2Score");
+
+const part3Score =
+    document.getElementById("part3Score");
+
+const totalScore =
+    document.getElementById("totalScore");
+
+const percentageScore =
+    document.getElementById("percentageScore");
+
+const historyContainer =
+    document.getElementById("historyContainer");
+
+const logoutButton =
+    document.getElementById("logoutButton");
 
 
-/* =========================================================
-   INITIALIZATION
-========================================================= */
+/*******************************************************
+ * INITIALIZATION
+ *******************************************************/
 
 document.addEventListener(
     "DOMContentLoaded",
-    initializeApp
+    function () {
+
+        setupEventListeners();
+
+    }
 );
 
 
-function initializeApp() {
-
-    cacheDOMElements();
-
-    setupEventListeners();
-
-    showScreen(
-        loginScreen
-    );
-
-}
-
-
-/* =========================================================
-   CACHE DOM ELEMENTS
-========================================================= */
-
-function cacheDOMElements() {
-
-    loginScreen =
-        document.getElementById(
-            "loginScreen"
-        );
-
-    chapterScreen =
-        document.getElementById(
-            "chapterScreen"
-        );
-
-    testScreen =
-        document.getElementById(
-            "testScreen"
-        );
-
-    resultScreen =
-        document.getElementById(
-            "resultScreen"
-        );
-
-    historyScreen =
-        document.getElementById(
-            "historyScreen"
-        );
-
-
-    loginForm =
-        document.getElementById(
-            "loginForm"
-        );
-
-    loginMessage =
-        document.getElementById(
-            "loginMessage"
-        );
-
-    loginButton =
-        document.getElementById(
-            "loginButton"
-        );
-
-
-    usernameInput =
-        document.getElementById(
-            "username"
-        );
-
-    passwordInput =
-        document.getElementById(
-            "password"
-        );
-
-
-    welcomeUsername =
-        document.getElementById(
-            "welcomeUsername"
-        );
-
-    studentClassBadge =
-        document.getElementById(
-            "studentClassBadge"
-        );
-
-    chapterGrid =
-        document.getElementById(
-            "chapterGrid"
-        );
-
-    logoutButton =
-        document.getElementById(
-            "logoutButton"
-        );
-
-
-    backToChapters =
-        document.getElementById(
-            "backToChapters"
-        );
-
-
-    testChapter =
-        document.getElementById(
-            "testChapter"
-        );
-
-    partTitle =
-        document.getElementById(
-            "partTitle"
-        );
-
-    questionCounter =
-        document.getElementById(
-            "questionCounter"
-        );
-
-    progressBar =
-        document.getElementById(
-            "progressBar"
-        );
-
-    questionType =
-        document.getElementById(
-            "questionType"
-        );
-
-    questionText =
-        document.getElementById(
-            "questionText"
-        );
-
-
-    selectedWords =
-        document.getElementById(
-            "selectedWords"
-        );
-
-    wordBank =
-        document.getElementById(
-            "wordBank"
-        );
-
-    clearAnswer =
-        document.getElementById(
-            "clearAnswer"
-        );
-
-
-    previousButton =
-        document.getElementById(
-            "previousButton"
-        );
-
-    nextButton =
-        document.getElementById(
-            "nextButton"
-        );
-
-
-    partTabs =
-        document.querySelectorAll(
-            ".part-tab"
-        );
-
-
-    resultChapter =
-        document.getElementById(
-            "resultChapter"
-        );
-
-    part1Score =
-        document.getElementById(
-            "part1Score"
-        );
-
-    part2Score =
-        document.getElementById(
-            "part2Score"
-        );
-
-    part3Score =
-        document.getElementById(
-            "part3Score"
-        );
-
-    totalScore =
-        document.getElementById(
-            "totalScore"
-        );
-
-    percentageScore =
-        document.getElementById(
-            "percentageScore"
-        );
-
-    saveStatus =
-        document.getElementById(
-            "saveStatus"
-        );
-
-    backToChapterButton =
-        document.getElementById(
-            "backToChapterButton"
-        );
-
-
-    scoreHistoryButton =
-        document.getElementById(
-            "scoreHistoryButton"
-        );
-
-    chapterHistoryButton =
-        document.getElementById(
-            "chapterHistoryButton"
-        );
-
-
-    backFromHistory =
-        document.getElementById(
-            "backFromHistory"
-        );
-
-    historyStudent =
-        document.getElementById(
-            "historyStudent"
-        );
-
-    historyLoading =
-        document.getElementById(
-            "historyLoading"
-        );
-
-    historyEmpty =
-        document.getElementById(
-            "historyEmpty"
-        );
-
-    historyList =
-        document.getElementById(
-            "historyList"
-        );
-
-}
-
-
-/* =========================================================
-   EVENT LISTENERS
-========================================================= */
+/*******************************************************
+ * EVENT LISTENERS
+ *******************************************************/
 
 function setupEventListeners() {
 
@@ -408,25 +199,20 @@ function setupEventListeners() {
     }
 
 
-    if (logoutButton) {
+    if (chapterSelect) {
 
-        logoutButton.addEventListener(
-            "click",
-            handleLogout
-        );
+        chapterSelect.addEventListener(
+            "change",
+            function () {
 
-    }
+                const chapter =
+                    Number(chapterSelect.value);
 
+                if (chapter) {
 
-    if (backToChapters) {
+                    loadChapter(chapter);
 
-        backToChapters.addEventListener(
-            "click",
-            () => {
-
-                showScreen(
-                    chapterScreen
-                );
+                }
 
             }
         );
@@ -434,15 +220,13 @@ function setupEventListeners() {
     }
 
 
-    if (backToChapterButton) {
+    if (part1Tab) {
 
-        backToChapterButton.addEventListener(
+        part1Tab.addEventListener(
             "click",
-            () => {
+            function () {
 
-                showScreen(
-                    chapterScreen
-                );
+                switchPart(1);
 
             }
         );
@@ -450,11 +234,29 @@ function setupEventListeners() {
     }
 
 
-    if (clearAnswer) {
+    if (part2Tab) {
 
-        clearAnswer.addEventListener(
+        part2Tab.addEventListener(
             "click",
-            clearCurrentAnswer
+            function () {
+
+                switchPart(2);
+
+            }
+        );
+
+    }
+
+
+    if (part3Tab) {
+
+        part3Tab.addEventListener(
+            "click",
+            function () {
+
+                switchPart(3);
+
+            }
         );
 
     }
@@ -464,7 +266,7 @@ function setupEventListeners() {
 
         previousButton.addEventListener(
             "click",
-            goToPreviousQuestion
+            previousQuestion
         );
 
     }
@@ -474,64 +276,37 @@ function setupEventListeners() {
 
         nextButton.addEventListener(
             "click",
-            goToNextQuestion
+            nextQuestion
         );
 
     }
 
 
-    partTabs.forEach(
-        tab => {
+    if (checkButton) {
 
-            tab.addEventListener(
-                "click",
-                () => {
-
-                    const requestedPart =
-                        tab.dataset.part;
-
-                    switchPart(
-                        requestedPart
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    if (scoreHistoryButton) {
-
-        scoreHistoryButton.addEventListener(
+        checkButton.addEventListener(
             "click",
-            showScoreHistory
+            checkCurrentQuestion
         );
 
     }
 
 
-    if (chapterHistoryButton) {
+    if (finishButton) {
 
-        chapterHistoryButton.addEventListener(
+        finishButton.addEventListener(
             "click",
-            showScoreHistory
+            finishTest
         );
 
     }
 
 
-    if (backFromHistory) {
+    if (logoutButton) {
 
-        backFromHistory.addEventListener(
+        logoutButton.addEventListener(
             "click",
-            () => {
-
-                showScreen(
-                    chapterScreen
-                );
-
-            }
+            logout
         );
 
     }
@@ -539,573 +314,55 @@ function setupEventListeners() {
 }
 
 
-/* =========================================================
-   SCREEN MANAGEMENT
-========================================================= */
-
-function showScreen(
-    screen
-) {
-
-    document
-        .querySelectorAll(
-            ".screen"
-        )
-        .forEach(
-            currentScreen => {
-
-                currentScreen.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    if (screen) {
-
-        screen.classList.add(
-            "active"
-        );
-
-    }
-
-
-    window.scrollTo(
-        0,
-        0
-    );
-
-}
-
-
-/* =========================================================
-   CLASS HELPERS
-========================================================= */
-
-function normalizeStudentClass(
-    value
-) {
-
-    if (
-        value === null ||
-        value === undefined
-    ) {
-
-        return "";
-
-    }
-
-
-    const raw =
-        String(
-            value
-        ).trim();
-
-
-    if (!raw) {
-
-        return "";
-
-    }
-
-
-    const matchingClass =
-        Object.keys(
-            CONFIG.CLASS_CONFIG
-        ).find(
-            className =>
-                className.toLowerCase() ===
-                raw.toLowerCase()
-        );
-
-
-    return (
-        matchingClass ||
-        raw
-    );
-
-}
-
-
-function getClassConfig() {
-
-    if (
-        !state.studentClass
-    ) {
-
-        return null;
-
-    }
-
-
-    return (
-        CONFIG.CLASS_CONFIG[
-            state.studentClass
-        ] ||
-        null
-    );
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHTML(
-    value
-) {
-
-    return String(
-        value ?? ""
-    )
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* =========================================================
-   GENERATE CHAPTER BUTTONS
-========================================================= */
-
-function generateChapterButtons() {
-
-    if (!chapterGrid) {
-
-        return;
-
-    }
-
-
-    chapterGrid.innerHTML =
-        "";
-
-
-    const classConfig =
-        getClassConfig();
-
-
-    if (!classConfig) {
-
-        chapterGrid.innerHTML = `
-            <div class="history-error">
-                No chapter configuration found.
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    for (
-        let i = 1;
-        i <= classConfig.totalChapters;
-        i++
-    ) {
-
-        const card =
-            document.createElement(
-                "button"
-            );
-
-
-        card.type =
-            "button";
-
-
-        card.className =
-            "chapter-card";
-
-
-        card.innerHTML = `
-            <div class="chapter-number">
-                CHAPTER ${i}
-            </div>
-
-            <h3>
-                Chapter ${i}
-            </h3>
-
-            <p>
-                ${escapeHTML(
-                    state.studentClass
-                )} Chinese Test
-            </p>
-        `;
-
-
-        card.addEventListener(
-            "click",
-            () => {
-
-                loadChapter(
-                    i
-                );
-
-            }
-        );
-
-
-        chapterGrid.appendChild(
-            card
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-async function handleLogin(
-    event
-) {
-
-    event.preventDefault();
-
-
-    const username =
-        String(
-            usernameInput?.value ||
-            ""
-        ).trim();
-
-
-    const password =
-        String(
-            passwordInput?.value ||
-            ""
-        );
-
-
-    clearLoginMessage();
-
-
-    if (
-        !username ||
-        !password
-    ) {
-
-        showLoginMessage(
-            "Please enter username and password."
-        );
-
-        return;
-
-    }
-
-
-    setLoginLoading(
-        true
-    );
-
-
-    try {
-
-        const result =
-            await callAPI(
-                "login",
-                {
-                    username,
-                    password
-                }
-            );
-
-
-        console.log(
-            "LOGIN RESPONSE:",
-            result
-        );
-
-
-        if (
-            !result ||
-            result.success !== true
-        ) {
-
-            showLoginMessage(
-                result?.message ||
-                "Invalid username or password."
-            );
-
-            return;
-
-        }
-
-
-        const studentClass =
-            normalizeStudentClass(
-                result.class ??
-                result.Class ??
-                result.studentClass
-            );
-
-
-        if (!studentClass) {
-
-            showLoginMessage(
-                "Your account does not have a class assigned."
-            );
-
-            return;
-
-        }
-
-
-        if (
-            !CONFIG.CLASS_CONFIG[
-                studentClass
-            ]
-        ) {
-
-            showLoginMessage(
-                `Class "${studentClass}" is not configured.`
-            );
-
-            return;
-
-        }
-
-
-        state.username =
-            result.username ||
-            username;
-
-
-        state.studentClass =
-            studentClass;
-
-
-        if (welcomeUsername) {
-
-            welcomeUsername.textContent =
-                state.username;
-
-        }
-
-
-        if (studentClassBadge) {
-
-            studentClassBadge.textContent =
-                state.studentClass;
-
-        }
-
-
-        generateChapterButtons();
-
-
-        if (passwordInput) {
-
-            passwordInput.value =
-                "";
-
-        }
-
-
-        showScreen(
-            chapterScreen
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            "LOGIN ERROR:",
-            error
-        );
-
-
-        showLoginMessage(
-            error.message ||
-            "Unable to connect to the server."
-        );
-
-
-    } finally {
-
-        setLoginLoading(
-            false
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN MESSAGE
-========================================================= */
-
-function showLoginMessage(
-    message
-) {
-
-    if (!loginMessage) {
-
-        return;
-
-    }
-
-
-    loginMessage.textContent =
-        message;
-
-
-    loginMessage.style.display =
-        "block";
-
-
-    loginMessage.className =
-        "message error";
-
-}
-
-
-function clearLoginMessage() {
-
-    if (!loginMessage) {
-
-        return;
-
-    }
-
-
-    loginMessage.textContent =
-        "";
-
-    loginMessage.style.display =
-        "none";
-
-}
-
-
-function setLoginLoading(
-    loading
-) {
-
-    if (!loginButton) {
-
-        return;
-
-    }
-
-
-    loginButton.disabled =
-        loading;
-
-
-    loginButton.textContent =
-        loading
-            ? "Logging in..."
-            : "Login";
-
-}
-
-
-/* =========================================================
-   GOOGLE APPS SCRIPT API
-========================================================= */
-
-async function callAPI(
-    action,
-    data = {}
-) {
-
-    if (!CONFIG.API_URL) {
-
-        throw new Error(
-            "API URL is not configured."
-        );
-
-    }
-
+/*******************************************************
+ * API
+ *******************************************************/
+
+async function callAPI(action, data = {}) {
 
     const params =
         new URLSearchParams();
 
-
-    params.set(
+    params.append(
         "action",
         action
     );
 
 
-    Object.keys(
-        data
-    ).forEach(
-        key => {
+    Object.keys(data).forEach(
+        function (key) {
 
             let value =
                 data[key];
 
 
             if (
-                value !== null &&
-                value !== undefined &&
                 typeof value === "object"
             ) {
 
                 value =
-                    JSON.stringify(
-                        value
-                    );
+                    JSON.stringify(value);
 
             }
 
 
-            if (
-                value !== null &&
-                value !== undefined
-            ) {
-
-                params.set(
-                    key,
-                    String(value)
-                );
-
-            }
+            params.append(
+                key,
+                value
+            );
 
         }
     );
 
 
-    console.log(
-        "API ACTION:",
-        action
-    );
-
-
     const response =
         await fetch(
+
             CONFIG.API_URL,
+
             {
 
-                method:
-                    "POST",
+                method: "POST",
 
                 headers: {
 
@@ -1121,74 +378,45 @@ async function callAPI(
                     "no-store"
 
             }
+
         );
 
 
     if (!response.ok) {
 
         throw new Error(
-            `Server returned ${response.status}.`
+            "API request failed: " +
+            response.status
         );
 
     }
 
 
-    const text =
-        await response.text();
-
-
-    console.log(
-        "API RAW RESPONSE:",
-        text
-    );
-
-
-    let result;
-
-
-    try {
-
-        result =
-            JSON.parse(
-                text
-            );
-
-    } catch (error) {
-
-        console.error(
-            "INVALID API RESPONSE:",
-            text
-        );
-
-
-        throw new Error(
-            "The server returned an invalid response."
-        );
-
-    }
-
-
-    return result;
+    return await response.json();
 
 }
 
 
-/* =========================================================
-   LOAD CHAPTER
-========================================================= */
+/*******************************************************
+ * LOGIN
+ *******************************************************/
 
-async function loadChapter(
-    chapterNumber
-) {
+async function handleLogin(event) {
 
-    const classConfig =
-        getClassConfig();
+    event.preventDefault();
 
 
-    if (!classConfig) {
+    const username =
+        usernameInput.value.trim();
 
-        alert(
-            "Your class has not been configured."
+    const password =
+        passwordInput.value;
+
+
+    if (!username || !password) {
+
+        showLoginMessage(
+            "Please enter username and password."
         );
 
         return;
@@ -1196,137 +424,360 @@ async function loadChapter(
     }
 
 
-    const chapter =
-        Number(
-            chapterNumber
-        );
+    if (loginButton) {
 
+        loginButton.disabled = true;
 
-    if (
-        !Number.isInteger(
-            chapter
-        ) ||
-        chapter < 1 ||
-        chapter >
-        classConfig.totalChapters
-    ) {
-
-        alert(
-            "Invalid chapter."
-        );
-
-        return;
+        loginButton.textContent =
+            "Logging in...";
 
     }
-
-
-    state.currentChapter =
-        chapter;
-
-    state.currentPart =
-        "part1";
-
-    state.currentQuestionIndex =
-        0;
-
-
-    state.answers = {
-
-        part1: {},
-        part2: {},
-        part3: {}
-
-    };
-
-
-    state.scores = {
-
-        part1: 0,
-        part2: 0,
-        part3: 0,
-        total: 0
-
-    };
-
-
-    state.randomOrders = {
-
-        part1: {},
-        part2: {},
-        part3: {}
-
-    };
-
-
-    state.testSaved =
-        false;
-
-
-    state.answerRecordsSaved =
-        false;
-
-
-    showScreen(
-        testScreen
-    );
-
-
-    showTestLoading();
-
-
-    const fileName =
-        `Chapter${chapter}.json`;
-
-
-    const chapterPath =
-        `./${classConfig.folder}/${fileName}`;
-
-
-    console.log(
-        "LOADING CHAPTER:",
-        chapterPath
-    );
 
 
     try {
 
+        const result =
+            await callAPI(
+
+                "login",
+
+                {
+
+                    username:
+                        username,
+
+                    password:
+                        password
+
+                }
+
+            );
+
+
+        if (!result.success) {
+
+            showLoginMessage(
+                result.message ||
+                "Login failed."
+            );
+
+            return;
+
+        }
+
+
+        state.username =
+            result.username ||
+            username;
+
+
+        state.studentClass =
+            result.class ||
+            "";
+
+
+        /*
+         * ADMIN REDIRECT
+         */
+
+        if (
+            state.studentClass
+                .trim()
+                .toLowerCase() ===
+            "admin"
+        ) {
+
+            window.location.href =
+                "admin.html";
+
+            return;
+
+        }
+
+
+        showStudentScreen();
+
+        populateStudentInfo();
+
+        populateChapterSelector();
+
+        await loadChapter(1);
+
+
+    } catch (error) {
+
+        console.error(
+            "LOGIN ERROR:",
+            error
+        );
+
+
+        showLoginMessage(
+            "Unable to connect to the server."
+        );
+
+
+    } finally {
+
+        if (loginButton) {
+
+            loginButton.disabled =
+                false;
+
+            loginButton.textContent =
+                "Login";
+
+        }
+
+    }
+
+}
+
+
+/*******************************************************
+ * LOGIN MESSAGE
+ *******************************************************/
+
+function showLoginMessage(message) {
+
+    if (!loginMessage) {
+        return;
+    }
+
+
+    loginMessage.textContent =
+        message;
+
+}
+
+
+/*******************************************************
+ * SHOW STUDENT SCREEN
+ *******************************************************/
+
+function showStudentScreen() {
+
+    if (loginScreen) {
+
+        loginScreen.classList.remove(
+            "active"
+        );
+
+        loginScreen.style.display =
+            "none";
+
+    }
+
+
+    if (testScreen) {
+
+        testScreen.classList.add(
+            "active"
+        );
+
+        testScreen.style.display =
+            "";
+
+    }
+
+
+    if (resultScreen) {
+
+        resultScreen.classList.remove(
+            "active"
+        );
+
+        resultScreen.style.display =
+            "none";
+
+    }
+
+}
+
+
+/*******************************************************
+ * POPULATE STUDENT INFO
+ *******************************************************/
+
+function populateStudentInfo() {
+
+    if (studentName) {
+
+        studentName.textContent =
+            state.username;
+
+    }
+
+
+    if (studentClassElement) {
+
+        studentClassElement.textContent =
+            state.studentClass;
+
+    }
+
+}
+
+
+/*******************************************************
+ * CHAPTER SELECTOR
+ *******************************************************/
+
+function populateChapterSelector() {
+
+    if (!chapterSelect) {
+        return;
+    }
+
+
+    chapterSelect.innerHTML =
+        "";
+
+
+    let numberOfChapters =
+        CONFIG.BEGINNER_CHAPTERS;
+
+
+    if (
+        state.studentClass
+            .trim()
+            .toLowerCase() ===
+        "speaking"
+    ) {
+
+        numberOfChapters =
+            CONFIG.SPEAKING_CHAPTERS;
+
+    }
+
+
+    for (
+        let i = 1;
+        i <= numberOfChapters;
+        i++
+    ) {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+
+        option.value =
+            i;
+
+
+        option.textContent =
+            "Chapter " + i;
+
+
+        chapterSelect.appendChild(
+            option
+        );
+
+    }
+
+
+    chapterSelect.value =
+        state.currentChapter;
+
+}
+
+
+/*******************************************************
+ * LOAD CHAPTER
+ *******************************************************/
+
+async function loadChapter(chapterNumber) {
+
+    try {
+
+        state.currentChapter =
+            Number(chapterNumber);
+
+        state.currentPart =
+            1;
+
+        state.currentQuestionIndex =
+            0;
+
+
+        state.chapterData =
+            null;
+
+
+        state.answers = {
+
+            part1: {},
+
+            part2: {},
+
+            part3: {}
+
+        };
+
+
+        state.scores = {
+
+            part1: 0,
+
+            part2: 0,
+
+            part3: 0
+
+        };
+
+
+        state.randomOrders = {
+
+            part1: {},
+
+            part2: {},
+
+            part3: {}
+
+        };
+
+
+        state.testSaved =
+            false;
+
+
+        state.answerRecordsSaved =
+            false;
+
+
         const response =
             await fetch(
-                chapterPath,
-                {
-                    cache:
-                        "no-store"
-                }
+
+                CONFIG.CHAPTER_PATH +
+                "Chapter" +
+                state.currentChapter +
+                ".json?" +
+                Date.now()
+
             );
 
 
         if (!response.ok) {
 
             throw new Error(
-                `HTTP ${response.status} - ${chapterPath}`
+                "Chapter file not found."
             );
 
         }
 
 
-        const data =
+        state.chapterData =
             await response.json();
 
 
-        validateChapterData(
-            data
-        );
+        if (chapterTitle) {
 
-
-        state.chapterData =
-            data.chapter ||
-            data;
-
-
-        if (testChapter) {
-
-            testChapter.textContent =
-                `Chapter ${chapter}`;
+            chapterTitle.textContent =
+                state.chapterData.title ||
+                "Chapter " +
+                state.currentChapter;
 
         }
 
@@ -1337,20 +788,14 @@ async function loadChapter(
     } catch (error) {
 
         console.error(
-            "CHAPTER LOADING ERROR:",
+            "LOAD CHAPTER ERROR:",
             error
         );
 
 
-        showTestError(
-            `Unable to load Chapter ${chapter}.
-
-Make sure this file exists:
-
-${chapterPath}
-
-Error:
-${error.message}`
+        alert(
+            "Unable to load Chapter " +
+            state.currentChapter
         );
 
     }
@@ -1358,670 +803,247 @@ ${error.message}`
 }
 
 
-/* =========================================================
-   VALIDATE CHAPTER DATA
-========================================================= */
-
-function validateChapterData(
-    data
-) {
-
-    const chapter =
-        data?.chapter ||
-        data;
-
-
-    if (
-        !chapter ||
-        typeof chapter !==
-        "object"
-    ) {
-
-        throw new Error(
-            "Chapter JSON is empty or invalid."
-        );
-
-    }
-
-
-    const requiredParts = [
-
-        "part1",
-        "part2",
-        "part3"
-
-    ];
-
-
-    requiredParts.forEach(
-        part => {
-
-            if (
-                !chapter[part]
-            ) {
-
-                throw new Error(
-                    `Chapter is missing ${part}.`
-                );
-
-            }
-
-
-            if (
-                !Array.isArray(
-                    chapter[
-                        part
-                    ].questions
-                )
-            ) {
-
-                throw new Error(
-                    `${part}.questions must be an array.`
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   TEST LOADING
-========================================================= */
-
-function showTestLoading() {
-
-    if (partTitle) {
-
-        partTitle.textContent =
-            "Loading...";
-
-    }
-
-
-    if (questionCounter) {
-
-        questionCounter.textContent =
-            "Please wait";
-
-    }
-
-
-    if (questionType) {
-
-        questionType.textContent =
-            "";
-
-    }
-
-
-    if (questionText) {
-
-        questionText.textContent =
-            "Loading chapter...";
-
-    }
-
-
-    if (selectedWords) {
-
-        selectedWords.innerHTML =
-            "";
-
-    }
-
-
-    if (wordBank) {
-
-        wordBank.innerHTML =
-            "";
-
-    }
-
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            "0%";
-
-    }
-
-}
-
-
-/* =========================================================
-   TEST ERROR
-========================================================= */
-
-function showTestError(
-    message
-) {
-
-    if (partTitle) {
-
-        partTitle.textContent =
-            "Error";
-
-    }
-
-
-    if (questionCounter) {
-
-        questionCounter.textContent =
-            "";
-
-    }
-
-
-    if (questionText) {
-
-        questionText.textContent =
-            message;
-
-    }
-
-
-    if (selectedWords) {
-
-        selectedWords.innerHTML =
-            "";
-
-    }
-
-
-    if (wordBank) {
-
-        wordBank.innerHTML =
-            "";
-
-    }
-
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            "0%";
-
-    }
-
-}
-
-
-/* =========================================================
-   GET CURRENT PART
-========================================================= */
+/*******************************************************
+ * GET CURRENT PART DATA
+ *******************************************************/
 
 function getCurrentPartData() {
 
-    if (
-        !state.chapterData
-    ) {
-
-        return null;
-
-    }
-
-
-    return (
-        state.chapterData[
-            state.currentPart
-        ] ||
-        null
-    );
-
-}
-
-
-/* =========================================================
-   GET CURRENT QUESTIONS
-========================================================= */
-
-function getCurrentQuestions() {
-
-    const part =
-        getCurrentPartData();
-
-
-    if (
-        !part ||
-        !Array.isArray(
-            part.questions
-        )
-    ) {
-
+    if (!state.chapterData) {
         return [];
+    }
+
+
+    if (state.currentPart === 1) {
+
+        return state.chapterData.part1 || [];
 
     }
 
 
-    return part.questions;
+    if (state.currentPart === 2) {
+
+        return state.chapterData.part2 || [];
+
+    }
+
+
+    if (state.currentPart === 3) {
+
+        return state.chapterData.part3 || [];
+
+    }
+
+
+    return [];
 
 }
 
 
-/* =========================================================
-   GET CURRENT QUESTION
-========================================================= */
-
-function getCurrentQuestion() {
-
-    const questions =
-        getCurrentQuestions();
-
-
-    return (
-        questions[
-            state.currentQuestionIndex
-        ] ||
-        null
-    );
-
-}
-
-
-/* =========================================================
-   RENDER CURRENT QUESTION
-========================================================= */
+/*******************************************************
+ * RENDER CURRENT QUESTION
+ *******************************************************/
 
 function renderCurrentQuestion() {
 
-    const part =
+    const questions =
         getCurrentPartData();
 
 
-    const question =
-        getCurrentQuestion();
+    if (!questions.length) {
 
+        if (questionText) {
 
-    if (
-        !part ||
-        !question
-    ) {
-
-        return;
-
-    }
-
-
-    const questions =
-        part.questions;
-
-
-    const totalQuestions =
-        questions.length;
-
-
-    const currentNumber =
-        state.currentQuestionIndex +
-        1;
-
-
-    if (testChapter) {
-
-        testChapter.textContent =
-            `Chapter ${state.currentChapter}`;
-
-    }
-
-
-    if (partTitle) {
-
-        partTitle.textContent =
-            part.title ||
-            getPartDisplayName(
-                state.currentPart
-            );
-
-    }
-
-
-    if (questionCounter) {
-
-        questionCounter.textContent =
-            `Question ${currentNumber} / ${totalQuestions}`;
-
-    }
-
-
-    if (questionType) {
-
-        questionType.textContent =
-            getQuestionTypeLabel(
-                state.currentPart
-            );
-
-    }
-
-
-    if (questionText) {
-
-        questionText.textContent =
-            question.question ||
-            "";
-
-    }
-
-
-    const progress =
-        totalQuestions > 0
-            ? (
-                currentNumber /
-                totalQuestions
-            ) * 100
-            : 0;
-
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            `${progress}%`;
-
-    }
-
-
-    partTabs.forEach(
-        tab => {
-
-            tab.classList.toggle(
-                "active",
-                tab.dataset.part ===
-                state.currentPart
-            );
+            questionText.textContent =
+                "No questions available.";
 
         }
-    );
-
-
-    renderSelectedWords();
-
-
-    renderWordBank(
-        question
-    );
-
-
-    updateNavigationButtons();
-
-}
-
-
-/* =========================================================
-   PART DISPLAY NAME
-========================================================= */
-
-function getPartDisplayName(
-    part
-) {
-
-    const names = {
-
-        part1:
-            "Translation",
-
-        part2:
-            "Answer the Question",
-
-        part3:
-            "Scramble"
-
-    };
-
-
-    return (
-        names[part] ||
-        part
-    );
-
-}
-
-
-/* =========================================================
-   QUESTION TYPE
-========================================================= */
-
-function getQuestionTypeLabel(
-    part
-) {
-
-    const labels = {
-
-        part1:
-            "TRANSLATION",
-
-        part2:
-            "QUESTION",
-
-        part3:
-            "SCRAMBLE"
-
-    };
-
-
-    return (
-        labels[part] ||
-        "QUESTION"
-    );
-
-}
-
-
-/* =========================================================
-   SWITCH PART
-========================================================= */
-
-function switchPart(
-    part,
-    goToLastQuestion = false
-) {
-
-    if (
-        !state.chapterData
-    ) {
 
         return;
 
     }
-
-
-    if (
-        ![
-            "part1",
-            "part2",
-            "part3"
-        ].includes(
-            part
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    const partData =
-        state.chapterData[
-            part
-        ];
-
-
-    if (
-        !partData ||
-        !Array.isArray(
-            partData.questions
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    state.currentPart =
-        part;
-
-
-    if (
-        goToLastQuestion
-    ) {
-
-        state.currentQuestionIndex =
-            Math.max(
-                partData.questions.length -
-                1,
-                0
-            );
-
-    } else {
-
-        state.currentQuestionIndex =
-            0;
-
-    }
-
-
-    renderCurrentQuestion();
-
-
-    window.scrollTo(
-        0,
-        0
-    );
-
-}
-
-
-/* =========================================================
-   SHUFFLE WORDS
-========================================================= */
-
-function shuffleWords(
-    words
-) {
-
-    const items =
-        (
-            Array.isArray(
-                words
-            )
-                ? words
-                : []
-        )
-        .map(
-            (
-                word,
-                originalIndex
-            ) => ({
-
-                word:
-                    String(
-                        word
-                    ),
-
-                originalIndex
-
-            })
-        );
-
-
-    for (
-        let i =
-            items.length - 1;
-
-        i > 0;
-
-        i--
-    ) {
-
-        const j =
-            Math.floor(
-                Math.random() *
-                (i + 1)
-            );
-
-
-        [
-            items[i],
-            items[j]
-        ] = [
-            items[j],
-            items[i]
-        ];
-
-    }
-
-
-    return items;
-
-}
-
-
-/* =========================================================
-   GET RANDOM ORDER
-========================================================= */
-
-function getRandomOrder(
-    question
-) {
-
-    const part =
-        state.currentPart;
 
 
     const index =
         state.currentQuestionIndex;
 
 
-    if (
-        !state.randomOrders[
-            part
-        ]
-    ) {
+    const question =
+        questions[index];
 
-        state.randomOrders[
-            part
-        ] = {};
+
+    if (!question) {
+        return;
+    }
+
+
+    if (questionNumber) {
+
+        questionNumber.textContent =
+            `${index + 1} / ${questions.length}`;
 
     }
 
 
-    if (
-        !state.randomOrders[
-            part
-        ][index]
-    ) {
+    if (questionText) {
 
-        state.randomOrders[
-            part
-        ][index] =
-            shuffleWords(
-                question?.words ||
-                []
-            );
+        questionText.textContent =
+            question.question || "";
 
     }
 
 
-    return state.randomOrders[
-        part
-    ][index];
+    if (part1Tab) {
+
+        part1Tab.classList.toggle(
+            "active",
+            state.currentPart === 1
+        );
+
+    }
+
+
+    if (part2Tab) {
+
+        part2Tab.classList.toggle(
+            "active",
+            state.currentPart === 2
+        );
+
+    }
+
+
+    if (part3Tab) {
+
+        part3Tab.classList.toggle(
+            "active",
+            state.currentPart === 3
+        );
+
+    }
+
+
+    renderSelectedAnswer();
+
+    renderWordBank(question);
+
+    updateNavigationButtons();
 
 }
 
 
-/* =========================================================
-   RENDER WORD BANK
-========================================================= */
+/*******************************************************
+ * GET WORDS
+ *******************************************************/
 
-function renderWordBank(
+function getQuestionWords(question) {
+
+    if (
+        Array.isArray(question.words)
+    ) {
+
+        return question.words;
+
+    }
+
+
+    if (
+        Array.isArray(question.options)
+    ) {
+
+        return question.options;
+
+    }
+
+
+    return [];
+
+}
+
+
+/*******************************************************
+ * SHUFFLE
+ *******************************************************/
+
+function shuffleArray(array) {
+
+    const result =
+        [...array];
+
+
+    for (
+        let i = result.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+
+        [
+            result[i],
+            result[j]
+        ] =
+        [
+            result[j],
+            result[i]
+        ];
+
+    }
+
+
+    return result;
+
+}
+
+
+/*******************************************************
+ * GET RANDOM WORDS
+ *******************************************************/
+
+function getRandomWords(
+    part,
+    questionIndex,
     question
 ) {
 
+    if (
+        state.randomOrders[part][questionIndex]
+    ) {
+
+        return state.randomOrders[part][questionIndex];
+
+    }
+
+
+    const words =
+        getQuestionWords(question);
+
+
+    const shuffled =
+        shuffleArray(words);
+
+
+    state.randomOrders[part][questionIndex] =
+        shuffled;
+
+
+    return shuffled;
+
+}
+
+
+/*******************************************************
+ * RENDER WORD BANK
+ *******************************************************/
+
+function renderWordBank(question) {
+
     if (!wordBank) {
-
         return;
-
     }
 
 
@@ -2029,23 +1051,21 @@ function renderWordBank(
         "";
 
 
-    const order =
-        getRandomOrder(
+    const words =
+        getRandomWords(
+
+            "part" +
+            state.currentPart,
+
+            state.currentQuestionIndex,
+
             question
+
         );
 
 
-    const currentAnswer =
-        state.answers[
-            state.currentPart
-        ][
-            state.currentQuestionIndex
-        ] ||
-        [];
-
-
-    order.forEach(
-        item => {
+    words.forEach(
+        function(word, index) {
 
             const button =
                 document.createElement(
@@ -2062,32 +1082,24 @@ function renderWordBank(
 
 
             button.textContent =
-                item.word;
+                word;
 
 
-            const selected =
-                currentAnswer.some(
-                    answerItem =>
-                        answerItem.originalIndex ===
-                        item.originalIndex
-                );
+            button.dataset.word =
+                word;
 
 
-            if (selected) {
-
-                button.classList.add(
-                    "selected"
-                );
-
-            }
+            button.dataset.index =
+                index;
 
 
             button.addEventListener(
                 "click",
-                () => {
+                function() {
 
-                    addWordToAnswer(
-                        item
+                    selectWord(
+                        word,
+                        button
                     );
 
                 }
@@ -2101,157 +1113,248 @@ function renderWordBank(
         }
     );
 
+
+    updateWordButtonStates();
+
 }
 
 
-/* =========================================================
-   ADD WORD TO ANSWER
-========================================================= */
+/*******************************************************
+ * UPDATE WORD BUTTON STATES
+ *******************************************************/
 
-function addWordToAnswer(
-    wordItem
-) {
+function updateWordButtonStates() {
 
-    const part =
-        state.currentPart;
-
-
-    const questionIndex =
-        state.currentQuestionIndex;
-
-
-    if (
-        !Array.isArray(
-            state.answers[
-                part
-            ][
-                questionIndex
-            ]
-        )
-    ) {
-
-        state.answers[
-            part
-        ][
-            questionIndex
-        ] = [];
-
-    }
-
-
-    const answer =
-        state.answers[
-            part
-        ][
-            questionIndex
-        ];
-
-
-    const alreadySelected =
-        answer.some(
-            item =>
-                item.originalIndex ===
-                wordItem.originalIndex
-        );
-
-
-    if (
-        alreadySelected
-    ) {
-
+    if (!wordBank) {
         return;
-
     }
 
 
-    answer.push({
-
-        word:
-            wordItem.word,
-
-        originalIndex:
-            wordItem.originalIndex
-
-    });
+    const selected =
+        state.answers[
+            "part" +
+            state.currentPart
+        ][
+            state.currentQuestionIndex
+        ] || [];
 
 
-    renderSelectedWords();
+    const selectedCounts = {};
 
 
-    renderWordBank(
-        getCurrentQuestion()
+    selected.forEach(
+        function(item) {
+
+            const word =
+                item.word;
+
+
+            selectedCounts[word] =
+                (selectedCounts[word] || 0) + 1;
+
+        }
+    );
+
+
+    const usedCounts = {};
+
+
+    Array.from(
+        wordBank.children
+    ).forEach(
+        function(button) {
+
+            const word =
+                button.dataset.word;
+
+
+            usedCounts[word] =
+                usedCounts[word] || 0;
+
+
+            if (
+                usedCounts[word] <
+                (selectedCounts[word] || 0)
+            ) {
+
+                button.classList.add(
+                    "selected-word"
+                );
+
+                usedCounts[word]++;
+
+            } else {
+
+                button.classList.remove(
+                    "selected-word"
+                );
+
+            }
+
+        }
     );
 
 }
 
 
-/* =========================================================
-   RENDER SELECTED WORDS
-========================================================= */
+/*******************************************************
+ * SELECT WORD
+ *******************************************************/
 
-function renderSelectedWords() {
+function selectWord(word, button) {
 
-    if (!selectedWords) {
-
-        return;
-
-    }
-
-
-    selectedWords.innerHTML =
-        "";
-
-
-    const answer =
-        state.answers[
-            state.currentPart
-        ][
-            state.currentQuestionIndex
-        ] ||
-        [];
+    const partKey =
+        "part" +
+        state.currentPart;
 
 
     if (
-        answer.length === 0
+        !state.answers[partKey][
+            state.currentQuestionIndex
+        ]
     ) {
 
-        const placeholder =
-            document.createElement(
-                "span"
-            );
-
-
-        placeholder.textContent =
-            "Select words below to build your answer";
-
-
-        placeholder.style.color =
-            "#a0a7af";
-
-
-        placeholder.style.fontSize =
-            "13px";
-
-
-        placeholder.style.fontWeight =
-            "600";
-
-
-        selectedWords.appendChild(
-            placeholder
-        );
-
-
-        return;
+        state.answers[partKey][
+            state.currentQuestionIndex
+        ] = [];
 
     }
 
 
-    answer.forEach(
-        (
-            item,
-            index
-        ) => {
+    const selected =
+        state.answers[partKey][
+            state.currentQuestionIndex
+        ];
+
+
+    const buttons =
+        Array.from(
+            wordBank.querySelectorAll(
+                ".word-button"
+            )
+        );
+
+
+    const clickedIndex =
+        buttons.indexOf(button);
+
+
+    if (
+        button.classList.contains(
+            "selected-word"
+        )
+    ) {
+
+        const occurrence =
+            buttons
+                .slice(0, clickedIndex + 1)
+                .filter(
+                    function(item) {
+
+                        return (
+                            item.dataset.word ===
+                            word
+                        );
+
+                    }
+                ).length;
+
+
+        let matchingIndex = -1;
+
+        let count = 0;
+
+
+        for (
+            let i = 0;
+            i < selected.length;
+            i++
+        ) {
+
+            if (
+                selected[i].word === word
+            ) {
+
+                count++;
+
+
+                if (
+                    count === occurrence
+                ) {
+
+                    matchingIndex =
+                        i;
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+
+        if (
+            matchingIndex !== -1
+        ) {
+
+            selected.splice(
+                matchingIndex,
+                1
+            );
+
+        }
+
+    } else {
+
+        selected.push({
+
+            word:
+                word,
+
+            index:
+                clickedIndex
+
+        });
+
+    }
+
+
+    renderSelectedAnswer();
+
+    updateWordButtonStates();
+
+}
+
+
+/*******************************************************
+ * RENDER SELECTED ANSWER
+ *******************************************************/
+
+function renderSelectedAnswer() {
+
+    if (!answerArea) {
+        return;
+    }
+
+
+    answerArea.innerHTML =
+        "";
+
+
+    const partKey =
+        "part" +
+        state.currentPart;
+
+
+    const selected =
+        state.answers[partKey][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    selected.forEach(
+        function(item, index) {
 
             const button =
                 document.createElement(
@@ -2263,35 +1366,33 @@ function renderSelectedWords() {
                 "button";
 
 
-            /*
-             * Same design as the word bank.
-             */
-
             button.className =
-                "word-button selected-word";
+                "selected-answer-word";
 
 
             button.textContent =
                 item.word;
 
 
-            button.title =
-                "Remove this word";
-
-
             button.addEventListener(
                 "click",
-                () => {
+                function() {
 
-                    removeWordFromAnswer(
-                        index
+                    selected.splice(
+                        index,
+                        1
                     );
+
+
+                    renderSelectedAnswer();
+
+                    updateWordButtonStates();
 
                 }
             );
 
 
-            selectedWords.appendChild(
+            answerArea.appendChild(
                 button
             );
 
@@ -2301,26 +1402,15 @@ function renderSelectedWords() {
 }
 
 
-/* =========================================================
-   REMOVE WORD
-========================================================= */
+/*******************************************************
+ * SWITCH PART
+ *******************************************************/
 
-function removeWordFromAnswer(
-    answerIndex
-) {
-
-    const answer =
-        state.answers[
-            state.currentPart
-        ][
-            state.currentQuestionIndex
-        ];
-
+function switchPart(part) {
 
     if (
-        !Array.isArray(
-            answer
-        )
+        part < 1 ||
+        part > 3
     ) {
 
         return;
@@ -2328,136 +1418,72 @@ function removeWordFromAnswer(
     }
 
 
-    if (
-        answerIndex < 0 ||
-        answerIndex >=
-        answer.length
-    ) {
-
-        return;
-
-    }
+    state.currentPart =
+        part;
 
 
-    answer.splice(
-        answerIndex,
-        1
-    );
+    state.currentQuestionIndex =
+        0;
 
 
-    renderSelectedWords();
-
-
-    renderWordBank(
-        getCurrentQuestion()
-    );
+    renderCurrentQuestion();
 
 }
 
 
-/* =========================================================
-   CLEAR ANSWER
-========================================================= */
+/*******************************************************
+ * NEXT QUESTION
+ *******************************************************/
 
-function clearCurrentAnswer() {
-
-    state.answers[
-        state.currentPart
-    ][
-        state.currentQuestionIndex
-    ] = [];
-
-
-    renderSelectedWords();
-
-
-    renderWordBank(
-        getCurrentQuestion()
-    );
-
-}
-
-
-/* =========================================================
-   NAVIGATION BUTTONS
-========================================================= */
-
-function updateNavigationButtons() {
+function nextQuestion() {
 
     const questions =
-        getCurrentQuestions();
+        getCurrentPartData();
+
+
+    if (!questions.length) {
+        return;
+    }
 
 
     if (
-        questions.length === 0
+        state.currentQuestionIndex <
+        questions.length - 1
     ) {
+
+        state.currentQuestionIndex++;
+
+        renderCurrentQuestion();
 
         return;
 
     }
 
 
-    const firstQuestion =
-        state.currentQuestionIndex === 0;
+    if (
+        state.currentPart < 3
+    ) {
 
+        state.currentPart++;
 
-    const lastQuestion =
-        state.currentQuestionIndex ===
-        questions.length - 1;
+        state.currentQuestionIndex =
+            0;
 
-
-    if (previousButton) {
-
-        previousButton.disabled =
-            firstQuestion &&
-            state.currentPart ===
-            "part1";
-
-    }
-
-
-    if (nextButton) {
-
-        if (
-            lastQuestion
-        ) {
-
-            if (
-                state.currentPart ===
-                "part3"
-            ) {
-
-                nextButton.textContent =
-                    "Finish Test →";
-
-            } else {
-
-                nextButton.textContent =
-                    "Next Part →";
-
-            }
-
-        } else {
-
-            nextButton.textContent =
-                "Next →";
-
-        }
+        renderCurrentQuestion();
 
     }
 
 }
 
 
-/* =========================================================
-   PREVIOUS QUESTION
-========================================================= */
+/*******************************************************
+ * PREVIOUS QUESTION
+ *******************************************************/
 
-function goToPreviousQuestion() {
+function previousQuestion() {
 
     if (
-        state.currentQuestionIndex >
-        0
+        state.currentQuestionIndex > 0
     ) {
 
         state.currentQuestionIndex--;
@@ -2470,173 +1496,175 @@ function goToPreviousQuestion() {
 
 
     if (
-        state.currentPart ===
-        "part2"
+        state.currentPart > 1
     ) {
 
-        switchPart(
-            "part1",
-            true
-        );
+        state.currentPart--;
 
-        return;
-
-    }
+        const questions =
+            getCurrentPartData();
 
 
-    if (
-        state.currentPart ===
-        "part3"
-    ) {
+        state.currentQuestionIndex =
+            Math.max(
+                0,
+                questions.length - 1
+            );
 
-        switchPart(
-            "part2",
-            true
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   NEXT QUESTION
-========================================================= */
-
-function goToNextQuestion() {
-
-    const questions =
-        getCurrentQuestions();
-
-
-    if (
-        questions.length === 0
-    ) {
-
-        return;
-
-    }
-
-
-    const lastQuestion =
-        state.currentQuestionIndex >=
-        questions.length - 1;
-
-
-    if (!lastQuestion) {
-
-        state.currentQuestionIndex++;
 
         renderCurrentQuestion();
 
-        return;
-
     }
-
-
-    if (
-        state.currentPart ===
-        "part1"
-    ) {
-
-        switchPart(
-            "part2"
-        );
-
-        return;
-
-    }
-
-
-    if (
-        state.currentPart ===
-        "part2"
-    ) {
-
-        switchPart(
-            "part3"
-        );
-
-        return;
-
-    }
-
-
-    finishTest();
 
 }
 
 
-/* =========================================================
-   NORMALIZE ANSWER WORDS
-========================================================= */
+/*******************************************************
+ * UPDATE NAVIGATION BUTTONS
+ *******************************************************/
 
-function normalizeAnswerWords(
-    answer
-) {
+function updateNavigationButtons() {
 
-    if (
-        typeof answer ===
-        "string"
-    ) {
+    const questions =
+        getCurrentPartData();
 
-        return answer
-            .trim()
-            .split(
-                /\s+/
-            )
-            .filter(
-                word =>
-                    word.length > 0
-            )
-            .map(
-                word =>
-                    word
-                        .trim()
-                        .toLowerCase()
+
+    if (previousButton) {
+
+        previousButton.disabled =
+            (
+                state.currentPart === 1 &&
+                state.currentQuestionIndex === 0
             );
 
     }
 
 
-    if (
-        Array.isArray(
-            answer
-        )
-    ) {
+    if (nextButton) {
 
-        return answer
+        const isLastQuestion =
+            state.currentQuestionIndex >=
+            questions.length - 1;
+
+
+        const isLastPart =
+            state.currentPart === 3;
+
+
+        nextButton.disabled =
+            (
+                isLastQuestion &&
+                isLastPart
+            );
+
+    }
+
+}
+
+
+/*******************************************************
+ * CHECK CURRENT QUESTION
+ *******************************************************/
+
+function checkCurrentQuestion() {
+
+    const partKey =
+        "part" +
+        state.currentPart;
+
+
+    const selected =
+        state.answers[partKey][
+            state.currentQuestionIndex
+        ] || [];
+
+
+    const answer =
+        selected
             .map(
-                item => {
+                function(item) {
 
-                    if (
-                        item &&
-                        typeof item ===
-                        "object" &&
-                        "word" in item
-                    ) {
-
-                        return String(
-                            item.word
-                        )
-                            .trim()
-                            .toLowerCase();
-
-                    }
-
-
-                    return String(
-                        item
-                    )
-                        .trim()
-                        .toLowerCase();
+                    return item.word;
 
                 }
             )
-            .filter(
-                word =>
-                    word.length > 0
-            );
+            .join(" ");
+
+
+    const questions =
+        getCurrentPartData();
+
+
+    const question =
+        questions[
+            state.currentQuestionIndex
+        ];
+
+
+    if (!question) {
+        return;
+    }
+
+
+    const correctAnswers =
+        getAcceptedAnswers(question);
+
+
+    const normalizedAnswer =
+        normalizeAnswer(answer);
+
+
+    const correct =
+        correctAnswers.some(
+            function(correctAnswer) {
+
+                return (
+                    normalizeAnswer(
+                        correctAnswer
+                    ) ===
+                    normalizedAnswer
+                );
+
+            }
+        );
+
+
+    if (correct) {
+
+        alert("Correct!");
+
+    } else {
+
+        alert("Not correct.");
+
+    }
+
+}
+
+
+/*******************************************************
+ * GET ACCEPTED ANSWERS
+ *******************************************************/
+
+function getAcceptedAnswers(question) {
+
+    if (
+        Array.isArray(question.answers)
+    ) {
+
+        return question.answers;
+
+    }
+
+
+    if (
+        typeof question.answer ===
+        "string"
+    ) {
+
+        return [
+            question.answer
+        ];
 
     }
 
@@ -2646,268 +1674,182 @@ function normalizeAnswerWords(
 }
 
 
-/* =========================================================
-   CHECK ANSWER
-========================================================= */
+/*******************************************************
+ * NORMALIZE ANSWER
+ *******************************************************/
 
-function isAnswerCorrect(
-    studentAnswer,
-    question
-) {
+function normalizeAnswer(value) {
 
-    const studentWords =
-        normalizeAnswerWords(
-            studentAnswer
-        );
+    return String(value || "")
 
+        .trim()
 
-    const acceptedAnswers =
-        Array.isArray(
-            question?.answers
+        .replace(
+            /\s+/g,
+            " "
         )
-            ? question.answers
-            : [];
+
+        .toLowerCase();
+
+}
 
 
-    if (
-        acceptedAnswers.length === 0
-    ) {
+/*******************************************************
+ * CALCULATE SCORES
+ *******************************************************/
 
-        return false;
+function calculateScores() {
 
-    }
+    state.scores = {
 
+        part1: 0,
 
-    return acceptedAnswers.some(
-        acceptedAnswer => {
+        part2: 0,
 
-            const acceptedWords =
-                normalizeAnswerWords(
-                    acceptedAnswer
-                );
+        part3: 0
 
-
-            if (
-                acceptedWords.length !==
-                studentWords.length
-            ) {
-
-                return false;
-
-            }
+    };
 
 
-            return acceptedWords.every(
-                (
-                    word,
-                    index
-                ) =>
-                    word ===
-                    studentWords[
-                        index
-                    ]
+    const parts = [
+
+        {
+
+            key: "part1",
+
+            data:
+                state.chapterData.part1 || []
+
+        },
+
+        {
+
+            key: "part2",
+
+            data:
+                state.chapterData.part2 || []
+
+        },
+
+        {
+
+            key: "part3",
+
+            data:
+                state.chapterData.part3 || []
+
+        }
+
+    ];
+
+
+    parts.forEach(
+        function(part) {
+
+            part.data.forEach(
+                function(question, index) {
+
+                    const selected =
+                        state.answers[
+                            part.key
+                        ][index] || [];
+
+
+                    const userAnswer =
+                        selected
+
+                            .map(
+                                function(item) {
+
+                                    return item.word;
+
+                                }
+                            )
+
+                            .join(" ");
+
+
+                    const acceptedAnswers =
+                        getAcceptedAnswers(
+                            question
+                        );
+
+
+                    const correct =
+                        acceptedAnswers.some(
+                            function(answer) {
+
+                                return (
+                                    normalizeAnswer(
+                                        answer
+                                    ) ===
+                                    normalizeAnswer(
+                                        userAnswer
+                                    )
+                                );
+
+                            }
+                        );
+
+
+                    if (correct) {
+
+                        state.scores[
+                            part.key
+                        ]++;
+
+                    }
+
+                }
             );
 
         }
     );
 
-}
 
-
-/* =========================================================
-   CALCULATE PART SCORE
-========================================================= */
-
-function calculatePartScore(
-    partName
-) {
-
-    const questions =
-        state.chapterData?.[
-            partName
-        ]?.questions ||
-        [];
-
-
-    let score =
-        0;
-
-
-    questions.forEach(
-        (
-            question,
-            index
-        ) => {
-
-            const studentAnswer =
-                state.answers[
-                    partName
-                ][index] ||
-                [];
-
-
-            if (
-                isAnswerCorrect(
-                    studentAnswer,
-                    question
-                )
-            ) {
-
-                score++;
-
-            }
-
-        }
-    );
-
-
-    return score;
+    return state.scores;
 
 }
 
 
-/* =========================================================
-   CALCULATE ALL SCORES
-========================================================= */
-
-function calculateAllScores() {
-
-    state.scores.part1 =
-        calculatePartScore(
-            "part1"
-        );
-
-
-    state.scores.part2 =
-        calculatePartScore(
-            "part2"
-        );
-
-
-    state.scores.part3 =
-        calculatePartScore(
-            "part3"
-        );
-
-
-    state.scores.total =
-        state.scores.part1 +
-        state.scores.part2 +
-        state.scores.part3;
-
-}
-
-
-/* =========================================================
-   GET MAXIMUM SCORE
-========================================================= */
-
-function getMaximumScore() {
-
-    if (
-        !state.chapterData
-    ) {
-
-        return 0;
-
-    }
-
-
-    let maximum =
-        0;
-
-
-    [
-        "part1",
-        "part2",
-        "part3"
-    ].forEach(
-        partName => {
-
-            const questions =
-                state.chapterData?.[
-                    partName
-                ]?.questions;
-
-
-            if (
-                Array.isArray(
-                    questions
-                )
-            ) {
-
-                maximum +=
-                    questions.length;
-
-            }
-
-        }
-    );
-
-
-    return maximum;
-
-}
-
-
-/* =========================================================
-   FINISH TEST
-========================================================= */
+/*******************************************************
+ * FINISH TEST
+ *******************************************************/
 
 async function finishTest() {
 
-    console.log(
-        "================================="
-    );
-
-    console.log(
-        "FINISHING TEST"
-    );
-
-    console.log(
-        "================================="
-    );
+    const scores =
+        calculateScores();
 
 
-    calculateAllScores();
+    const part1Total =
+        (
+            state.chapterData.part1 || []
+        ).length;
 
 
-    renderResults();
+    const part2Total =
+        (
+            state.chapterData.part2 || []
+        ).length;
 
 
-    showScreen(
-        resultScreen
-    );
-
-
-    /*
-     * Save score.
-     */
-
-    await saveScore();
-
-
-    /*
-     * Save all student answers.
-     */
-
-    await saveAnswerRecords();
-
-}
-
-
-/* =========================================================
-   RENDER RESULTS
-========================================================= */
-
-function renderResults() {
-
-    const maximum =
-        getMaximumScore();
+    const part3Total =
+        (
+            state.chapterData.part3 || []
+        ).length;
 
 
     const total =
-        state.scores.total;
+        scores.part1 +
+        scores.part2 +
+        scores.part3;
+
+
+    const maximum =
+        part1Total +
+        part2Total +
+        part3Total;
 
 
     const percentage =
@@ -2921,10 +1863,57 @@ function renderResults() {
             : 0;
 
 
-    if (resultChapter) {
+    showResults(
 
-        resultChapter.textContent =
-            `Chapter ${state.currentChapter}`;
+        scores,
+
+        total,
+
+        maximum,
+
+        percentage
+
+    );
+
+
+    await saveScore();
+
+    await saveAnswerRecords();
+
+}
+
+
+/*******************************************************
+ * SHOW RESULTS
+ *******************************************************/
+
+function showResults(
+    scores,
+    total,
+    maximum,
+    percentage
+) {
+
+    if (testScreen) {
+
+        testScreen.classList.remove(
+            "active"
+        );
+
+        testScreen.style.display =
+            "none";
+
+    }
+
+
+    if (resultScreen) {
+
+        resultScreen.classList.add(
+            "active"
+        );
+
+        resultScreen.style.display =
+            "";
 
     }
 
@@ -2932,7 +1921,7 @@ function renderResults() {
     if (part1Score) {
 
         part1Score.textContent =
-            state.scores.part1;
+            scores.part1;
 
     }
 
@@ -2940,7 +1929,7 @@ function renderResults() {
     if (part2Score) {
 
         part2Score.textContent =
-            state.scores.part2;
+            scores.part2;
 
     }
 
@@ -2948,7 +1937,7 @@ function renderResults() {
     if (part3Score) {
 
         part3Score.textContent =
-            state.scores.part3;
+            scores.part3;
 
     }
 
@@ -2956,7 +1945,7 @@ function renderResults() {
     if (totalScore) {
 
         totalScore.textContent =
-            total;
+            `${total} / ${maximum}`;
 
     }
 
@@ -2969,68 +1958,74 @@ function renderResults() {
     }
 
 
-    if (saveStatus) {
-
-        saveStatus.textContent =
-            "Saving your score...";
-
-        saveStatus.style.color =
-            "#6e767f";
-
-    }
+    loadScoreHistory();
 
 }
 
 
-/* =========================================================
-   SAVE SCORE
-========================================================= */
+/*******************************************************
+ * SAVE SCORE
+ *******************************************************/
 
 async function saveScore() {
 
-    if (
-        state.testSaved
-    ) {
-
-        console.log(
-            "Score already saved."
-        );
-
+    if (state.testSaved) {
         return;
-
     }
 
 
-    if (
-        !state.username ||
-        !state.studentClass ||
-        !state.currentChapter
-    ) {
+    const scores =
+        state.scores;
 
-        console.error(
-            "Cannot save score: missing student information."
-        );
 
-        if (saveStatus) {
+    const part1Total =
+        (
+            state.chapterData.part1 || []
+        ).length;
 
-            saveStatus.textContent =
-                "Unable to save score.";
 
-            saveStatus.style.color =
-                "#d93636";
+    const part2Total =
+        (
+            state.chapterData.part2 || []
+        ).length;
 
-        }
 
-        return;
+    const part3Total =
+        (
+            state.chapterData.part3 || []
+        ).length;
 
-    }
+
+    const total =
+        scores.part1 +
+        scores.part2 +
+        scores.part3;
+
+
+    const maximum =
+        part1Total +
+        part2Total +
+        part3Total;
+
+
+    const percentage =
+        maximum > 0
+            ? Math.round(
+                (
+                    total /
+                    maximum
+                ) * 100
+            )
+            : 0;
 
 
     try {
 
         const result =
             await callAPI(
+
                 "saveScore",
+
                 {
 
                     username:
@@ -3040,65 +2035,38 @@ async function saveScore() {
                         state.studentClass,
 
                     chapter:
-                        `Chapter ${state.currentChapter}`,
+                        state.currentChapter,
 
-                    part1:
-                        state.scores.part1,
+                    part1Score:
+                        scores.part1,
 
-                    part2:
-                        state.scores.part2,
+                    part2Score:
+                        scores.part2,
 
-                    part3:
-                        state.scores.part3,
+                    part3Score:
+                        scores.part3,
 
                     total:
-                        state.scores.total,
+                        total,
 
                     maximum:
-                        getMaximumScore()
+                        maximum,
+
+                    percentage:
+                        percentage
 
                 }
+
             );
 
 
-        console.log(
-            "SAVE SCORE RESPONSE:",
-            result
-        );
-
-
-        if (
-            result?.success === true
-        ) {
+        if (result.success) {
 
             state.testSaved =
                 true;
 
-
-            if (saveStatus) {
-
-                saveStatus.textContent =
-                    "✓ Score saved successfully.";
-
-                saveStatus.style.color =
-                    "#238636";
-
-            }
-
-        } else {
-
-            if (saveStatus) {
-
-                saveStatus.textContent =
-                    result?.message ||
-                    "Unable to save score.";
-
-                saveStatus.style.color =
-                    "#d93636";
-
-            }
-
         }
+
 
     } catch (error) {
 
@@ -3107,329 +2075,136 @@ async function saveScore() {
             error
         );
 
-
-        if (saveStatus) {
-
-            saveStatus.textContent =
-                "Unable to save score. Please try again.";
-
-            saveStatus.style.color =
-                "#d93636";
-
-        }
-
     }
 
 }
 
 
-/* =========================================================
-   SAVE ANSWER RECORDS
-========================================================= */
+/*******************************************************
+ * SAVE ANSWER RECORDS
+ *******************************************************/
 
 async function saveAnswerRecords() {
 
-    console.log(
-        "================================="
-    );
+    if (state.answerRecordsSaved) {
+        return;
+    }
+
 
     console.log(
         "START SAVING ANSWER RECORDS"
     );
 
-    console.log(
-        "================================="
+
+    const records = [];
+
+
+    const parts = [
+
+        {
+
+            key: "part1",
+
+            data:
+                state.chapterData.part1 || []
+
+        },
+
+        {
+
+            key: "part2",
+
+            data:
+                state.chapterData.part2 || []
+
+        },
+
+        {
+
+            key: "part3",
+
+            data:
+                state.chapterData.part3 || []
+
+        }
+
+    ];
+
+
+    parts.forEach(
+        function(part) {
+
+            part.data.forEach(
+                function(question, index) {
+
+                    const selected =
+                        state.answers[
+                            part.key
+                        ][index] || [];
+
+
+                    const answer =
+                        selected
+
+                            .map(
+                                function(item) {
+
+                                    return item.word;
+
+                                }
+                            )
+
+                            .join(" ");
+
+
+                    records.push({
+
+                        question:
+                            question.question || "",
+
+                        answer:
+                            answer
+
+                    });
+
+                }
+            );
+
+        }
     );
 
 
-    if (
-        state.answerRecordsSaved
-    ) {
-
-        console.log(
-            "Answer records already saved."
-        );
-
-        return;
-
-    }
+    console.log(
+        "USERNAME:",
+        state.username
+    );
 
 
-    if (
-        !state.username ||
-        !state.studentClass ||
-        !state.chapterData
-    ) {
+    console.log(
+        "CLASS:",
+        state.studentClass
+    );
 
-        console.error(
-            "Missing information:",
-            {
 
-                username:
-                    state.username,
+    console.log(
+        "NUMBER OF RECORDS:",
+        records.length
+    );
 
-                class:
-                    state.studentClass,
 
-                chapterData:
-                    !!state.chapterData
-
-            }
-        );
-
-        return;
-
-    }
+    console.log(
+        "RECORDS:",
+        records
+    );
 
 
     try {
 
-        const records = [];
-
-
-        /*
-         * ================================================
-         * PART 1
-         * ================================================
-         */
-
-        const part1Questions =
-            state.chapterData?.part1?.questions ||
-            [];
-
-
-        part1Questions.forEach(
-            (
-                question,
-                index
-            ) => {
-
-                const studentAnswer =
-                    state.answers.part1[index] ||
-                    [];
-
-
-                const answerText =
-                    studentAnswer
-                        .map(
-                            item => {
-
-                                if (
-                                    item &&
-                                    typeof item ===
-                                    "object" &&
-                                    item.word !==
-                                    undefined
-                                ) {
-
-                                    return String(
-                                        item.word
-                                    );
-
-                                }
-
-
-                                return String(
-                                    item
-                                );
-
-                            }
-                        )
-                        .join(" ");
-
-
-                records.push({
-
-                    question:
-                        String(
-                            question?.question ||
-                            ""
-                        ).trim(),
-
-                    answer:
-                        answerText.trim()
-
-                });
-
-            }
-        );
-
-
-        /*
-         * ================================================
-         * PART 2
-         * ================================================
-         */
-
-        const part2Questions =
-            state.chapterData?.part2?.questions ||
-            [];
-
-
-        part2Questions.forEach(
-            (
-                question,
-                index
-            ) => {
-
-                const studentAnswer =
-                    state.answers.part2[index] ||
-                    [];
-
-
-                const answerText =
-                    studentAnswer
-                        .map(
-                            item => {
-
-                                if (
-                                    item &&
-                                    typeof item ===
-                                    "object" &&
-                                    item.word !==
-                                    undefined
-                                ) {
-
-                                    return String(
-                                        item.word
-                                    );
-
-                                }
-
-
-                                return String(
-                                    item
-                                );
-
-                            }
-                        )
-                        .join(" ");
-
-
-                records.push({
-
-                    question:
-                        String(
-                            question?.question ||
-                            ""
-                        ).trim(),
-
-                    answer:
-                        answerText.trim()
-
-                });
-
-            }
-        );
-
-
-        /*
-         * ================================================
-         * PART 3
-         * ================================================
-         */
-
-        const part3Questions =
-            state.chapterData?.part3?.questions ||
-            [];
-
-
-        part3Questions.forEach(
-            (
-                question,
-                index
-            ) => {
-
-                const studentAnswer =
-                    state.answers.part3[index] ||
-                    [];
-
-
-                const answerText =
-                    studentAnswer
-                        .map(
-                            item => {
-
-                                if (
-                                    item &&
-                                    typeof item ===
-                                    "object" &&
-                                    item.word !==
-                                    undefined
-                                ) {
-
-                                    return String(
-                                        item.word
-                                    );
-
-                                }
-
-
-                                return String(
-                                    item
-                                );
-
-                            }
-                        )
-                        .join(" ");
-
-
-                records.push({
-
-                    question:
-                        String(
-                            question?.question ||
-                            ""
-                        ).trim(),
-
-                    answer:
-                        answerText.trim()
-
-                });
-
-            }
-        );
-
-
-        /*
-         * ================================================
-         * CHECK RECORDS BEFORE SENDING
-         * ================================================
-         */
-
-        console.log(
-            "Username:",
-            state.username
-        );
-
-
-        console.log(
-            "Class:",
-            state.studentClass
-        );
-
-
-        console.log(
-            "Number of records:",
-            records.length
-        );
-
-
-        console.log(
-            "Records:",
-            records
-        );
-
-
-        /*
-         * ================================================
-         * SEND TO GOOGLE APPS SCRIPT
-         * ================================================
-         */
-
         const result =
             await callAPI(
+
                 "saveAnswerRecords",
+
                 {
 
                     username:
@@ -3439,19 +2214,12 @@ async function saveAnswerRecords() {
                         state.studentClass,
 
                     records:
-                        JSON.stringify(
-                            records
-                        )
+                        JSON.stringify(records)
 
                 }
+
             );
 
-
-        /*
-         * ================================================
-         * SHOW SERVER RESPONSE
-         * ================================================
-         */
 
         console.log(
             "GOOGLE APPS SCRIPT RESPONSE:",
@@ -3460,7 +2228,6 @@ async function saveAnswerRecords() {
 
 
         if (
-            result &&
             result.success === true
         ) {
 
@@ -3469,196 +2236,67 @@ async function saveAnswerRecords() {
 
 
             console.log(
-                "================================="
-            );
-
-            console.log(
                 "ANSWER RECORDS SAVED SUCCESSFULLY"
-            );
-
-            console.log(
-                "Saved:",
-                result.saved
-            );
-
-            console.log(
-                "================================="
             );
 
         } else {
 
             console.error(
-                "================================="
-            );
-
-            console.error(
-                "ANSWER RECORDS FAILED"
-            );
-
-            console.error(
-                result?.message ||
-                "Unknown error"
-            );
-
-            console.error(
-                "================================="
+                "ANSWER RECORD SAVE FAILED:",
+                result.message
             );
 
         }
+
 
     } catch (error) {
 
         console.error(
-            "================================="
-        );
-
-        console.error(
-            "SAVE ANSWER RECORDS ERROR"
-        );
-
-        console.error(
+            "SAVE ANSWER RECORDS ERROR:",
             error
         );
 
-        console.error(
-            "================================="
-        );
-
     }
 
 }
 
 
-/* =========================================================
-   GET SCORE HISTORY
-========================================================= */
+/*******************************************************
+ * LOAD SCORE HISTORY
+ *******************************************************/
 
-async function getScoreHistory() {
+async function loadScoreHistory() {
 
-    if (
-        !state.username ||
-        !state.studentClass
-    ) {
-
-        return {
-
-            success:
-                false,
-
-            message:
-                "Student information is missing."
-
-        };
-
-    }
-
-
-    return await callAPI(
-        "getScoreHistory",
-        {
-
-            username:
-                state.username,
-
-            class:
-                state.studentClass
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SHOW SCORE HISTORY
-========================================================= */
-
-async function showScoreHistory() {
-
-    if (
-        !state.username ||
-        !state.studentClass
-    ) {
-
+    if (!historyContainer) {
         return;
-
     }
 
 
-    showScreen(
-        historyScreen
-    );
-
-
-    if (historyLoading) {
-
-        historyLoading.style.display =
-            "block";
-
-    }
-
-
-    if (historyEmpty) {
-
-        historyEmpty.style.display =
-            "none";
-
-    }
-
-
-    if (historyList) {
-
-        historyList.innerHTML =
-            "";
-
-    }
-
-
-    if (historyStudent) {
-
-        historyStudent.textContent =
-            `${state.username} • ${state.studentClass}`;
-
-    }
+    historyContainer.innerHTML =
+        "Loading history...";
 
 
     try {
 
         const result =
-            await getScoreHistory();
+            await callAPI(
+
+                "getScoreHistory",
+
+                {
+
+                    username:
+                        state.username
+
+                }
+
+            );
 
 
-        console.log(
-            "SCORE HISTORY RESPONSE:",
-            result
-        );
+        if (!result.success) {
 
-
-        if (historyLoading) {
-
-            historyLoading.style.display =
-                "none";
-
-        }
-
-
-        if (
-            !result ||
-            result.success !== true
-        ) {
-
-            if (historyList) {
-
-                historyList.innerHTML = `
-                    <div class="history-error">
-                        ${escapeHTML(
-                            result?.message ||
-                            "Unable to load score history."
-                        )}
-                    </div>
-                `;
-
-            }
+            historyContainer.innerHTML =
+                "Unable to load history.";
 
             return;
 
@@ -3666,651 +2304,1019 @@ async function showScoreHistory() {
 
 
         const records =
-            Array.isArray(
-                result.records
-            )
-                ? result.records
-                : (
-                    Array.isArray(
-                        result.history
-                    )
-                        ? result.history
-                        : []
-                );
+            result.records ||
+            result.history ||
+            [];
 
 
-        if (
-            records.length === 0
-        ) {
+        if (!records.length) {
 
-            if (historyEmpty) {
-
-                historyEmpty.style.display =
-                    "block";
-
-            }
+            historyContainer.innerHTML =
+                "No score history yet.";
 
             return;
 
         }
 
 
-        const normalizedRecords =
-            records.map(
-                normalizeHistoryRecord
-            );
+        historyContainer.innerHTML =
+            "";
 
 
-        renderScoreHistory(
-            normalizedRecords
+        records.forEach(
+            function(record, index) {
+
+                /*
+                 * Support both the original
+                 * Google Sheet column names
+                 * and lowercase alternatives.
+                 */
+
+                const chapter =
+                    record.Chapter ??
+                    record.chapter ??
+                    "";
+
+
+                const className =
+                    record.Class ??
+                    record.class ??
+                    state.studentClass;
+
+
+                const p1 =
+                    record["Part 1 Score"] ??
+                    record.part1Score ??
+                    0;
+
+
+                const p2 =
+                    record["Part 2 Score"] ??
+                    record.part2Score ??
+                    0;
+
+
+                const p3 =
+                    record["Part 3 Score"] ??
+                    record.part3Score ??
+                    0;
+
+
+                const total =
+                    record.Total ??
+                    record.total ??
+                    0;
+
+
+                const maximum =
+                    record.Maximum ??
+                    record.maximum ??
+                    0;
+
+
+                const percentage =
+                    record.Percentage ??
+                    record.percentage ??
+                    0;
+
+
+                const date =
+                    record.Date ??
+                    record.date ??
+                    "";
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "history-item";
+
+
+                /*
+                 * Store the full result on the
+                 * button using a unique ID.
+                 */
+
+                const resultData = {
+
+                    username:
+                        state.username,
+
+                    class:
+                        className,
+
+                    chapter:
+                        chapter,
+
+                    part1Score:
+                        p1,
+
+                    part2Score:
+                        p2,
+
+                    part3Score:
+                        p3,
+
+                    total:
+                        total,
+
+                    maximum:
+                        maximum,
+
+                    percentage:
+                        percentage,
+
+                    date:
+                        date
+
+                };
+
+
+                const printButton =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                printButton.type =
+                    "button";
+
+
+                printButton.className =
+                    "print-result-button";
+
+
+                printButton.textContent =
+                    "Print / Save PDF";
+
+
+                printButton.addEventListener(
+                    "click",
+                    function() {
+
+                        printResultPDF(
+                            resultData
+                        );
+
+                    }
+                );
+
+
+                /*
+                 * Create the history record.
+                 */
+
+                const info =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                info.className =
+                    "history-info";
+
+
+                info.innerHTML = `
+
+                    <div class="history-title">
+                        Chapter ${escapeHTML(
+                            String(chapter)
+                        )}
+                    </div>
+
+                    <div class="history-details">
+
+                        <span>
+                            ${escapeHTML(
+                                String(total)
+                            )}
+                            /
+                            ${escapeHTML(
+                                String(maximum)
+                            )}
+                        </span>
+
+                        <span>
+                            ${escapeHTML(
+                                String(percentage)
+                            )}%
+                        </span>
+
+                        <span>
+                            ${escapeHTML(
+                                String(date)
+                            )}
+                        </span>
+
+                    </div>
+
+                `;
+
+
+                const scores =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                scores.className =
+                    "history-scores";
+
+
+                scores.innerHTML = `
+
+                    <div>
+                        <span>Part 1</span>
+                        <strong>
+                            ${escapeHTML(
+                                String(p1)
+                            )}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Part 2</span>
+                        <strong>
+                            ${escapeHTML(
+                                String(p2)
+                            )}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Part 3</span>
+                        <strong>
+                            ${escapeHTML(
+                                String(p3)
+                            )}
+                        </strong>
+                    </div>
+
+                `;
+
+
+                const actions =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                actions.className =
+                    "history-actions";
+
+
+                actions.appendChild(
+                    printButton
+                );
+
+
+                item.appendChild(
+                    info
+                );
+
+
+                item.appendChild(
+                    scores
+                );
+
+
+                item.appendChild(
+                    actions
+                );
+
+
+                historyContainer.appendChild(
+                    item
+                );
+
+            }
         );
 
 
     } catch (error) {
 
         console.error(
-            "SCORE HISTORY ERROR:",
+            "HISTORY ERROR:",
             error
         );
 
 
-        if (historyLoading) {
-
-            historyLoading.style.display =
-                "none";
-
-        }
-
-
-        if (historyList) {
-
-            historyList.innerHTML = `
-                <div class="history-error">
-                    Unable to load score history.
-                    <br><br>
-                    ${escapeHTML(
-                        error.message ||
-                        ""
-                    )}
-                </div>
-            `;
-
-        }
+        historyContainer.innerHTML =
+            "Unable to load history.";
 
     }
 
 }
 
 
-/* =========================================================
-   NORMALIZE HISTORY RECORD
-========================================================= */
+/*******************************************************
+ * ESCAPE HTML
+ *******************************************************/
 
-function normalizeHistoryRecord(
-    record
-) {
+function escapeHTML(value) {
 
-    record =
-        record ||
-        {};
+    return String(value)
 
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-    return {
+        .replace(
+            /</g,
+            "&lt;"
+        )
 
-        chapter:
-            record.chapter ??
-            record.Chapter ??
-            "Chapter",
+        .replace(
+            />/g,
+            "&gt;"
+        )
 
+        .replace(
+            /"/g,
+            "&quot;"
+        )
 
-        part1:
-            Number(
-                record.part1 ??
-                record["Part 1 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        part2:
-            Number(
-                record.part2 ??
-                record["Part 2 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        part3:
-            Number(
-                record.part3 ??
-                record["Part 3 Score"] ??
-                0
-            ) ||
-            0,
-
-
-        total:
-            Number(
-                record.total ??
-                record.Total ??
-                0
-            ) ||
-            0,
-
-
-        maximum:
-            Number(
-                record.maximum ??
-                record.Maximum ??
-                0
-            ) ||
-            0,
-
-
-        percentage:
-            record.percentage ??
-            record.Percentage ??
-            "",
-
-
-        date:
-            record.date ??
-            record.Date ??
-            ""
-
-    };
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
 
-/* =========================================================
-   RENDER SCORE HISTORY
-========================================================= */
+/*******************************************************
+ * PRINT / SAVE RESULT AS PDF
+ *******************************************************/
 
-function renderScoreHistory(
-    records
-) {
+function printResultPDF(result) {
 
-    if (!historyList) {
+    const username =
+        escapeHTML(
+            result.username
+        );
 
-        return;
 
-    }
+    const studentClass =
+        escapeHTML(
+            result.class
+        );
 
 
-    historyList.innerHTML =
-        "";
+    const chapter =
+        escapeHTML(
+            String(result.chapter)
+        );
 
 
-    records.forEach(
-        (
-            item,
-            index
-        ) => {
+    const part1 =
+        escapeHTML(
+            String(result.part1Score)
+        );
 
-            const card =
-                document.createElement(
-                    "div"
-                );
 
+    const part2 =
+        escapeHTML(
+            String(result.part2Score)
+        );
 
-            card.className =
-                "history-card";
 
+    const part3 =
+        escapeHTML(
+            String(result.part3Score)
+        );
 
-            card.style.background =
-                "#ffffff";
-
-            card.style.borderRadius =
-                "18px";
-
-            card.style.padding =
-                "18px";
-
-            card.style.marginBottom =
-                "16px";
-
-            card.style.border =
-                "1px solid #e7e7e7";
-
-            card.style.boxShadow =
-                "0 5px 18px rgba(0,0,0,.07)";
-
-            card.style.boxSizing =
-                "border-box";
-
-            card.style.width =
-                "100%";
-
-
-            const percentage =
-                getHistoryPercentage(
-                    item
-                );
-
-
-            card.innerHTML = `
-
-                <div
-                    style="
-                        display:flex;
-                        justify-content:space-between;
-                        align-items:center;
-                        gap:12px;
-                        margin-bottom:16px;
-                    "
-                >
-
-                    <div
-                        style="
-                            min-width:0;
-                            flex:1;
-                        "
-                    >
-
-                        <div
-                            style="
-                                font-size:11px;
-                                font-weight:700;
-                                letter-spacing:1px;
-                                color:#8a8f98;
-                                margin-bottom:5px;
-                            "
-                        >
-                            TEST ${records.length - index}
-                        </div>
-
-
-                        <div
-                            style="
-                                font-size:18px;
-                                font-weight:800;
-                                line-height:1.3;
-                                color:#222222;
-                                word-break:break-word;
-                                overflow-wrap:anywhere;
-                            "
-                        >
-                            ${escapeHTML(
-                                item.chapter
-                            )}
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        style="
-                            flex-shrink:0;
-                            width:54px;
-                            height:54px;
-                            border-radius:14px;
-                            background:#383838;
-                            color:#ffffff;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            font-size:18px;
-                            font-weight:800;
-                        "
-                    >
-                        ${item.total}
-                    </div>
-
-                </div>
-
-
-                <div
-                    style="
-                        display:grid;
-                        grid-template-columns:
-                            repeat(3,minmax(0,1fr));
-                        gap:8px;
-                        width:100%;
-                    "
-                >
-
-                    ${createHistoryPart(
-                        "Part 1",
-                        item.part1
-                    )}
-
-                    ${createHistoryPart(
-                        "Part 2",
-                        item.part2
-                    )}
-
-                    ${createHistoryPart(
-                        "Part 3",
-                        item.part3
-                    )}
-
-                </div>
-
-
-                <div
-                    style="
-                        display:flex;
-                        justify-content:space-between;
-                        align-items:center;
-                        gap:10px;
-                        margin-top:15px;
-                        padding-top:13px;
-                        border-top:1px solid #eeeeee;
-                    "
-                >
-
-                    <span
-                        style="
-                            font-size:12px;
-                            color:#8a8f98;
-                            word-break:break-word;
-                        "
-                    >
-                        ${escapeHTML(
-                            formatHistoryDate(
-                                item.date
-                            )
-                        )}
-                    </span>
-
-
-                    <strong
-                        style="
-                            font-size:15px;
-                            color:#383838;
-                            flex-shrink:0;
-                        "
-                    >
-                        ${percentage}%
-                    </strong>
-
-                </div>
-
-            `;
-
-
-            historyList.appendChild(
-                card
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   HISTORY PART CARD
-========================================================= */
-
-function createHistoryPart(
-    label,
-    score
-) {
-
-    return `
-
-        <div
-            style="
-                background:#f6f6f6;
-                border-radius:12px;
-                padding:11px 8px;
-                text-align:center;
-                min-width:0;
-                box-sizing:border-box;
-            "
-        >
-
-            <span
-                style="
-                    display:block;
-                    font-size:11px;
-                    color:#777777;
-                    margin-bottom:4px;
-                "
-            >
-                ${label}
-            </span>
-
-
-            <strong
-                style="
-                    display:block;
-                    font-size:16px;
-                    color:#222222;
-                "
-            >
-                ${score}
-            </strong>
-
-        </div>
-
-    `;
-
-}
-
-
-/* =========================================================
-   HISTORY PERCENTAGE
-========================================================= */
-
-function getHistoryPercentage(
-    item
-) {
 
     const total =
-        Number(
-            item.total
-        ) ||
-        0;
+        escapeHTML(
+            String(result.total)
+        );
 
 
     const maximum =
-        Number(
-            item.maximum
-        ) ||
-        0;
-
-
-    if (
-        maximum > 0
-    ) {
-
-        return Math.round(
-            (
-                total /
-                maximum
-            ) *
-            100
-        );
-
-    }
-
-
-    if (
-        item.percentage !== "" &&
-        item.percentage !== null &&
-        item.percentage !== undefined
-    ) {
-
-        const percentage =
-            Number(
-                item.percentage
-            );
-
-
-        if (
-            !Number.isNaN(
-                percentage
-            )
-        ) {
-
-            return Math.round(
-                percentage
-            );
-
-        }
-
-    }
-
-
-    const chapterNumber =
-        extractChapterNumber(
-            item.chapter
+        escapeHTML(
+            String(result.maximum)
         );
 
 
-    if (
-        chapterNumber &&
-        state.currentChapter ===
-        chapterNumber &&
-        state.chapterData
-    ) {
-
-        const knownMaximum =
-            getMaximumScore();
-
-
-        if (
-            knownMaximum > 0
-        ) {
-
-            return Math.round(
-                (
-                    total /
-                    knownMaximum
-                ) *
-                100
-            );
-
-        }
-
-    }
-
-
-    return 0;
-
-}
-
-
-/* =========================================================
-   FORMAT HISTORY DATE
-========================================================= */
-
-function formatHistoryDate(
-    date
-) {
-
-    if (!date) {
-
-        return "";
-
-    }
-
-
-    const parsed =
-        new Date(
-            date
+    const percentage =
+        escapeHTML(
+            String(result.percentage)
         );
 
 
-    if (
-        Number.isNaN(
-            parsed.getTime()
-        )
-    ) {
-
-        return String(
-            date
-        );
-
-    }
-
-
-    return parsed.toLocaleDateString(
-        undefined,
-        {
-
-            year:
-                "numeric",
-
-            month:
-                "short",
-
-            day:
-                "numeric"
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   EXTRACT CHAPTER NUMBER
-========================================================= */
-
-function extractChapterNumber(
-    value
-) {
-
-    const match =
-        String(
-            value ?? ""
-        ).match(
-            /(\d+)/
+    const date =
+        escapeHTML(
+            String(result.date)
         );
 
 
-    return match
-        ? Number(
-            match[1]
-        )
-        : 0;
+    /*
+     * Create a completely separate
+     * printable window.
+     */
 
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-function handleLogout() {
-
-    const confirmed =
-        window.confirm(
-            "Are you sure you want to logout?"
+    const printWindow =
+        window.open(
+            "",
+            "_blank",
+            "width=900,height=900"
         );
 
 
-    if (!confirmed) {
+    if (!printWindow) {
+
+        alert(
+            "Please allow pop-ups to print your result."
+        );
 
         return;
 
     }
 
 
-    state.username =
-        null;
+    printWindow.document.open();
 
+
+    printWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html lang="en">
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            >
+
+            <title>
+                Chinese Daily Test - Result
+            </title>
+
+
+            <style>
+
+                * {
+                    box-sizing: border-box;
+                }
+
+
+                body {
+
+                    margin: 0;
+
+                    padding: 40px 20px;
+
+                    background: #f3f3f3;
+
+                    font-family:
+                        Arial,
+                        Helvetica,
+                        sans-serif;
+
+                    color: #222;
+
+                }
+
+
+                .print-page {
+
+                    width: 100%;
+
+                    max-width: 800px;
+
+                    margin: 0 auto;
+
+                    background: white;
+
+                    padding: 50px;
+
+                    border: 1px solid #ddd;
+
+                }
+
+
+                .header {
+
+                    text-align: center;
+
+                    border-bottom:
+                        3px solid #383838;
+
+                    padding-bottom: 25px;
+
+                    margin-bottom: 30px;
+
+                }
+
+
+                .logo {
+
+                    width: 58px;
+
+                    height: 58px;
+
+                    margin: 0 auto 15px;
+
+                    border-radius: 50%;
+
+                    background: #383838;
+
+                    color: white;
+
+                    display: flex;
+
+                    align-items: center;
+
+                    justify-content: center;
+
+                    font-size: 28px;
+
+                    font-weight: bold;
+
+                }
+
+
+                .header h1 {
+
+                    margin: 0;
+
+                    font-size: 28px;
+
+                    letter-spacing: 1px;
+
+                }
+
+
+                .header p {
+
+                    margin: 8px 0 0;
+
+                    color: #666;
+
+                    font-size: 14px;
+
+                }
+
+
+                .student-section {
+
+                    display: grid;
+
+                    grid-template-columns:
+                        1fr 1fr;
+
+                    gap: 15px;
+
+                    margin-bottom: 30px;
+
+                }
+
+
+                .student-box {
+
+                    padding: 16px;
+
+                    border:
+                        1px solid #ddd;
+
+                    border-radius: 8px;
+
+                    background: #fafafa;
+
+                }
+
+
+                .label {
+
+                    font-size: 11px;
+
+                    text-transform: uppercase;
+
+                    letter-spacing: 1px;
+
+                    color: #777;
+
+                    margin-bottom: 6px;
+
+                }
+
+
+                .value {
+
+                    font-size: 16px;
+
+                    font-weight: 600;
+
+                }
+
+
+                .chapter {
+
+                    text-align: center;
+
+                    margin-bottom: 30px;
+
+                }
+
+
+                .chapter h2 {
+
+                    margin: 0;
+
+                    font-size: 23px;
+
+                }
+
+
+                .scores {
+
+                    border:
+                        1px solid #ddd;
+
+                    border-radius: 10px;
+
+                    overflow: hidden;
+
+                    margin-bottom: 30px;
+
+                }
+
+
+                .score-row {
+
+                    display: grid;
+
+                    grid-template-columns:
+                        1fr 150px;
+
+                    padding: 17px 20px;
+
+                    border-bottom:
+                        1px solid #ddd;
+
+                }
+
+
+                .score-row:last-child {
+
+                    border-bottom: none;
+
+                }
+
+
+                .score-row span {
+
+                    color: #555;
+
+                }
+
+
+                .score-row strong {
+
+                    text-align: right;
+
+                }
+
+
+                .total-row {
+
+                    background: #383838;
+
+                    color: white;
+
+                    font-size: 18px;
+
+                }
+
+
+                .total-row span {
+
+                    color: white;
+
+                }
+
+
+                .percentage-box {
+
+                    text-align: center;
+
+                    padding: 25px;
+
+                    border:
+                        2px solid #383838;
+
+                    border-radius: 10px;
+
+                    margin-bottom: 30px;
+
+                }
+
+
+                .percentage-label {
+
+                    font-size: 12px;
+
+                    text-transform: uppercase;
+
+                    letter-spacing: 2px;
+
+                    color: #666;
+
+                }
+
+
+                .percentage {
+
+                    font-size: 42px;
+
+                    font-weight: bold;
+
+                    margin-top: 8px;
+
+                }
+
+
+                .footer {
+
+                    text-align: center;
+
+                    padding-top: 25px;
+
+                    border-top:
+                        1px solid #ddd;
+
+                    color: #777;
+
+                    font-size: 12px;
+
+                }
+
+
+                @media print {
+
+                    body {
+
+                        background: white;
+
+                        padding: 0;
+
+                    }
+
+
+                    .print-page {
+
+                        max-width: none;
+
+                        border: none;
+
+                        padding: 35px;
+
+                    }
+
+                }
+
+
+                @page {
+
+                    size: A4;
+
+                    margin: 15mm;
+
+                }
+
+            </style>
+
+        </head>
+
+
+        <body>
+
+            <div class="print-page">
+
+
+                <div class="header">
+
+                    <div class="logo">
+                        中
+                    </div>
+
+                    <h1>
+                        CHINESE DAILY TEST
+                    </h1>
+
+                    <p>
+                        STUDENT TEST RESULT
+                    </p>
+
+                </div>
+
+
+                <div class="student-section">
+
+                    <div class="student-box">
+
+                        <div class="label">
+                            Student
+                        </div>
+
+                        <div class="value">
+                            ${username}
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-box">
+
+                        <div class="label">
+                            Class
+                        </div>
+
+                        <div class="value">
+                            ${studentClass}
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-box">
+
+                        <div class="label">
+                            Chapter
+                        </div>
+
+                        <div class="value">
+                            Chapter ${chapter}
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-box">
+
+                        <div class="label">
+                            Date
+                        </div>
+
+                        <div class="value">
+                            ${date}
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chapter">
+
+                    <h2>
+                        Chapter ${chapter} Result
+                    </h2>
+
+                </div>
+
+
+                <div class="scores">
+
+                    <div class="score-row">
+
+                        <span>
+                            Part 1 — Translation
+                        </span>
+
+                        <strong>
+                            ${part1}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-row">
+
+                        <span>
+                            Part 2 — Answer the Question
+                        </span>
+
+                        <strong>
+                            ${part2}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-row">
+
+                        <span>
+                            Part 3 — Scramble
+                        </span>
+
+                        <strong>
+                            ${part3}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-row total-row">
+
+                        <span>
+                            Total Score
+                        </span>
+
+                        <strong>
+                            ${total} / ${maximum}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="percentage-box">
+
+                    <div class="percentage-label">
+                        Final Score
+                    </div>
+
+                    <div class="percentage">
+                        ${percentage}%
+                    </div>
+
+                </div>
+
+
+                <div class="footer">
+
+                    Chinese Daily Test
+
+                    <br>
+
+                    Student Result Report
+
+                </div>
+
+
+            </div>
+
+
+            <script>
+
+                window.onload = function () {
+
+                    setTimeout(
+                        function () {
+
+                            window.print();
+
+                        },
+                        300
+                    );
+
+                };
+
+            <\/script>
+
+        </body>
+
+        </html>
+
+    `);
+
+
+    printWindow.document.close();
+
+}
+
+
+/*******************************************************
+ * LOGOUT
+ *******************************************************/
+
+function logout() {
+
+    state.username =
+        "";
 
     state.studentClass =
-        null;
-
+        "";
 
     state.currentChapter =
-        null;
-
+        1;
 
     state.chapterData =
         null;
 
-
     state.currentPart =
-        "part1";
-
+        1;
 
     state.currentQuestionIndex =
         0;
@@ -4319,7 +3325,9 @@ function handleLogout() {
     state.answers = {
 
         part1: {},
+
         part2: {},
+
         part3: {}
 
     };
@@ -4328,9 +3336,10 @@ function handleLogout() {
     state.scores = {
 
         part1: 0,
+
         part2: 0,
-        part3: 0,
-        total: 0
+
+        part3: 0
 
     };
 
@@ -4338,7 +3347,9 @@ function handleLogout() {
     state.randomOrders = {
 
         part1: {},
+
         part2: {},
+
         part3: {}
 
     };
@@ -4368,40 +3379,47 @@ function handleLogout() {
     }
 
 
-    if (welcomeUsername) {
+    if (loginMessage) {
 
-        welcomeUsername.textContent =
-            "Student";
-
-    }
-
-
-    if (studentClassBadge) {
-
-        studentClassBadge.textContent =
+        loginMessage.textContent =
             "";
 
     }
 
 
-    if (chapterGrid) {
+    if (testScreen) {
 
-        chapterGrid.innerHTML =
-            "";
+        testScreen.classList.remove(
+            "active"
+        );
+
+        testScreen.style.display =
+            "none";
 
     }
 
 
-    clearLoginMessage();
+    if (resultScreen) {
+
+        resultScreen.classList.remove(
+            "active"
+        );
+
+        resultScreen.style.display =
+            "none";
+
+    }
 
 
-    showScreen(
-        loginScreen
-    );
+    if (loginScreen) {
+
+        loginScreen.classList.add(
+            "active"
+        );
+
+        loginScreen.style.display =
+            "";
+
+    }
 
 }
-
-
-/* =========================================================
-   END OF APP.JS
-========================================================= */
