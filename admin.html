@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - Chinese Daily Test</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ADMIN LOGIN
+    ====================================================== -->
+
+    <section
+        id="adminLoginScreen"
+        class="admin-screen active"
+    >
+
+        <div class="admin-login-wrapper">
+
+            <div class="admin-login-card">
+
+                <div class="admin-logo">
+                    管
+                </div>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p class="admin-login-subtitle">
+                    Chinese Daily Test
+                </p>
+
+
+                <form id="adminLoginForm">
+
+                    <div class="form-group">
+
+                        <label for="adminUsername">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminUsername"
+                            autocomplete="username"
+                            placeholder="Enter admin username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="adminPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            autocomplete="current-password"
+                            placeholder="Enter admin password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div
+                        id="adminLoginMessage"
+                        class="admin-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        id="adminLoginButton"
+                        class="primary-button full-button"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="adminDashboardScreen"
+        class="admin-screen"
+    >
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <div class="admin-header-logo">
+                    管
+                </div>
+
+                <div>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                    <span id="adminWelcome">
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="adminLogoutButton"
+                class="logout-button"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- MAIN -->
+
+        <main class="admin-container">
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-label">
+                        Students
+                    </div>
+
+                    <div
+                        id="studentCount"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-label">
+                        Scores
+                    </div>
+
+                    <div
+                        id="scoreCount"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-label">
+                        Answers
+                    </div>
+
+                    <div
+                        id="answerCount"
+                        class="stat-value"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TABS
+            ================================================== -->
+
+            <div class="admin-tabs">
+
+                <button
+                    type="button"
+                    class="admin-tab active"
+                    data-section="users"
+                >
+                    Users
+                </button>
+
+
+                <button
+                    type="button"
+                    class="admin-tab"
+                    data-section="scores"
+                >
+                    Scores
+                </button>
+
+
+                <button
+                    type="button"
+                    class="admin-tab"
+                    data-section="answers"
+                >
+                    Answers
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 USER MANAGEMENT
+            ================================================== -->
+
+            <section
+                id="usersSection"
+                class="admin-section active"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            User Management
+                        </h2>
+
+                        <p>
+                            Manage usernames, passwords and classes.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="addUserButton"
+                        class="primary-button"
+                    >
+                        + Add User
+                    </button>
+
+                </div>
+
+
+                <!-- USER FILTER -->
+
+                <div class="filter-card">
+
+                    <div class="filter-group">
+
+                        <label for="userClassFilter">
+                            Class
+                        </label>
+
+                        <select id="userClassFilter">
+
+                            <option value="">
+                                All Classes
+                            </option>
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Speaking">
+                                Speaking
+                            </option>
+
+                            <option value="Admin">
+                                Admin
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="userUsernameFilter">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="userUsernameFilter"
+                            placeholder="Search username..."
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="clearUserFilters"
+                        class="secondary-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="usersLoading"
+                    class="loading-message"
+                >
+                    Loading users...
+                </div>
+
+
+                <div
+                    id="usersTableContainer"
+                    class="table-container"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SCORE MANAGEMENT
+            ================================================== -->
+
+            <section
+                id="scoresSection"
+                class="admin-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Score Records
+                        </h2>
+
+                        <p>
+                            View student test results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCORE FILTER -->
+
+                <div class="filter-card">
+
+                    <div class="filter-group">
+
+                        <label for="scoreClassFilter">
+                            Class
+                        </label>
+
+                        <select id="scoreClassFilter">
+
+                            <option value="">
+                                All Classes
+                            </option>
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Speaking">
+                                Speaking
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="scoreUsernameFilter">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="scoreUsernameFilter"
+                            placeholder="Search username..."
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="clearScoreFilters"
+                        class="secondary-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="scoresLoading"
+                    class="loading-message"
+                >
+                    Loading scores...
+                </div>
+
+
+                <div
+                    id="scoresTableContainer"
+                    class="table-container"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANSWER RECORDS
+            ================================================== -->
+
+            <section
+                id="answersSection"
+                class="admin-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Answer Records
+                        </h2>
+
+                        <p>
+                            View answers submitted by students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANSWER FILTER -->
+
+                <div class="filter-card">
+
+                    <div class="filter-group">
+
+                        <label for="answerClassFilter">
+                            Class
+                        </label>
+
+                        <select id="answerClassFilter">
+
+                            <option value="">
+                                All Classes
+                            </option>
+
+                            <option value="Beginner">
+                                Beginner
+                            </option>
+
+                            <option value="Speaking">
+                                Speaking
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="answerUsernameFilter">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="answerUsernameFilter"
+                            placeholder="Search username..."
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="clearAnswerFilters"
+                        class="secondary-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="answersLoading"
+                    class="loading-message"
+                >
+                    Loading answers...
+                </div>
+
+
+                <div
+                    id="answersTableContainer"
+                    class="table-container"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+
+    <!-- =====================================================
+         ADD / EDIT USER MODAL
+    ====================================================== -->
+
+    <div
+        id="userModal"
+        class="modal-overlay"
+    >
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="userModalTitle">
+                        Add User
+                    </h2>
+
+                    <p>
+                        Account information will be saved to the
+                        existing Login sheet.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeUserModal"
+                    class="close-modal-button"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="userForm">
+
+                <input
+                    type="hidden"
+                    id="editingUsername"
+                >
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="userFormUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userFormUsername"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="userFormPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userFormPassword"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CLASS -->
+
+                <div class="form-group">
+
+                    <label for="userFormClass">
+                        Class
+                    </label>
+
+                    <select
+                        id="userFormClass"
+                        required
+                    >
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Speaking">
+                            Speaking
+                        </option>
+
+                        <option value="Admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="userFormMessage"
+                    class="admin-message"
+                ></div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelUserButton"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="saveUserButton"
+                        class="primary-button"
+                    >
+                        Save User
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
