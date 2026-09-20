@@ -534,11 +534,17 @@ function showScreen(
 ) {
 
     const screens = [
+
         loginScreen,
+
         chapterScreen,
+
         testScreen,
+
         resultScreen,
+
         historyScreen
+
     ];
 
 
@@ -719,6 +725,11 @@ function generateChapterButtons() {
             "click",
             () => {
 
+                /*
+                 * IMPORTANT:
+                 * Chapter is opened ONLY
+                 * when the student clicks it.
+                 */
                 loadChapter(
                     i
                 );
@@ -835,23 +846,6 @@ async function handleLogin(
             );
 
 
-        /*
-         * Admin accounts are redirected
-         * to admin.html.
-         */
-        if (
-            studentClass.toLowerCase() ===
-            "admin"
-        ) {
-
-            window.location.href =
-                "admin.html";
-
-            return;
-
-        }
-
-
         if (!studentClass) {
 
             showLoginMessage(
@@ -880,6 +874,10 @@ async function handleLogin(
         }
 
 
+        /*
+         * Save login state.
+         */
+
         state.username =
             result.username ||
             username;
@@ -887,6 +885,10 @@ async function handleLogin(
         state.studentClass =
             studentClass;
 
+
+        /*
+         * Update UI.
+         */
 
         if (welcomeUsername) {
 
@@ -904,8 +906,17 @@ async function handleLogin(
         }
 
 
+        /*
+         * Generate ALL chapters.
+         *
+         * DO NOT call loadChapter(1).
+         */
         generateChapterButtons();
 
+
+        /*
+         * Clear password.
+         */
 
         if (passwordInput) {
 
@@ -914,6 +925,15 @@ async function handleLogin(
 
         }
 
+
+        /*
+         * IMPORTANT:
+         *
+         * Login ends here.
+         *
+         * The student sees the chapter
+         * selection screen.
+         */
 
         showScreen(
             chapterScreen
@@ -1033,7 +1053,7 @@ function setLoginLoading(
 
 
 /* =========================================================
-   API CALL
+   GOOGLE APPS SCRIPT API
 ========================================================= */
 
 async function callAPI(
@@ -1086,12 +1106,6 @@ async function callAPI(
         }
     );
 
-
-    /*
-     * Use POST for Google Apps Script.
-     * This is especially important for
-     * saveScore and saveAnswerRecords.
-     */
 
     const response =
         await fetch(
@@ -1201,44 +1215,61 @@ async function loadChapter(
     }
 
 
+    /*
+     * Set chapter state.
+     */
+
     state.currentChapter =
         chapter;
 
+
     state.currentPart =
         "part1";
+
 
     state.currentQuestionIndex =
         0;
 
 
     state.answers = {
+
         part1: {},
         part2: {},
         part3: {}
+
     };
 
 
     state.scores = {
+
         part1: 0,
         part2: 0,
         part3: 0,
         total: 0
+
     };
 
 
     state.randomOrders = {
+
         part1: {},
         part2: {},
         part3: {}
+
     };
 
 
     state.testSaved =
         false;
 
+
     state.answerRecordsSaved =
         false;
 
+
+    /*
+     * Show test screen.
+     */
 
     showScreen(
         testScreen
@@ -1341,9 +1372,11 @@ function validateChapterData(
 
 
     const requiredParts = [
+
         "part1",
         "part2",
         "part3"
+
     ];
 
 
@@ -1380,7 +1413,7 @@ function validateChapterData(
 
 
 /* =========================================================
-   TEST LOADING STATE
+   TEST LOADING
 ========================================================= */
 
 function showTestLoading() {
@@ -1668,7 +1701,7 @@ function getPartDisplayName(
 
 
 /* =========================================================
-   QUESTION TYPE LABEL
+   QUESTION TYPE
 ========================================================= */
 
 function getQuestionTypeLabel(
@@ -1782,6 +1815,7 @@ function switchPart(
     state.currentPart =
         part;
 
+
     state.currentQuestionIndex =
         0;
 
@@ -1798,7 +1832,7 @@ function switchPart(
 
 
 /* =========================================================
-   WORD RANDOMIZATION
+   SHUFFLE WORDS
 ========================================================= */
 
 function shuffleWords(
@@ -1813,7 +1847,6 @@ function shuffleWords(
             ) => ({
 
                 word,
-
                 originalIndex
 
             })
@@ -1859,6 +1892,7 @@ function getRandomOrder(
 
     const part =
         state.currentPart;
+
 
     const questionIndex =
         state.currentQuestionIndex;
@@ -1993,7 +2027,7 @@ function renderWordBank(
 
 
 /* =========================================================
-   ADD WORD
+   ADD WORD TO ANSWER
 ========================================================= */
 
 function addWordToAnswer(
@@ -2002,6 +2036,7 @@ function addWordToAnswer(
 
     const part =
         state.currentPart;
+
 
     const questionIndex =
         state.currentQuestionIndex;
@@ -2073,7 +2108,6 @@ function addWordToAnswer(
 
 
     renderSelectedWords();
-
 
     renderWordBank(
         getCurrentQuestion()
@@ -2160,11 +2194,15 @@ function renderSelectedWords() {
 
 
             button.className =
-                "selected-word";
+                "word-button selected-word";
 
 
             button.textContent =
                 item.word;
+
+
+            button.title =
+                "Remove this word";
 
 
             button.addEventListener(
@@ -2194,7 +2232,7 @@ function renderSelectedWords() {
 ========================================================= */
 
 function removeWordFromAnswer(
-    index
+    answerIndex
 ) {
 
     const answer =
@@ -2216,8 +2254,18 @@ function removeWordFromAnswer(
     }
 
 
+    if (
+        answerIndex < 0 ||
+        answerIndex >= answer.length
+    ) {
+
+        return;
+
+    }
+
+
     answer.splice(
-        index,
+        answerIndex,
         1
     );
 
@@ -2232,7 +2280,7 @@ function removeWordFromAnswer(
 
 
 /* =========================================================
-   CLEAR ANSWER
+   CLEAR CURRENT ANSWER
 ========================================================= */
 
 function clearCurrentAnswer() {
@@ -2254,7 +2302,7 @@ function clearCurrentAnswer() {
 
 
 /* =========================================================
-   NAVIGATION
+   NAVIGATION BUTTONS
 ========================================================= */
 
 function updateNavigationButtons() {
@@ -2263,7 +2311,12 @@ function updateNavigationButtons() {
         getCurrentPartData();
 
 
-    if (!part) {
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
 
         return;
 
@@ -2274,10 +2327,19 @@ function updateNavigationButtons() {
         part.questions.length;
 
 
+    const isFirstQuestion =
+        state.currentQuestionIndex === 0;
+
+
+    const isLastQuestion =
+        state.currentQuestionIndex ===
+        totalQuestions - 1;
+
+
     if (previousButton) {
 
         previousButton.disabled =
-            state.currentQuestionIndex === 0;
+            isFirstQuestion;
 
     }
 
@@ -2285,17 +2347,28 @@ function updateNavigationButtons() {
     if (nextButton) {
 
         if (
-            state.currentQuestionIndex <
-            totalQuestions - 1
+            isLastQuestion
         ) {
 
-            nextButton.textContent =
-                "Next";
+            if (
+                state.currentPart ===
+                "part3"
+            ) {
+
+                nextButton.textContent =
+                    "Finish Test →";
+
+            } else {
+
+                nextButton.textContent =
+                    "Next Part →";
+
+            }
 
         } else {
 
             nextButton.textContent =
-                "Finish Part";
+                "Next →";
 
         }
 
@@ -2343,7 +2416,12 @@ function goToNextQuestion() {
         getCurrentPartData();
 
 
-    if (!part) {
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
 
         return;
 
@@ -2354,10 +2432,12 @@ function goToNextQuestion() {
         part.questions.length;
 
 
-    if (
-        state.currentQuestionIndex <
-        totalQuestions - 1
-    ) {
+    const isLastQuestion =
+        state.currentQuestionIndex >=
+        totalQuestions - 1;
+
+
+    if (!isLastQuestion) {
 
         state.currentQuestionIndex++;
 
@@ -2370,14 +2450,11 @@ function goToNextQuestion() {
             0
         );
 
+
         return;
 
     }
 
-
-    /*
-     * Current part is finished.
-     */
 
     if (
         state.currentPart ===
@@ -2407,11 +2484,6 @@ function goToNextQuestion() {
     }
 
 
-    /*
-     * Part 3 finished.
-     * Finish entire test.
-     */
-
     finishTest();
 
 }
@@ -2423,7 +2495,20 @@ function goToNextQuestion() {
 
 async function finishTest() {
 
-    calculateScores();
+    if (
+        state.testSaved
+    ) {
+
+        showScreen(
+            resultScreen
+        );
+
+        return;
+
+    }
+
+
+    calculateAllScores();
 
     renderResults();
 
@@ -2432,16 +2517,7 @@ async function finishTest() {
     );
 
 
-    /*
-     * Save score first.
-     */
-
     await saveScore();
-
-
-    /*
-     * Then save all answer records.
-     */
 
     await saveAnswerRecords();
 
@@ -2449,85 +2525,96 @@ async function finishTest() {
 
 
 /* =========================================================
-   CALCULATE SCORES
+   CALCULATE ALL SCORES
 ========================================================= */
 
-function calculateScores() {
+function calculateAllScores() {
 
-    const parts = [
-        "part1",
-        "part2",
-        "part3"
-    ];
-
-
-    state.scores = {
-
-        part1: 0,
-
-        part2: 0,
-
-        part3: 0,
-
-        total: 0
-
-    };
+    state.scores.part1 =
+        calculatePartScore(
+            "part1"
+        );
 
 
-    parts.forEach(
-        partName => {
-
-            const questions =
-                state.chapterData?.[
-                    partName
-                ]?.questions || [];
+    state.scores.part2 =
+        calculatePartScore(
+            "part2"
+        );
 
 
-            let score =
-                0;
-
-
-            questions.forEach(
-                (
-                    question,
-                    index
-                ) => {
-
-                    const studentAnswer =
-                        state.answers?.[
-                            partName
-                        ]?.[
-                            index
-                        ] || [];
-
-
-                    if (
-                        isAnswerCorrect(
-                            question,
-                            studentAnswer
-                        )
-                    ) {
-
-                        score++;
-
-                    }
-
-                }
-            );
-
-
-            state.scores[
-                partName
-            ] = score;
-
-        }
-    );
+    state.scores.part3 =
+        calculatePartScore(
+            "part3"
+        );
 
 
     state.scores.total =
         state.scores.part1 +
         state.scores.part2 +
         state.scores.part3;
+
+}
+
+
+/* =========================================================
+   CALCULATE PART SCORE
+========================================================= */
+
+function calculatePartScore(
+    partName
+) {
+
+    const part =
+        state.chapterData?.[
+            partName
+        ];
+
+
+    if (
+        !part ||
+        !Array.isArray(
+            part.questions
+        )
+    ) {
+
+        return 0;
+
+    }
+
+
+    let score = 0;
+
+
+    part.questions.forEach(
+        (
+            question,
+            index
+        ) => {
+
+            const studentAnswer =
+                state.answers[
+                    partName
+                ][
+                    index
+                ] || [];
+
+
+            if (
+                isAnswerCorrect(
+                    studentAnswer,
+                    question
+                )
+            ) {
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    return score;
 
 }
 
@@ -2541,71 +2628,80 @@ function normalizeAnswerWords(
 ) {
 
     if (
-        Array.isArray(
+        !Array.isArray(
             answer
         )
     ) {
 
-        return answer.map(
-            item => {
+        return [];
 
-                if (
-                    typeof item ===
-                    "object" &&
-                    item !== null
-                ) {
+    }
 
-                    return String(
-                        item.word || ""
-                    )
-                        .trim()
-                        .toLowerCase();
 
-                }
+    return answer.map(
+        item => {
 
-                return String(
+            if (
+                typeof item ===
+                "string"
+            ) {
+
+                return normalizeWord(
                     item
-                )
-                    .trim()
-                    .toLowerCase();
+                );
 
             }
-        );
-
-    }
 
 
-    if (
-        typeof answer ===
-        "string"
-    ) {
+            if (
+                item &&
+                typeof item.word ===
+                "string"
+            ) {
 
-        return answer
-            .trim()
-            .split(/\s+/)
-            .filter(Boolean)
-            .map(
-                word =>
-                    word
-                        .trim()
-                        .toLowerCase()
-            );
+                return normalizeWord(
+                    item.word
+                );
 
-    }
+            }
 
 
-    return [];
+            return "";
+
+        }
+    );
 
 }
 
 
 /* =========================================================
-   CHECK ANSWER
+   NORMALIZE WORD
+========================================================= */
+
+function normalizeWord(
+    word
+) {
+
+    return String(
+        word ?? ""
+    )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .toLowerCase();
+
+}
+
+
+/* =========================================================
+   ANSWER CORRECTNESS
 ========================================================= */
 
 function isAnswerCorrect(
-    question,
-    studentAnswer
+    studentAnswer,
+    question
 ) {
 
     const studentWords =
@@ -2623,8 +2719,7 @@ function isAnswerCorrect(
 
 
     if (
-        acceptedAnswers.length ===
-        0
+        acceptedAnswers.length === 0
     ) {
 
         return false;
@@ -2768,8 +2863,7 @@ function getMaximumScore() {
     }
 
 
-    let maximum =
-        0;
+    let maximum = 0;
 
 
     [
@@ -2975,11 +3069,12 @@ async function saveAnswerRecords() {
 
     if (
         !state.username ||
-        !state.studentClass
+        !state.studentClass ||
+        !state.chapterData
     ) {
 
         console.error(
-            "Cannot save answer records: student information missing."
+            "Cannot save answer records: missing student or chapter data."
         );
 
         return;
@@ -2995,41 +3090,54 @@ async function saveAnswerRecords() {
         "part2",
         "part3"
     ].forEach(
-        part => {
+        partName => {
 
-            const questions =
-                state.chapterData?.[
-                    part
-                ]?.questions || [];
+            const part =
+                state.chapterData[
+                    partName
+                ];
 
 
-            questions.forEach(
+            if (
+                !part ||
+                !Array.isArray(
+                    part.questions
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            part.questions.forEach(
                 (
                     question,
                     index
                 ) => {
 
                     const answer =
-                        state.answers?.[
-                            part
-                        ]?.[
+                        state.answers[
+                            partName
+                        ][
                             index
                         ] || [];
 
 
-                    const answerText =
+                    const words =
                         normalizeAnswerWords(
                             answer
-                        ).join(" ");
+                        );
 
 
                     records.push({
 
                         question:
-                            `${formatPartName(part)} - ${question.question || "Question"}`,
+                            question.question ||
+                            "",
 
                         answer:
-                            answerText
+                            words.join(" ")
 
                     });
 
@@ -3052,11 +3160,6 @@ async function saveAnswerRecords() {
     console.log(
         "Class:",
         state.studentClass
-    );
-
-    console.log(
-        "Record count:",
-        records.length
     );
 
     console.log(
@@ -3088,14 +3191,14 @@ async function saveAnswerRecords() {
 
 
         console.log(
-            "GOOGLE APPS SCRIPT RESPONSE:",
+            "GOOGLE APPS SCRIPT ANSWER RECORD RESPONSE:",
             result
         );
 
 
         if (
             result &&
-            result.success === true
+            result.success
         ) {
 
             state.answerRecordsSaved =
@@ -3114,54 +3217,11 @@ async function saveAnswerRecords() {
     } catch (error) {
 
         console.error(
-            "Answer records could not be saved:",
+            "Save answer records error:",
             error
         );
 
     }
-
-}
-
-
-/* =========================================================
-   FORMAT PART NAME
-========================================================= */
-
-function formatPartName(
-    part
-) {
-
-    if (
-        part ===
-        "part1"
-    ) {
-
-        return "Part 1 - Translation";
-
-    }
-
-
-    if (
-        part ===
-        "part2"
-    ) {
-
-        return "Part 2 - Answer the Question";
-
-    }
-
-
-    if (
-        part ===
-        "part3"
-    ) {
-
-        return "Part 3 - Scramble";
-
-    }
-
-
-    return part;
 
 }
 
@@ -3179,8 +3239,7 @@ async function getScoreHistory() {
 
         return {
 
-            success:
-                false,
+            success: false,
 
             message:
                 "Student information is missing."
@@ -3302,17 +3361,6 @@ async function showScoreHistory() {
         }
 
 
-        /*
-         * Support both:
-         *
-         * result.records
-         *
-         * and
-         *
-         * result.history
-         *
-         */
-
         const history =
             Array.isArray(
                 result.records
@@ -3328,8 +3376,7 @@ async function showScoreHistory() {
 
 
         if (
-            history.length ===
-            0
+            history.length === 0
         ) {
 
             if (historyEmpty) {
@@ -3382,8 +3429,6 @@ async function showScoreHistory() {
 
 /* =========================================================
    RENDER SCORE HISTORY
-   IMPORTANT:
-   PRINT BUTTON IS CREATED HERE
 ========================================================= */
 
 function renderScoreHistory(
@@ -3413,23 +3458,22 @@ function renderScoreHistory(
                 );
 
 
-            const historyItem =
+            const card =
                 document.createElement(
                     "div"
                 );
 
 
-            historyItem.className =
+            card.className =
                 "history-item";
 
 
-            const historyInfo =
+            const info =
                 document.createElement(
                     "div"
                 );
 
-
-            historyInfo.className =
+            info.className =
                 "history-info";
 
 
@@ -3437,7 +3481,6 @@ function renderScoreHistory(
                 document.createElement(
                     "div"
                 );
-
 
             title.className =
                 "history-title";
@@ -3453,9 +3496,19 @@ function renderScoreHistory(
                     "div"
                 );
 
-
             details.className =
                 "history-details";
+
+
+            const date =
+                document.createElement(
+                    "span"
+                );
+
+            date.textContent =
+                formatHistoryDate(
+                    item.date
+                );
 
 
             const classText =
@@ -3463,190 +3516,148 @@ function renderScoreHistory(
                     "span"
                 );
 
-
             classText.textContent =
-                `Class: ${
-                    item.class ||
-                    state.studentClass
-                }`;
+                item.class ||
+                state.studentClass;
 
 
-            const dateText =
-                document.createElement(
-                    "span"
-                );
-
-
-            dateText.textContent =
-                formatHistoryDate(
-                    item.date ||
-                    item.Date
-                );
-
+            details.appendChild(
+                date
+            );
 
             details.appendChild(
                 classText
             );
 
 
-            details.appendChild(
-                dateText
-            );
-
-
-            historyInfo.appendChild(
+            info.appendChild(
                 title
             );
 
-
-            historyInfo.appendChild(
+            info.appendChild(
                 details
             );
 
-
-            /*
-             * Scores
-             */
 
             const scores =
                 document.createElement(
                     "div"
                 );
 
-
             scores.className =
                 "history-scores";
 
 
-            scores.appendChild(
-                createHistoryScoreBox(
-                    "Part 1",
-                    item.part1
-                )
-            );
+            scores.innerHTML = `
+
+                <div>
+
+                    <span>
+                        Part 1
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(
+                            String(
+                                item.part1 ??
+                                0
+                            )
+                        )}
+                    </strong>
+
+                </div>
 
 
-            scores.appendChild(
-                createHistoryScoreBox(
-                    "Part 2",
-                    item.part2
-                )
-            );
+                <div>
+
+                    <span>
+                        Part 2
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(
+                            String(
+                                item.part2 ??
+                                0
+                            )
+                        )}
+                    </strong>
+
+                </div>
 
 
-            scores.appendChild(
-                createHistoryScoreBox(
-                    "Part 3",
-                    item.part3
-                )
-            );
+                <div>
 
+                    <span>
+                        Part 3
+                    </span>
 
-            /*
-             * Total section
-             */
+                    <strong>
+                        ${escapeHTML(
+                            String(
+                                item.part3 ??
+                                0
+                            )
+                        )}
+                    </strong>
+
+                </div>
+
+            `;
+
 
             const totalBox =
                 document.createElement(
                     "div"
                 );
 
-
             totalBox.className =
                 "history-total-box";
 
 
-            const totalLabel =
-                document.createElement(
-                    "span"
-                );
+            totalBox.innerHTML = `
+
+                <div>
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        ${escapeHTML(
+                            String(
+                                item.total ??
+                                0
+                            )
+                        )}
+                    </strong>
+
+                </div>
 
 
-            totalLabel.textContent =
-                "Total Score";
+                <div>
+
+                    <span>
+                        Percentage
+                    </span>
+
+                    <strong>
+                        ${percentage}%
+                    </strong>
+
+                </div>
+
+            `;
 
 
-            const totalValue =
-                document.createElement(
-                    "strong"
-                );
-
-
-            const maximum =
-                Number(
-                    item.maximum
-                ) > 0
-                    ? Number(
-                        item.maximum
-                    )
-                    : getKnownMaximumForHistoryItem(
-                        item
-                    );
-
-
-            if (
-                maximum > 0
-            ) {
-
-                totalValue.textContent =
-                    `${item.total ?? 0} / ${maximum}`;
-
-            } else {
-
-                totalValue.textContent =
-                    String(
-                        item.total ??
-                        0
-                    );
-
-            }
-
-
-            totalBox.appendChild(
-                totalLabel
-            );
-
-
-            totalBox.appendChild(
-                totalValue
-            );
-
-
-            /*
-             * Percentage
-             */
-
-            const percentageBox =
+            const actions =
                 document.createElement(
                     "div"
                 );
 
-
-            percentageBox.className =
-                "history-percentage";
-
-
-            percentageBox.textContent =
-                `${percentage}%`;
-
-
-            /*
-             * Bottom section
-             */
-
-            const bottom =
-                document.createElement(
-                    "div"
-                );
-
-
-            bottom.className =
+            actions.className =
                 "history-actions";
 
-
-            /*
-             * PRINT BUTTON
-             */
 
             const printButton =
                 document.createElement(
@@ -3666,159 +3677,46 @@ function renderScoreHistory(
                 "Print / Save PDF";
 
 
-            /*
-             * Create a clean copy of
-             * the score data for printing.
-             */
-
-            const resultData = {
-
-                username:
-                    state.username,
-
-                class:
-                    item.class ||
-                    state.studentClass,
-
-                chapter:
-                    item.chapter ||
-                    "Chapter",
-
-                part1:
-                    Number(
-                        item.part1
-                    ) || 0,
-
-                part2:
-                    Number(
-                        item.part2
-                    ) || 0,
-
-                part3:
-                    Number(
-                        item.part3
-                    ) || 0,
-
-                total:
-                    Number(
-                        item.total
-                    ) || 0,
-
-                maximum:
-                    maximum,
-
-                percentage:
-                    percentage,
-
-                date:
-                    item.date ||
-                    item.Date ||
-                    ""
-
-            };
-
-
             printButton.addEventListener(
                 "click",
                 () => {
 
                     printResultPDF(
-                        resultData
+                        item
                     );
 
                 }
             );
 
 
-            bottom.appendChild(
+            actions.appendChild(
                 printButton
             );
 
 
-            /*
-             * Put everything together.
-             */
-
-            historyItem.appendChild(
-                historyInfo
+            card.appendChild(
+                info
             );
 
-            historyItem.appendChild(
+            card.appendChild(
                 scores
             );
 
-            historyItem.appendChild(
+            card.appendChild(
                 totalBox
             );
 
-            historyItem.appendChild(
-                percentageBox
-            );
-
-            historyItem.appendChild(
-                bottom
+            card.appendChild(
+                actions
             );
 
 
             historyList.appendChild(
-                historyItem
+                card
             );
 
         }
     );
-
-}
-
-
-/* =========================================================
-   CREATE HISTORY SCORE BOX
-========================================================= */
-
-function createHistoryScoreBox(
-    label,
-    value
-) {
-
-    const box =
-        document.createElement(
-            "div"
-        );
-
-
-    const labelElement =
-        document.createElement(
-            "span"
-        );
-
-
-    labelElement.textContent =
-        label;
-
-
-    const valueElement =
-        document.createElement(
-            "strong"
-        );
-
-
-    valueElement.textContent =
-        String(
-            value ??
-            0
-        );
-
-
-    box.appendChild(
-        labelElement
-    );
-
-
-    box.appendChild(
-        valueElement
-    );
-
-
-    return box;
 
 }
 
@@ -3833,13 +3731,15 @@ function calculateHistoryPercentage(
 
     const total =
         Number(
-            item?.total
+            item?.total ??
+            item?.Total
         ) || 0;
 
 
     const maximum =
         Number(
-            item?.maximum
+            item?.maximum ??
+            item?.Maximum
         ) || 0;
 
 
@@ -3877,13 +3777,40 @@ function calculateHistoryPercentage(
     }
 
 
+    const recordedPartTotal =
+        (
+            Number(
+                item?.part1
+            ) || 0
+        ) +
+        (
+            Number(
+                item?.part2
+            ) || 0
+        ) +
+        (
+            Number(
+                item?.part3
+            ) || 0
+        );
+
+
+    if (
+        recordedPartTotal <= 0
+    ) {
+
+        return 0;
+
+    }
+
+
     return 0;
 
 }
 
 
 /* =========================================================
-   GET KNOWN MAXIMUM FOR HISTORY
+   GET KNOWN MAXIMUM
 ========================================================= */
 
 function getKnownMaximumForHistoryItem(
@@ -3904,12 +3831,6 @@ function getKnownMaximumForHistoryItem(
 
     }
 
-
-    /*
-     * If the currently loaded chapter
-     * is the same chapter, use its
-     * exact question count.
-     */
 
     if (
         state.currentChapter ===
@@ -4023,33 +3944,45 @@ function printResultPDF(
     result
 ) {
 
-    /*
-     * Create a separate browser
-     * window for printing.
-     */
-
-    const printWindow =
-        window.open(
-            "",
-            "_blank",
-            "width=900,height=1000"
-        );
-
-
-    if (!printWindow) {
-
-        alert(
-            "The print window was blocked by your browser. Please allow pop-ups for this website."
-        );
+    if (!result) {
 
         return;
 
     }
 
 
-    const maximum =
+    const student =
+        result.username ||
+        state.username ||
+        "";
+
+
+    const studentClass =
+        result.class ||
+        state.studentClass ||
+        "";
+
+
+    const chapter =
+        result.chapter ||
+        "Chapter";
+
+
+    const part1 =
         Number(
-            result.maximum
+            result.part1
+        ) || 0;
+
+
+    const part2 =
+        Number(
+            result.part2
+        ) || 0;
+
+
+    const part3 =
+        Number(
+            result.part3
         ) || 0;
 
 
@@ -4059,29 +3992,34 @@ function printResultPDF(
         ) || 0;
 
 
-    let percentage =
+    let maximum =
         Number(
-            result.percentage
-        );
+            result.maximum
+        ) || 0;
 
 
     if (
-        !Number.isFinite(
-            percentage
-        )
+        maximum <= 0 &&
+        result === getCurrentResultObject()
     ) {
 
-        percentage =
-            maximum > 0
-                ? Math.round(
-                    (
-                        total /
-                        maximum
-                    ) * 100
-                )
-                : 0;
+        maximum =
+            getMaximumScore();
 
     }
+
+
+    const percentage =
+        maximum > 0
+            ? Math.round(
+                (
+                    total /
+                    maximum
+                ) * 100
+            )
+            : calculateHistoryPercentage(
+                result
+            );
 
 
     const date =
@@ -4090,362 +4028,226 @@ function printResultPDF(
         );
 
 
-    const student =
-        escapeHTML(
-            result.username ||
-            ""
+    const printWindow =
+        window.open(
+            "",
+            "_blank",
+            "width=900,height=700"
         );
 
 
-    const studentClass =
+    if (!printWindow) {
+
+        alert(
+            "Please allow pop-ups to print the result."
+        );
+
+        return;
+
+    }
+
+
+    const safeStudent =
         escapeHTML(
-            result.class ||
-            ""
+            student
         );
 
 
-    const chapter =
+    const safeClass =
         escapeHTML(
-            result.chapter ||
-            ""
+            studentClass
         );
 
 
-    const dateText =
+    const safeChapter =
         escapeHTML(
-            date ||
-            new Date().toLocaleDateString()
+            chapter
         );
 
 
-    const maximumText =
-        maximum > 0
-            ? ` / ${maximum}`
-            : "";
+    const safeDate =
+        escapeHTML(
+            date
+        );
 
 
-    const html = `
+    printWindow.document.open();
+
+
+    printWindow.document.write(`
+
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
 <title>
-    Chinese Daily Test - Result
+    Chinese Test Result
 </title>
-
 
 <style>
 
-    @page {
-
-        size: A4;
-
-        margin: 18mm;
-
-    }
-
-
     * {
-
         box-sizing: border-box;
-
     }
-
 
     body {
-
         margin: 0;
-
-        padding: 0;
-
-        background: #ffffff;
-
-        color: #222222;
-
+        padding: 40px;
         font-family:
             Arial,
             Helvetica,
             sans-serif;
-
+        background: #ffffff;
+        color: #222222;
     }
-
 
     .page {
-
-        width: 100%;
-
         max-width: 800px;
-
         margin: 0 auto;
-
     }
-
 
     .header {
-
         text-align: center;
-
-        padding-bottom: 24px;
-
-        border-bottom:
-            2px solid #383838;
-
-        margin-bottom: 24px;
-
+        margin-bottom: 35px;
+        border-bottom: 2px solid #222;
+        padding-bottom: 20px;
     }
-
 
     .header h1 {
-
-        margin: 0 0 8px 0;
-
-        font-size: 26px;
-
-        letter-spacing: 1px;
-
+        margin: 0 0 10px;
+        font-size: 28px;
     }
-
 
     .header p {
-
-        margin: 0;
-
-        color: #666666;
-
-        font-size: 14px;
-
+        margin: 4px 0;
+        color: #666;
     }
-
 
     .student-info {
-
         display: grid;
-
         grid-template-columns:
             1fr 1fr;
-
-        gap: 14px;
-
-        margin-bottom: 28px;
-
+        gap: 15px;
+        margin-bottom: 30px;
     }
-
 
     .info-box {
-
-        border:
-            1px solid #dddddd;
-
+        border: 1px solid #dddddd;
         border-radius: 8px;
-
-        padding: 14px;
-
+        padding: 15px;
     }
-
 
     .info-label {
-
-        font-size: 11px;
-
+        display: block;
+        font-size: 12px;
         color: #777777;
-
-        text-transform: uppercase;
-
-        margin-bottom: 6px;
-
-        letter-spacing: .5px;
-
+        margin-bottom: 5px;
     }
-
 
     .info-value {
-
-        font-size: 15px;
-
-        font-weight: 700;
-
-        color: #222222;
-
+        font-size: 16px;
+        font-weight: bold;
     }
 
-
-    .section-title {
-
-        font-size: 17px;
-
-        font-weight: 700;
-
-        margin:
-            24px 0 12px 0;
-
-        padding-bottom: 7px;
-
-        border-bottom:
-            1px solid #dddddd;
-
-    }
-
-
-    .parts {
-
+    .scores {
         display: grid;
-
         grid-template-columns:
             repeat(3, 1fr);
-
-        gap: 12px;
-
+        gap: 15px;
+        margin-bottom: 25px;
     }
 
-
-    .part-box {
-
-        border:
-            1px solid #dddddd;
-
+    .score-box {
+        border: 1px solid #dddddd;
         border-radius: 8px;
-
-        padding: 16px;
-
-        text-align: center;
-
-    }
-
-
-    .part-box span {
-
-        display: block;
-
-        font-size: 12px;
-
-        color: #777777;
-
-        margin-bottom: 8px;
-
-    }
-
-
-    .part-box strong {
-
-        display: block;
-
-        font-size: 22px;
-
-        color: #222222;
-
-    }
-
-
-    .total-box {
-
-        margin-top: 24px;
-
         padding: 20px;
-
-        border-radius: 10px;
-
-        background: #f5f5f5;
-
         text-align: center;
-
     }
 
+    .score-box span {
+        display: block;
+        font-size: 13px;
+        color: #777777;
+        margin-bottom: 8px;
+    }
+
+    .score-box strong {
+        font-size: 25px;
+    }
+
+    .total {
+        border: 2px solid #222222;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        justify-content:
+            space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
 
     .total-label {
-
-        font-size: 13px;
-
-        color: #666666;
-
-        margin-bottom: 8px;
-
+        font-size: 18px;
+        font-weight: bold;
     }
 
-
-    .total-score {
-
-        font-size: 32px;
-
-        font-weight: 700;
-
-        color: #222222;
-
+    .total-value {
+        font-size: 28px;
+        font-weight: bold;
     }
-
 
     .percentage {
-
-        margin-top: 12px;
-
+        text-align: center;
         font-size: 20px;
-
-        font-weight: 700;
-
-        color: #383838;
-
+        font-weight: bold;
+        margin-bottom: 30px;
     }
-
 
     .footer {
-
-        margin-top: 45px;
-
-        padding-top: 15px;
-
-        border-top:
-            1px solid #dddddd;
-
         text-align: center;
-
+        font-size: 12px;
         color: #888888;
-
-        font-size: 11px;
-
+        border-top: 1px solid #dddddd;
+        padding-top: 15px;
     }
-
 
     @media print {
 
         body {
-
-            background: #ffffff;
-
+            padding: 0;
         }
 
         .page {
-
             max-width: none;
+        }
 
+        @page {
+            size: A4;
+            margin: 18mm;
         }
 
     }
-
 
 </style>
 
 </head>
 
-
 <body>
 
 <div class="page">
 
-
     <div class="header">
 
         <h1>
-            CHINESE DAILY TEST
+            Chinese Daily Test
         </h1>
 
         <p>
-            STUDENT TEST RESULT
+            Test Result
         </p>
 
     </div>
@@ -4453,150 +4255,125 @@ function printResultPDF(
 
     <div class="student-info">
 
-
         <div class="info-box">
 
-            <div class="info-label">
+            <span class="info-label">
                 Student
-            </div>
+            </span>
 
-            <div class="info-value">
-                ${student}
-            </div>
+            <span class="info-value">
+                ${safeStudent}
+            </span>
 
         </div>
 
 
         <div class="info-box">
 
-            <div class="info-label">
+            <span class="info-label">
                 Class
-            </div>
+            </span>
 
-            <div class="info-value">
-                ${studentClass}
-            </div>
+            <span class="info-value">
+                ${safeClass}
+            </span>
 
         </div>
 
 
         <div class="info-box">
 
-            <div class="info-label">
+            <span class="info-label">
                 Chapter
-            </div>
+            </span>
 
-            <div class="info-value">
-                ${chapter}
-            </div>
+            <span class="info-value">
+                ${safeChapter}
+            </span>
 
         </div>
 
 
         <div class="info-box">
 
-            <div class="info-label">
+            <span class="info-label">
                 Date
-            </div>
+            </span>
 
-            <div class="info-value">
-                ${dateText}
-            </div>
+            <span class="info-value">
+                ${safeDate}
+            </span>
 
         </div>
 
-
     </div>
 
 
-    <div class="section-title">
-        Test Scores
-    </div>
+    <div class="scores">
 
-
-    <div class="parts">
-
-
-        <div class="part-box">
+        <div class="score-box">
 
             <span>
-                Part 1 — Translation
+                Part 1
             </span>
 
             <strong>
-                ${escapeHTML(
-                    String(
-                        result.part1 ?? 0
-                    )
-                )}
+                ${part1}
             </strong>
 
         </div>
 
 
-        <div class="part-box">
+        <div class="score-box">
 
             <span>
-                Part 2 — Answer the Question
+                Part 2
             </span>
 
             <strong>
-                ${escapeHTML(
-                    String(
-                        result.part2 ?? 0
-                    )
-                )}
+                ${part2}
             </strong>
 
         </div>
 
 
-        <div class="part-box">
+        <div class="score-box">
 
             <span>
-                Part 3 — Scramble
+                Part 3
             </span>
 
             <strong>
-                ${escapeHTML(
-                    String(
-                        result.part3 ?? 0
-                    )
-                )}
+                ${part3}
             </strong>
 
         </div>
-
 
     </div>
 
 
-    <div class="total-box">
+    <div class="total">
 
-        <div class="total-label">
-            TOTAL SCORE
-        </div>
+        <span class="total-label">
+            Total Score
+        </span>
 
-        <div class="total-score">
+        <span class="total-value">
+            ${total}
+            ${
+                maximum > 0
+                    ? ` / ${maximum}`
+                    : ""
+            }
+        </span>
 
-            ${escapeHTML(
-                String(total)
-            )}
-
-            ${escapeHTML(
-                maximumText
-            )}
-
-        </div>
+    </div>
 
 
-        <div class="percentage">
+    <div class="percentage">
 
-            ${escapeHTML(
-                String(percentage)
-            )}%
-
-        </div>
+        Percentage:
+        ${percentage}%
 
     </div>
 
@@ -4605,48 +4382,36 @@ function printResultPDF(
 
         Chinese Daily Test
 
-        <br>
-
-        Student Result Report
-
     </div>
-
 
 </div>
 
-
 <script>
 
-    window.addEventListener(
-        "load",
-        function() {
+window.addEventListener(
+    "load",
+    function() {
 
-            setTimeout(
-                function() {
+        setTimeout(
+            function() {
 
-                    window.print();
+                window.print();
 
-                },
-                300
-            );
+            },
+            300
+        );
 
-        }
-    );
+    }
+);
 
 </script>
-
 
 </body>
 
 </html>
-`;
 
+    `);
 
-    printWindow.document.open();
-
-    printWindow.document.write(
-        html
-    );
 
     printWindow.document.close();
 
@@ -4654,21 +4419,41 @@ function printResultPDF(
 
 
 /* =========================================================
-   BACK TO CHAPTERS
+   CURRENT RESULT OBJECT
 ========================================================= */
 
-if (backToChapters) {
+function getCurrentResultObject() {
 
-    backToChapters.addEventListener(
-        "click",
-        () => {
+    return {
 
-            showScreen(
-                chapterScreen
-            );
+        username:
+            state.username,
 
-        }
-    );
+        class:
+            state.studentClass,
+
+        chapter:
+            `Chapter ${state.currentChapter}`,
+
+        part1:
+            state.scores.part1,
+
+        part2:
+            state.scores.part2,
+
+        part3:
+            state.scores.part3,
+
+        total:
+            state.scores.total,
+
+        maximum:
+            getMaximumScore(),
+
+        date:
+            new Date().toISOString()
+
+    };
 
 }
 
@@ -4695,17 +4480,22 @@ function handleLogout() {
     state.username =
         null;
 
+
     state.studentClass =
         null;
+
 
     state.currentChapter =
         null;
 
+
     state.chapterData =
         null;
 
+
     state.currentPart =
         "part1";
+
 
     state.currentQuestionIndex =
         0;
@@ -4714,9 +4504,7 @@ function handleLogout() {
     state.answers = {
 
         part1: {},
-
         part2: {},
-
         part3: {}
 
     };
@@ -4725,11 +4513,8 @@ function handleLogout() {
     state.scores = {
 
         part1: 0,
-
         part2: 0,
-
         part3: 0,
-
         total: 0
 
     };
@@ -4738,9 +4523,7 @@ function handleLogout() {
     state.randomOrders = {
 
         part1: {},
-
         part2: {},
-
         part3: {}
 
     };
@@ -4748,6 +4531,7 @@ function handleLogout() {
 
     state.testSaved =
         false;
+
 
     state.answerRecordsSaved =
         false;
