@@ -1,0 +1,198 @@
+{
+  "chapter": {
+    "id": "chapter-23",
+    "title": "Chapter 23",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p1-q1",
+          "question": "Nǐ zài yèyǔ shíjiān zuò shénme?",
+          "words": ["Nǐ", "zài", "yèyǔ", "shíjiān", "zuò", "shénme"],
+          "answers": ["Nǐ", "zài", "yèyǔ", "shíjiān", "zuò", "shénme"]
+        },
+        {
+          "id": "ch23-p1-q2",
+          "question": "Wǒ xǐhuan yùndòng.",
+          "words": ["Wǒ", "xǐhuan", "yùndòng"],
+          "answers": ["Wǒ", "xǐhuan", "yùndòng"]
+        },
+        {
+          "id": "ch23-p1-q3",
+          "question": "Nǐ xǐhuan shénme yùndòng?",
+          "words": ["Nǐ", "xǐhuan", "shénme", "yùndòng"],
+          "answers": ["Nǐ", "xǐhuan", "shénme", "yùndòng"]
+        },
+        {
+          "id": "ch23-p1-q4",
+          "question": "Wǒ zuì xǐhuan yóuyǒng, dǎ pīngpāngqiú hé tī zúqiú.",
+          "words": ["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"],
+          "answers": ["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"]
+        },
+        {
+          "id": "ch23-p1-q5",
+          "question": "Nǐ shénme shíhou zuò zhèxiē yùndòng?",
+          "words": ["Nǐ", "shénme", "shíhou", "zuò", "zhèxiē", "yùndòng"],
+          "answers": ["Nǐ", "shénme", "shíhou", "zuò", "zhèxiē", "yùndòng"]
+        },
+        {
+          "id": "ch23-p1-q6",
+          "question": "Wǒ zhōumò xǐhuan zuò zhèxiē yùndòng.",
+          "words": ["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"],
+          "answers": ["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"]
+        },
+        {
+          "id": "ch23-p1-q7",
+          "question": "Nǐ ài yùndòng ma?",
+          "words": ["Nǐ", "ài", "yùndòng", "ma"],
+          "answers": ["Nǐ", "ài", "yùndòng", "ma"]
+        },
+        {
+          "id": "ch23-p1-q8",
+          "question": "Wǒ bútài yùndòng, zhǐshì ǒu’ěr huì qù pǎobù.",
+          "words": ["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"],
+          "answers": ["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"]
+        },
+        {
+          "id": "ch23-p1-q9",
+          "question": "Wǒ měitiān zǎoshàng dōu huì dǎ yí gè xiǎoshí de yǔmáoqiú.",
+          "words": ["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"],
+          "answers": ["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"]
+        },
+        {
+          "id": "ch23-p1-q10",
+          "question": "Nǐ hé shéi yìqǐ dǎ?",
+          "words": ["Nǐ", "hé", "shéi", "yìqǐ", "dǎ"],
+          "answers": ["Nǐ", "hé", "shéi", "yìqǐ", "dǎ"]
+        },
+        {
+          "id": "ch23-p1-q11",
+          "question": "Wǒ hé dìdi mèimei yìqǐ dǎ.",
+          "words": ["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"],
+          "answers": ["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"]
+        },
+        {
+          "id": "ch23-p1-q12",
+          "question": "Měitiān yùndòng duì shēntǐ hǎo.",
+          "words": ["Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"],
+          "answers": ["Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"]
+        },
+        {
+          "id": "ch23-p1-q13",
+          "question": "Gǎitiān wǒmen yìqǐ yùndòng ba.",
+          "words": ["Gǎitiān", "wǒmen", "yìqǐ", "yùndòng", "ba"],
+          "answers": ["Gǎitiān", "wǒmen", "yìqǐ", "yùndòng", "ba"]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch23-p2-q1",
+          "question": "Nǐ xǐhuan yùndòng ma?",
+          "words": ["Wǒ", "xǐhuan", "yùndòng"],
+          "answers": [["Wǒ", "xǐhuan", "yùndòng"]]
+        },
+        {
+          "id": "ch23-p2-q2",
+          "question": "Nǐ zuì xǐhuan shénme yùndòng?",
+          "words": ["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"],
+          "answers": [["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"]]
+        },
+        {
+          "id": "ch23-p2-q3",
+          "question": "Nǐ zhōumò xǐhuan zuò shénme?",
+          "words": ["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"],
+          "answers": [["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"]]
+        },
+        {
+          "id": "ch23-p2-q4",
+          "question": "Nǐ cháng cháng yùndòng ma?",
+          "words": ["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"],
+          "answers": [["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"]]
+        },
+        {
+          "id": "ch23-p2-q5",
+          "question": "Nǐ měitiān zǎoshàng zuò shénme yùndòng?",
+          "words": ["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"],
+          "answers": [["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"]]
+        },
+        {
+          "id": "ch23-p2-q6",
+          "question": "Nǐ hé shéi yìqǐ dǎ?",
+          "words": ["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"],
+          "answers": [["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"]]
+        },
+        {
+          "id": "ch23-p2-q7",
+          "question": "Měitiān yùndòng duì shēntǐ hǎo ma?",
+          "words": ["Shì", "de", "Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"],
+          "answers": [["Shì", "de", "Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"]]
+        },
+        {
+          "id": "ch23-p2-q8",
+          "question": "Nǐ juéde yùndòng hǎo ma?",
+          "words": ["Hǎo"],
+          "answers": [["Hǎo"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch23-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "xǐhuan", "yùndòng"],
+          "answers": [["Wǒ", "xǐhuan", "yùndòng"]]
+        },
+        {
+          "id": "ch23-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"],
+          "answers": [["Wǒ", "zuì", "xǐhuan", "yóuyǒng", "dǎ", "pīngpāngqiú", "hé", "tī", "zúqiú"]]
+        },
+        {
+          "id": "ch23-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"],
+          "answers": [["Wǒ", "zhōumò", "xǐhuan", "zuò", "zhèxiē", "yùndòng"]]
+        },
+        {
+          "id": "ch23-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"],
+          "answers": [["Wǒ", "bútài", "yùndòng", "zhǐshì", "ǒu’ěr", "huì", "qù", "pǎobù"]]
+        },
+        {
+          "id": "ch23-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"],
+          "answers": [["Wǒ", "měitiān", "zǎoshàng", "dōu", "huì", "dǎ", "yí", "gè", "xiǎoshí", "de", "yǔmáoqiú"]]
+        },
+        {
+          "id": "ch23-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"],
+          "answers": [["Wǒ", "hé", "dìdi", "mèimei", "yìqǐ", "dǎ"]]
+        },
+        {
+          "id": "ch23-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"],
+          "answers": [["Měitiān", "yùndòng", "duì", "shēntǐ", "hǎo"]]
+        },
+        {
+          "id": "ch23-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Gǎitiān", "wǒmen", "yìqǐ", "yùndòng", "ba"],
+          "answers": [["Gǎitiān", "wǒmen", "yìqǐ", "yùndòng", "ba"]]
+        }
+      ]
+    }
+  }
+}

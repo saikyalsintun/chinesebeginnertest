@@ -1,0 +1,192 @@
+{
+  "chapter": {
+    "id": "chapter-15",
+    "title": "Chapter 15",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch15-p1-q1",
+          "question": "ဒီရက်ပိုင်းမှာ ခေါင်းအရမ်းကိုက်တယ်။",
+          "words": ["tòng", "Zhè", "hěn", "tóu", "jǐ", "tiān", "shū", "yú", "yǔsǎn"],
+          "answers": [["Zhè", "jǐ", "tiān", "tóu", "hěn", "tòng"]]
+        },
+        {
+          "id": "ch15-p1-q2",
+          "question": "မိန်းကလေးတွေရဲ့ ဆံပင်က အရမ်းရှည်တယ်။",
+          "words": ["de", "hěn", "cháng", "Nǚshēng", "tóufa", "hǎi", "kāfēi", "chē"],
+          "answers": [["Nǚshēng", "de", "tóufa", "hěn", "cháng"]]
+        },
+        {
+          "id": "ch15-p1-q3",
+          "question": "သူ့မှာ မျက်လုံးကြီးကြီးတစ်စုံနဲ့ နှာခေါင်းရှည်ရှည်တစ်ခုရှိတယ်။",
+          "words": ["bízi", "gāogāode", "dàdàde", "shuāng", "yǒu", "yǎnjing", "Tā", "yì", "yīfu", "diànnǎo", "yǔsǎn"],
+          "answers": [["Tā", "yǒu", "yì", "shuāng", "dàdàde", "yǎnjing", "gāogāode", "bízi"]]
+        },
+        {
+          "id": "ch15-p1-q4",
+          "question": "မင်းရဲ့သွားတွေက အရမ်းဖြူတယ်။",
+          "words": ["yáchǐ", "bái", "Nǐ", "hěn", "de", "diànnǎo", "chē", "yǔsǎn"],
+          "answers": [["Nǐ", "de", "yáchǐ", "hěn", "bái"]]
+        },
+        {
+          "id": "ch15-p1-q5",
+          "question": "ဗိုက်ဆာပြီ။ ဒီပါးစပ်က ဘာမှမဖြစ်ဘူး၊ အစားအစာပဲစားချင်တယ်။",
+          "words": ["méishì", "è", "Wǒ", "jiù", "Zhè", "zuǐ", "xiǎng", "chī", "le", "dōngxi", "yú", "hǎi", "yǔsǎn"],
+          "answers": [["Wǒ", "è", "le", "Zhè", "zuǐ", "méishì", "jiù", "xiǎng", "chī", "dōngxi"]]
+        },
+        {
+          "id": "ch15-p1-q6",
+          "question": "မင်းရဲ့လည်ပင်း ဘာဖြစ်သွားတာလဲ။",
+          "words": ["zěnme", "zhǒng", "Nǐ", "bózi", "le", "fēijī", "yǔsǎn", "yú"],
+          "answers": [["Nǐ", "bózi", "zěnme", "zhǒng", "le"]]
+        },
+        {
+          "id": "ch15-p1-q7",
+          "question": "ညီမလေးမှာ လှပတဲ့လက်တစ်စုံရှိတယ်။",
+          "words": ["shuāng", "yǒu", "shǒu", "yì", "piàoliang", "Mèimei", "de", "hěn", "píngguǒ", "shū", "yú"],
+          "answers": [["Mèimei", "yǒu", "yì", "shuāng", "hěn", "piàoliang", "de", "shǒu"]]
+        },
+        {
+          "id": "ch15-p1-q8",
+          "question": "မော်ဒယ်တွေမှာ အားလုံး ခြေထောက်ရှည်ရှည်တွေရှိတယ်။",
+          "words": ["de", "dōu", "yǒu", "cháng", "tuǐ", "hěn", "Mótè’ér", "huǒchē", "zhuōzi", "huā"],
+          "answers": [["Mótè’ér", "dōu", "yǒu", "hěn", "cháng", "de", "tuǐ"]]
+        },
+        {
+          "id": "ch15-p1-q9",
+          "question": "မင်းခြေထောက် ဘာဖြစ်သွားတာလဲ။",
+          "words": ["zěnme", "Nǐ", "de", "le", "jiǎo", "shū", "zhuōzi", "diànnǎo"],
+          "answers": [["Nǐ", "de", "jiǎo", "zěnme", "le"]]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch15-p2-q1",
+          "question": "Zhè jǐ tiān tóu zěnmeyàng?",
+          "words": ["hěn", "tóu", "tòng", "jǐ", "Zhè", "tiān", "yǔsǎn", "diànnǎo", "hǎi"],
+          "answers": [["tóu", "hěn", "tòng"]]
+        },
+        {
+          "id": "ch15-p2-q2",
+          "question": "Nǚshēng de tóufa zěnmeyàng?",
+          "words": ["cháng", "hěn", "tóufa", "Nǚshēng", "de", "huǒchē", "hǎi", "kāfēi"],
+          "answers": [["hěn", "cháng"]]
+        },
+        {
+          "id": "ch15-p2-q3",
+          "question": "Tā yǒu shénme yàng de yǎnjing?",
+          "words": ["Tā", "dàdàde", "yì", "yǎnjing", "shuāng", "yǒu", "xiāngjiāo", "yīfu", "yú"],
+          "answers": [["dàdàde", "yǎnjing"]]
+        },
+        {
+          "id": "ch15-p2-q4",
+          "question": "Tā de bízi zěnmeyàng?",
+          "words": ["bízi", "gāogāode", "Tā", "de", "píngguǒ", "māo", "yǔsǎn"],
+          "answers": [["gāogāode"]]
+        },
+        {
+          "id": "ch15-p2-q5",
+          "question": "Nǐ è le ma?",
+          "words": ["è", "Wǒ", "le", "yú", "huǒchē", "yǔsǎn"],
+          "answers": [["Wǒ", "è", "le"]]
+        },
+        {
+          "id": "ch15-p2-q6",
+          "question": "Nǐ xiǎng chī shénme?",
+          "words": ["xiǎng", "dōngxi", "Wǒ", "chī", "yīfu", "píngguǒ", "zhuōzi"],
+          "answers": [["Wǒ", "xiǎng", "chī", "dōngxi"]]
+        },
+        {
+          "id": "ch15-p2-q7",
+          "question": "Nǐ bózi zěnme le?",
+          "words": ["zhǒng", "le", "bózi", "Wǒ", "zhuōzi", "bēizi", "fēijī"],
+          "answers": [["zhǒng", "le"]]
+        },
+        {
+          "id": "ch15-p2-q8",
+          "question": "Mèimei yǒu shénme yàng de shǒu?",
+          "words": ["piàoliang", "shǒu", "yǒu", "Mèimei", "shuāng", "yì", "de", "hěn", "bēizi", "kāfēi", "diànnǎo"],
+          "answers": [["hěn", "piàoliang", "de", "shǒu"]]
+        },
+        {
+          "id": "ch15-p2-q9",
+          "question": "Mótè’ér dōu yǒu shénme yàng de tuǐ?",
+          "words": ["hěn", "de", "yǒu", "Mótè’ér", "tuǐ", "dōu", "cháng", "zhuōzi", "yīfu", "hǎi"],
+          "answers": [["hěn", "cháng", "de", "tuǐ"]]
+        },
+        {
+          "id": "ch15-p2-q10",
+          "question": "Nǐ de jiǎo zěnme le?",
+          "words": ["tòng", "de", "jiǎo", "le", "Wǒ", "píngguǒ", "yú", "hǎi"],
+          "answers": [["tòng", "le"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch15-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhè", "jǐ", "tiān", "tóu", "hěn", "tòng"],
+          "answers": [["Zhè", "jǐ", "tiān", "tóu", "hěn", "tòng"]]
+        },
+        {
+          "id": "ch15-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǚshēng", "de", "tóufa", "hěn", "cháng"],
+          "answers": [["Nǚshēng", "de", "tóufa", "hěn", "cháng"]]
+        },
+        {
+          "id": "ch15-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "yǒu", "yì", "shuāng", "dàdàde", "yǎnjing", "gāogāode", "bízi"],
+          "answers": [["Tā", "yǒu", "yì", "shuāng", "dàdàde", "yǎnjing", "gāogāode", "bízi"]]
+        },
+        {
+          "id": "ch15-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "de", "yáchǐ", "hěn", "bái"],
+          "answers": [["Nǐ", "de", "yáchǐ", "hěn", "bái"]]
+        },
+        {
+          "id": "ch15-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "è", "le", "Zhè", "zuǐ", "méishì", "jiù", "xiǎng", "chī", "dōngxi"],
+          "answers": [["Wǒ", "è", "le", "Zhè", "zuǐ", "méishì", "jiù", "xiǎng", "chī", "dōngxi"]]
+        },
+        {
+          "id": "ch15-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "bózi", "zěnme", "zhǒng", "le"],
+          "answers": [["Nǐ", "bózi", "zěnme", "zhǒng", "le"]]
+        },
+        {
+          "id": "ch15-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Mèimei", "yǒu", "yì", "shuāng", "hěn", "piàoliang", "de", "shǒu"],
+          "answers": [["Mèimei", "yǒu", "yì", "shuāng", "hěn", "piàoliang", "de", "shǒu"]]
+        },
+        {
+          "id": "ch15-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Mótè’ér", "dōu", "yǒu", "hěn", "cháng", "de", "tuǐ"],
+          "answers": [["Mótè’ér", "dōu", "yǒu", "hěn", "cháng", "de", "tuǐ"]]
+        },
+        {
+          "id": "ch15-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "de", "jiǎo", "zěnme", "le"],
+          "answers": [["Nǐ", "de", "jiǎo", "zěnme", "le"]]
+        }
+      ]
+    }
+  }
+}

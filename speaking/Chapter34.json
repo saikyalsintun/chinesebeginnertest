@@ -1,0 +1,222 @@
+{
+  "chapter": {
+    "id": "chapter-34",
+    "title": "Chapter 34",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch34-p1-q1",
+          "question": "သူက ဘယ်မှာလဲ။",
+          "words": ["zhuōzi", "píngguǒ", "dàngāo", "zài", "nǎlǐ", "Tā"],
+          "answers": ["Tā", "zài", "nǎlǐ"]
+        },
+        {
+          "id": "ch34-p1-q2",
+          "question": "ဘဏ်က စာတိုက်ရဲ့ မျက်နှာချင်းဆိုင်မှာ ရှိတယ်။",
+          "words": ["duìmiàn", "de", "Yínháng", "bēizi", "zài", "zhuōzi", "píngguǒ", "yóujú"],
+          "answers": ["Yínháng", "zài", "yóujú", "de", "duìmiàn"]
+        },
+        {
+          "id": "ch34-p1-q3",
+          "question": "သူက ဟိုတယ်ရဲ့ အပြင်ဘက်မှာ ရှိတယ်။",
+          "words": ["kāfēi", "zài", "Tā", "wàimiàn", "chē", "māo", "lǚguǎn", "de"],
+          "answers": ["Tā", "zài", "lǚguǎn", "de", "wàimiàn"]
+        },
+        {
+          "id": "ch34-p1-q4",
+          "question": "ကျွန်တော့်အဖေက ဟိုဘက်မှာ ရှိတယ်။",
+          "words": ["Wǒ", "biān", "bàba", "xiāngjiāo", "chē", "zài", "píngguǒ", "nà"],
+          "answers": ["Wǒ", "bàba", "zài", "nà", "biān"]
+        },
+        {
+          "id": "ch34-p1-q5",
+          "question": "ကျောင်းက Jin Ya စားသောက်ဆိုင်ရဲ့ ဘေးမှာ ရှိတယ်။",
+          "words": ["Xuéxiào", "pángbiān", "diànnǎo", "zài", "Fànguǎn", "Jīnyā", "píngguǒ", "yǔsǎn", "de"],
+          "answers": ["Xuéxiào", "zài", "Jīnyā", "Fànguǎn", "de", "pángbiān"]
+        },
+        {
+          "id": "ch34-p1-q6",
+          "question": "မင်း ဘယ်ကို သွားချင်တာလဲ။",
+          "words": ["diànnǎo", "yào", "yīfu", "nǎli", "qù", "shū", "Nǐ", "xiǎng"],
+          "answers": ["Nǐ", "xiǎng", "yào", "qù", "nǎli"]
+        },
+        {
+          "id": "ch34-p1-q7",
+          "question": "မန်နေဂျာက အခု ဒုတိယထပ်မှာ ရှိတယ်။",
+          "words": ["èr", "xiànzài", "zài", "hǎi", "yīfu", "Jīnglǐ", "lóu", "chē"],
+          "answers": ["Jīnglǐ", "xiànzài", "zài", "èr", "lóu"]
+        },
+        {
+          "id": "ch34-p1-q8",
+          "question": "ကျွန်တော့်အိမ်က La La Café အနီးမှာ ရှိတယ်။",
+          "words": ["Wǒ", "xuéxiào", "zài", "fēijī", "La", "La", "dàngāo", "fùjìn", "jiā", "Kāfēiguǎn"],
+          "answers": ["Wǒ", "jiā", "zài", "La", "La", "Kāfēiguǎn", "fùjìn"]
+        },
+        {
+          "id": "ch34-p1-q9",
+          "question": "ရေကူးကန်က 30 လမ်းမှာ ရှိတယ်။ ညာဘက်မှာ။",
+          "words": ["Tiáojiē", "yòubiān", "huā", "dàngāo", "Zài", "zài", "Yóuyǒngchí", "māo", "30"],
+          "answers": ["Yóuyǒngchí", "zài", "30", "Tiáojiē", "Zài", "yòubiān"]
+        },
+        {
+          "id": "ch34-p1-q10",
+          "question": "စားပွဲပေါ်မှာ စာအုပ်တချို့ ရှိတယ်။",
+          "words": ["Zhuōzi", "píngguǒ", "huā", "shūběn", "yǒu", "yú", "shàng", "yìxiē"],
+          "answers": ["Zhuōzi", "shàng", "yǒu", "yìxiē", "shūběn"]
+        },
+        {
+          "id": "ch34-p1-q11",
+          "question": "လက်ပ်တော့က စားပွဲအောက်မှာ ရှိတယ်။",
+          "words": ["zhuōzi", "píngguǒ", "dàngāo", "xiàmiàn", "diànnǎo", "Bǐjìběn", "zài", "yú"],
+          "answers": ["Bǐjìběn", "diànnǎo", "zài", "zhuōzi", "xiàmiàn"]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch34-p2-q1",
+          "question": "Tā zài nǎlǐ?",
+          "words": ["bēizi", "zài", "biān", "píngguǒ", "Tā", "nà", "zhuōzi"],
+          "answers": [["Tā", "zài", "nà", "biān"]]
+        },
+        {
+          "id": "ch34-p2-q2",
+          "question": "Yínháng zài nǎlǐ?",
+          "words": ["bēizi", "Yínháng", "de", "yóujú", "xuéxiào", "zài", "fēijī", "duìmiàn"],
+          "answers": [["Yínháng", "zài", "yóujú", "de", "duìmiàn"]]
+        },
+        {
+          "id": "ch34-p2-q3",
+          "question": "Tā zài nǎlǐ?",
+          "words": ["de", "zài", "wàimiàn", "píngguǒ", "xiāngjiāo", "lǚguǎn", "xuéxiào", "Tā"],
+          "answers": [["Tā", "zài", "lǚguǎn", "de", "wàimiàn"]]
+        },
+        {
+          "id": "ch34-p2-q4",
+          "question": "Wǒ bàba zài nǎlǐ?",
+          "words": ["shū", "yīfu", "zài", "nà", "Wǒ", "bàba", "biān", "xuéxiào"],
+          "answers": [["Wǒ", "bàba", "zài", "nà", "biān"]]
+        },
+        {
+          "id": "ch34-p2-q5",
+          "question": "Xuéxiào zài nǎlǐ?",
+          "words": ["Fànguǎn", "pángbiān", "fēijī", "zài", "māo", "Xuéxiào", "huǒchē", "Jīnyā", "de"],
+          "answers": [["Xuéxiào", "zài", "Jīnyā", "Fànguǎn", "de", "pángbiān"]]
+        },
+        {
+          "id": "ch34-p2-q6",
+          "question": "Nǐ xiǎng yào qù nǎli?",
+          "words": ["huǒchē", "yào", "shū", "nàli", "xiǎng", "Wǒ", "xiāngjiāo", "qù"],
+          "answers": [["Wǒ", "xiǎng", "yào", "qù", "nàli"]]
+        },
+        {
+          "id": "ch34-p2-q7",
+          "question": "Jīnglǐ xiànzài zài nǎlǐ?",
+          "words": ["xiànzài", "zài", "māo", "bēizi", "shū", "èr", "Jīnglǐ", "lóu"],
+          "answers": [["Jīnglǐ", "xiànzài", "zài", "èr", "lóu"]]
+        },
+        {
+          "id": "ch34-p2-q8",
+          "question": "Wǒ jiā zài nǎlǐ?",
+          "words": ["La", "huǒchē", "yú", "La", "fùjìn", "bēizi", "Kāfāiguǎn", "jiā", "zài", "Wǒ"],
+          "answers": [["Wǒ", "jiā", "zài", "La", "La", "Kāfāiguǎn", "fùjìn"]]
+        },
+        {
+          "id": "ch34-p2-q9",
+          "question": "Yóuyǒngchí zài nǎlǐ?",
+          "words": ["Yóuyǒngchí", "xuéxiào", "Zài", "yòubiān", "zhuōzi", "zài", "Tiáojiē", "30", "bēizi"],
+          "answers": [["Yóuyǒngchí", "zài", "30", "Tiáojiē", "Zài", "yòubiān"]]
+        },
+        {
+          "id": "ch34-p2-q10",
+          "question": "Shūběn zài nǎlǐ?",
+          "words": ["shàng", "dàngāo", "xuéxiào", "zài", "zhuōzi", "kāfēi", "Shūběn"],
+          "answers": [["Shūběn", "zài", "zhuōzi", "shàng"]]
+        },
+        {
+          "id": "ch34-p2-q11",
+          "question": "Bǐjìběn diànnǎo zài nǎlǐ?",
+          "words": ["diànnǎo", "xiàmiàn", "dàngāo", "māo", "Bǐjìběn", "zài", "yú", "zhuōzi"],
+          "answers": [["Bǐjìběn", "diànnǎo", "zài", "zhuōzi", "xiàmiàn"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch34-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["nǎlǐ", "Tā", "zài"],
+          "answers": [["Tā", "zài", "nǎlǐ"]]
+        },
+        {
+          "id": "ch34-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["de", "yóujú", "zài", "Yínháng", "duìmiàn"],
+          "answers": [["Yínháng", "zài", "yóujú", "de", "duìmiàn"]]
+        },
+        {
+          "id": "ch34-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["wàimiàn", "de", "Tā", "zài", "lǚguǎn"],
+          "answers": [["Tā", "zài", "lǚguǎn", "de", "wàimiàn"]]
+        },
+        {
+          "id": "ch34-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["zài", "nà", "bàba", "biān", "Wǒ"],
+          "answers": [["Wǒ", "bàba", "zài", "nà", "biān"]]
+        },
+        {
+          "id": "ch34-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Xuéxiào", "zài", "de", "Fànguǎn", "Jīnyā", "pángbiān"],
+          "answers": [["Xuéxiào", "zài", "Jīnyā", "Fànguǎn", "de", "pángbiān"]]
+        },
+        {
+          "id": "ch34-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["xiǎng", "Nǐ", "nàli", "yào", "qù"],
+          "answers": [["Nǐ", "xiǎng", "yào", "qù", "nàli"]]
+        },
+        {
+          "id": "ch34-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Jīnglǐ", "xiànzài", "lóu", "zài", "èr"],
+          "answers": [["Jīnglǐ", "xiànzài", "zài", "èr", "lóu"]]
+        },
+        {
+          "id": "ch34-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["La", "La", "Wǒ", "Kāfēiguǎn", "jiā", "zài", "fùjìn"],
+          "answers": [["Wǒ", "jiā", "zài", "La", "La", "Kāfēiguǎn", "fùjìn"]]
+        },
+        {
+          "id": "ch34-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["zài", "yòubiān", "Yóuyǒngchí", "30", "Zài", "Tiáojiē"],
+          "answers": [["Yóuyǒngchí", "zài", "30", "Tiáojiē", "Zài", "yòubiān"]]
+        },
+        {
+          "id": "ch34-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["shàng", "yǒu", "shūběn", "Zhuōzi", "yìxiē"],
+          "answers": [["Zhuōzi", "shàng", "yǒu", "yìxiē", "shūběn"]]
+        },
+        {
+          "id": "ch34-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["xiàmiàn", "diànnǎo", "Bǐjìběn", "zài", "zhuōzi"],
+          "answers": [["Bǐjìběn", "diànnǎo", "zài", "zhuōzi", "xiàmiàn"]]
+        }
+      ]
+    }
+  }
+}

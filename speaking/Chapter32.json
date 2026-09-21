@@ -1,0 +1,384 @@
+{
+  "chapter": {
+    "id": "chapter-32",
+    "title": "Chapter 32",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch32-p1-q1",
+          "question": "တရုတ်လူမျိုး",
+          "words": ["Zhōngguó", "fēijī", "xiāngjiāo", "rén", "yīfu"],
+          "answers": ["Zhōngguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q2",
+          "question": "ဂျပန်လူမျိုး",
+          "words": ["māo", "huā", "Rìběn", "rén", "yú"],
+          "answers": ["Rìběn", "rén"]
+        },
+        {
+          "id": "ch32-p1-q3",
+          "question": "အင်္ဂလိပ်လူမျိုး",
+          "words": ["shū", "rén", "Yīngguó", "zhuōzi", "yīfu"],
+          "answers": ["Yīngguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q4",
+          "question": "ကိုရီးယားလူမျိုး",
+          "words": ["fēijī", "píngguǒ", "Hánguó", "rén", "shū"],
+          "answers": ["Hánguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q5",
+          "question": "ထိုင်းလူမျိုး",
+          "words": ["bēizi", "Tàiguó", "hǎi", "rén", "kāfēi"],
+          "answers": ["Tàiguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q6",
+          "question": "ပြင်သစ်လူမျိုး",
+          "words": ["xuéxiào", "chē", "huǒchē", "Fǎguó", "rén"],
+          "answers": ["Fǎguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q7",
+          "question": "ဂျာမန်လူမျိုး",
+          "words": ["xuéxiào", "māo", "rén", "yú", "Déguó"],
+          "answers": ["Déguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q8",
+          "question": "ကနေဒါလူမျိုး",
+          "words": ["zhuōzi", "Jiānádà", "yīfu", "rén", "dàngāo"],
+          "answers": ["Jiānádà", "rén"]
+        },
+        {
+          "id": "ch32-p1-q9",
+          "question": "ဂရိလူမျိုး",
+          "words": ["diànnǎo", "Xīlà", "rén", "dàngāo", "yǔsǎn"],
+          "answers": ["Xīlà", "rén"]
+        },
+        {
+          "id": "ch32-p1-q10",
+          "question": "အင်ဒိုနီးရှားလူမျိုး",
+          "words": ["Yìnní", "rén", "yīfu", "māo", "shū"],
+          "answers": ["Yìnní", "rén"]
+        },
+        {
+          "id": "ch32-p1-q11",
+          "question": "အီတလီလူမျိုး",
+          "words": ["huā", "hǎi", "rén", "Yìdàlì", "yú"],
+          "answers": ["Yìdàlì", "rén"]
+        },
+        {
+          "id": "ch32-p1-q12",
+          "question": "မလေးရှားလူမျိုး",
+          "words": ["hǎi", "píngguǒ", "rén", "diànnǎo", "Mǎláixīyà"],
+          "answers": ["Mǎláixīyà", "rén"]
+        },
+        {
+          "id": "ch32-p1-q13",
+          "question": "မက္ကဆီကိုလူမျိုး",
+          "words": ["Mòxīgē", "huǒchē", "kāfēi", "shū", "rén"],
+          "answers": ["Mòxīgē", "rén"]
+        },
+        {
+          "id": "ch32-p1-q14",
+          "question": "စပိန်လူမျိုး",
+          "words": ["Xībānyá", "rén", "xiāngjiāo", "huā", "shū"],
+          "answers": ["Xībānyá", "rén"]
+        },
+        {
+          "id": "ch32-p1-q15",
+          "question": "အမေရိကန်လူမျိုး",
+          "words": ["diànnǎo", "rén", "xiāngjiāo", "Měiguó", "huǒchē"],
+          "answers": ["Měiguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q16",
+          "question": "ဗီယက်နမ်လူမျိုး",
+          "words": ["Yuènán", "rén", "xuéxiào", "shū", "huā"],
+          "answers": ["Yuènán", "rén"]
+        },
+        {
+          "id": "ch32-p1-q17",
+          "question": "ရုရှားလူမျိုး",
+          "words": ["yǔsǎn", "yú", "Éguó", "rén", "chē"],
+          "answers": ["Éguó", "rén"]
+        },
+        {
+          "id": "ch32-p1-q18",
+          "question": "ဖိလစ်ပိုင်လူမျိုး",
+          "words": ["rén", "Fēilǜbīn", "xiāngjiāo", "huǒchē", "bēizi"],
+          "answers": ["Fēilǜbīn", "rén"]
+        },
+        {
+          "id": "ch32-p1-q19",
+          "question": "ဘရာဇီးလ်လူမျိုး",
+          "words": ["Bāxī", "fēijī", "píngguǒ", "rén", "xiāngjiāo"],
+          "answers": ["Bāxī", "rén"]
+        },
+        {
+          "id": "ch32-p1-q20",
+          "question": "ဂါမီယွန်လူမျိုး",
+          "words": ["huā", "rén", "Gāomián", "hǎi", "xiāngjiāo"],
+          "answers": ["Gāomián", "rén"]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin. Use a complete sentence.",
+      "questions": [
+        {
+          "id": "ch32-p2-q1",
+          "question": "Wǒ shì nǎ guó rén?",
+          "words": ["huǒchē", "hǎi", "shì", "diànnǎo", "Wǒ", "Zhōngguó", "rén"],
+          "answers": [["Wǒ", "shì", "Zhōngguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q2",
+          "question": "Tā shì nǎ guó rén?",
+          "words": ["dàngāo", "Rìběn", "xiāngjiāo", "Tā", "bēizi", "rén", "shì"],
+          "answers": [["Tā", "shì", "Rìběn", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q3",
+          "question": "Lǐ Míng shì nǎ guó rén?",
+          "words": ["Yīngguó", "Míng", "shì", "dàngāo", "píngguǒ", "rén", "Lǐ", "yǔsǎn"],
+          "answers": [["Lǐ", "Míng", "shì", "Yīngguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q4",
+          "question": "Měi Měi shì nǎ guó rén?",
+          "words": ["xuéxiào", "dàngāo", "Měi", "Hánguó", "yīfu", "rén", "shì"],
+          "answers": [["Měi", "Měi", "shì", "Hánguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q5",
+          "question": "Wǒ péngyou shì nǎ guó rén?",
+          "words": ["shū", "rén", "shì", "Wǒ", "péngyou", "píngguǒ", "Tàiguó", "huǒchē"],
+          "answers": [["Wǒ", "péngyou", "shì", "Tàiguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q6",
+          "question": "Wǒ bàba shì nǎ guó rén?",
+          "words": ["Wǒ", "māo", "yú", "bàba", "Fǎguó", "shì", "rén", "píngguǒ"],
+          "answers": [["Wǒ", "bàba", "shì", "Fǎguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q7",
+          "question": "Wǒ māma shì nǎ guó rén?",
+          "words": ["Wǒ", "rén", "māma", "Déguó", "huǒchē", "fēijī", "yú", "shì"],
+          "answers": [["Wǒ", "māma", "shì", "Déguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q8",
+          "question": "Nǐ lǎoshī shì nǎ guó rén?",
+          "words": ["hǎi", "fēijī", "Jiānádà", "Nǐ", "xiāngjiāo", "rén", "shì", "lǎoshī"],
+          "answers": [["Nǐ", "lǎoshī", "shì", "Jiānádà", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q9",
+          "question": "Tā péngyou shì nǎ guó rén?",
+          "words": ["píngguǒ", "Tā", "Xīlà", "péngyou", "zhuōzi", "shì", "rén", "bēizi"],
+          "answers": [["Tā", "péngyou", "shì", "Xīlà", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q10",
+          "question": "Nǐ tóngxué shì nǎ guó rén?",
+          "words": ["tóngxué", "Nǐ", "Yìnní", "rén", "huǒchē", "shì", "yú", "huā"],
+          "answers": [["Nǐ", "tóngxué", "shì", "Yìnní", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q11",
+          "question": "Wǒ tóngxué shì nǎ guó rén?",
+          "words": ["fēijī", "rén", "Yìdàlì", "tóngxué", "Wǒ", "yīfu", "shì", "shū"],
+          "answers": [["Wǒ", "tóngxué", "shì", "Yìdàlì", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q12",
+          "question": "Tā bàba shì nǎ guó rén?",
+          "words": ["yǔsǎn", "rén", "Tā", "Mǎláixīyà", "shì", "bàba", "yīfu", "fēijī"],
+          "answers": [["Tā", "bàba", "shì", "Mǎláixīyà", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q13",
+          "question": "Tā māma shì nǎ guó rén?",
+          "words": ["māma", "diànnǎo", "Tā", "shì", "Mòxīgē", "yǔsǎn", "fēijī", "rén"],
+          "answers": [["Tā", "māma", "shì", "Mòxīgē", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q14",
+          "question": "Nǐ péngyou shì nǎ guó rén?",
+          "words": ["Nǐ", "māo", "shì", "Xībānyá", "péngyou", "diànnǎo", "rén", "xuéxiào"],
+          "answers": [["Nǐ", "péngyou", "shì", "Xībānyá", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q15",
+          "question": "Wǒ gēge shì nǎ guó rén?",
+          "words": ["Měiguó", "chē", "Wǒ", "zhuōzi", "gēge", "shì", "yú", "rén"],
+          "answers": [["Wǒ", "gēge", "shì", "Měiguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q16",
+          "question": "Wǒ jiějie shì nǎ guó rén?",
+          "words": ["rén", "diànnǎo", "Yuènán", "jiějie", "shì", "chē", "Wǒ", "hǎi"],
+          "answers": [["Wǒ", "jiějie", "shì", "Yuènán", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q17",
+          "question": "Tā gēge shì nǎ guó rén?",
+          "words": ["chē", "gēge", "rén", "yīfu", "Tā", "xiāngjiāo", "Éguó", "shì"],
+          "answers": [["Tā", "gēge", "shì", "Éguó", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q18",
+          "question": "Tā jiějie shì nǎ guó rén?",
+          "words": ["Fēilǜbīn", "jiějie", "rén", "hǎi", "shì", "Tā", "zhuōzi", "yīfu"],
+          "answers": [["Tā", "jiějie", "shì", "Fēilǜbīn", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q19",
+          "question": "Wǒ tóngxué shì nǎ guó rén?",
+          "words": ["shì", "Bāxī", "xuéxiào", "bēizi", "Wǒ", "tóngxué", "rén", "kāfēi"],
+          "answers": [["Wǒ", "tóngxué", "shì", "Bāxī", "rén"]]
+        },
+        {
+          "id": "ch32-p2-q20",
+          "question": "Tā lǎoshī shì nǎ guó rén?",
+          "words": ["lǎoshī", "rén", "xiāngjiāo", "shì", "Gāomián", "zhuōzi", "Tā", "shū"],
+          "answers": [["Tā", "lǎoshī", "shì", "Gāomián", "rén"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch32-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhōngguó", "Wǒ", "shì", "rén"],
+          "answers": [["Wǒ", "shì", "Zhōngguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "shì", "Rìběn", "rén"],
+          "answers": [["Tā", "shì", "Rìběn", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["rén", "shì", "Yīngguó", "Lǐ", "Míng"],
+          "answers": [["Lǐ", "Míng", "shì", "Yīngguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Hánguó", "rén", "Měi", "shì", "Měi"],
+          "answers": [["Měi", "Měi", "shì", "Hánguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "Tàiguó", "shì", "péngyou", "rén"],
+          "answers": [["Wǒ", "péngyou", "shì", "Tàiguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Fǎguó", "Wǒ", "bàba", "rén", "shì"],
+          "answers": [["Wǒ", "bàba", "shì", "Fǎguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Déguó", "Wǒ", "māma", "shì", "rén"],
+          "answers": [["Wǒ", "māma", "shì", "Déguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["rén", "shì", "lǎoshī", "Nǐ", "Jiānádà"],
+          "answers": [["Nǐ", "lǎoshī", "shì", "Jiānádà", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "péngyou", "shì", "Xīlà", "rén"],
+          "answers": [["Tā", "péngyou", "shì", "Xīlà", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "Yìnní", "shì", "tóngxué", "rén"],
+          "answers": [["Nǐ", "tóngxué", "shì", "Yìnní", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "Yìdàlì", "shì", "tóngxué", "rén"],
+          "answers": [["Wǒ", "tóngxué", "shì", "Yìdàlì", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "Mǎláixīyà", "shì", "bàba", "rén"],
+          "answers": [["Tā", "bàba", "shì", "Mǎláixīyà", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["rén", "shì", "Mòxīgē", "Tā", "māma"],
+          "answers": [["Tā", "māma", "shì", "Mòxīgē", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "rén", "Xībānyá", "shì", "péngyou"],
+          "answers": [["Nǐ", "péngyou", "shì", "Xībānyá", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["rén", "Měiguó", "gēge", "shì", "Wǒ"],
+          "answers": [["Wǒ", "gēge", "shì", "Měiguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "rén", "jiějie", "Yuènán", "shì"],
+          "answers": [["Wǒ", "jiějie", "shì", "Yuènán", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q17",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["rén", "gēge", "shì", "Tā", "Éguó"],
+          "answers": [["Tā", "gēge", "shì", "Éguó", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q18",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["shì", "rén", "jiějie", "Tā", "Fēilǜbīn"],
+          "answers": [["Tā", "jiějie", "shì", "Fēilǜbīn", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q19",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Bāxī", "shì", "Wǒ", "tóngxué", "rén"],
+          "answers": [["Wǒ", "tóngxué", "shì", "Bāxī", "rén"]]
+        },
+        {
+          "id": "ch32-p3-q20",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["lǎoshī", "rén", "Gāomián", "Tā", "shì"],
+          "answers": [["Tā", "lǎoshī", "shì", "Gāomián", "rén"]]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "chapter": {
+    "id": "chapter-16",
+    "title": "Chapter 16",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch16-p1-q1",
+          "question": "ရှောင်မင်း၊ ဒီနေ့ ဘာနေ့လဲ။",
+          "words": ["jīntiān", "Xiǎomíng", "jǐ", "xīngqī", "shū", "kāfēi", "xiāngjiāo"],
+          "answers": [["Xiǎomíng", "jīntiān", "xīngqī", "jǐ"]]
+        },
+        {
+          "id": "ch16-p1-q2",
+          "question": "ဒီနေ့ သောကြာနေ့ပါ။ ဘာဖြစ်လို့လဲ။",
+          "words": ["le", "Zěnme", "wǔ", "Jīntiān", "xīngqī", "māo", "hǎi", "píngguǒ"],
+          "answers": [["Jīntiān", "xīngqī", "wǔ", "Zěnme", "le"]]
+        },
+        {
+          "id": "ch16-p1-q3",
+          "question": "ဗုဒ္ဓဟူးနေ့ပဲရှိသေးတယ်လို့ ထင်ခဲ့တာ။ မနက်ဖြန် ညီလေးအတွက် လက်ဆောင်သွားဝယ်ရမယ်။",
+          "words": ["mǎi", "qù", "Wǒ", "lǐwù", "yǐwéi", "xīngqī", "sān", "wǒ", "děi", "Wǒ", "dìdi", "míngtiān", "gěi", "cái", "hǎi", "shū", "chē"],
+          "answers": [["Wǒ", "yǐwéi", "cái", "xīngqī", "sān", "Wǒ", "míngtiān", "děi", "qù", "mǎi", "lǐwù", "gěi", "wǒ", "dìdi"]]
+        },
+        {
+          "id": "ch16-p1-q4",
+          "question": "မနက်ဖြန်က သူ့မွေးနေ့ပါ။",
+          "words": ["tā", "de", "Míngtiān", "shì", "shēngrì", "hǎi", "yǔsǎn", "huǒchē"],
+          "answers": [["Míngtiān", "shì", "tā", "de", "shēngrì"]]
+        },
+        {
+          "id": "ch16-p1-q5",
+          "question": "ဟုတ်လား။ ဒါဆို သူ့မွေးနေ့ ပျော်ရွှင်ပါစေလို့ ဆုတောင်းပေးလိုက်။",
+          "words": ["zhù", "kuàilè", "Shì", "Nà", "shēngrì", "ma", "tā", "shū", "bēizi", "yú"],
+          "answers": [["Shì", "ma", "Nà", "zhù", "tā", "shēngrì", "kuàilè"]]
+        },
+        {
+          "id": "ch16-p1-q6",
+          "question": "ကျေးဇူးတင်ပါတယ်။ မနက်ဖြန် ညနေ ၅ နာရီမှာ ငါ့အိမ်လာပြီး ထမင်းစားပါ။",
+          "words": ["wǒ", "chīfàn", "wǔ", "Míngtiān", "xiàwǔ", "jiā", "lái", "Xièxie", "diǎn", "huǒchē", "māo", "hǎi"],
+          "answers": [["Xièxie", "Míngtiān", "xiàwǔ", "wǔ", "diǎn", "lái", "wǒ", "jiā", "chīfàn"]]
+        },
+        {
+          "id": "ch16-p1-q7",
+          "question": "ကောင်းပြီ။ မနက်ဖြန် သေချာပေါက်လာမယ်။",
+          "words": ["Míngtiān", "a", "yídìng", "lái", "wǒ", "Hǎo", "yīfu", "yú", "māo"],
+          "answers": [["Hǎo", "a", "Míngtiān", "wǒ", "yídìng", "lái"]]
+        },
+        {
+          "id": "ch16-p1-q8",
+          "question": "ဖေးဖေး၊ မတွေ့တာကြာပြီ။",
+          "words": ["FēiFēi", "jiàn", "hǎojiǔ", "bú", "yǔsǎn", "dàngāo", "shǒujī"],
+          "answers": [["FēiFēi", "hǎojiǔ", "bú", "jiàn"]]
+        },
+        {
+          "id": "ch16-p1-q9",
+          "question": "မနှစ်က နှစ်သစ်ကူးကို ဘယ်မှာ ဖြတ်သန်းခဲ့တာလဲ။",
+          "words": ["zài", "guò", "nǐ", "Qùnián", "de", "guònián", "nǎr", "māo", "shū", "xiāngjiāo"],
+          "answers": [["Qùnián", "guònián", "nǐ", "zài", "nǎr", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p1-q10",
+          "question": "မနှစ်က ယူနန်မှာရှိတဲ့ ဇာတိမြို့မှာ နှစ်သစ်ကူးခဲ့တယ်၊ နင်ရော။",
+          "words": ["zài", "Qùnián", "lǎojiā", "de", "nǐ", "Yúnnán", "guò", "ne", "wǒ", "shū", "diànnǎo", "shǒujī"],
+          "answers": [["Qùnián", "wǒ", "zài", "Yúnnán", "lǎojiā", "guò", "de", "nǐ", "ne"]]
+        },
+        {
+          "id": "ch16-p1-q11",
+          "question": "မနှစ်က ဘေဂျင်းမှာ နှစ်သစ်ကူးခဲ့တယ်။",
+          "words": ["Běijīng", "qùnián", "de", "guò", "zài", "shì", "Wǒ", "kāfēi", "yīfu", "píngguǒ"],
+          "answers": [["Wǒ", "qùnián", "shì", "zài", "Běijīng", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p1-q12",
+          "question": "ဘာလို့ အိမ်မပြန်ခဲ့တာလဲ။",
+          "words": ["huíqù", "ne", "bù", "zěnme", "Nǐ", "chē", "kāfēi", "huā"],
+          "answers": [["Nǐ", "zěnme", "bù", "huíqù", "ne"]]
+        },
+        {
+          "id": "ch16-p1-q13",
+          "question": "အလုပ်များလို့ အိမ်မပြန်ခဲ့ဘူး။ ဒီနှစ်တော့ ပြန်မယ်။",
+          "words": ["huíqù", "Jīnnián", "huíqù", "Yīnwèi", "gōngzuò", "méiyǒu", "de", "máng", "yào", "píngguǒ", "diànnǎo", "yīfu"],
+          "answers": [["Yīnwèi", "gōngzuò", "máng", "méiyǒu", "huíqù", "Jīnnián", "yào", "huíqù", "de"]]
+        },
+        {
+          "id": "ch16-p1-q14",
+          "question": "ဒါဆို ဘယ်အချိန် အိမ်ပြန်မလဲ။",
+          "words": ["shénme", "huíqù", "Nà", "nǐ", "shíhou", "hǎi", "huā", "shū"],
+          "answers": [["Nà", "nǐ", "shénme", "shíhou", "huíqù"]]
+        },
+        {
+          "id": "ch16-p1-q15",
+          "question": "ဇန်နဝါရီ ၈ ရက်နေ့ ပြန်မယ်၊ နင်ရော။",
+          "words": ["ne", "huíqù", "bā", "Wǒ", "yuè", "hào", "nǐ", "yī", "yǔsǎn", "shǒujī", "yú"],
+          "answers": [["Wǒ", "yī", "yuè", "bā", "hào", "huíqù", "nǐ", "ne"]]
+        },
+        {
+          "id": "ch16-p1-q16",
+          "question": "လာမယ့်အပတ်မှာပဲ ထွက်မယ်။",
+          "words": ["Wǒ", "le", "zǒu", "jiù", "gè", "xīngqī", "xià", "zhuōzi", "yú", "dàngāo"],
+          "answers": [["Wǒ", "xià", "gè", "xīngqī", "jiù", "zǒu", "le"]]
+        },
+        {
+          "id": "ch16-p1-q17",
+          "question": "အရမ်းကောင်းတယ်။ နှစ်သစ်မှာ ပျော်ရွှင်ပါစေ။",
+          "words": ["nǐ", "hǎo", "kuàilè", "xīnnián", "Zhēn", "Zhù", "māo", "zhuōzi", "kāfēi"],
+          "answers": [["Zhēn", "hǎo", "Zhù", "nǐ", "xīnnián", "kuàilè"]]
+        },
+        {
+          "id": "ch16-p1-q18",
+          "question": "ကျေးဇူးတင်ပါတယ်။ အတူတူပါပဲ။",
+          "words": ["lè", "Xièxie", "Tóng", "yīfu", "yǔsǎn", "chē"],
+          "answers": [["Xièxie", "Tóng", "lè"]]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch16-p2-q1",
+          "question": "Xiǎomíng, jīntiān xīngqī jǐ?",
+          "words": ["xīngqī", "Jīntiān", "wǔ", "zhuōzi", "yú", "bēizi"],
+          "answers": [["Jīntiān", "xīngqī", "wǔ"]]
+        },
+        {
+          "id": "ch16-p2-q2",
+          "question": "Jīntiān xīngqī jǐ?",
+          "words": ["wǔ", "xīngqī", "Jīntiān", "shū", "dàngāo", "fēijī"],
+          "answers": [["Jīntiān", "xīngqī", "wǔ"]]
+        },
+        {
+          "id": "ch16-p2-q3",
+          "question": "Wǒ yǐwéi cái xīngqī jǐ?",
+          "words": ["cái", "xīngqī", "Wǒ", "yǐwéi", "sān", "yīfu", "diànnǎo", "zhuōzi"],
+          "answers": [["sān"]]
+        },
+        {
+          "id": "ch16-p2-q4",
+          "question": "Míngtiān shì shéi de shēngrì?",
+          "words": ["tā", "de", "Míngtiān", "shì", "shēngrì", "diànnǎo", "kāfēi", "chē"],
+          "answers": [["tā", "de", "shēngrì"]]
+        },
+        {
+          "id": "ch16-p2-q5",
+          "question": "Míngtiān xiàwǔ jǐ diǎn lái wǒ jiā?",
+          "words": ["diǎn", "xiàwǔ", "jiā", "lái", "Míngtiān", "wǔ", "wǒ", "píngguǒ", "shǒujī", "xiāngjiāo"],
+          "answers": [["Míngtiān", "xiàwǔ", "wǔ", "diǎn", "lái", "wǒ", "jiā"]]
+        },
+        {
+          "id": "ch16-p2-q6",
+          "question": "Qùnián guònián nǐ zài nǎr guò de?",
+          "words": ["guò", "wǒ", "zài", "lǎojiā", "de", "Yúnnán", "Qùnián", "hǎi", "diànnǎo", "māo"],
+          "answers": [["zài", "Yúnnán", "lǎojiā", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p2-q7",
+          "question": "Nǐ qùnián zài nǎr guònián?",
+          "words": ["guò", "Běijīng", "qùnián", "Wǒ", "zài", "de", "shì", "shǒujī", "māo", "huǒchē"],
+          "answers": [["zài", "Běijīng", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p2-q8",
+          "question": "Nǐ zěnme bù huíqù ne?",
+          "words": ["méiyǒu", "Yīnwèi", "máng", "gōngzuò", "huíqù", "kāfēi", "hǎi", "huā"],
+          "answers": [["Yīnwèi", "gōngzuò", "máng", "méiyǒu", "huíqù"]]
+        },
+        {
+          "id": "ch16-p2-q9",
+          "question": "Nà nǐ shénme shíhou huíqù?",
+          "words": ["yī", "hào", "yuè", "huíqù", "bā", "Wǒ", "shǒujī", "yīfu", "diànnǎo"],
+          "answers": [["Wǒ", "yī", "yuè", "bā", "hào", "huíqù"]]
+        },
+        {
+          "id": "ch16-p2-q10",
+          "question": "Nǐ shénme shíhou zǒu?",
+          "words": ["jiù", "xià", "le", "zǒu", "xīngqī", "gè", "Wǒ", "xiāngjiāo", "diànnǎo", "píngguǒ"],
+          "answers": [["Wǒ", "xià", "gè", "xīngqī", "jiù", "zǒu", "le"]]
+        },
+        {
+          "id": "ch16-p2-q11",
+          "question": "Nǐ xīnnián kuàilè ma?",
+          "words": ["Tóng", "lè", "Xièxie", "huā", "shū", "shǒujī"],
+          "answers": [["Xièxie", "Tóng", "lè"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch16-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Xiǎomíng", "jīntiān", "xīngqī", "jǐ"],
+          "answers": [["Xiǎomíng", "jīntiān", "xīngqī", "jǐ"]]
+        },
+        {
+          "id": "ch16-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Jīntiān", "xīngqī", "wǔ", "Zěnme", "le"],
+          "answers": [["Jīntiān", "xīngqī", "wǔ", "Zěnme", "le"]]
+        },
+        {
+          "id": "ch16-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "yǐwéi", "cái", "xīngqī", "sān"],
+          "answers": [["Wǒ", "yǐwéi", "cái", "xīngqī", "sān"]]
+        },
+        {
+          "id": "ch16-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "míngtiān", "děi", "qù", "mǎi", "lǐwù", "gěi", "wǒ", "dìdi"],
+          "answers": [["Wǒ", "míngtiān", "děi", "qù", "mǎi", "lǐwù", "gěi", "wǒ", "dìdi"]]
+        },
+        {
+          "id": "ch16-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Míngtiān", "shì", "tā", "de", "shēngrì"],
+          "answers": [["Míngtiān", "shì", "tā", "de", "shēngrì"]]
+        },
+        {
+          "id": "ch16-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Shì", "ma", "Nà", "zhù", "tā", "shēngrì", "kuàilè"],
+          "answers": [["Shì", "ma", "Nà", "zhù", "tā", "shēngrì", "kuàilè"]]
+        },
+        {
+          "id": "ch16-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Xièxie", "Míngtiān", "xiàwǔ", "wǔ", "diǎn", "lái", "wǒ", "jiā", "chīfàn"],
+          "answers": [["Xièxie", "Míngtiān", "xiàwǔ", "wǔ", "diǎn", "lái", "wǒ", "jiā", "chīfàn"]]
+        },
+        {
+          "id": "ch16-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Hǎo", "a", "Míngtiān", "wǒ", "yídìng", "lái"],
+          "answers": [["Hǎo", "a", "Míngtiān", "wǒ", "yídìng", "lái"]]
+        },
+        {
+          "id": "ch16-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Qùnián", "guònián", "nǐ", "zài", "nǎr", "guò", "de"],
+          "answers": [["Qùnián", "guònián", "nǐ", "zài", "nǎr", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Qùnián", "wǒ", "zài", "Yúnnán", "lǎojiā", "guò", "de", "nǐ", "ne"],
+          "answers": [["Qùnián", "wǒ", "zài", "Yúnnán", "lǎojiā", "guò", "de", "nǐ", "ne"]]
+        },
+        {
+          "id": "ch16-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "qùnián", "shì", "zài", "Běijīng", "guò", "de"],
+          "answers": [["Wǒ", "qùnián", "shì", "zài", "Běijīng", "guò", "de"]]
+        },
+        {
+          "id": "ch16-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nǐ", "zěnme", "bù", "huíqù", "ne"],
+          "answers": [["Nǐ", "zěnme", "bù", "huíqù", "ne"]]
+        },
+        {
+          "id": "ch16-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Yīnwèi", "gōngzuò", "máng", "méiyǒu", "huíqù"],
+          "answers": [["Yīnwèi", "gōngzuò", "máng", "méiyǒu", "huíqù"]]
+        },
+        {
+          "id": "ch16-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Jīnnián", "yào", "huíqù", "de"],
+          "answers": [["Jīnnián", "yào", "huíqù", "de"]]
+        },
+        {
+          "id": "ch16-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nà", "nǐ", "shénme", "shíhou", "huíqù"],
+          "answers": [["Nà", "nǐ", "shénme", "shíhou", "huíqù"]]
+        },
+        {
+          "id": "ch16-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "yī", "yuè", "bā", "hào", "huíqù", "nǐ", "ne"],
+          "answers": [["Wǒ", "yī", "yuè", "bā", "hào", "huíqù", "nǐ", "ne"]]
+        },
+        {
+          "id": "ch16-p3-q17",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "xià", "gè", "xīngqī", "jiù", "zǒu", "le"],
+          "answers": [["Wǒ", "xià", "gè", "xīngqī", "jiù", "zǒu", "le"]]
+        },
+        {
+          "id": "ch16-p3-q18",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhēn", "hǎo", "Zhù", "nǐ", "xīnnián", "kuàilè"],
+          "answers": [["Zhēn", "hǎo", "Zhù", "nǐ", "xīnnián", "kuàilè"]]
+        },
+        {
+          "id": "ch16-p3-q19",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Xièxie", "Tóng", "lè"],
+          "answers": [["Xièxie", "Tóng", "lè"]]
+        }
+      ]
+    }
+  }
+}

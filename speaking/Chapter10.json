@@ -1,0 +1,204 @@
+{
+  "chapter": {
+    "id": "chapter-10",
+    "title": "Chapter 10",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin by arranging the words.",
+      "questions": [
+        {
+          "id": "ch10-p1-q1",
+          "question": "ဒီအင်္ကျီက ဘယ်လောက်ကျသလဲ။",
+          "words": ["qián", "yīfu", "Zhè", "duōshǎo", "jiàn"],
+          "answers": [["Zhè", "jiàn", "yīfu", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p1-q2",
+          "question": "ဒီအင်္ကျီက ဘယ်လောက်လဲ။",
+          "words": ["duōshǎo", "Zhè", "qián", "jiàn"],
+          "answers": [["Zhè", "jiàn", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p1-q3",
+          "question": "ဒီဖိနပ်တစ်ရံက ဘယ်လောက်ကျသလဲ။",
+          "words": ["xié", "duōshǎo", "Zhè", "qián", "shuāng"],
+          "answers": [["Zhè", "shuāng", "xié", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p1-q4",
+          "question": "ဒီဖိနပ်တစ်ရံက ဘယ်လောက်လဲ။",
+          "words": ["duōshǎo", "shuāng", "qián", "Zhè"],
+          "answers": [["Zhè", "shuāng", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p1-q5",
+          "question": "ဒါကို ဘယ်လိုရောင်းသလဲ။",
+          "words": ["mài", "Zhège", "zěnme"],
+          "answers": [["Zhège", "zěnme", "mài"]]
+        },
+        {
+          "id": "ch10-p1-q6",
+          "question": "မင်းမှာ အကြွေငွေရှိလား။",
+          "words": ["língqián", "ma", "Nǐ", "yǒu"],
+          "answers": [["Nǐ", "yǒu", "língqián", "ma"]]
+        },
+        {
+          "id": "ch10-p1-q7",
+          "question": "ကျွန်တော်/ကျွန်မ ယွမ်ငွေ အနည်းငယ် လဲချင်တယ်။",
+          "words": ["diǎn", "Wǒ", "rénmínbì", "huàn", "xiǎng"],
+          "answers": [["Wǒ", "xiǎng", "huàn", "diǎn", "rénmínbì"]]
+        },
+        {
+          "id": "ch10-p1-q8",
+          "question": "ကျွန်တော်/ကျွန်မမှာ မြန်မာငွေ ၅၀၀ ပဲရှိတယ်။",
+          "words": ["miǎnbì", "Wǒ", "wǔbǎi", "zhǐyǒu"],
+          "answers": [["Wǒ", "zhǐyǒu", "wǔbǎi", "miǎnbì"]]
+        },
+        {
+          "id": "ch10-p1-q9",
+          "question": "ဒီအင်္ကျီက ဘယ်လောက်ကျသလဲ။",
+          "words": ["yīfu", "qián", "jiàn", "duōshǎo", "Zhè"],
+          "answers": [["Zhè", "jiàn", "yīfu", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p1-q10",
+          "question": "ပန်းသီး ၃ လုံး၊ သစ်တော်သီး ၅ လုံးနဲ့ ဖရဲသီး ၁ လုံး စုစုပေါင်း ဘယ်လောက်ကျသလဲ။",
+          "words": ["xīguā", "Lǎobǎn", "yí", "duōshǎo", "wǔ", "qián", "gè", "hé", "sān", "píngguǒ", "lǐ", "yígòng", "wǒ", "yào"],
+          "answers": [["Lǎobǎn", "wǒ", "yào", "sān", "gè", "píngguǒ", "wǔ", "gè", "lǐ", "hé", "yí", "gè", "xīguā", "yígòng", "duōshǎo", "qián"]]
+        }
+      ]
+    },
+    "part2": {
+      "title": "answers Question",
+      "instruction": "answers the following question in Chinese Pinyin by arranging the words.",
+      "questions": [
+        {
+          "id": "ch10-p2-q1",
+          "question": "Zhè jiàn yīfu duōshǎo qián?",
+          "words": ["wǔbǎibā", "Yìqiān"],
+          "answers": [["Yìqiān"], ["wǔbǎibā"]]
+        },
+        {
+          "id": "ch10-p2-q2",
+          "question": "Zhè shuāng xié duōshǎo qián?",
+          "words": ["wǔbǎibā", "Yìqiān"],
+          "answers": [["Yìqiān"], ["wǔbǎibā"]]
+        },
+        {
+          "id": "ch10-p2-q3",
+          "question": "Nǐ yǒu língqián ma?",
+          "words": ["miǎnbì", "Wǒ", "wǔbǎi", "zhǐyǒu"],
+          "answers": [["Wǒ", "zhǐyǒu", "wǔbǎi", "miǎnbì"]]
+        },
+        {
+          "id": "ch10-p2-q4",
+          "question": "Nǐ xiǎng huàn shénme qián?",
+          "words": ["rénmínbì", "xiǎng", "Wǒ", "diǎn", "huàn"],
+          "answers": [["Wǒ", "xiǎng", "huàn", "diǎn", "rénmínbì"]]
+        },
+        {
+          "id": "ch10-p2-q5",
+          "question": "Lǎobǎn, wǒ yào liǎng píng píjiǔ hé yì píng hóngjiǔ, yígòng duōshǎo qián?",
+          "words": ["jiǔ", "bā", "sān", "Yígòng", "shí", "bǎi", "kuài"],
+          "answers": [["Yígòng", "sān", "bǎi", "jiǔ", "shí", "bā", "kuài"]]
+        },
+        {
+          "id": "ch10-p2-q6",
+          "question": "Qǐngwèn zhège duōshǎo qián?",
+          "words": ["èrshí", "měijīn", "Yìbǎi"],
+          "answers": [["Yìbǎi", "èrshí", "měijīn"]]
+        },
+        {
+          "id": "ch10-p2-q7",
+          "question": "Wǒ xiǎng huàn diǎn miǎnbì. Huàn duōshǎo?",
+          "words": ["miǎnbì", "wǔwàn", "Huàn"],
+          "answers": [["Huàn", "wǔwàn", "miǎnbì"]]
+        },
+        {
+          "id": "ch10-p2-q8",
+          "question": "Lǎobǎn, wǒ yào sān gè píngguǒ, wǔ gè lǐ hé yí gè xīguā, yígòng duōshǎo qián?",
+          "words": ["sìbǎi", "Yígòng", "wǔshí", "shì", "sānqiān"],
+          "answers": [["Yígòng", "shì", "sānqiān", "sìbǎi", "wǔshí"]]
+        },
+        {
+          "id": "ch10-p2-q9",
+          "question": "Nǐ yào mǎi shénme?",
+          "words": ["xīguā", "Wǒ", "lǐ", "yào", "wǔ", "gè", "hé", "píngguǒ", "yí", "sān"],
+          "answers": [["Wǒ", "yào", "sān", "gè", "píngguǒ", "wǔ", "gè", "lǐ", "hé", "yí", "gè", "xīguā"]]
+        },
+        {
+          "id": "ch10-p2-q10",
+          "question": "Nǐ xiǎng huàn duōshǎo miǎnbì?",
+          "words": ["miǎnbì", "Huàn", "wǔwàn"],
+          "answers": [["Huàn", "wǔwàn", "miǎnbì"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch10-p3-q1",
+          "question": "",
+          "words": ["qián", "duōshǎo", "yīfu", "jiàn", "Zhè"],
+          "answers": [["Zhè", "jiàn", "yīfu", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p3-q2",
+          "question": "",
+          "words": ["qián", "duōshǎo", "jiàn", "Zhè"],
+          "answers": [["Zhè", "jiàn", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p3-q3",
+          "question": "",
+          "words": ["qián", "duōshǎo", "xié", "shuāng", "Zhè"],
+          "answers": [["Zhè", "shuāng", "xié", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p3-q4",
+          "question": "",
+          "words": ["qián", "duōshǎo", "shuāng", "Zhè"],
+          "answers": [["Zhè", "shuāng", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p3-q5",
+          "question": "",
+          "words": ["mài", "zěnme", "Zhège"],
+          "answers": [["Zhège", "zěnme", "mài"]]
+        },
+        {
+          "id": "ch10-p3-q6",
+          "question": "",
+          "words": ["ma", "língqián", "yǒu", "Nǐ"],
+          "answers": [["Nǐ", "yǒu", "língqián", "ma"]]
+        },
+        {
+          "id": "ch10-p3-q7",
+          "question": "",
+          "words": ["rénmínbì", "diǎn", "huàn", "xiǎng", "Wǒ"],
+          "answers": [["Wǒ", "xiǎng", "huàn", "diǎn", "rénmínbì"]]
+        },
+        {
+          "id": "ch10-p3-q8",
+          "question": "",
+          "words": ["miǎnbì", "wǔbǎi", "zhǐyǒu", "Wǒ"],
+          "answers": [["Wǒ", "zhǐyǒu", "wǔbǎi", "miǎnbì"]]
+        },
+        {
+          "id": "ch10-p3-q9",
+          "question": "",
+          "words": ["qián", "duōshǎo", "yígòng", "hóngjiǔ", "píng", "yì", "hé", "píjiǔ", "píng", "liǎng", "yào", "wǒ", "Lǎobǎn"],
+          "answers": [["Lǎobǎn", "wǒ", "yào", "liǎng", "píng", "píjiǔ", "hé", "yì", "píng", "hóngjiǔ", "yígòng", "duōshǎo", "qián"]]
+        },
+        {
+          "id": "ch10-p3-q10",
+          "question": "",
+          "words": ["miǎnbì", "diǎn", "huàn", "xiǎng", "Wǒ"],
+          "answers": [["Wǒ", "xiǎng", "huàn", "diǎn", "miǎnbì"]]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "chapter": {
+    "id": "chapter-25",
+    "title": "Chapter 25",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch25-p1-q1",
+          "question": "အဲဒီလူက အရပ်လည်းရှည်ပြီး ချောလည်းချောတယ်။",
+          "words": ["yòu", "Nàge", "gāo", "shuài", "rén", "yīfu", "kāfēi", "yǔsǎn"],
+          "answers": ["Nàge", "rén", "yòu", "gāo", "yòu", "shuài"]
+        },
+        {
+          "id": "ch25-p1-q2",
+          "question": "ဒီဖရဲသီးက ကြီးလည်းကြီးပြီး ချိုလည်းချိုတယ်။",
+          "words": ["Zhège", "xīguā", "yòu", "tián", "dà", "yǔsǎn", "píngguǒ", "yīfu"],
+          "answers": ["Zhège", "xīguā", "yòu", "dà", "yòu", "tián"]
+        },
+        {
+          "id": "ch25-p1-q3",
+          "question": "ဒီအလုပ်က ပိုက်ဆံလည်းရှာနိုင်ပြီး အသစ်တွေလည်း သင်ယူနိုင်တယ်။",
+          "words": ["néng", "gōngzuò", "yòu", "jì", "zhuànqián", "xuédào", "Zhège", "dōngxi", "yīfu", "shū", "diànnǎo"],
+          "answers": ["Zhège", "gōngzuò", "jì", "néng", "zhuànqián", "yòu", "néng", "xuédào", "dōngxi"]
+        },
+        {
+          "id": "ch25-p1-q4",
+          "question": "ဒီနည်းလမ်းက ရိုးရှင်းလည်းရိုးရှင်းပြီး အသုံးဝင်လည်းအသုံးဝင်တယ်။",
+          "words": ["jiǎndān", "yòu", "fāngfǎ", "jì", "yǒuyòng", "Zhège", "dàngāo", "shū", "māo"],
+          "answers": ["Zhège", "fāngfǎ", "jì", "jiǎndān", "yòu", "yǒuyòng"]
+        },
+        {
+          "id": "ch25-p1-q5",
+          "question": "ကျွန်တော် ငှက်ပျောသီးလည်း မကြိုက်ဘူး၊ ပန်းသီးလည်း မစားချင်ဘူး။",
+          "words": ["jì", "píngguǒ", "bù", "xǐhuan", "Wǒ", "chī", "yě", "xiāngjiāo", "bēizi", "huā", "dàngāo"],
+          "answers": ["Wǒ", "jì", "bù", "xǐhuan", "xiāngjiāo", "yě", "bù", "xǐhuan", "chī", "píngguǒ"]
+        },
+        {
+          "id": "ch25-p1-q6",
+          "question": "ကျွန်တော် အင်္ဂလိပ်လိုလည်း မပြောတတ်ဘူး၊ ပြင်သစ်လိုလည်း မပြောတတ်ဘူး။",
+          "words": ["Yīngyǔ", "shuō", "huì", "Wǒ", "Fǎyǔ", "bú", "jì", "yě", "hǎi", "bēizi", "zhuōzi"],
+          "answers": ["Wǒ", "jì", "bú", "huì", "shuō", "Yīngyǔ", "yě", "bú", "huì", "shuō", "Fǎyǔ"]
+        },
+        {
+          "id": "ch25-p1-q7",
+          "question": "ကျွန်တော် ရေချိုးရင်း သီချင်းဆိုရတာကြိုက်တယ်။",
+          "words": ["yìbiān", "chànggē", "xǐzǎo", "Wǒ", "xǐhuan", "huǒchē", "fēijī", "chē"],
+          "answers": ["Wǒ", "xǐhuan", "yìbiān", "xǐzǎo", "yìbiān", "chànggē"]
+        },
+        {
+          "id": "ch25-p1-q8",
+          "question": "ကျွန်တော် တီဗီကြည့်ရင်း အဆာပြေစားရတာကြိုက်တယ်။",
+          "words": ["Wǒ", "yìbiān", "língshí", "chī", "diànshì", "xǐhuan", "kàn", "māo", "bēizi", "píngguǒ"],
+          "answers": ["Wǒ", "xǐhuan", "yìbiān", "kàn", "diànshì", "yìbiān", "chī", "língshí"]
+        },
+        {
+          "id": "ch25-p1-q9",
+          "question": "တချို့က စကားပြောနေပြီး တချို့က အိမ်စာလုပ်နေကြတယ်။",
+          "words": ["yǒude", "liáotiān", "xiě", "zài", "zuòyè", "Yǒude", "yīfu", "xiāngjiāo", "kāfēi"],
+          "answers": ["Yǒude", "zài", "liáotiān", "yǒude", "zài", "xiě", "zuòyè"]
+        },
+        {
+          "id": "ch25-p1-q10",
+          "question": "ကျွန်တော့်ကျောင်းသားတွေထဲမှာ တချို့က ဆရာဝန်တွေဖြစ်ပြီး တချို့က စားဖိုမှူးတွေဖြစ်တယ်။",
+          "words": ["xuésheng", "shì", "chúshī", "yǒude", "Wǒde", "yīshēng", "dàngāo", "diànnǎo", "māo"],
+          "answers": ["Wǒde", "xuésheng", "yǒude", "shì", "yīshēng", "yǒude", "shì", "chúshī"]
+        },
+        {
+          "id": "ch25-p1-q11",
+          "question": "ကလေးတွေက တစ်ခါတလေ ငိုပြီး တစ်ခါတလေ ရယ်တယ်။",
+          "words": ["yíhuìr", "zǒngshì", "xiào", "kū", "Háizi", "shǒujī", "huǒchē", "māo"],
+          "answers": ["Háizi", "zǒngshì", "yíhuìr", "kū", "yíhuìr", "xiào"]
+        },
+        {
+          "id": "ch25-p1-q12",
+          "question": "ဒီနေ့ရာသီဥတုက တစ်ခါတလေ အေးပြီး တစ်ခါတလေ ပူတယ်။",
+          "words": ["lěng", "rè", "yíhuìr", "tiānqì", "Jīntiān", "de", "píngguǒ", "huā", "shū"],
+          "answers": ["Jīntiān", "de", "tiānqì", "yíhuìr", "lěng", "yíhuìr", "rè"]
+        },
+        {
+          "id": "ch25-p1-q13",
+          "question": "အမေက တစ်ဖက်မှာ အလုပ်လုပ်ပြီး တစ်ဖက်မှာ ကျွန်တော်နဲ့ အဖေကို စောင့်ရှောက်တယ်။",
+          "words": ["Māma", "fāngmiàn", "bàba", "hé", "zhàogù", "wǒ", "yì", "gōngzuò", "diànnǎo", "píngguǒ", "xiāngjiāo"],
+          "answers": ["Māma", "yì", "fāngmiàn", "gōngzuò", "yì", "fāngmiàn", "zhàogù", "wǒ", "hé", "bàba"]
+        },
+        {
+          "id": "ch25-p1-q14",
+          "question": "အိမ်ပြန်ရောက်တာနဲ့ မင်းကို ဖုန်းဆက်မယ်။",
+          "words": ["dào", "yí", "jiù", "jiā", "Wǒ", "gěi", "huí", "dǎ", "nǐ", "diànhuà", "dàngāo", "xiāngjiāo", "diànnǎo"],
+          "answers": ["Wǒ", "yí", "huí", "dào", "jiā", "jiù", "gěi", "nǐ", "dǎ", "diànhuà"]
+        },
+        {
+          "id": "ch25-p1-q15",
+          "question": "အလုပ်ဆင်းတာနဲ့ အိမ်ပြန်တယ်။",
+          "words": ["huíjiā", "jiù", "Wǒ", "yí", "xiàbān", "píngguǒ", "bēizi", "yīfu"],
+          "answers": ["Wǒ", "yí", "xiàbān", "jiù", "huíjiā"]
+        },
+        {
+          "id": "ch25-p1-q16",
+          "question": "ကျွန်တော်တို့ အရင်ထမင်းစားပြီးမှ ရုပ်ရှင်သွားကြည့်တယ်။",
+          "words": ["Wǒmen", "ránhòu", "kàn", "diànyǐng", "chīfàn", "xiān", "qù", "xiāngjiāo", "fēijī", "huǒchē"],
+          "answers": ["Wǒmen", "xiān", "chīfàn", "ránhòu", "qù", "kàn", "diànyǐng"]
+        },
+        {
+          "id": "ch25-p1-q17",
+          "question": "ကျွန်တော် အရင်စူပါမားကတ်သွားပြီး ဟင်းသီးဟင်းရွက်ဝယ်တယ်၊ ပြီးတော့ အိမ်ပြန်ပြီး ဟင်းချက်တယ်။",
+          "words": ["xiān", "zuòfàn", "Wǒ", "chāoshì", "cài", "qù", "mǎi", "huíjiā", "ránhòu", "chē", "yú", "huǒchē"],
+          "answers": ["Wǒ", "xiān", "qù", "chāoshì", "mǎi", "cài", "ránhòu", "huíjiā", "zuòfàn"]
+        },
+        {
+          "id": "ch25-p1-q18",
+          "question": "သူက လှရုံတင်မကဘဲ ဉာဏ်လည်းကောင်းတယ်။",
+          "words": ["hěn", "cōngmíng", "búdàn", "zhǎng", "hái", "de", "piàoliang", "érqiě", "Tā", "diànnǎo", "huā", "shū"],
+          "answers": ["Tā", "búdàn", "zhǎng", "de", "piàoliang", "érqiě", "hái", "hěn", "cōngmíng"]
+        },
+        {
+          "id": "ch25-p1-q19",
+          "question": "ဒီဟင်းက အရသာရှိရုံတင်မကဘဲ အာဟာရလည်းရှိတယ်။",
+          "words": ["yǒu", "hěn", "hǎochī", "cài", "érqiě", "hái", "dào", "búdàn", "yíngyǎng", "Zhè", "kāfēi", "xiāngjiāo", "bēizi"],
+          "answers": ["Zhè", "dào", "cài", "búdàn", "hěn", "hǎochī", "érqiě", "hái", "hěn", "yǒu", "yíngyǎng"]
+        },
+        {
+          "id": "ch25-p1-q20",
+          "question": "မနက်ဖြန် မိုးမရွာရင် ကျွန်တော်တို့ တောင်တက်သွားမယ်။",
+          "words": ["míngtiān", "qù", "jiù", "bú", "Rúguǒ", "xiàyǔ", "wǒmen", "páshān", "shǒujī", "xiāngjiāo", "bēizi"],
+          "answers": ["Rúguǒ", "míngtiān", "bú", "xiàyǔ", "wǒmen", "jiù", "qù", "páshān"]
+        },
+        {
+          "id": "ch25-p1-q21",
+          "question": "မနက်ဖြန် သူတို့မလာရင် ကျွန်တော်တို့ ဈေးဝယ်သွားမယ်။",
+          "words": ["qù", "lái", "Rúguǒ", "míngtiān", "gòuwù", "wǒmen", "bù", "jiù", "tāmen", "yú", "shǒujī", "bēizi"],
+          "answers": ["Rúguǒ", "míngtiān", "tāmen", "bù", "lái", "wǒmen", "jiù", "qù", "gòuwù"]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch25-p2-q1",
+          "question": "Nàge yòu gāo yòu shuài de rén shì shéi?",
+          "words": ["shéi", "shì", "de", "Nàge", "yòu", "rén", "shuài", "gāo", "shǒujī", "shū", "māo"],
+          "answers": [["Nàge", "yòu", "gāo", "yòu", "shuài", "de", "rén", "shì", "shéi"]]
+        },
+        {
+          "id": "ch25-p2-q2",
+          "question": "Zhège xīguā zěnmeyàng?",
+          "words": ["xīguā", "tián", "yòu", "dà", "Zhège", "huā", "xiāngjiāo", "yǔsǎn"],
+          "answers": [["Zhège", "xīguā", "yòu", "dà", "yòu", "tián"]]
+        },
+        {
+          "id": "ch25-p2-q3",
+          "question": "Zhège gōngzuò yǒu shénme hǎochù?",
+          "words": ["Zhège", "yòu", "néng", "xuédào", "jì", "zhuànqián", "gōngzuò", "dōngxi", "huā", "diànnǎo", "kāfēi"],
+          "answers": [["Zhège", "gōngzuò", "jì", "néng", "zhuànqián", "yòu", "néng", "xuédào", "dōngxi"]]
+        },
+        {
+          "id": "ch25-p2-q4",
+          "question": "Zhège fāngfǎ zěnmeyàng?",
+          "words": ["jì", "yòu", "jiǎndān", "yǒuyòng", "fāngfǎ", "Zhège", "xiāngjiāo", "píngguǒ", "huā"],
+          "answers": [["Zhège", "fāngfǎ", "jì", "jiǎndān", "yòu", "yǒuyòng"]]
+        },
+        {
+          "id": "ch25-p2-q5",
+          "question": "Nǐ xǐhuan chī xiāngjiāo hé píngguǒ ma?",
+          "words": ["bù", "Wǒ", "píngguǒ", "jì", "xiāngjiāo", "yě", "xǐhuan", "chī", "huǒchē", "bēizi", "fēijī"],
+          "answers": [["Wǒ", "jì", "bù", "xǐhuan", "xiāngjiāo", "yě", "bù", "xǐhuan", "chī", "píngguǒ"]]
+        },
+        {
+          "id": "ch25-p2-q6",
+          "question": "Nǐ huì shuō Yīngyǔ hé Fǎyǔ ma?",
+          "words": ["huì", "shuō", "bú", "yě", "Fǎyǔ", "Yīngyǔ", "jì", "Wǒ", "huǒchē", "zhuōzi", "yú"],
+          "answers": [["Wǒ", "jì", "bú", "huì", "shuō", "Yīngyǔ", "yě", "bú", "huì", "shuō", "Fǎyǔ"]]
+        },
+        {
+          "id": "ch25-p2-q7",
+          "question": "Nǐ xǐhuan zuò shénme?",
+          "words": ["yìbiān", "chànggē", "xǐhuan", "Wǒ", "xǐzǎo", "zhuōzi", "huā", "píngguǒ"],
+          "answers": [["Wǒ", "xǐhuan", "yìbiān", "xǐzǎo", "yìbiān", "chànggē"]]
+        },
+        {
+          "id": "ch25-p2-q8",
+          "question": "Nǐ xǐhuan yìbiān kàn diànshì yìbiān zuò shénme?",
+          "words": ["xǐhuan", "kàn", "yìbiān", "diànshì", "Wǒ", "chī", "língshí", "diànnǎo", "hǎi", "xiāngjiāo"],
+          "answers": [["Wǒ", "xǐhuan", "yìbiān", "kàn", "diànshì", "yìbiān", "chī", "língshí"]]
+        },
+        {
+          "id": "ch25-p2-q9",
+          "question": "Xuéshengmen zài zuò shénme?",
+          "words": ["xiě", "Yǒude", "yǒude", "zài", "zuòyè", "liáotiān", "dàngāo", "yú", "shū"],
+          "answers": [["Yǒude", "zài", "liáotiān", "yǒude", "zài", "xiě", "zuòyè"]]
+        },
+        {
+          "id": "ch25-p2-q10",
+          "question": "Wǒde xuésheng dōu shì yīshēng ma?",
+          "words": ["shì", "chúshī", "Wǒde", "yīshēng", "xuésheng", "yǒude", "diànnǎo", "yú", "píngguǒ"],
+          "answers": [["Wǒde", "xuésheng", "yǒude", "shì", "yīshēng", "yǒude", "shì", "chúshī"]]
+        },
+        {
+          "id": "ch25-p2-q11",
+          "question": "Háizi zǒngshì zěnmeyàng?",
+          "words": ["kū", "xiào", "yíhuìr", "Háizi", "zǒngshì", "huā", "diànnǎo", "bēizi"],
+          "answers": [["Háizi", "zǒngshì", "yíhuìr", "kū", "yíhuìr", "xiào"]]
+        },
+        {
+          "id": "ch25-p2-q12",
+          "question": "Jīntiān de tiānqì zěnmeyàng?",
+          "words": ["yíhuìr", "lěng", "de", "rè", "Jīntiān", "tiānqì", "fēijī", "píngguǒ", "shǒujī"],
+          "answers": [["Jīntiān", "de", "tiānqì", "yíhuìr", "lěng", "yíhuìr", "rè"]]
+        },
+        {
+          "id": "ch25-p2-q13",
+          "question": "Māma zài zuò shénme?",
+          "words": ["bàba", "hé", "fāngmiàn", "yì", "zhàogù", "Māma", "wǒ", "gōngzuò", "diànnǎo", "kāfēi", "yǔsǎn"],
+          "answers": [["Māma", "yì", "fāngmiàn", "gōngzuò", "yì", "fāngmiàn", "zhàogù", "wǒ", "hé", "bàba"]]
+        },
+        {
+          "id": "ch25-p2-q14",
+          "question": "Nǐ shénme shíhou gěi wǒ dǎ diànhuà?",
+          "words": ["jiù", "gěi", "diànhuà", "dǎ", "yí", "huí", "nǐ", "dào", "Wǒ", "jiā", "zhuōzi", "kāfēi", "hǎi"],
+          "answers": [["Wǒ", "yí", "huí", "dào", "jiā", "jiù", "gěi", "nǐ", "dǎ", "diànhuà"]]
+        },
+        {
+          "id": "ch25-p2-q15",
+          "question": "Nǐ shénme shíhou huíjiā?",
+          "words": ["xiàbān", "Wǒ", "huíjiā", "jiù", "yí", "yǔsǎn", "yú", "hǎi"],
+          "answers": [["Wǒ", "yí", "xiàbān", "jiù", "huíjiā"]]
+        },
+        {
+          "id": "ch25-p2-q16",
+          "question": "Wǒmen xiān zuò shénme ránhòu qù kàn diànyǐng?",
+          "words": ["qù", "diànyǐng", "ránhòu", "Wǒmen", "xiān", "chīfàn", "kàn", "shǒujī", "huǒchē", "xiāngjiāo"],
+          "answers": [["Wǒmen", "xiān", "chīfàn", "ránhòu", "qù", "kàn", "diànyǐng"]]
+        },
+        {
+          "id": "ch25-p2-q17",
+          "question": "Nǐ xiān qù nǎr ránhòu zuò shénme?",
+          "words": ["ránhòu", "huíjiā", "qù", "chāoshì", "zuòfàn", "cài", "xiān", "Wǒ", "mǎi", "māo", "zhuōzi", "shǒujī"],
+          "answers": [["Wǒ", "xiān", "qù", "chāoshì", "mǎi", "cài", "ránhòu", "huíjiā", "zuòfàn"]]
+        },
+        {
+          "id": "ch25-p2-q18",
+          "question": "Tā zhǎng de zěnmeyàng?",
+          "words": ["búdàn", "zhǎng", "de", "cōngmíng", "hái", "hěn", "érqiě", "piàoliang", "Tā", "chē", "shǒujī", "dàngāo"],
+          "answers": [["Tā", "búdàn", "zhǎng", "de", "piàoliang", "érqiě", "hái", "hěn", "cōngmíng"]]
+        },
+        {
+          "id": "ch25-p2-q19",
+          "question": "Zhè dào cài zěnmeyàng?",
+          "words": ["Zhè", "yíngyǎng", "cài", "búdàn", "yǒu", "hái", "hǎochī", "hěn", "érqiě", "dào", "yǔsǎn", "hǎi", "huā"],
+          "answers": [["Zhè", "dào", "cài", "búdàn", "hěn", "hǎochī", "érqiě", "hái", "hěn", "yǒu", "yíngyǎng"]]
+        },
+        {
+          "id": "ch25-p2-q20",
+          "question": "Rúguǒ míngtiān bú xiàyǔ, wǒmen jiù qù nǎr?",
+          "words": ["Rúguǒ", "jiù", "wǒmen", "xiàyǔ", "bú", "míngtiān", "páshān", "qù", "bēizi", "huǒchē", "píngguǒ"],
+          "answers": [["Rúguǒ", "míngtiān", "bú", "xiàyǔ", "wǒmen", "jiù", "qù", "páshān"]]
+        },
+        {
+          "id": "ch25-p2-q21",
+          "question": "Rúguǒ míngtiān tāmen bù lái, wǒmen jiù qù gàn shénme?",
+          "words": ["míngtiān", "wǒmen", "qù", "bù", "jiù", "lái", "tāmen", "Rúguǒ", "gòuwù", "diànnǎo", "píngguǒ", "xiāngjiāo"],
+          "answers": [["Rúguǒ", "míngtiān", "tāmen", "bù", "lái", "wǒmen", "jiù", "qù", "gòuwù"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch25-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Nàge", "yòu", "gāo", "yòu", "shuài", "de", "rén", "shì", "shéi"],
+          "answers": [["Nàge", "yòu", "gāo", "yòu", "shuài", "de", "rén", "shì", "shéi"]]
+        },
+        {
+          "id": "ch25-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhège", "xīguā", "yòu", "dà", "yòu", "tián"],
+          "answers": [["Zhège", "xīguā", "yòu", "dà", "yòu", "tián"]]
+        },
+        {
+          "id": "ch25-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhège", "gōngzuò", "jì", "néng", "zhuànqián", "yòu", "néng", "xuédào", "dōngxi"],
+          "answers": [["Zhège", "gōngzuò", "jì", "néng", "zhuànqián", "yòu", "néng", "xuédào", "dōngxi"]]
+        },
+        {
+          "id": "ch25-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhège", "fāngfǎ", "jì", "jiǎndān", "yòu", "yǒuyòng"],
+          "answers": [["Zhège", "fāngfǎ", "jì", "jiǎndān", "yòu", "yǒuyòng"]]
+        },
+        {
+          "id": "ch25-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "jì", "bù", "xǐhuan", "xiāngjiāo", "yě", "bù", "xǐhuan", "chī", "píngguǒ"],
+          "answers": [["Wǒ", "jì", "bù", "xǐhuan", "xiāngjiāo", "yě", "bù", "xǐhuan", "chī", "píngguǒ"]]
+        },
+        {
+          "id": "ch25-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "jì", "bú", "huì", "shuō", "Yīngyǔ", "yě", "bú", "huì", "shuō", "Fǎyǔ"],
+          "answers": [["Wǒ", "jì", "bú", "huì", "shuō", "Yīngyǔ", "yě", "bú", "huì", "shuō", "Fǎyǔ"]]
+        },
+        {
+          "id": "ch25-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "xǐhuan", "yìbiān", "xǐzǎo", "yìbiān", "chànggē"],
+          "answers": [["Wǒ", "xǐhuan", "yìbiān", "xǐzǎo", "yìbiān", "chànggē"]]
+        },
+        {
+          "id": "ch25-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "xǐhuan", "yìbiān", "kàn", "diànshì", "yìbiān", "chī", "língshí"],
+          "answers": [["Wǒ", "xǐhuan", "yìbiān", "kàn", "diànshì", "yìbiān", "chī", "língshí"]]
+        },
+        {
+          "id": "ch25-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Yǒude", "zài", "liáotiān", "yǒude", "zài", "xiě", "zuòyè"],
+          "answers": [["Yǒude", "zài", "liáotiān", "yǒude", "zài", "xiě", "zuòyè"]]
+        },
+        {
+          "id": "ch25-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒde", "xuésheng", "yǒude", "shì", "yīshēng", "yǒude", "shì", "chúshī"],
+          "answers": [["Wǒde", "xuésheng", "yǒude", "shì", "yīshēng", "yǒude", "shì", "chúshī"]]
+        },
+        {
+          "id": "ch25-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Háizi", "zǒngshì", "yíhuìr", "kū", "yíhuìr", "xiào"],
+          "answers": [["Háizi", "zǒngshì", "yíhuìr", "kū", "yíhuìr", "xiào"]]
+        },
+        {
+          "id": "ch25-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Jīntiān", "de", "tiānqì", "yíhuìr", "lěng", "yíhuìr", "rè"],
+          "answers": [["Jīntiān", "de", "tiānqì", "yíhuìr", "lěng", "yíhuìr", "rè"]]
+        },
+        {
+          "id": "ch25-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Māma", "yì", "fāngmiàn", "gōngzuò", "yì", "fāngmiàn", "zhàogù", "wǒ", "hé", "bàba"],
+          "answers": [["Māma", "yì", "fāngmiàn", "gōngzuò", "yì", "fāngmiàn", "zhàogù", "wǒ", "hé", "bàba"]]
+        },
+        {
+          "id": "ch25-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "yí", "huí", "dào", "jiā", "jiù", "gěi", "nǐ", "dǎ", "diànhuà"],
+          "answers": [["Wǒ", "yí", "huí", "dào", "jiā", "jiù", "gěi", "nǐ", "dǎ", "diànhuà"]]
+        },
+        {
+          "id": "ch25-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "yí", "xiàbān", "jiù", "huíjiā"],
+          "answers": [["Wǒ", "yí", "xiàbān", "jiù", "huíjiā"]]
+        },
+        {
+          "id": "ch25-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒmen", "xiān", "chīfàn", "ránhòu", "qù", "kàn", "diànyǐng"],
+          "answers": [["Wǒmen", "xiān", "chīfàn", "ránhòu", "qù", "kàn", "diànyǐng"]]
+        },
+        {
+          "id": "ch25-p3-q17",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "xiān", "qù", "chāoshì", "mǎi", "cài", "ránhòu", "huíjiā", "zuòfàn"],
+          "answers": [["Wǒ", "xiān", "qù", "chāoshì", "mǎi", "cài", "ránhòu", "huíjiā", "zuòfàn"]]
+        },
+        {
+          "id": "ch25-p3-q18",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "búdàn", "zhǎng", "de", "piàoliang", "érqiě", "hái", "hěn", "cōngmíng"],
+          "answers": [["Tā", "búdàn", "zhǎng", "de", "piàoliang", "érqiě", "hái", "hěn", "cōngmíng"]]
+        },
+        {
+          "id": "ch25-p3-q19",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhè", "dào", "cài", "búdàn", "hěn", "hǎochī", "érqiě", "hái", "hěn", "yǒu", "yíngyǎng"],
+          "answers": [["Zhè", "dào", "cài", "búdàn", "hěn", "hǎochī", "érqiě", "hái", "hěn", "yǒu", "yíngyǎng"]]
+        },
+        {
+          "id": "ch25-p3-q20",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Rúguǒ", "míngtiān", "bú", "xiàyǔ", "wǒmen", "jiù", "qù", "páshān"],
+          "answers": [["Rúguǒ", "míngtiān", "bú", "xiàyǔ", "wǒmen", "jiù", "qù", "páshān"]]
+        },
+        {
+          "id": "ch25-p3-q21",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Rúguǒ", "míngtiān", "tāmen", "bù", "lái", "wǒmen", "jiù", "qù", "gòuwù"],
+          "answers": [["Rúguǒ", "míngtiān", "tāmen", "bù", "lái", "wǒmen", "jiù", "qù", "gòuwù"]]
+        }
+      ]
+    }
+  }
+}

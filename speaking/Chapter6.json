@@ -1,0 +1,204 @@
+{
+  "chapter": {
+    "id": "chapter-6",
+    "title": "Chapter 6",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch6-p1-q1",
+          "question": "လုံးဝ မဟုတ်ဘူး။",
+          "words": ["juéduì","bú","shì","yào","zhēnde","jiǎde","tài","guì","le"],
+          "answers": [["juéduì","bú","shì"]]
+        },
+        {
+          "id": "ch6-p1-q2",
+          "question": "မင်း သစ်သီးနည်းနည်း လိုချင်လား။",
+          "words": ["nǐ","xiǎng","yào","yìxiē","shuǐguǒ","ma","mǎi","mài","zhēnde","hǎochī"],
+          "answers": [["nǐ","xiǎng","yào","yìxiē","shuǐguǒ","ma"]]
+        },
+        {
+          "id": "ch6-p1-q3",
+          "question": "သေချာလား။",
+          "words": ["nǐ","quèdìng","ma","zhēnde","jiǎde","shì","bú","yào","le"],
+          "answers": [["nǐ","quèdìng","ma"]]
+        },
+        {
+          "id": "ch6-p1-q4",
+          "question": "မကြာခင် ရောက်တော့မလား။",
+          "words": ["kuài","dào","le","ma","nǐ","yào","quèdìng","zhēnde","hǎochī"],
+          "answers": [["kuài","dào","le","ma"]]
+        },
+        {
+          "id": "ch6-p1-q5",
+          "question": "ကြိုဆိုပါတယ်။",
+          "words": ["huān","yíng","guāng","lín","hǎochī","lǎobǎn","qǐngwèn","děng","yíxià"],
+          "answers": [["huān","yíng","guāng","lín"]]
+        },
+        {
+          "id": "ch6-p1-q6",
+          "question": "မနက်ဖြန်တွေ့မယ်။",
+          "words": ["míngtīan","jiàn","zàijiàn","huānyíng","guānglín","děng","yíxià","kāi","mén"],
+          "answers": [["míngtīan","jiàn"]]
+        },
+        {
+          "id": "ch6-p1-q7",
+          "question": "တကယ်လား။",
+          "words": ["zhēnde","ma","jiǎde","nǐ","quèdìng","shì","bú","yào","le"],
+          "answers": [["zhēnde","ma"]]
+        },
+        {
+          "id": "ch6-p1-q8",
+          "question": "အရသာကောင်းလား။",
+          "words": ["hǎochī","ma","zhēnde","jiǎde","tài","guì","piányi","yìdiǎn","nǐ"],
+          "answers": [["hǎochī","ma"]]
+        },
+        {
+          "id": "ch6-p1-q9",
+          "question": "သူဌေး၊ ဒီဟာကို ဘယ်လိုရောင်းလဲ။",
+          "words": ["lǎobǎn","zhège","zěnme","mài","nǐ","mǎi","tài","guì","ma"],
+          "answers": [["lǎobǎn","zhège","zěnme","mài"]]
+        },
+        {
+          "id": "ch6-p1-q10",
+          "question": "အရမ်းဈေးကြီးတယ်။",
+          "words": ["tài","guì","le","piányi","yìdiǎn","zhēnde","jiǎde","mǎi","mài"],
+          "answers": [["tài","guì","le"]]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer the Question",
+      "instruction": "Answer the question by selecting and arranging the correct Pinyin words.",
+      "questions": [
+        {
+          "id": "ch6-p2-q1",
+          "question": "Nǐ xiǎng yào xiē shuǐguǒ ma?",
+          "words": ["wǒ","xiǎng","yào","yìxiē","shuǐguǒ","nǐ","bú","shì","ma"],
+          "answers": [["wǒ","xiǎng","yào","yìxiē","shuǐguǒ"]]
+        },
+        {
+          "id": "ch6-p2-q2",
+          "question": "Nǐ quèdìng ma?",
+          "words": ["shì","wǒ","quèdìng","bú","shì","juéduì","zhēnde","jiǎde","ma"],
+          "answers": [["wǒ","quèdìng"],["shì","wǒ","quèdìng"],["juéduì","quèdìng"]]
+        },
+        {
+          "id": "ch6-p2-q3",
+          "question": "Kuài dào le ma?",
+          "words": ["kuài","dào","le","shì","wǒ","hái","méiyǒu","yào","ma"],
+          "answers": [["kuài","dào","le"],["hái","méiyǒu"],["wǒ","hái","méiyǒu"]]
+        },
+        {
+          "id": "ch6-p2-q4",
+          "question": "Zhēnde ma?",
+          "words": ["zhēnde","shì","bú","shì","wǒ","juéduì","quèdìng","ma","jiǎde"],
+          "answers": [["shì"],["wǒ","quèdìng"],["juéduì","quèdìng"]]
+        },
+        {
+          "id": "ch6-p2-q5",
+          "question": "Hǎochī ma?",
+          "words": ["hǎochī","hěn","hǎo","chī","wǒ","yě","xǐhuān","ma","tài"],
+          "answers": [["hǎochī"],["hěn","hǎo","chī"],["wǒ","yě","xǐhuān"]]
+        },
+        {
+          "id": "ch6-p2-q6",
+          "question": "Lǎobǎn, zhège zěnme mài?",
+          "words": ["zhège","tài","guì","le","lǎobǎn","piányi","yìdiǎn","mài","mǎi"],
+          "answers": [["tài","guì","le"],["piányi","yìdiǎn"]]
+        },
+        {
+          "id": "ch6-p2-q7",
+          "question": "Nǐmen kāi mén ma?",
+          "words": ["wǒmen","jǐ","diǎn","guān","mén","kāi","děng","yíxià","shénme"],
+          "answers": [["wǒmen","kāi","mén"],["kāi","mén"]]
+        },
+        {
+          "id": "ch6-p2-q8",
+          "question": "Nǐmen guān mén ma?",
+          "words": ["wǒmen","jǐ","diǎn","kāi","mén","guān","děng","yíxià","shénme"],
+          "answers": [["wǒmen","guān","mén"],["guān","mén"]]
+        },
+        {
+          "id": "ch6-p2-q9",
+          "question": "Qǐngwèn, nǐmen kāi mén ma?",
+          "words": ["qǐngwèn","wǒmen","jǐ","diǎn","guān","mén","kāi","děng","yíxià"],
+          "answers": [["wǒmen","kāi","mén"],["kāi","mén"]]
+        },
+        {
+          "id": "ch6-p2-q10",
+          "question": "Nǐ děng yíxià ma?",
+          "words": ["děng","yíxià","hǎo","qǐngwèn","zhēnde","ma","guān","mén","le"],
+          "answers": [["děng","yíxià"],["hǎo","děng","yíxià"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch6-p3-q1",
+          "words": ["shì","bú","juéduì"],
+          "answers": [["juéduì","bú","shì"]]
+        },
+        {
+          "id": "ch6-p3-q2",
+          "words": ["shuǐguǒ","yào","nǐ","xiǎng","yìxiē","ma"],
+          "answers": [["nǐ","xiǎng","yào","yìxiē","shuǐguǒ","ma"]]
+        },
+        {
+          "id": "ch6-p3-q3",
+          "words": ["ma","quèdìng","nǐ"],
+          "answers": [["nǐ","quèdìng","ma"]]
+        },
+        {
+          "id": "ch6-p3-q4",
+          "words": ["le","dào","kuài","ma"],
+          "answers": [["kuài","dào","le","ma"]]
+        },
+        {
+          "id": "ch6-p3-q5",
+          "words": ["lín","huān","yíng","guāng"],
+          "answers": [["huān","yíng","guāng","lín"]]
+        },
+        {
+          "id": "ch6-p3-q6",
+          "words": ["jiàn","míngtīan","zàijiàn"],
+          "answers": [["míngtīan","jiàn"]]
+        },
+        {
+          "id": "ch6-p3-q7",
+          "words": ["ma","zhēnde","jiǎde"],
+          "answers": [["zhēnde","ma"]]
+        },
+        {
+          "id": "ch6-p3-q8",
+          "words": ["ma","hǎochī","tài","guì"],
+          "answers": [["hǎochī","ma"]]
+        },
+        {
+          "id": "ch6-p3-q9",
+          "words": ["mài","lǎobǎn","zěnme","zhège"],
+          "answers": [["lǎobǎn","zhège","zěnme","mài"]]
+        },
+        {
+          "id": "ch6-p3-q10",
+          "words": ["guì","tài","le","piányi"],
+          "answers": [["tài","guì","le"]]
+        },
+        {
+          "id": "ch6-p3-q11",
+          "words": ["yìdiǎn","piányi"],
+          "answers": [["piányi","yìdiǎn"]]
+        },
+        {
+          "id": "ch6-p3-q12",
+          "words": ["gōngxǐ","gōngxǐ","xièxie","nǐ"],
+          "answers": [["gōngxǐ","gōngxǐ"]]
+        }
+      ]
+    }
+  }
+}

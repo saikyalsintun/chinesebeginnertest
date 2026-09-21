@@ -1,0 +1,306 @@
+{
+  "chapter": {
+    "id": "chapter-28",
+    "title": "Chapter 28",
+    "part1": {
+      "title": "Translation",
+      "instruction": "Translate the Burmese sentence into Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch28-p1-q1",
+          "question": "သူက တရုတ်ဘာသာသင်ခန်းစာ တက်နေတယ်။",
+          "words": ["Tā", "shàng", "yíbiàn", "zhèngzài", "duìde", "Wǒmen", "kè", "Zhōngwén"],
+          "answers": ["Tā", "zhèngzài", "shàng", "Zhōngwén", "kè"]
+        },
+        {
+          "id": "ch28-p1-q2",
+          "question": "မနေ့က သင်ပေးခဲ့တဲ့ သင်ခန်းစာမှာ အားလုံး ပြဿနာရှိလား။",
+          "words": ["jiāo", "ránhòu", "děi", "gāngbǐ", "Zuótiān", "kèchéng", "yǒu", "dàjiā", "wèntí", "méiyǒu", "de"],
+          "answers": ["Zuótiān", "jiāo", "de", "kèchéng", "dàjiā", "yǒu", "méiyǒu", "wèntí"]
+        },
+        {
+          "id": "ch28-p1-q3",
+          "question": "ဆရာ၊ ကျွန်တော့်မှာ မေးစရာရှိတယ်။",
+          "words": ["Lǎoshī", "dǒng", "shàng", "yǒu", "wèntí", "qīngchu", "wǒ"],
+          "answers": ["Lǎoshī", "wǒ", "yǒu", "wèntí"]
+        },
+        {
+          "id": "ch28-p1-q4",
+          "question": "ဒီဝါကျက မှန်လား။",
+          "words": ["dàjiā", "bǐjìběn", "shì", "xuéxí", "Zhège", "ma", "duìde", "jùzi"],
+          "answers": ["Zhège", "jùzi", "shì", "duìde", "ma"]
+        },
+        {
+          "id": "ch28-p1-q5",
+          "question": "အရမ်းမှန်တယ်။",
+          "words": ["bǐjìběn", "bǐjì", "zhèngquè", "Fēicháng", "yòng"],
+          "answers": ["Fēicháng", "zhèngquè"]
+        },
+        {
+          "id": "ch28-p1-q6",
+          "question": "ဒါပေမယ့် ကျွန်တော် မရှင်းသေးဘူး။",
+          "words": ["lǐ", "yī", "qīngchu", "kěyǐ", "wǒ", "Kěshì", "bù", "háishì"],
+          "answers": ["Kěshì", "wǒ", "háishì", "bù", "qīngchu"]
+        },
+        {
+          "id": "ch28-p1-q7",
+          "question": "ကျေးဇူးပြုပြီး ထပ်ရှင်းပြပေးလို့ရမလား။",
+          "words": ["Kěyǐ", "qǐng", "nín", "ma", "yíbiàn", "Tā", "jiěshì", "bù", "Zhège", "zài"],
+          "answers": ["Kěyǐ", "qǐng", "nín", "zài", "jiěshì", "yíbiàn", "ma"]
+        },
+        {
+          "id": "ch28-p1-q8",
+          "question": "အတန်းဖော်အားလုံး နားလည်ပြီလား။",
+          "words": ["dōu", "dǒng", "ma", "le", "fěnbǐ", "jiāo", "Tóngxuémen", "yīnwéi"],
+          "answers": ["Tóngxuémen", "dōu", "dǒng", "le", "ma"]
+        },
+        {
+          "id": "ch28-p1-q9",
+          "question": "ဒီနေ့သင်ခန်းစာက ဒီလောက်နဲ့ပဲ ပြီးပြီ။",
+          "words": ["kè", "jiù", "zhèlǐ", "jì", "jiàoshì", "yònglái", "Jīntiān", "de", "dào"],
+          "answers": ["Jīntiān", "de", "kè", "jiù", "dào", "zhèlǐ"]
+        },
+        {
+          "id": "ch28-p1-q10",
+          "question": "အားလုံး ပြန်တွေ့မယ်။ အိမ်ပြန်ရင် အိမ်စာရေးဖို့ မမေ့နဲ့။",
+          "words": ["jìdé", "xiě", "wèntí", "zàijiàn", "zuòyè", "kěyǐ", "fěnbǐ", "Huíjiā", "Dàjiā"],
+          "answers": ["Dàjiā", "zàijiàn", "Huíjiā", "jìdé", "xiě", "zuòyè"]
+        },
+        {
+          "id": "ch28-p1-q11",
+          "question": "ဘုတ်ပြားကို နံရံပေါ်မှာ ချိတ်ထားတယ်။",
+          "words": ["Báibǎn", "guàzài", "shàng", "kàn", "nín", "Huíjiā", "qiáng"],
+          "answers": ["Báibǎn", "guàzài", "qiáng", "shàng"]
+        },
+        {
+          "id": "ch28-p1-q12",
+          "question": "ခဲတံဖျက်ရတာ လွယ်တယ်၊ ပြီးတော့ တခြားစာလုံးတွေကို ထပ်ရေးလို့ရတယ်။",
+          "words": ["nǐ", "zì", "Cā", "zài", "fěnbǐ", "Kěshì", "róngyì", "kéyǐ", "hěn", "xiě", "ránhòu", "fàngyìngjī", "kàn", "qítā"],
+          "answers": ["Cā", "fěnbǐ", "zì", "hěn", "róngyì", "ránhòu", "nǐ", "kéyǐ", "zài", "xiě", "qítā", "zì"]
+        },
+        {
+          "id": "ch28-p1-q13",
+          "question": "စာမေးပွဲအောင်ဖို့ ဒီအချက်အလက်တွေကို လေ့လာရမယ်။",
+          "words": ["yíbiàn", "Yào", "zīliào", "kǎoshì", "Tóngxuémen", "Nǐ", "xuéxí", "zhèxiē", "tōngguò", "děi"],
+          "answers": ["Yào", "tōngguò", "kǎoshì", "nǐ", "děi", "xuéxí", "zhèxiē", "zīliào"]
+        },
+        {
+          "id": "ch28-p1-q14",
+          "question": "ကျွန်တော် ဘောပင်နဲ့ မှတ်စုရေးတယ်၊ ဘောပင်နဲ့ရေးရတာ လွယ်လို့ပါ။",
+          "words": ["Kěyǐ", "róngyì", "hěn", "gāngbǐ", "yīnwéi", "Wǒ", "bǐjì", "yòng", "jì", "tái", "kěyǐ", "xiěqǐlái"],
+          "answers": ["Wǒ", "yòng", "gāngbǐ", "jì", "bǐjì", "yīnwéi", "gāngbǐ", "xiěqǐlái", "hěn", "róngyì"]
+        },
+        {
+          "id": "ch28-p1-q15",
+          "question": "ကျွန်တော်တို့ စာသင်ခန်းထဲမှာ ပရိုဂျက်တာတစ်လုံးရှိတယ်၊ ရုပ်ရှင်ကြည့်ဖို့ အသုံးပြုလို့ရတယ်။",
+          "words": ["kàn", "méiyǒu", "diànyǐng", "yònglái", "jiàoshì", "lǐ", "fàngyìngjī", "Wǒmen", "de", "tái", "kěyǐ", "yī", "yǒu", "jìdé"],
+          "answers": ["Wǒmen", "jiàoshì", "lǐ", "yǒu", "yī", "tái", "fàngyìngjī", "kěyǐ", "yònglái", "kàn", "diànyǐng"]
+        },
+        {
+          "id": "ch28-p1-q16",
+          "question": "ကျွန်တော်တို့ ဘာသာရပ်တိုင်းမှာ မှတ်စုစာအုပ်တစ်အုပ်ရှိတယ်။",
+          "words": ["zài", "qīngchu", "bǐjìběn", "Wǒmen", "yígè", "zhǒng", "dōu", "yǒu", "méi", "kè", "Zhōngwén"],
+          "answers": ["Wǒmen", "méi", "zhǒng", "kè", "dōu", "yǒu", "yígè", "bǐjìběn"]
+        }
+      ]
+    },
+    "part2": {
+      "title": "Answer Question",
+      "instruction": "Answer the following question in Chinese Pinyin.",
+      "questions": [
+        {
+          "id": "ch28-p2-q1",
+          "question": "Tā zhèngzài shàng shénme kè?",
+          "words": ["Tā", "Zhōngwén", "zàijiàn", "hěn", "kè", "zhèngzài", "méi", "shàng"],
+          "answers": [["Tā", "zhèngzài", "shàng", "Zhōngwén", "kè"]]
+        },
+        {
+          "id": "ch28-p2-q2",
+          "question": "Zuótiān jiāo de kèchéng, dàjiā yǒu méiyǒu wèntí?",
+          "words": ["yǒu", "yíbiàn", "wèntí", "Zuótiān", "méiyǒu", "Kěyǐ", "Dàjiā"],
+          "answers": [["Dàjiā", "méiyǒu", "wèntí"]]
+        },
+        {
+          "id": "ch28-p2-q3",
+          "question": "Lǎoshī, wǒ yǒu shénme?",
+          "words": ["jiāo", "yǒu", "wèntí", "xuéxí", "Lǎoshī", "qīngchu", "wǒ"],
+          "answers": [["Lǎoshī", "wǒ", "yǒu", "wèntí"]]
+        },
+        {
+          "id": "ch28-p2-q4",
+          "question": "Zhège jùzi shì duìde ma?",
+          "words": ["Fēicháng", "zhèngquè", "xuéxí", "zài", "qiáng"],
+          "answers": [["Fēicháng", "zhèngquè"]]
+        },
+        {
+          "id": "ch28-p2-q5",
+          "question": "Wǒ háishì bù qīngchu, zěnmebàn?",
+          "words": ["Kěshì", "wǒ", "háishì", "bù", "qīngchu", "zài", "nín"],
+          "answers": [["Kěshì", "wǒ", "háishì", "bù", "qīngchu"]]
+        },
+        {
+          "id": "ch28-p2-q6",
+          "question": "Kěyǐ qǐng nín zài jiěshì yíbiàn ma?",
+          "words": ["qǐng", "Kěyǐ", "nín", "zài", "jiěshì", "yíbiàn", "ma", "děi", "méiyǒu"],
+          "answers": [["Kěyǐ", "qǐng", "nín", "zài", "jiěshì", "yíbiàn", "ma"]]
+        },
+        {
+          "id": "ch28-p2-q7",
+          "question": "Tóngxuémen dōu dǒng le ma?",
+          "words": ["dǒng", "dōu", "Tóngxuémen", "xuéxí", "qítā", "Nǐ", "le", "ma"],
+          "answers": [["Tóngxuémen", "dōu", "dǒng", "le"]]
+        },
+        {
+          "id": "ch28-p2-q8",
+          "question": "Jīntiān de kè dào nǎlǐ?",
+          "words": ["róngyì", "yíbiàn", "wǒ", "de", "jiù", "Jīntiān", "kè", "zhèlǐ", "dào"],
+          "answers": [["Jīntiān", "de", "kè", "jiù", "dào", "zhèlǐ"]]
+        },
+        {
+          "id": "ch28-p2-q9",
+          "question": "Huíjiā jìdé zuò shénme?",
+          "words": ["xiě", "Lǎoshī", "gāngbǐ", "jìdé", "Huíjiā", "fěnbǐ", "zuòyè"],
+          "answers": [["Huíjiā", "jìdé", "xiě", "zuòyè"]]
+        },
+        {
+          "id": "ch28-p2-q10",
+          "question": "Báibǎn zài nǎlǐ?",
+          "words": ["ránhòu", "qǐng", "lǐ", "qiáng", "shàng", "guàzài", "Báibǎn"],
+          "answers": [["Báibǎn", "guàzài", "qiáng", "shàng"]]
+        },
+        {
+          "id": "ch28-p2-q11",
+          "question": "Cā fěnbǐ zì zěnmeyàng?",
+          "words": ["Cā", "dōu", "děi", "róngyì", "zì", "fěnbǐ", "jùzi", "hěn"],
+          "answers": [["Cā", "fěnbǐ", "zì", "hěn", "róngyì"]]
+        },
+        {
+          "id": "ch28-p2-q12",
+          "question": "Yào tōngguò kǎoshì, nǐ děi zuò shénme?",
+          "words": ["bǐjì", "Tóngxuémen", "zhèxiē", "xuéxí", "jìdé", "zīliào", "děi", "Nǐ"],
+          "answers": [["Nǐ", "děi", "xuéxí", "zhèxiē", "zīliào"]]
+        },
+        {
+          "id": "ch28-p2-q13",
+          "question": "Nǐ yòng shénme jì bǐjì?",
+          "words": ["bǐjì", "Zuótiān", "Wǒ", "Lǎoshī", "jì", "gāngbǐ", "yòng", "kàn"],
+          "answers": [["Wǒ", "yòng", "gāngbǐ", "jì", "bǐjì"]]
+        },
+        {
+          "id": "ch28-p2-q14",
+          "question": "Nǐmen jiàoshì lǐ yǒu shénme?",
+          "words": ["fàngyìngjī", "yǒu", "zhèxiē", "yī", "tái", "Wǒmen", "jiàoshì", "hěn", "lǐ", "Jīntiān"],
+          "answers": [["Wǒmen", "jiàoshì", "lǐ", "yǒu", "yī", "tái", "fàngyìngjī"]]
+        },
+        {
+          "id": "ch28-p2-q15",
+          "question": "Měi zhǒng kè dōu yǒu shénme?",
+          "words": ["yǒu", "yígè", "wèntí", "bǐjìběn", "Wǒmen", "zhǒng", "děi", "dōu", "kè", "méi", "yīnwéi"],
+          "answers": [["Měi", "zhǒng", "kè", "dōu", "yǒu", "yígè", "bǐjìběn"]]
+        }
+      ]
+    },
+    "part3": {
+      "title": "Scramble",
+      "instruction": "Arrange the words to make the correct sentence.",
+      "questions": [
+        {
+          "id": "ch28-p3-q1",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tā", "zhèngzài", "shàng", "Zhōngwén", "kè"],
+          "answers": [["Tā", "zhèngzài", "shàng", "Zhōngwén", "kè"]]
+        },
+        {
+          "id": "ch28-p3-q2",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zuótiān", "jiāo", "de", "kèchéng", "dàjiā", "yǒu", "méiyǒu", "wèntí"],
+          "answers": [["Zuótiān", "jiāo", "de", "kèchéng", "dàjiā", "yǒu", "méiyǒu", "wèntí"]]
+        },
+        {
+          "id": "ch28-p3-q3",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Lǎoshī", "wǒ", "yǒu", "wèntí"],
+          "answers": [["Lǎoshī", "wǒ", "yǒu", "wèntí"]]
+        },
+        {
+          "id": "ch28-p3-q4",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Zhège", "jùzi", "shì", "duìde", "ma"],
+          "answers": [["Zhège", "jùzi", "shì", "duìde", "ma"]]
+        },
+        {
+          "id": "ch28-p3-q5",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Fēicháng", "zhèngquè"],
+          "answers": [["Fēicháng", "zhèngquè"]]
+        },
+        {
+          "id": "ch28-p3-q6",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Kěshì", "wǒ", "háishì", "bù", "qīngchu"],
+          "answers": [["Kěshì", "wǒ", "háishì", "bù", "qīngchu"]]
+        },
+        {
+          "id": "ch28-p3-q7",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Kěyǐ", "qǐng", "nín", "zài", "jiěshì", "yíbiàn", "ma"],
+          "answers": [["Kěyǐ", "qǐng", "nín", "zài", "jiěshì", "yíbiàn", "ma"]]
+        },
+        {
+          "id": "ch28-p3-q8",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Tóngxuémen", "dōu", "dǒng", "le", "ma"],
+          "answers": [["Tóngxuémen", "dōu", "dǒng", "le", "ma"]]
+        },
+        {
+          "id": "ch28-p3-q9",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Jīntiān", "de", "kè", "jiù", "dào", "zhèlǐ"],
+          "answers": [["Jīntiān", "de", "kè", "jiù", "dào", "zhèlǐ"]]
+        },
+        {
+          "id": "ch28-p3-q10",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Dàjiā", "zàijiàn", "Huíjiā", "jìdé", "xiě", "zuòyè"],
+          "answers": [["Dàjiā", "zàijiàn", "Huíjiā", "jìdé", "xiě", "zuòyè"]]
+        },
+        {
+          "id": "ch28-p3-q11",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Báibǎn", "guàzài", "qiáng", "shàng"],
+          "answers": [["Báibǎn", "guàzài", "qiáng", "shàng"]]
+        },
+        {
+          "id": "ch28-p3-q12",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Cā", "fěnbǐ", "zì", "hěn", "róngyì", "ránhòu", "nǐ", "kéyǐ", "zài", "xiě", "qítā", "zì"],
+          "answers": [["Cā", "fěnbǐ", "zì", "hěn", "róngyì", "ránhòu", "nǐ", "kéyǐ", "zài", "xiě", "qítā", "zì"]]
+        },
+        {
+          "id": "ch28-p3-q13",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Yào", "tōngguò", "kǎoshì", "nǐ", "děi", "xuéxí", "zhèxiē", "zīliào"],
+          "answers": [["Yào", "tōngguò", "kǎoshì", "nǐ", "děi", "xuéxí", "zhèxiē", "zīliào"]]
+        },
+        {
+          "id": "ch28-p3-q14",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒ", "yòng", "gāngbǐ", "jì", "bǐjì", "yīnwéi", "gāngbǐ", "xiěqǐlái", "hěn", "róngyì"],
+          "answers": [["Wǒ", "yòng", "gāngbǐ", "jì", "bǐjì", "yīnwéi", "gāngbǐ", "xiěqǐlái", "hěn", "róngyì"]]
+        },
+        {
+          "id": "ch28-p3-q15",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒmen", "jiàoshì", "lǐ", "yǒu", "yī", "tái", "fàngyìngjī", "kěyǐ", "yònglái", "kàn", "diànyǐng"],
+          "answers": [["Wǒmen", "jiàoshì", "lǐ", "yǒu", "yī", "tái", "fàngyìngjī", "kěyǐ", "yònglái", "kàn", "diànyǐng"]]
+        },
+        {
+          "id": "ch28-p3-q16",
+          "question": "Arrange the words to make the correct sentence.",
+          "words": ["Wǒmen", "měi", "zhǒng", "kè", "dōu", "yǒu", "yígè", "bǐjìběn"],
+          "answers": [["Wǒmen", "měi", "zhǒng", "kè", "dōu", "yǒu", "yígè", "bǐjìběn"]]
+        }
+      ]
+    }
+  }
+}
