@@ -143,6 +143,62 @@ let historyList;
    INITIALIZATION
 ========================================================= */
 
+
+/* =========================================================
+  Exam
+========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
+    const username = localStorage.getItem("username");
+
+    // Only show the exam area to Khaing
+    if (!username || username.trim().toLowerCase() !== "khaing") {
+        return;
+    }
+
+    const examArea = document.getElementById("khaingExamArea");
+    const comingSoon = document.getElementById("examComingSoon");
+    const examButton = document.getElementById("khaingExamButton");
+    const countdown = document.getElementById("examCountdown");
+
+    examArea.style.display = "block";
+
+    // Thailand local time: October 22, 2026, at 00:00
+    const examDate = new Date("2026-10-22T00:00:00+07:00");
+
+    function updateExamStatus() {
+        const now = new Date();
+        const remaining = examDate.getTime() - now.getTime();
+
+        if (remaining <= 0) {
+            comingSoon.style.display = "none";
+            examButton.style.display = "block";
+            return;
+        }
+
+        comingSoon.style.display = "block";
+        examButton.style.display = "none";
+
+        const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (remaining / (1000 * 60 * 60)) % 24
+        );
+        const minutes = Math.floor(
+            (remaining / (1000 * 60)) % 60
+        );
+        const seconds = Math.floor(
+            (remaining / 1000) % 60
+        );
+
+        countdown.textContent =
+            `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+    }
+
+    updateExamStatus();
+    setInterval(updateExamStatus, 1000);
+});
+
+
+
 document.addEventListener(
     "DOMContentLoaded",
     initializeApp
