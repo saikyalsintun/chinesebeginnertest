@@ -3,6 +3,50 @@
    COMPLETE STYLE SHEET
 ========================================================= */
 
+.exam-coming-soon {
+    max-width: 420px;
+    padding: 24px;
+    margin: 20px auto;
+    text-align: center;
+    background: #383838;
+    color: white;
+    border: 2px solid #D0A557;
+    border-radius: 14px;
+}
+
+.exam-coming-soon h3 {
+    color: #D0A557;
+    margin-top: 0;
+}
+
+.exam-coming-soon p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#examCountdown {
+    margin-top: 14px;
+    color: #D0A557;
+    font-weight: bold;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.exam-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #383838, #D0A557);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.exam-button:hover {
+    transform: translateY(-2px);
+}
 
 /* =========================================================
    RESET
