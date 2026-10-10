@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const username = localStorage.getItem("username");
 
     // Only show the exam area to Khaing
-    if (!username || username.trim().toLowerCase() !== "khaing") {
+    if (!username || username.trim().toLowerCase() !== "Khaing Thinzar Aung") {
         return;
     }
 
